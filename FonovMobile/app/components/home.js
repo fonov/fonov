@@ -10,7 +10,7 @@ export default class Home extends Component{
 
         return(
             <Content style={{marginTop: 100, paddingHorizontal: 10}}>
-                <Button block success>
+                <Button block success onPress={() => Actions.Test1()}>
                     <Text>Начать тест</Text>
                 </Button>
                 <Button transparent full onPress={() => Actions.ForTest()}>

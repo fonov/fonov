@@ -35,13 +35,13 @@ export default class App extends Component {
         return(
             <Router>
                 <Scene key='root'>
-                    <Scene key='Home' component={Home} title='Fonov' initial={true}/>
+                    <Scene key='Home' component={Home} title='Fonov' initial={false}/>
                     <Scene key='About' component={About} title='О Тесте'/>
                     <Scene key='ForTest' component={ForTest} title='Что нужно для теста'/>
-                    <Scene key='Test1' component={Test1} title='Test1'/>
-                    <Scene key='Test2' component={Test2} title='Test2'/>
-                    <Scene key='Test3' component={Test3} title='Test3'/>
-                    <Scene key='Test4' component={Test4} title='Test4'/>
+                    <Scene key='Test1' component={Test1} title='Внешний вид' initial={false}/>
+                    <Scene key='Test2' component={Test2} title='Определение ремонта' initial={false}/>
+                    <Scene key='Test3' component={Test3} title='Проверка на попадание влаги' initial={false}/>
+                    <Scene key='Test4' component={Test4} title='Характеристик iPhone' initial={true}/>
                     <Scene key='Test5' component={Test5} title='Test5'/>
                     <Scene key='Test6' component={Test6} title='Test6'/>
                     <Scene key='Test7' component={Test7} title='Test7'/>
