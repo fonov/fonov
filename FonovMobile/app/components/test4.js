@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, AlertIOS, Linking } from 'react-native'
 import { Content, Button, Grid, Col, List, ListItem, Right, Body, Icon } from 'native-base'
 import { Actions } from 'react-native-router-flux'
+import NextButton from '../elements/nextButton'
 import DeviceInfo from 'react-native-device-info';
 
 
@@ -555,7 +556,7 @@ export default class Test4 extends Component{
                         <Text>{country_of_purchase}</Text>
                     </ListItem>
                 </List>
-
+                <NextButton onPress={() => Actions.Test5()}/>
             </Content>
         )
     }

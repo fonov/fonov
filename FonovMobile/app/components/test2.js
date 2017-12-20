@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, Dimensions } from 'react-native'
 import { Content, Button, Grid, Col, Thumbnail } from 'native-base'
+import NextButton from '../elements/nextButton'
 import { Actions } from 'react-native-router-flux'
 
 
@@ -38,9 +39,7 @@ export default class Test2 extends Component{
                     source={require('../image/test2/Люфт_дитсплея.jpg')}
                 />
                 <Text style={{textAlign: 'center'}}>Люфт экрана (равномерно понажимать по все кромки экрана)</Text>
-                <Button block style={{margin: 10}} onPress={() => Actions.Test3()}>
-                    <Text>Далее</Text>
-                </Button>
+                <NextButton onPress={() => Actions.Test3()}/>
             </Content>
         )
     }

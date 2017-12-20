@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, Dimensions } from 'react-native'
 import { Content, Button, Grid, Col } from 'native-base'
+import NextButton from '../elements/nextButton'
 import { Actions } from 'react-native-router-flux'
 
 
@@ -40,9 +41,7 @@ export default class Test3 extends Component{
                         key={`img_${i}`}
                     />)
                 }
-                <Button block style={{margin: 10}} onPress={() => Actions.Test4()}>
-                    <Text>Далее</Text>
-                </Button>
+                <NextButton onPress={() => Actions.Test4()}/>
             </Content>
         )
     }
