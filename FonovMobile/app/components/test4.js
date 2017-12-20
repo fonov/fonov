@@ -12,10 +12,10 @@ export default class Test4 extends Component{
 
         this.iphoneInfo = {
             firstLetter: {
-                refurbished: 'F',
-                retail: 'M',
-                replacement: 'N',
-                personalized: 'P'
+                F: 'Восстановленный',
+                M: 'Для розничной продаже',
+                N: 'Подменный iPhone. Выдан в замен не исправного iPhone',
+                P: 'Специальный экземпляр'
             },
             modelInfo: {
                 'iPhone': {
@@ -410,7 +410,6 @@ export default class Test4 extends Component{
         };
 
         this.state = {
-            model: null,
             iPhone: '-',
             capacity: '-',
             color: '-',
@@ -419,15 +418,44 @@ export default class Test4 extends Component{
         }
     }
 
-    getModel() {
+    getInfo(result) {
+        const { firstLetter, modelInfo, country } = this.iphoneInfo;
 
-        const { model } = this.state;
+        info = {
+            type: firstLetter[result.firstLetter] || "-",
+            country_of_purchase: country[result.code_country] || '-'
+        };
+
+        for (let iPhone in modelInfo) {
+            for (let color in modelInfo[iPhone]) {
+                for (let capacity in modelInfo[iPhone][color]) {
+                    if (modelInfo[iPhone][color][capacity].indexOf(result.code) !== -1) {
+                        Object.assign(info, {
+                            iPhone,
+                            color,
+                            capacity
+                        })
+                    }
+                }
+            }
+        }
+
+        this.setState(info)
+    }
+
+    getModel() {
 
         let getCleanModel = model => {
             return new Promise((resolve, reject) => {
                 model_split = model.split('/');
-                if (model_split.length === 2 && (model_split[0].length === 6 || model_split[0].length === 5)) {
-                    resolve(model_split[0])
+                if (model_split.length === 2 && (model_split[0].length === 7 || model_split[0].length === 6)) {
+                    model_split[0] = model_split[0].toUpperCase();
+                    let result = {
+                        firstLetter: model_split[0].slice(0, 1),
+                        code: model_split[0].slice(1, 5),
+                        code_country: model_split[0].slice(5, model_split[0].length)
+                    };
+                    resolve(result)
                 } else {
                     reject();
                 }
@@ -438,10 +466,9 @@ export default class Test4 extends Component{
             'Модель устройства',
             null,
             rowModel => {
-
                 getCleanModel(rowModel)
-                    .then(cleanModel => {
-                        this.setState({model: cleanModel});
+                    .then(result => {
+                        this.getInfo(result);
                     })
                     .catch(() => {
                         AlertIOS.alert(
@@ -507,33 +534,25 @@ export default class Test4 extends Component{
                         <Body>
                         <Text>Кол-во памати</Text>
                         </Body>
-                        <Right>
-                            <Text>{capacity}</Text>
-                        </Right>
+                        <Text>{capacity}</Text>
                     </ListItem>
                     <ListItem>
                         <Body>
                         <Text>Цвет устройства</Text>
                         </Body>
-                        <Right>
-                            <Text>{color}</Text>
-                        </Right>
+                        <Text>{color}</Text>
                     </ListItem>
                     <ListItem>
                         <Body>
                         <Text>Тип устройства</Text>
                         </Body>
-                        <Right>
-                            <Text>{type}</Text>
-                        </Right>
+                        <Text>{type}</Text>
                     </ListItem>
                     <ListItem>
                         <Body>
                         <Text>Страна покупки</Text>
                         </Body>
-                        <Right>
-                            <Text>{country_of_purchase}</Text>
-                        </Right>
+                        <Text>{country_of_purchase}</Text>
                     </ListItem>
                 </List>
 
