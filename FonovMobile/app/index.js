@@ -35,7 +35,7 @@ export default class App extends Component {
         return(
             <Router>
                 <Scene key='root'>
-                    <Scene key='Home' component={Home} title='Fonov' initial={false}/>
+                    <Scene key='Home' component={Home} title='Fonov' initial={true}/>
                     <Scene key='About' component={About} title='О Тесте'/>
                     <Scene key='ForTest' component={ForTest} title='Что нужно для теста'/>
                     <Scene key='Test1' component={Test1} title='Внешний вид' initial={false}/>
@@ -44,8 +44,8 @@ export default class App extends Component {
                     <Scene key='Test4' component={Test4} title='Характеристик iPhone' initial={false}/>
                     <Scene key='Test5' component={Test5} title='Проверка iCloud Lock' initial={false} />
                     <Scene key='Test6' component={Test6} title='Проверка кнопок' initial={false} />
-                    <Scene key='Test7' component={Test7} title='Проверка вспышки' initial={true}/>
-                    <Scene key='Test8' component={Test8} title='Test8'/>
+                    <Scene key='Test7' component={Test7} title='Проверка вспышки' initial={false}/>
+                    <Scene key='Test8' component={Test8} title='Проверка камеры' initial={false}/>
                     <Scene key='Test9' component={Test9} title='Test9'/>
                     <Scene key='Test10' component={Test10} title='Test10'/>
                     <Scene key='Test11' component={Test11} title='Test11'/>
