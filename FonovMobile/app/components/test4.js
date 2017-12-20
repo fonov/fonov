@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, AlertIOS } from 'react-native'
+import { View, Text, AlertIOS, Linking } from 'react-native'
 import { Content, Button, Grid, Col, List, ListItem, Right, Body, Icon } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 import DeviceInfo from 'react-native-device-info';
@@ -10,7 +10,7 @@ export default class Test4 extends Component{
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.iphoneInfo = {
             firstLetter: {
                 refurbished: 'F',
                 retail: 'M',
@@ -407,43 +407,108 @@ export default class Test4 extends Component{
                 SE: 'Сербия',
                 ZD: 'Германия, Бельгия, Люксембург, Нидерланды, Австрия, Франция, Швейцария, Монако'
             }
+        };
+
+        this.state = {
+            model: null,
+            iPhone: '-',
+            capacity: '-',
+            color: '-',
+            type: '-',
+            country_of_purchase: '-'
         }
     }
 
     getModel() {
-        AlertIOS.prompt(
-            'Введите модель устройства',
-            'Настройки -> Основыный об устройстве -> Модель',
-            model => {
-                this.setState({isRefresh: model[0] === 'F'});
+
+        const { model } = this.state;
+
+        let getCleanModel = model => {
+            return new Promise((resolve, reject) => {
+                model_split = model.split('/');
+                if (model_split.length === 2 && (model_split[0].length === 6 || model_split[0].length === 5)) {
+                    resolve(model_split[0])
+                } else {
+                    reject();
+                }
+            });
+        };
+
+        let inputModel = () => AlertIOS.prompt(
+            'Модель устройства',
+            null,
+            rowModel => {
+
+                getCleanModel(rowModel)
+                    .then(cleanModel => {
+                        this.setState({model: cleanModel});
+                    })
+                    .catch(() => {
+                        AlertIOS.alert(
+                            'Вы ввели не верную модель iPhone',
+                            'Попробывать еще?',
+                            [
+                                {
+                                    text: 'Ввести еще раз',
+                                    onPress: () => inputModel()
+                                },
+                                {
+                                    text: 'Отмена',
+                                    style: 'cancel',
+                                    onPress: () => null,
+                                },
+                            ]
+                        )
+                    });
             }
         );
+
+        AlertIOS.alert(
+            'Введите модель устройства',
+            'Настройки -> Основыный об устройстве -> Модель\nПример: MN592LL/A',
+            [
+                {
+                    text: 'Открыть настройки',
+                    onPress: () => Promise.all([
+                        Linking.openURL('app-settings:root=General&path=About'),
+                        inputModel()
+                    ])
+                },
+                {
+                    text: 'Ввести',
+                    onPress: () => inputModel(),
+                    style: 'cancel',
+                },
+
+            ]
+        );
+
     }
 
     render(){
 
+        const { iPhone, capacity, color, type, country_of_purchase } = this.state;
+
         return(
             <Content>
-                <List style={{margin: 10}}>
-                    <ListItem>
-                        <Body>
-                            <Text>Модель</Text>
-                        </Body>
-                        <Text>{DeviceInfo.getModel()}</Text>
-                    </ListItem>
-                </List>
 
                 <Button block style={{margin: 10}} success onPress={() => this.getModel()}>
                     <Text>Получить подробную информацию</Text>
                 </Button>
 
-                <List>
+                <List style={{margin: 10}}>
+                    <ListItem>
+                        <Body>
+                            <Text>Модель</Text>
+                        </Body>
+                        <Text>{iPhone}</Text>
+                    </ListItem>
                     <ListItem>
                         <Body>
                         <Text>Кол-во памати</Text>
                         </Body>
                         <Right>
-                            <Text>16 гб</Text>
+                            <Text>{capacity}</Text>
                         </Right>
                     </ListItem>
                     <ListItem>
@@ -451,18 +516,15 @@ export default class Test4 extends Component{
                         <Text>Цвет устройства</Text>
                         </Body>
                         <Right>
-                            <Text>Серый</Text>
+                            <Text>{color}</Text>
                         </Right>
                     </ListItem>
                     <ListItem>
                         <Body>
-                        <Text>Устройсво востановленно</Text>
+                        <Text>Тип устройства</Text>
                         </Body>
                         <Right>
-                            <Icon
-                                style={{color: 'green'}}
-                                name="ios-checkmark-circle"
-                            />
+                            <Text>{type}</Text>
                         </Right>
                     </ListItem>
                     <ListItem>
@@ -470,10 +532,11 @@ export default class Test4 extends Component{
                         <Text>Страна покупки</Text>
                         </Body>
                         <Right>
-                            <Text>Россия</Text>
+                            <Text>{country_of_purchase}</Text>
                         </Right>
                     </ListItem>
                 </List>
+
             </Content>
         )
     }
