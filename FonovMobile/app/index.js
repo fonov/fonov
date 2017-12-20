@@ -42,8 +42,8 @@ export default class App extends Component {
                     <Scene key='Test2' component={Test2} title='Определение ремонта' initial={false}/>
                     <Scene key='Test3' component={Test3} title='Проверка на попадание влаги' initial={false}/>
                     <Scene key='Test4' component={Test4} title='Характеристик iPhone' initial={false}/>
-                    <Scene key='Test5' component={Test5} title='Проверка iCloud Lock' initial={true} />
-                    <Scene key='Test6' component={Test6} title='Test6'/>
+                    <Scene key='Test5' component={Test5} title='Проверка iCloud Lock' initial={false} />
+                    <Scene key='Test6' component={Test6} title='Проверка кнопок' initial={true} />
                     <Scene key='Test7' component={Test7} title='Test7'/>
                     <Scene key='Test8' component={Test8} title='Test8'/>
                     <Scene key='Test9' component={Test9} title='Test9'/>
