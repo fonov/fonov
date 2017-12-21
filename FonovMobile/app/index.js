@@ -49,10 +49,10 @@ export default class App extends Component {
                     <Scene key='Test9' component={Test9} title='Проверка динамиков' initial={false}/>
                     <Scene key='Test10' component={Test10} title='Наушников' initial={false}/>
                     <Scene key='Test11' component={Test11} title='Датчика освешености' initial={false}/>
-                    <Scene key='Test12' component={Test12} title='Проверка Touch ID/Face ID' initial={true}/>
-                    <Scene key='Test13' component={Test13} title='Test13'/>
-                    <Scene key='Test14' component={Test14} title='Test14'/>
-                    <Scene key='Test15' component={Test15} title='Test15'/>
+                    <Scene key='Test12' component={Test12} title='Проверка Touch ID/Face ID' initial={false}/>
+                    <Scene key='Test13' component={Test13} title='Проверка Wifi' initial={false}/>
+                    <Scene key='Test14' component={Test14} title='Проверка Bluetooth' initial={false}/>
+                    <Scene key='Test15' component={Test15} title='Проверка микрофона' initial={true}/>
                     <Scene key='Test16' component={Test16} title='Test16'/>
                     <Scene key='Test17' component={Test17} title='Test17'/>
                     <Scene key='Test18' component={Test18} title='Test18'/>
