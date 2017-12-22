@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native'
+import {View, Text, Dimensions, Image} from 'react-native'
 import { Content, Button, Grid, Col } from 'native-base'
 import { Actions } from 'react-native-router-flux'
+import NextButton from '../elements/nextButton'
 
 
-export default class Test19 extends Component{
+export default class Test18 extends Component{
 
     render(){
 
+        const { width } = Dimensions.get('window');
+
         return(
-            <Content style={{padding: 10}}>
-                <Text>Тест 19</Text>
+            <Content>
+                <Text style={{margin: 10}}>
+                    Подключите телефон к зарядки. Проверте плотно ли находиться разьм зарядки, отсутсвуют ли лифты. Телефон при подключние зарядки сразу же должен начать зарежаться
+                </Text>
+                <Image
+                    resizeMode='contain'
+                    style={{width: width-20, height: 250, marginLeft: 10, marginTop: 10}}
+                    source={require('../image/test18/iPhone_-_Зарядка.png')}
+                />
+                <NextButton onPress={() => Actions.Test19()}/>
             </Content>
         )
     }

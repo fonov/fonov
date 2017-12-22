@@ -9,8 +9,10 @@ export default class Test20 extends Component{
     render(){
 
         return(
-            <Content style={{padding: 10}}>
-                <Text>Тест 20</Text>
+            <Content>
+                <Text style={{margin: 10}}>
+                    Зайти в настройки -> основные -> об устройстве -> серийный номер. Нажмите на серийны номер и выбирете скопировать. Затем перейдите на официальный сайт Apple для проверки гарантии
+                </Text>
             </Content>
         )
     }

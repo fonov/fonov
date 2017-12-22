@@ -26,6 +26,7 @@ import Test19 from './components/test19'
 import Test20 from './components/test20'
 import Test21 from './components/test21'
 import TestResult from './components/test_result'
+import Colors from './components/colors'
 
 
 export default class App extends Component {
@@ -52,14 +53,15 @@ export default class App extends Component {
                     <Scene key='Test12' component={Test12} title='Проверка Touch ID/Face ID' initial={false}/>
                     <Scene key='Test13' component={Test13} title='Проверка Wifi' initial={false}/>
                     <Scene key='Test14' component={Test14} title='Проверка Bluetooth' initial={false}/>
-                    <Scene key='Test15' component={Test15} title='Проверка микрофона' initial={true}/>
-                    <Scene key='Test16' component={Test16} title='Test16'/>
-                    <Scene key='Test17' component={Test17} title='Test17'/>
-                    <Scene key='Test18' component={Test18} title='Test18'/>
-                    <Scene key='Test19' component={Test19} title='Test19'/>
-                    <Scene key='Test20' component={Test20} title='Test20'/>
+                    <Scene key='Test15' component={Test15} title='Проверка микрофона' initial={false}/>
+                    <Scene key='Test16' component={Test16} title='Проверка экрана' initial={false}/>
+                    <Scene key='Test17' component={Test17} title='Вызов и Датчик приближения' initial={false}/>
+                    <Scene key='Test18' component={Test18} title='Порт зарядки' initial={false}/>
+                    <Scene key='Test19' component={Test19} title='Проверка батареи' initial={false}/>
+                    <Scene key='Test20' component={Test20} title='Проверка гарантии' initial={true}/>
                     <Scene key='Test21' component={Test21} title='Test21'/>
                     <Scene key='TestResult' component={TestResult} title='Результаты теста'/>
+                    <Scene key='Colors' hideNavBar component={Colors} title='Colors'/>
                 </Scene>
             </Router>
         )
