@@ -6,11 +6,11 @@ export default class NextButton extends Component{
 
     render(){
 
-        const { onPress } = this.props;
+        const { onPress, finish = false } = this.props;
 
         return(
             <Button block style={{margin: 10}} onPress={onPress}>
-                <Text>Далее</Text>
+                <Text>{finish ? 'Завершить' : 'Далее'}</Text>
             </Button>
         )
     }

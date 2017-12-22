@@ -9,8 +9,8 @@ export default class TestResult extends Component{
     render(){
 
         return(
-            <Content style={{padding: 10}}>
-                <Text>TestResult</Text>
+            <Content>
+                <Text style={{margin: 10}}>Рекамендации после теста!</Text>
             </Content>
         )
     }

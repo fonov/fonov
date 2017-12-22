@@ -36,7 +36,7 @@ export default class App extends Component {
         return(
             <Router>
                 <Scene key='root'>
-                    <Scene key='Home' component={Home} title='Fonov' initial={false}/>
+                    <Scene key='Home' component={Home} title='Fonov' initial={true}/>
                     <Scene key='About' component={About} title='О Тесте'/>
                     <Scene key='ForTest' component={ForTest} title='Что нужно для теста'/>
                     <Scene key='Test1' component={Test1} title='Внешний вид' initial={false}/>
@@ -58,8 +58,8 @@ export default class App extends Component {
                     <Scene key='Test17' component={Test17} title='Вызов и Датчик приближения' initial={false}/>
                     <Scene key='Test18' component={Test18} title='Порт зарядки' initial={false}/>
                     <Scene key='Test19' component={Test19} title='Проверка батареи' initial={false}/>
-                    <Scene key='Test20' component={Test20} title='Проверка гарантии' initial={true}/>
-                    <Scene key='Test21' component={Test21} title='Test21'/>
+                    <Scene key='Test20' component={Test20} title='Проверка гарантии' initial={false}/>
+                    <Scene key='Test21' component={Test21} title='Проверка комплектующих' initial={false}/>
                     <Scene key='TestResult' component={TestResult} title='Результаты теста'/>
                     <Scene key='Colors' hideNavBar component={Colors} title='Colors'/>
                 </Scene>
