@@ -13,7 +13,12 @@ class Test8 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>iCloid</h1>
+                <p>
+                    Телефон должен быть отвязан от аккатов iCloud и Apple id. В противном случае вы не сможете использовать телефон со своим аккаунтов и телефон может быть без возвратно заблокирован
+                </p>
+                <img src={require('../image/iCloud/IMG_0001.jpg')} className="img-fluid"/>
+                <Button color="primary" block onClick={() => changeRoute('Test9')}>Далле</Button>
             </div>
         );
     }

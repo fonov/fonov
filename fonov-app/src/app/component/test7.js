@@ -13,7 +13,12 @@ class Test7 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>3D Touch</h1>
+                <p>
+                    Для проверка 3D Touch необходимо сильно понажать на иконки. После этого должен открыться меню
+                </p>
+                <img src={require('../image/screen/3D-Touch-iPhone-6s.jpg')} className="img-fluid"/>
+                <Button color="primary" block onClick={() => changeRoute('Test8')}>Далле</Button>
             </div>
         );
     }

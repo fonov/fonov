@@ -13,7 +13,11 @@ class Test10 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>Проверка динамиков</h1>
+                <p>
+                    Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
+                </p>
+                <Button color="primary" block onClick={() => changeRoute('Test11')}>Далле</Button>
             </div>
         );
     }

@@ -13,7 +13,11 @@ class Test9 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>Проверка вспышки</h1>
+                <p>
+                    Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
+                </p>
+                <Button color="primary" block onClick={() => changeRoute('Test10')}>Далле</Button>
             </div>
         );
     }

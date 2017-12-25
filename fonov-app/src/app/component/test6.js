@@ -13,7 +13,12 @@ class Test6 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>Сенсор</h1>
+                <p>
+                    Проводить польцем по всему экрану. Сенсор должен работать плавно и беззадержкой и на всей площади экрана
+                </p>
+                <img src={require('../image/screen/iPhone-screen-touch-600x402.png')} className="img-fluid"/>
+                <Button color="primary" block onClick={() => changeRoute('Test7')}>Далле</Button>
             </div>
         );
     }
