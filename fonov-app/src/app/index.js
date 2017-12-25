@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
+import ChangeRoute from "./actions/route";
+// View
 import Home from './component/home'
 import Test1 from './component/test1'
 import Test2 from './component/test2'
@@ -15,6 +17,12 @@ import Test10 from './component/test10'
 
 
 class App extends Component {
+
+    componentWillMount() {
+        const { changeRoute } = this.props;
+
+        changeRoute('Test1')
+    }
 
     currentScene() {
 
@@ -63,7 +71,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        changeRoute: route => dispatch(ChangeRoute(route))
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
