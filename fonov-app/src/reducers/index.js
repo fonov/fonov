@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 import route from './route'
+import currentModel from './currentModel'
 
 
 const reducers = combineReducers({
-    route
+    route,
+    currentModel
 });
 
 export default reducers

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button, FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux'
 import ChangeRoute from '../actions/route'
+import setCurrentModel from '../actions/currentModel'
 
 
 class Test1 extends Component {
@@ -421,7 +422,8 @@ class Test1 extends Component {
     }
 
     getInfo(result) {
-        const { firstLetter, modelInfo, country } = this.iphoneInfo;
+        const { firstLetter, modelInfo, country } = this.iphoneInfo,
+            { setCurrentModel } = this.props;
 
         let info = {
             type: firstLetter[result.firstLetter] || "-",
@@ -441,6 +443,8 @@ class Test1 extends Component {
                 }
             }
         }
+
+        setCurrentModel(info.iPhone);
 
         this.setState(info)
     }
@@ -515,7 +519,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeRoute: route => dispatch(ChangeRoute(route))
+        changeRoute: route => dispatch(ChangeRoute(route)),
+        setCurrentModel: model => dispatch(setCurrentModel(model))
     }
 };
 

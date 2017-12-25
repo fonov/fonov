@@ -21,7 +21,7 @@ class App extends Component {
     componentWillMount() {
         const { changeRoute } = this.props;
 
-        changeRoute('Test1')
+        changeRoute('Test5')
     }
 
     currentScene() {
