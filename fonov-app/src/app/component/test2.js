@@ -13,7 +13,14 @@ class Test2 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>Внешний вид</h1>
+                <p>
+                    Извлечь телефон из чехла. Если iPhone имеет защитное стекло или пленку на задний или передней части телефона то ее необходимо удалить. Поднести телефон к источнику освящениею и внимательно осмотреть переднию, заднию и боковые грание на наличие царапин, потертостей, трещин, сколов.
+                </p>
+                <img src={require('../image/visual_appearance/front.png')} className="img-fluid"/>
+                <img src={require('../image/visual_appearance/Боковая_грань.png')} className="img-fluid"/>
+                <img src={require('../image/visual_appearance/front.png')} className="img-fluid"/>
+                <Button color="primary" block onClick={() => changeRoute('Test3')}>Далее</Button>
             </div>
         );
     }

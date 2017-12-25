@@ -502,7 +502,7 @@ class Test1 extends Component {
                     <li><b>Тип устройства:</b> {type}</li>
                     <li><b>Страна покупки:</b> {country_of_purchase}</li>
                 </ul>
-                <Button color="primary" block>Далле</Button>
+                <Button color="primary" block onClick={() => changeRoute('Test2')}>Далле</Button>
             </div>
         );
     }

@@ -13,7 +13,7 @@ class Test4 extends Component {
 
         return (
             <div>
-                <h1>Тест 1</h1>
+                <h1>Попадание влаги</h1>
             </div>
         );
     }
