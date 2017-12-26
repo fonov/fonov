@@ -32,11 +32,11 @@ import TestResult from './component/testResult'
 
 class App extends Component {
 
-    componentWillMount() {
-        const { changeRoute } = this.props;
-
-        changeRoute('TestResult')
-    }
+    // componentWillMount() {
+    //     const { changeRoute } = this.props;
+    //
+    //     changeRoute('TestResult')
+    // }
 
     currentScene() {
 

@@ -14,6 +14,7 @@ class TestResult extends Component {
         return (
             <div>
                 <h1>Результаты теста</h1>
+                <Button color="primary" block onClick={() => changeRoute('Home')}>На главную</Button>
             </div>
         );
     }
