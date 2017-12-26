@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test12 extends Component {
@@ -17,7 +16,7 @@ class Test12 extends Component {
                 <p>
                     Откройти центр управление взмахом с низу вверх. Нажмити на клавишу камеру. Проверьте изображение с фронтальной и передней камерой. Изображение должно быть чистое и без размытия
                 </p>
-                <Button color="primary" block onClick={() => changeRoute('Test13')}>Далее</Button>
+                <TestNav testN={12}/>
             </div>
         );
     }
@@ -29,9 +28,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test12);

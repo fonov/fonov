@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test10 extends Component {
 
     render() {
-
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -18,7 +15,7 @@ class Test10 extends Component {
                     Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
                 </p>
                 <img src={require('../image/control_panel/camera.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test11')}>Далле</Button>
+                <TestNav testN={10}/>
             </div>
         );
     }
@@ -30,9 +27,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test10);

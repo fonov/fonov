@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test4 extends Component {
@@ -55,8 +54,6 @@ class Test4 extends Component {
 
     render() {
 
-        const { changeRoute } = this.props;
-
         return (
             <div>
                 <h1>Попадание влаги</h1>
@@ -64,7 +61,7 @@ class Test4 extends Component {
                     Влага оказывает разрушительное влияние на компоненты iPhone. Чтобы определить было ли попадание влаги проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета значит телефон был подвержен попаданию влаги
                 </p>
                 <img src={this.currentWaterIndicatorImage()} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test5')}>Далле</Button>
+                <TestNav testN={4}/>
             </div>
         );
     }
@@ -78,9 +75,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test4);

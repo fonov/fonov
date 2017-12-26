@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
 import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test21 extends Component {
@@ -18,7 +19,7 @@ class Test21 extends Component {
                     Подключите телефон к зарядки. Проверте плотно ли находиться разьм зарядки, отсутсвуют ли лифты. Телефон при подключние зарядки сразу же должен начать зарежаться
                 </p>
                 <img src={require('../image/charge/iPhone_-_Зарядка.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test22')}>Далее</Button>
+                <TestNav testN={21}/>
             </div>
         );
     }

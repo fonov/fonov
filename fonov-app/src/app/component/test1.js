@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, FormGroup, Label, Input } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 import setCurrentModel from '../actions/currentModel'
 
 
@@ -410,15 +410,16 @@ class Test1 extends Component {
             }
         };
 
-        this.defaultInfo = {
+        this.defaultState = {
             iPhone: '-',
             capacity: '-',
             color: '-',
             type: '-',
-            country_of_purchase: '-'
+            country_of_purchase: '-',
+            input_valid: null
         };
 
-        this.state = Object.assign(this.defaultInfo, {input_valid: null})
+        this.state = this.defaultState
     }
 
     getInfo(result) {
@@ -426,6 +427,8 @@ class Test1 extends Component {
             { setCurrentModel } = this.props;
 
         let info = {
+            ...this.defaultState,
+            input_valid: false,
             type: firstLetter[result.firstLetter] || "-",
             country_of_purchase: country[result.code_country] || '-'
         };
@@ -437,14 +440,15 @@ class Test1 extends Component {
                         Object.assign(info, {
                             iPhone,
                             color,
-                            capacity
-                        })
+                            capacity,
+                            input_valid: true
+                        });
+                        setCurrentModel(iPhone);
+                        break;
                     }
                 }
             }
         }
-
-        setCurrentModel(info.iPhone);
 
         this.setState(info)
     }
@@ -468,24 +472,19 @@ class Test1 extends Component {
     };
 
     inputModel(rowModel) {
+
         this.getCleanModel(rowModel)
             .then(result => {
                 this.getInfo(result);
-                this.setState({
-                    input_valid: true
-                })
             })
             .catch(() => {
-                this.setState(
-                    Object.assign(this.defaultInfo, { input_valid: false })
-                )
-            })
+                this.setState(Object.assign(this.defaultState, {input_valid: false}))
+            });
     }
 
     render() {
 
-        const { changeRoute } = this.props,
-            { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state;
+        const { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state;
 
         return (
             <div>
@@ -506,7 +505,7 @@ class Test1 extends Component {
                     <li><b>Тип устройства:</b> {type}</li>
                     <li><b>Страна покупки:</b> {country_of_purchase}</li>
                 </ul>
-                <Button color="primary" block onClick={() => changeRoute('Test2')}>Далле</Button>
+                {input_valid === true && <TestNav testN={1}/>}
             </div>
         );
     }
@@ -519,7 +518,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeRoute: route => dispatch(ChangeRoute(route)),
         setCurrentModel: model => dispatch(setCurrentModel(model))
     }
 };

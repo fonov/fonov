@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test7 extends Component {
 
     render() {
-
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -18,7 +15,7 @@ class Test7 extends Component {
                     Для проверка 3D Touch необходимо сильно понажать на иконки. После этого должен открыться меню
                 </p>
                 <img src={require('../image/screen/3D-Touch-iPhone-6s.jpg')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test8')}>Далле</Button>
+                <TestNav testN={7}/>
             </div>
         );
     }
@@ -30,9 +27,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test7);

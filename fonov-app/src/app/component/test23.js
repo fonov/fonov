@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
 import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test23 extends Component {
@@ -34,7 +35,7 @@ class Test23 extends Component {
                 <p>
                     Использование не оригинального кабеля питания или блока питания может сокранить срок службы вашего iPhone
                 </p>
-                <Button color="primary" block onClick={() => changeRoute('TestResult')}>Завершить тест</Button>
+                <TestNav testN={23}/>
             </div>
         );
     }

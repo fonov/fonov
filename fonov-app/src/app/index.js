@@ -32,11 +32,11 @@ import TestResult from './component/testResult'
 
 class App extends Component {
 
-    // componentWillMount() {
-    //     const { changeRoute } = this.props;
-    //
-    //     changeRoute('TestResult')
-    // }
+    componentWillMount() {
+        const { changeRoute } = this.props;
+
+        changeRoute('Test1')
+    }
 
     currentScene() {
 
@@ -99,7 +99,10 @@ class App extends Component {
     render() {
 
         return (
-            <div className="container">
+            <div
+                className="container"
+                style={{padding: 25}}
+            >
                 {this.currentScene()}
             </div>
         );

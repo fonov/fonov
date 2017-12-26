@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test16 extends Component {
 
     render() {
-
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -18,7 +15,7 @@ class Test16 extends Component {
                     Откройти настройки -> Wi-Fi. Попробуйте подключиться к wifi сети. Если рядом нет доступных wifi точек то попробуйте создать точку доступа на своем смартфоне
                 </p>
                 <img src={require('../image/settings/iPhone-6-Wi-Fi-settings.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test17')}>Далее</Button>
+                <TestNav testN={16}/>
             </div>
         );
     }
@@ -30,9 +27,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test16);

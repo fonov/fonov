@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
-
+import TestNav from '../elements/testNav'
 
 class Test9 extends Component {
 
     render() {
-
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -18,7 +14,7 @@ class Test9 extends Component {
                     Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
                 </p>
                 <img src={require('../image/control_panel/flashlight.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test10')}>Далле</Button>
+                <TestNav testN={9}/>
             </div>
         );
     }
@@ -30,9 +26,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test9);

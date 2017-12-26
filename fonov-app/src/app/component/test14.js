@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test14 extends Component {
 
     render() {
-
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -18,7 +15,7 @@ class Test14 extends Component {
                     Для проверки датчика освящености необходимо зайти в настройки -> Экран и яркость. Уменьшить яркость до минимума, после этого поднести датчик авто якрости к истучнику освящение. Шкала яркости должна автоматически увеличиться, вместе с яркостью экрана.
                 </p>
                 <img src={require('../image/top_sensor/A4.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test15')}>Далее</Button>
+                <TestNav testN={14}/>
             </div>
         );
     }
@@ -30,9 +27,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test14);

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test3 extends Component {
 
     render() {
 
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -21,7 +19,7 @@ class Test3 extends Component {
                 <h3>Смещение передней камеры.</h3>
                 <img src={require('../image/repair/Люфт_дитсплея.jpg')} className="img-fluid"/>
                 <h3>Люфт экрана (равномерно понажимать по все кромки экрана)</h3>
-                <Button color="primary" block onClick={() => changeRoute('Test4')}>Далле</Button>
+                <TestNav testN={3}/>
             </div>
         );
     }
@@ -33,9 +31,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test3);

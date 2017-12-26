@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test5 extends Component {
 
     render() {
-
-        const { changeRoute } = this.props;
 
         return (
             <div>
@@ -18,7 +15,7 @@ class Test5 extends Component {
                     Нажать не мение 5 раз на клавишу громкости вниз, в верх, клавиша блокировки и кнопка домой. Качалька клавиши бесшумного режима. При переключение в бесшумный режим iPhone должен плавно вибрировать
                 </p>
                 <img src={require('../image/buttons/iphone_front.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test6')}>Далле</Button>
+                <TestNav testN={5}/>
             </div>
         );
     }
@@ -30,9 +27,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        changeRoute: route => dispatch(ChangeRoute(route))
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test5);

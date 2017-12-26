@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
 import ChangeRoute from '../actions/route'
+import TestNav from '../elements/testNav'
 
 
 class Test22 extends Component {
@@ -18,7 +19,7 @@ class Test22 extends Component {
                     Зайти в настройки -> основные -> об устройстве -> серийный номер. Нажмите на серийны номер и выбирете скопировать. Затем перейдите на официальный сайт Apple для проверки гарантии
                 </p>
                 <Button color="success" block target="_blank" href='https://checkcoverage.apple.com'>Проверить гарантию</Button>
-                <Button color="primary" block onClick={() => changeRoute('Test23')}>Далее</Button>
+                <TestNav testN={22}/>
             </div>
         );
     }
