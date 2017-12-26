@@ -17,7 +17,8 @@ class Test22 extends Component {
                 <p>
                     Зайти в настройки -> основные -> об устройстве -> серийный номер. Нажмите на серийны номер и выбирете скопировать. Затем перейдите на официальный сайт Apple для проверки гарантии
                 </p>
-                <Button color="primary" block onClick={() => changeRoute('Test22')}>Далее</Button>
+                <Button color="success" block target="_blank" href='https://checkcoverage.apple.com'>Проверить гарантию</Button>
+                <Button color="primary" block onClick={() => changeRoute('Test23')}>Далее</Button>
             </div>
         );
     }

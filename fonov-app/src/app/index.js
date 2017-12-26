@@ -26,6 +26,8 @@ import Test19 from './component/test19'
 import Test20 from './component/test20'
 import Test21 from './component/test21'
 import Test22 from './component/test22'
+import Test23 from './component/test23'
+import TestResult from './component/testResult'
 
 
 class App extends Component {
@@ -33,7 +35,7 @@ class App extends Component {
     componentWillMount() {
         const { changeRoute } = this.props;
 
-        changeRoute('Test22')
+        changeRoute('TestResult')
     }
 
     currentScene() {
@@ -85,6 +87,10 @@ class App extends Component {
                 return <Test21/>;
             case 'Test22':
                 return <Test22/>;
+            case 'Test23':
+                return <Test23/>;
+            case 'TestResult':
+                return <TestResult/>;
             default:
                 return <Home/>
         }
