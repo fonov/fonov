@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import ChangeRoute from '../actions/route'
 
 
-class Test10 extends Component {
+class Test17 extends Component {
 
     render() {
 
@@ -13,12 +13,12 @@ class Test10 extends Component {
 
         return (
             <div>
-                <h1>Проверка динамиков</h1>
+                <h1>Проверка Bluetooth</h1>
                 <p>
-                    Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
+                    Откройти настройки -> Bluetooth. Попробуйте найти bluetooth устройтво и подключиться к нему.
                 </p>
-                <img src={require('../image/control_panel/camera.png')} className="img-fluid"/>
-                <Button color="primary" block onClick={() => changeRoute('Test11')}>Далле</Button>
+                <img src={require('../image/settings/IMG_96988805C252-1.jpeg')} className="img-fluid"/>
+                <Button color="primary" block onClick={() => changeRoute('Test18')}>Далее</Button>
             </div>
         );
     }
@@ -35,4 +35,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test10);
+export default connect(mapStateToProps, mapDispatchToProps)(Test17);

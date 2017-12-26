@@ -17,6 +17,7 @@ class Test9 extends Component {
                 <p>
                     Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
                 </p>
+                <img src={require('../image/control_panel/flashlight.png')} className="img-fluid"/>
                 <Button color="primary" block onClick={() => changeRoute('Test10')}>Далле</Button>
             </div>
         );
