@@ -28,7 +28,7 @@ class Home extends Component {
                         <li>Сматфон с фонариком и возможность раздать Wi-Fi</li>
                     </ul>
                 </h5>
-                <Button color="primary" size="lg" block onClick={() => changeRoute('Test1')}>Начать тест</Button>
+                <Button color="primary" size="lg" block onClick={() => changeRoute('Test2')}>Начать тест</Button>
             </div>
         );
     }

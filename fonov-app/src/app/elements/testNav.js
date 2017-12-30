@@ -11,22 +11,23 @@ class TestNav extends Component {
         super(props);
 
         this.state = {
-            countTest: 23
+            maxTest: 23,
+            minTest: 2
         }
     }
 
     render() {
 
-        const { countTest } = this.state,
+        const { maxTest, minTest } = this.state,
             { testN, changeRoute } = this.props;
 
         return (
             <div style={{marginTop: 20}}>
-                { testN === 1 ? (
+                { testN === minTest ? (
                     <Button color="primary" block onClick={() => changeRoute(`Test${testN+1}`)}>
                         Далле <FontAwesome name='chevron-right' />
                     </Button>
-                ) : testN < countTest ? (
+                ) : testN < maxTest-minTest+1 ? (
                     <div>
                         <div className='row'>
                             <div className='col'>

@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import ChangeRoute from "./actions/route";
 // View
 import Home from './component/home'
-import Test1 from './component/test1'
 import Test2 from './component/test2'
+import Test3 from './component/test3'
 import Test4 from './component/test4'
 import Test5 from './component/test5'
 import Test6 from './component/test6'
@@ -34,7 +34,7 @@ class App extends Component {
     componentWillMount() {
         const { changeRoute } = this.props;
 
-        changeRoute('Test2')
+        changeRoute('Test5')
     }
 
     currentScene() {
@@ -42,11 +42,10 @@ class App extends Component {
         const { route } = this.props;
 
         switch (route) {
-            case 'Test1':
-                return <Test1/>;
             case 'Test2':
                 return <Test2/>;
             case 'Test3':
+                return <Test3/>;
             case 'Test4':
                 return <Test4/>;
             case 'Test5':
