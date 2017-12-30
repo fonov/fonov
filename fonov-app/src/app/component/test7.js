@@ -23,7 +23,6 @@ class Test7 extends Component {
             case 'iPhone 6':
             case 'iPhone 6 Plus':
             case 'iPhone SE':
-            default:
                 REPLACE_ROUTE('Test8')
         }
 
