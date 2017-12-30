@@ -11,7 +11,15 @@ const POP_ROUTE = () => {
     }
 };
 
+const REPLACE_ROUTE = (route) => {
+    return {
+        type: 'REPLACE_ROUTE',
+        route
+    }
+};
+
 export {
     ADD_ROUTE,
-    POP_ROUTE
+    POP_ROUTE,
+    REPLACE_ROUTE
 }

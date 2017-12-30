@@ -11,6 +11,12 @@ const route = (state = {currentRoute: 'DEFAULT', stack: ['DEFAULT']}, action) =>
                 currentRoute: state.stack[state.stack.length - 1],
                 stack: state.stack
             };
+        case 'REPLACE_ROUTE':
+            state.stack.pop();
+            return {
+                currentRoute: action.route,
+                stack: [...state.stack, action.route]
+            };
         default:
             return state
     }

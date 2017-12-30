@@ -34,7 +34,7 @@ class App extends Component {
     componentWillMount() {
         const { ADD_ROUTE } = this.props;
 
-        ADD_ROUTE('Test7')
+        ADD_ROUTE('Test3')
     }
 
     currentScene() {
