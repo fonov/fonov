@@ -1,4 +1,4 @@
-const currentModel = (state = 'iPhone', action) => {
+const currentModel = (state = 'iPhone X', action) => {
     switch (action.type) {
         case 'SET_MODEL':
             return action.model;

@@ -12,7 +12,7 @@ class Test5 extends Component {
 
         return (
             <div>
-                <Title>Проверка кнопок и вибрации на {currentModel}</Title>
+                <Title>Проверка кнопок и вибрации {currentModel}</Title>
                 <Image src={require('../image2/кнопки/Кпокпи 2.png')}/>
                 <Text>
                     Проверьте главишу громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрирорвать
