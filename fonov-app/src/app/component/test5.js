@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Text, Image, Title } from '../elements/index'
 
 
 class Test5 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <h1>Проверка кнопок и вибрации</h1>
-                <p>
-                    Нажать не мение 5 раз на клавишу громкости вниз, в верх, клавиша блокировки и кнопка домой. Качалька клавиши бесшумного режима. При переключение в бесшумный режим iPhone должен плавно вибрировать
-                </p>
-                <img src={require('../image/buttons/iphone_front.png')} className="img-fluid"/>
+                <Title>Проверка кнопок и вибрации на {currentModel}</Title>
+                <Image src={require('../image2/кнопки/Кпокпи 2.png')}/>
+                <Text>
+                    Проверьте главишу громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрирорвать
+                </Text>
+                <Image src={require('../image2/кнопки/Кпокпи.png')}/>
+                <Text>Клавиша Домой</Text>
+                <Image src={require('../image2/кнопки/Кпокпи 3.png')}/>
+                <Text>Клавиша блокировки</Text>
                 <TestNav testN={5}/>
             </div>
         );
@@ -23,7 +29,9 @@ class Test5 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

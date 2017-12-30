@@ -1,20 +1,45 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Text, Image, Title } from '../elements/index'
+import { REPLACE_ROUTE } from "../actions/route";
 
 
 class Test7 extends Component {
 
+    componentWillMount() {
+
+        const { currentModel, REPLACE_ROUTE } = this.props;
+
+        switch (currentModel) {
+            case 'iPhone':
+            case 'iPhone 3G':
+            case 'iPhone 3GS':
+            case 'iPhone 4':
+            case 'iPhone 4S':
+            case 'iPhone 5':
+            case 'iPhone 5c':
+            case 'iPhone 5s':
+            case 'iPhone 6':
+            case 'iPhone 6 Plus':
+            case 'iPhone SE':
+            default:
+                REPLACE_ROUTE('Test8')
+        }
+
+    }
+
     render() {
+
+        const { currentModel } = this.props;
 
         return (
             <div>
-                <h1>3D Touch</h1>
-                <p>
+                <Title>3D Touch на {currentModel}</Title>
+                <Image src={require('../image2/screen/3D-Touch-iPhone-6s.jpg')}/>
+                <Text>
                     Для проверка 3D Touch необходимо сильно понажать на иконки. После этого должен открыться меню
-                </p>
-                <img src={require('../image/screen/3D-Touch-iPhone-6s.jpg')} className="img-fluid"/>
+                </Text>
                 <TestNav testN={7}/>
             </div>
         );
@@ -23,11 +48,15 @@ class Test7 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        REPLACE_ROUTE: route => dispatch(REPLACE_ROUTE(route))
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test7);

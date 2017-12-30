@@ -8,8 +8,6 @@ class Test8 extends Component {
 
     render() {
 
-        const { changeRoute } = this.props;
-
         return (
             <div>
                 <h1>iCloid</h1>
