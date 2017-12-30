@@ -32,7 +32,7 @@ class Image extends Component {
         const { height } = this.state;
 
         if (img.offsetHeight > height/2) {
-            this.setState({imgStyle: {height: height/2}})
+            this.setState({imgStyle: {height: height*0.5}})
         }
     }
 

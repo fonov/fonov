@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import ChangeRoute from "./actions/route";
+import { ADD_ROUTE } from "./actions/route";
 // View
 import Home from './component/home'
 import Test2 from './component/test2'
@@ -32,16 +32,16 @@ import TestResult from './component/testResult'
 class App extends Component {
 
     componentWillMount() {
-        const { changeRoute } = this.props;
+        const { ADD_ROUTE } = this.props;
 
-        changeRoute('Test5')
+        ADD_ROUTE('Test7')
     }
 
     currentScene() {
 
-        const { route } = this.props;
+        const { currentRoute } = this.props;
 
-        switch (route) {
+        switch (currentRoute) {
             case 'Test2':
                 return <Test2/>;
             case 'Test3':
@@ -108,13 +108,13 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        route: state.route
+        currentRoute: state.route.currentRoute
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeRoute: route => dispatch(ChangeRoute(route))
+        ADD_ROUTE: route => dispatch(ADD_ROUTE(route))
     }
 };
 

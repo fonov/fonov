@@ -1,8 +1,17 @@
-const change_route = route => {
+const ADD_ROUTE = route => {
     return {
-        type: 'CHANGE_ROUTE',
+        type: 'ADD_ROUTE',
         route
     }
 };
 
-export default change_route
+const POP_ROUTE = () => {
+    return {
+        type: 'POP_ROUTE'
+    }
+};
+
+export {
+    ADD_ROUTE,
+    POP_ROUTE
+}

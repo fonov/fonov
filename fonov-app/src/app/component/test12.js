@@ -8,8 +8,6 @@ class Test12 extends Component {
 
     render() {
 
-        const { changeRoute } = this.props;
-
         return (
             <div>
                 <h1>Проверка камеры</h1>

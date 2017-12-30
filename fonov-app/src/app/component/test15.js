@@ -8,8 +8,6 @@ class Test15 extends Component {
 
     render() {
 
-        const { changeRoute } = this.props;
-
         return (
             <div>
                 <h1>Проверка Touch ID или Face ID</h1>

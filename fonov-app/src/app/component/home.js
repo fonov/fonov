@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import ChangeRoute from '../actions/route'
+import { ADD_ROUTE } from '../actions/route'
 
 
 class Home extends Component {
 
     render() {
 
-        const { changeRoute } = this.props;
+        const { ADD_ROUTE } = this.props;
 
         return (
             <div>
@@ -28,7 +28,7 @@ class Home extends Component {
                         <li>Сматфон с фонариком и возможность раздать Wi-Fi</li>
                     </ul>
                 </h5>
-                <Button color="primary" size="lg" block onClick={() => changeRoute('Test2')}>Начать тест</Button>
+                <Button color="primary" size="lg" block onClick={() => ADD_ROUTE('Test2')}>Начать тест</Button>
             </div>
         );
     }
@@ -43,7 +43,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeRoute: route => dispatch(ChangeRoute(route))
+        ADD_ROUTE: route => dispatch(ADD_ROUTE(route))
     }
 };
 

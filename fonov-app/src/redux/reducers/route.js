@@ -1,9 +1,16 @@
-
-
-const route = (state = 'DEFAULT', action) => {
+const route = (state = {currentRoute: 'DEFAULT', stack: ['DEFAULT']}, action) => {
     switch (action.type) {
-        case 'CHANGE_ROUTE':
-            return action.route;
+        case 'ADD_ROUTE':
+            return {
+                currentRoute: action.route,
+                stack: [...state.stack, action.route]
+            };
+        case 'POP_ROUTE':
+            state.stack.pop();
+            return {
+                currentRoute: state.stack[state.stack.length - 1],
+                stack: state.stack
+            };
         default:
             return state
     }
