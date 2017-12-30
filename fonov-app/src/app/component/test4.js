@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Text, Title} from '../elements/index'
+import Image from "../elements/image";
 
 
 class Test4 extends Component {
@@ -54,13 +55,15 @@ class Test4 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <h1>Попадание влаги</h1>
-                <p>
-                    Влага оказывает разрушительное влияние на компоненты iPhone. Чтобы определить было ли попадание влаги проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета значит телефон был подвержен попаданию влаги
-                </p>
-                <img src={this.currentWaterIndicatorImage()} className="img-fluid"/>
+                <Title>Попадание влаги в {currentModel}</Title>
+                <Image src={this.currentWaterIndicatorImage()} />
+                <Text>
+                    Влага оказывает разрушительное влияние на компоненты iPhone. Чтобы определить было ли попадание влаги проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета значит телефон был подвержен попаданию влаги.
+                </Text>
                 <TestNav testN={4}/>
             </div>
         );

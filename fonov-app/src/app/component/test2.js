@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import { TestNav, Title } from '../elements'
+import { TestNav, Title, Text, Image } from '../elements'
 
 
 class Test2 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <Title>Внешний вид</Title>
-                <p>
-                    Извлечь телефон из чехла. Если iPhone имеет защитное стекло или пленку на задний или передней части телефона то ее необходимо удалить. Поднести телефон к источнику освящениею и внимательно осмотреть переднию, заднию и боковые грание на наличие царапин, потертостей, трещин, сколов.
-                </p>
-                <img src={require('../image/visual_appearance/front.png')} className="img-fluid"/>
-                <img src={require('../image/visual_appearance/Боковая_грань.png')} className="img-fluid"/>
-                <img src={require('../image/visual_appearance/front.png')} className="img-fluid"/>
+                <Title>Внешний вид {currentModel}</Title>
+                <Image src={require('../image2/внешний вид/removeCase.png')} />
+                <Text>Извлеките iPhone из чехла</Text>
+                <Image src={require('../image2/внешний вид/removeFilm.png')} />
+                <Text>Удалите защитную пленку или стекло</Text>
+                <Text>Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов.</Text>
+                <Image src={require('../image2/внешний вид/iPhone Front.png')}/>
+                <Text>Осмотрите переднию часть телефона</Text>
+                <Image src={require('../image2/внешний вид/iPhone Back.png')}/>
+                <Text>Заднию часть телефона</Text>
+                <Image src={require('../image2/внешний вид/sides.png')}/>
+                <Text>Боковые грани телефона</Text>
                 <TestNav testN={2}/>
             </div>
         );
@@ -25,7 +32,9 @@ class Test2 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
