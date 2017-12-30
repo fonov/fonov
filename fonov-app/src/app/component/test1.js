@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Title } from '../elements'
 import setCurrentModel from '../actions/currentModel'
 
 
@@ -426,23 +426,23 @@ class Test1 extends Component {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
             { setCurrentModel } = this.props;
 
-        let info = {
+        let add_sate = {
             ...this.defaultState,
             input_valid: false,
-            type: firstLetter[result.firstLetter] || "-",
-            country_of_purchase: country[result.code_country] || '-'
         };
 
         for (let iPhone in modelInfo) {
             for (let color in modelInfo[iPhone]) {
                 for (let capacity in modelInfo[iPhone][color]) {
                     if (modelInfo[iPhone][color][capacity].indexOf(result.code) !== -1) {
-                        Object.assign(info, {
+                        add_sate = {
                             iPhone,
                             color,
                             capacity,
+                            type: firstLetter[result.firstLetter] || "-",
+                            country_of_purchase: country[result.code_country] || '-',
                             input_valid: true
-                        });
+                        };
                         setCurrentModel(iPhone);
                         break;
                     }
@@ -450,7 +450,7 @@ class Test1 extends Component {
             }
         }
 
-        this.setState(info)
+        this.setState(add_sate)
     }
 
     getCleanModel(model) {
@@ -478,7 +478,7 @@ class Test1 extends Component {
                 this.getInfo(result);
             })
             .catch(() => {
-                this.setState(Object.assign(this.defaultState, {input_valid: false}))
+                this.setState({...this.defaultState, input_valid: false})
             });
     }
 
@@ -488,7 +488,7 @@ class Test1 extends Component {
 
         return (
             <div>
-                <h1>О iPhone</h1>
+                <Title>О iPhone</Title>
                 <FormGroup>
                     <Label>Введите модель iPhone</Label>
                     <Input
