@@ -6,7 +6,6 @@ import ChangeRoute from "./actions/route";
 import Home from './component/home'
 import Test1 from './component/test1'
 import Test2 from './component/test2'
-import Test3 from './component/test3'
 import Test4 from './component/test4'
 import Test5 from './component/test5'
 import Test6 from './component/test6'
@@ -48,7 +47,6 @@ class App extends Component {
             case 'Test2':
                 return <Test2/>;
             case 'Test3':
-                return <Test3/>;
             case 'Test4':
                 return <Test4/>;
             case 'Test5':
