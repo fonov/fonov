@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Image, Text, Title } from '../elements/index'
 
 
 class Test8 extends Component {
@@ -10,11 +10,11 @@ class Test8 extends Component {
 
         return (
             <div>
-                <h1>iCloid</h1>
-                <p>
-                    Телефон должен быть отвязан от аккатов iCloud и Apple id. В противном случае вы не сможете использовать телефон со своим аккаунтов и телефон может быть без возвратно заблокирован
-                </p>
-                <img src={require('../image/iCloud/IMG_0001.jpg')} className="img-fluid"/>
+                <Title>iCloid</Title>
+                <Image src={require('../image2/iCloud/IMG_0001.jpg')}/>
+                <Text>
+                    Телефон должен быть отвязан от аккатов iCloud и Apple ID.
+                </Text>
                 <TestNav testN={8}/>
             </div>
         );

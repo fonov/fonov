@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Text, Title, Image } from '../elements/index'
 
 
 class Test10 extends Component {
@@ -10,11 +10,11 @@ class Test10 extends Component {
 
         return (
             <div>
-                <h1>Проверка динамиков</h1>
-                <p>
+                <Title>Проверка динамиков</Title>
+                <Image src={require('../image2/звуки/step.png')}/>
+                <Text>
                     Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
-                </p>
-                <img src={require('../image/control_panel/camera.png')} className="img-fluid"/>
+                </Text>
                 <TestNav testN={10}/>
             </div>
         );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Text, Title, Image } from '../elements/index'
 
 class Test9 extends Component {
 
@@ -9,11 +9,11 @@ class Test9 extends Component {
 
         return (
             <div>
-                <h1>Проверка вспышки</h1>
-                <p>
+                <Title>Проверка вспышки</Title>
+                <img src={require('../image2/controlPanel/fl.png')} className="img-fluid"/>
+                <Text>
                     Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
-                </p>
-                <img src={require('../image/control_panel/flashlight.png')} className="img-fluid"/>
+                </Text>
                 <TestNav testN={9}/>
             </div>
         );
