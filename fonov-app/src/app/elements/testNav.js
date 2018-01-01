@@ -16,19 +16,34 @@ class TestNav extends Component {
         }
     }
 
+    next(nextView) {
+
+        const { rating = false, ratingType = null, ratingTitle = null, ADD_ROUTE, testN } = this.props;
+
+        if (rating) {
+            switch (ratingType) {
+                default:
+                    ADD_ROUTE('Rating5Stars', {ratingTitle, nextView, testN})
+            }
+        } else {
+            ADD_ROUTE(nextView)
+        }
+
+    }
+
     render() {
 
         const { maxTest, minTest } = this.state,
-            { testN, ADD_ROUTE, POP_ROUTE } = this.props;
+            { testN, POP_ROUTE } = this.props;
 
         return (
             <div style={{marginTop: 20}}>
                 { testN === minTest ? (
-                    <Button color="primary" block onClick={() => ADD_ROUTE(`Test${testN+1}`)}>
+                    <Button color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
                         Далле <FontAwesome name='chevron-right' />
                     </Button>
                 ) : testN === maxTest ? (
-                    <Button color="primary" block onClick={() => ADD_ROUTE('TestResult')}>Завершить тест</Button>
+                    <Button color="primary" block onClick={() => this.next('TestResult')}>Завершить тест</Button>
                 ) : (
                     <div>
                         <div className='row'>
@@ -38,7 +53,7 @@ class TestNav extends Component {
                                 </Button>
                             </div>
                             <div className='col'>
-                                <Button color="primary" block onClick={() => ADD_ROUTE(`Test${testN+1}`)}>
+                                <Button color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
                                     Далее <FontAwesome name='chevron-right' />
                                 </Button>
                             </div>
@@ -58,7 +73,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        ADD_ROUTE: route => dispatch(ADD_ROUTE(route)),
+        ADD_ROUTE: (route, props = null) => dispatch(ADD_ROUTE(route, props)),
         POP_ROUTE: () => dispatch(POP_ROUTE())
     }
 };

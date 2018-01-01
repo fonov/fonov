@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Container } from 'reactstrap';
 import { connect } from 'react-redux'
 import { ADD_ROUTE } from "./actions/route";
 // View
@@ -28,6 +29,7 @@ import Test22 from './component/test22'
 import Test23 from './component/test23'
 import Test24 from './component/test24'
 import TestResult from './component/testResult'
+import Rating5Stars from './component/rating/rating_5_stars'
 
 
 class App extends Component {
@@ -36,7 +38,7 @@ class App extends Component {
         const { ADD_ROUTE } = this.props;
 
         if (process.env.NODE_ENV === 'development') {
-            // ADD_ROUTE('Test13')
+            ADD_ROUTE('Test4')
         }
     }
 
@@ -93,6 +95,8 @@ class App extends Component {
                 return <Test24/>;
             case 'TestResult':
                 return <TestResult/>;
+            case 'Rating5Stars':
+                return <Rating5Stars/>;
             default:
                 return <Home/>
         }
@@ -101,12 +105,9 @@ class App extends Component {
     render() {
 
         return (
-            <div
-                className="container"
-                style={{padding: 25}}
-            >
+            <Container style={{padding: 25}}>
                 {this.currentScene()}
-            </div>
+            </Container>
         );
     }
 }

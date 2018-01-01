@@ -1,20 +1,23 @@
-const ADD_ROUTE = route => {
+const ADD_ROUTE = (route, props = null) => {
     return {
         type: 'ADD_ROUTE',
-        route
+        route,
+        props
     }
 };
 
-const POP_ROUTE = () => {
+const POP_ROUTE = (props = null) => {
     return {
-        type: 'POP_ROUTE'
+        type: 'POP_ROUTE',
+        props
     }
 };
 
-const REPLACE_ROUTE = (route) => {
+const REPLACE_ROUTE = (route, props = null) => {
     return {
         type: 'REPLACE_ROUTE',
-        route
+        route,
+        props
     }
 };
 
