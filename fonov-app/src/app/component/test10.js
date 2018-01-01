@@ -13,7 +13,7 @@ class Test10 extends Component {
         return (
             <div>
                 <Title>Проверка динамиков на {currentModel}</Title>
-                <Image src={require('../image2/звуки/step.png')}/>
+                <Image src={require('../image/звуки/step.png')}/>
                 <Text>
                     Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
                 </Text>

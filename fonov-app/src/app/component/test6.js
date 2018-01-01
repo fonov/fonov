@@ -13,7 +13,7 @@ class Test6 extends Component {
         return (
             <div>
                 <Title>Сенсор в {currentModel}</Title>
-                <Image src={require('../image2/screen/iPhone-screen-touch-600x402.png')}/>
+                <Image src={require('../image/screen/iPhone-screen-touch-600x402.png')}/>
                 <Text>
                     Проводить польцем по всему экрану. Сенсор должен работать плавно и без задержок на всей площади экрана.
                 </Text>

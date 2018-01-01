@@ -26,7 +26,7 @@ class Test20 extends Component {
             case 'iPhone SE':
                 return (
                     <div>
-                        <Image src={require('../image2/call/call_headpods.png')} />
+                        <Image src={require('../image/call/call_headpods.png')} />
                         <Text>
                             Вставьте наушники и попробуйте разговарить через них
                         </Text>
@@ -44,20 +44,20 @@ class Test20 extends Component {
         return (
             <div>
                 <Title>Вызов и Датчик приближения {currentModel}</Title>
-                <Image src={require('../image2/call/cell.png')} />
+                <Image src={require('../image/call/cell.png')} />
                 <Text>
                     Вставьте сим карту. Телефон должнен сразу же найти сеть.
                 </Text>
-                <Image src={require('../image2/call/call.png')} />
+                <Image src={require('../image/call/call.png')} />
                 <Text>
                     Попробуйте соверщить вызов.
                 </Text>
-                <Image src={require('../image2/call/spiker_call.png')} />
+                <Image src={require('../image/call/spiker_call.png')} />
                 <Text>
                     Включите громкую связь
                 </Text>
                 {this.callWithHeadpods()}
-                <Image src={require('../image2/call/call_sensor.png')} />
+                <Image src={require('../image/call/call_sensor.png')} />
                 <Text>
                     Выключите громкую связь и зайкройте пальцем сенсор приближения. Экран должен потухнуть
                 </Text>

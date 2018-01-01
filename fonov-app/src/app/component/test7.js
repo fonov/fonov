@@ -35,7 +35,7 @@ class Test7 extends Component {
         return (
             <div>
                 <Title>3D Touch в {currentModel}</Title>
-                <Image src={require('../image2/screen/3D-Touch-iPhone-6s.jpg')}/>
+                <Image src={require('../image/screen/3D-Touch-iPhone-6s.jpg')}/>
                 <Text>
                     Для проверка 3D Touch необходимо сильно понажать на иконки. После этого должен открыться меню
                 </Text>

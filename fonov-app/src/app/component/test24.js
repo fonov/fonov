@@ -17,7 +17,7 @@ class Test24 extends Component {
             case 'iPhone 4':
             case 'iPhone 4S':
                 return (
-                    <Image src={require('../image2/accessories/aPPLEMB770_enl.jpg')} />
+                    <Image src={require('../image/accessories/aPPLEMB770_enl.jpg')} />
                 );
             case 'iPhone 5':
             case 'iPhone 5c':
@@ -33,7 +33,7 @@ class Test24 extends Component {
             case 'iPhone 8 Plus':
             case 'iPhone X':
                 return (
-                    <Image src={require('../image2/accessories/Apple-EarPods-with-Remote-and-Mic.png')} />
+                    <Image src={require('../image/accessories/Apple-EarPods-with-Remote-and-Mic.png')} />
                 );
             default:
                 return null
@@ -52,7 +52,7 @@ class Test24 extends Component {
             case 'iPhone X':
                 return (
                     <div>
-                        <Image src={require('../image2/accessories/4c2faf2c784a8663258f2fe9495542b0.jpg')} />
+                        <Image src={require('../image/accessories/4c2faf2c784a8663258f2fe9495542b0.jpg')} />
                         <Text>Адаптер Lightning/выход 3,5 мм для наушников</Text>
                     </div>
                 );
@@ -73,7 +73,7 @@ class Test24 extends Component {
             case 'iPhone 4S':
                 return (
                     <div>
-                        <Image src={require('../image2/accessories/apple-30-pin-cable.jpg')} />
+                        <Image src={require('../image/accessories/apple-30-pin-cable.jpg')} />
                         <Text>30 пиновый кабель</Text>
                     </div>
                 );
@@ -92,7 +92,7 @@ class Test24 extends Component {
             case 'iPhone X':
                 return (
                     <div>
-                        <Image src={require('../image2/accessories/apple-lightning-cable-1_1024x1024.png')} />
+                        <Image src={require('../image/accessories/apple-lightning-cable-1_1024x1024.png')} />
                         <Text>Кабель Lightning/USB</Text>
                     </div>
                 );
@@ -111,7 +111,7 @@ class Test24 extends Component {
                 {this.earpods()}
                 <Text>Наушники</Text>
                 {this.adapter()}
-                <Image src={require('../image2/accessories/MD810.jpg')} />
+                <Image src={require('../image/accessories/MD810.jpg')} />
                 <Text>Зарядное устройстов</Text>
                 {this.cable()}
                 <TestNav testN={24}/>

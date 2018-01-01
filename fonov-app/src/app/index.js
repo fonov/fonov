@@ -36,7 +36,7 @@ class App extends Component {
         const { ADD_ROUTE } = this.props;
 
         if (process.env.NODE_ENV === 'development') {
-            ADD_ROUTE('Test13')
+            // ADD_ROUTE('Test13')
         }
     }
 

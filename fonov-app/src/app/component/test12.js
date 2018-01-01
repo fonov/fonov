@@ -13,7 +13,7 @@ class Test12 extends Component {
         return (
             <div>
                 <Title>Проверка камеры {currentModel}</Title>
-                <Image src={require('../image2/controlPanel/camera.png')}/>
+                <Image src={require('../image/controlPanel/camera.png')}/>
                 <Text>
                     Откройте центр управления, нажмите на клавишу камеру. Проверьте изображение с фронтальной и передней камерой. Изображение должно быть чистое и без размытия
                 </Text>

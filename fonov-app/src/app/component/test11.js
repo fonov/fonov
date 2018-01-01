@@ -13,11 +13,11 @@ class Test11 extends Component {
         return (
             <div>
                 <Title>Компас и G-sensor {currentModel}</Title>
-                <Image src={require('../image2/compas/IMG_1352.PNG')} />
+                <Image src={require('../image/compas/IMG_1352.PNG')} />
                 <Text>
                     Открыть приложение компас и поврашать телефон. При вращение телефона компас доллжен менять свое положение
                 </Text>
-                <Image src={require('../image2/compas/IMG_1353.PNG')} />
+                <Image src={require('../image/compas/IMG_1353.PNG')} />
                 <Text>
                     Взмахом влево открыть уровень. По переворачивайте телефон, сесор должен работать корректно и плавно.
                 </Text>

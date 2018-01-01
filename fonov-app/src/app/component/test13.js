@@ -29,11 +29,11 @@ class Test13 extends Component {
         return (
             <div>
                 <Title>Проверка входа для наушников {currentModel}</Title>
-                <Image src={require('../image2/headpods/headpods.png')} />
+                <Image src={require('../image/headpods/headpods.png')} />
                 <Text>
                     Вставить наушники
                 </Text>
-                <Image src={require('../image2/звуки/step.png')} />
+                <Image src={require('../image/звуки/step.png')} />
                 <Text>
                     Проиграть звук. Если звука нет, то попробуйте использоватеть заведомо рабочие наушники
                 </Text>

@@ -13,13 +13,13 @@ class Test5 extends Component {
         return (
             <div>
                 <Title>Проверка кнопок и вибрации {currentModel}</Title>
-                <Image src={require('../image2/кнопки/Кпокпи 2.png')}/>
+                <Image src={require('../image/кнопки/Кпокпи 2.png')}/>
                 <Text>
                     Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
                 </Text>
-                <Image src={require('../image2/кнопки/Кпокпи.png')}/>
+                <Image src={require('../image/кнопки/Кпокпи.png')}/>
                 <Text>Клавиша Домой</Text>
-                <Image src={require('../image2/кнопки/Кпокпи 3.png')}/>
+                <Image src={require('../image/кнопки/Кпокпи 3.png')}/>
                 <Text>Клавиша блокировки</Text>
                 <TestNav testN={5}/>
             </div>

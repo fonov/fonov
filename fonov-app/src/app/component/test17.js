@@ -13,7 +13,7 @@ class Test17 extends Component {
         return (
             <div>
                 <Title>Проверка Bluetooth {currentModel}</Title>
-                <Image src={require('../image2/BT/IMG_1360.PNG')}/>
+                <Image src={require('../image/BT/IMG_1360.PNG')}/>
                 <Text>
                     Откройти настройки -> Bluetooth. Попробуйте найти bluetooth устройтво и подключиться к нему.
                 </Text>

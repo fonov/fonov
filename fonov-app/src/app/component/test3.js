@@ -13,16 +13,16 @@ class Test3 extends Component {
         return (
             <div>
                 <Title>Внешний вид {currentModel}</Title>
-                <Image src={require('../image2/внешний вид/removeCase.png')} />
+                <Image src={require('../image/внешний вид/removeCase.png')} />
                 <Text>Извлеките iPhone из чехла</Text>
-                <Image src={require('../image2/внешний вид/removeFilm.png')} />
+                <Image src={require('../image/внешний вид/removeFilm.png')} />
                 <Text>Удалите защитную пленку или стекло</Text>
                 <Text>Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов.</Text>
-                <Image src={require('../image2/внешний вид/iPhone Front.png')}/>
+                <Image src={require('../image/внешний вид/iPhone Front.png')}/>
                 <Text>Передния часть телефона</Text>
-                <Image src={require('../image2/внешний вид/iPhone Back.png')}/>
+                <Image src={require('../image/внешний вид/iPhone Back.png')}/>
                 <Text>Заднию часть телефона</Text>
-                <Image src={require('../image2/внешний вид/sides.png')}/>
+                <Image src={require('../image/внешний вид/sides.png')}/>
                 <Text>Боковые грани телефона</Text>
                 <TestNav testN={3}/>
             </div>

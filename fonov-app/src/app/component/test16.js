@@ -13,7 +13,7 @@ class Test16 extends Component {
         return (
             <div>
                 <Title>Проверка Wifi {currentModel}</Title>
-                <Image src={require('../image2/wifi/IMG_1359.PNG')} />
+                <Image src={require('../image/wifi/IMG_1359.PNG')} />
                 <Text>
                     Откройти настройки -> Wi-Fi. Попробуйте подключиться к wifi сети. Если рядом нет доступных wifi точек то попробуйте создать точку доступа на своем смартфоне
                 </Text>

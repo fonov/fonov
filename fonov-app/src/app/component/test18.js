@@ -14,11 +14,11 @@ class Test18 extends Component {
         return (
             <div>
                 <Title>Проверка микрофона {currentModel}</Title>
-                <Image src={require('../image2/microphone/microphone.jpeg')} />
+                <Image src={require('../image/microphone/microphone.jpeg')} />
                 <Text>
                     Откройти приложение микрофон. Сделайте тестувую запись.
                 </Text>
-                <Image src={require('../image2/microphone/IMG_1361.PNG')} />
+                <Image src={require('../image/microphone/IMG_1361.PNG')} />
                 <Text>
                     Прослушайте её. Запись не должна содержать постороних шумов и тресков. Голос должне быть чистым
                 </Text>

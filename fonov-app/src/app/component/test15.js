@@ -41,7 +41,7 @@ class Test15 extends Component {
                 return (
                     <div>
                         <Title>Проверка Touch ID {currentModel}</Title>
-                        <Image src={require('../image2/touchID/Group 2.png')} />
+                        <Image src={require('../image/touchID/Group 2.png')} />
                         <Text>
                             Зайдите в настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверте работу Touch ID
                         </Text>
@@ -52,7 +52,7 @@ class Test15 extends Component {
                 return (
                     <div>
                         <Title>Проверка Face ID {currentModel}</Title>
-                        <Image src={require('../image2/faceID/Face ID.png')} />
+                        <Image src={require('../image/faceID/Face ID.png')} />
                         <Text>
                             Для проведки Face ID необходимо зайти в настройки -> Face ID и код-пароль. Нажмите cканировать лицо и проверьте работу Face ID
                         </Text>

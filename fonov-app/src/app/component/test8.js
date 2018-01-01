@@ -11,7 +11,7 @@ class Test8 extends Component {
         return (
             <div>
                 <Title>iCloid</Title>
-                <Image src={require('../image2/iCloud/IMG_0001.jpg')}/>
+                <Image src={require('../image/iCloud/IMG_0001.jpg')}/>
                 <Text>
                     Телефон должен быть отвязан от аккатов iCloud и Apple ID.
                 </Text>

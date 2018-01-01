@@ -21,11 +21,11 @@ class Test14 extends Component {
         return (
             <div>
                 <Title>Проверка датчика освешености {currentModel}</Title>
-                <Image src={require('../image2/top_sensor/Group.png')} />
+                <Image src={require('../image/top_sensor/Group.png')} />
                 <Text>
                     Увеличте яркость до максимума
                 </Text>
-                <Image src={require('../image2/top_sensor/Bitmap.png')} />
+                <Image src={require('../image/top_sensor/Bitmap.png')} />
                 <Text>
                     Заблокируйте телефон. Затем пальцем зайкройте датчик пальцем и включите iPhone. Шкала яркости должна уменьшиться
                 </Text>

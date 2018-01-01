@@ -20,7 +20,7 @@ class Test23 extends Component {
             case 'iPhone X':
                 return (
                     <div>
-                        <Image src={require('../image2/imei/iphone6s-SIM-card-illustration.png')} />
+                        <Image src={require('../image/imei/iphone6s-SIM-card-illustration.png')} />
                         <Text>На слоте для сим карты</Text>
                     </div>
                 );
@@ -32,7 +32,7 @@ class Test23 extends Component {
             case 'iPhone SE':
                 return (
                     <div>
-                        <Image src={require('../image2/imei/iphone6-imei-back-device.jpg')} />
+                        <Image src={require('../image/imei/iphone6-imei-back-device.jpg')} />
                         <Text>На задней стороне iphone</Text>
                     </div>
                 );
@@ -43,7 +43,7 @@ class Test23 extends Component {
             case 'iPhone 4S':
                 return (
                     <div>
-                        <Image src={require('../image2/imei/SIM-card-illustration.png')} />
+                        <Image src={require('../image/imei/SIM-card-illustration.png')} />
                         <Text>На слоте для сим карты</Text>
                     </div>
                 )
@@ -57,10 +57,10 @@ class Test23 extends Component {
         return (
             <div>
                 <Title>Проверка совподения IMEI {currentModel}</Title>
-                <Image src={require('../image2/imei/iphone7-ios11-settings-general-about-imei.jpg')} />
+                <Image src={require('../image/imei/iphone7-ios11-settings-general-about-imei.jpg')} />
                 <Text>Нстройки->Основные->О Устройстве.</Text>
                 {this.secondImei()}
-                <Image src={require('../image2/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
+                <Image src={require('../image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
                 <Text>На коробке.</Text>
                 <TestNav testN={23}/>
             </div>

@@ -12,11 +12,11 @@ class Test22 extends Component {
         return (
             <div>
                 <Title>Проверка гарантии</Title>
-                <Image src={require('../image2/waranty/Group 7.png')} />
+                <Image src={require('../image/waranty/Group 7.png')} />
                 <Text>
                     Зайти в настройки -> основные -> об устройстве -> серийный номер. Нажмите на серийны номер и выбирете скопировать. Затем перейдите на официальный сайт Apple для проверки гарантии
                 </Text>
-                <Image src={require('../image2/waranty/Group 8.png')} />
+                <Image src={require('../image/waranty/Group 8.png')} />
                 <Text>
                     Затем перейдите на официальный сайт Apple для проверки гарантии
                 </Text>
