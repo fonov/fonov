@@ -24,12 +24,7 @@ class Test3 extends Component {
                 <Text>Заднию часть телефона</Text>
                 <Image src={require('../image/внешний вид/sides.png')}/>
                 <Text>Боковые грани телефона</Text>
-                <TestNav
-                    testN={3}
-                    rating={true}
-                    ratingType='5star'
-                    ratingTitle='Оценка внешнего вида'
-                />
+                <TestNav testN={3} rating={{routeName: 'Rating5Stars', title: 'Оценка внешнего вида'}}/>
             </div>
         );
     }

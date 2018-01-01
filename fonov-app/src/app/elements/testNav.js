@@ -18,13 +18,10 @@ class TestNav extends Component {
 
     next(nextView) {
 
-        const { rating = false, ratingType = null, ratingTitle = null, ADD_ROUTE, testN } = this.props;
+        const { rating = null, ADD_ROUTE, testN } = this.props;
 
         if (rating) {
-            switch (ratingType) {
-                default:
-                    ADD_ROUTE('Rating5Stars', {ratingTitle, nextView, testN})
-            }
+            ADD_ROUTE(rating.routeName, {title: rating.title, testN: testN, nextView})
         } else {
             ADD_ROUTE(nextView)
         }

@@ -30,6 +30,7 @@ import Test23 from './component/test23'
 import Test24 from './component/test24'
 import TestResult from './component/testResult'
 import Rating5Stars from './component/rating/rating_5_stars'
+import RatingCheck from './component/rating/rating_check'
 
 
 class App extends Component {
@@ -97,6 +98,8 @@ class App extends Component {
                 return <TestResult/>;
             case 'Rating5Stars':
                 return <Rating5Stars/>;
+            case 'RatingCheck':
+                return <RatingCheck/>;
             default:
                 return <Home/>
         }

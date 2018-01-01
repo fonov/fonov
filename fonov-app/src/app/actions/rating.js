@@ -1,9 +1,8 @@
-const add_rating = (testN, type, data) => {
+const add_rating = (testN, data) => {
     return {
         type: 'ADD_RATING',
         rating: {
             testN,
-            type,
             data
         }
     }

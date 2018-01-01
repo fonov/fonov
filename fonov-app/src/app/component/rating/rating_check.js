@@ -7,77 +7,71 @@ import { add_rating } from '../../actions/rating'
 import FontAwesome from 'react-fontawesome'
 
 
-const starStyle = {
-    fontSize: '5em',
-    color: 'gold'
+const checkStyle = {
+    textAlign: 'center',
+    fontSize: '8em'
 };
 
 
-class Stars extends Component {
+class Check extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            startPosition: -1
+            check: null
         }
 
-    }
-
-    stars(){
-
-        const { countStars, onClick } = this.props,
-            { startPosition } = this.state;
-
-        let array = [];
-        for (let i = 0; i < countStars; i++) {
-            array.push(
-                <Col
-                    key={`start_${i}`}
-                    style={starStyle}
-                >
-                    <FontAwesome
-                        name={startPosition >= i ? 'star' : 'star-o'}
-                        onClick={() => {
-                            this.setState({startPosition: i});
-                            onClick(i+1)
-                        }}
-                    />
-                </Col>
-            )
-        }
-        return array
     }
 
     render() {
 
+        const { check } = this.state,
+            { onClick } = this.props;
+
         return (
             <Row className='justify-content-center'>
-                {this.stars()}
+                <Col
+                    style={{...checkStyle, color: check === true ? 'green' : 'black'}}
+                    onClick={() => {
+                        this.setState({check: true});
+                        onClick(true)
+                    }}
+                >
+                    <FontAwesome name={check === true ? 'check-circle' : 'check-circle-o'} />
+                </Col>
+                <Col
+                    style={{...checkStyle, color: check === false ? 'green' : 'black'}}
+                    onClick={() => {
+                        this.setState({check: false});
+                        onClick(false)
+                    }}
+                >
+                    <FontAwesome name={check === false ? 'times-circle' : 'times-circle-o'} />
+                </Col>
             </Row>
         )
     }
 }
 
 
-class Rating5Stars extends Component {
+class RatingCheck extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            firstStars: 0,
-            secondStars: 0
+            firstCheck: null,
+            secondCheck: null
         }
-
     }
 
     validate() {
 
-        const { firstStars, secondStars } = this.state;
+        const { firstCheck, secondCheck } = this.state;
 
         return new Promise((resolve, reject) => {
-            if (firstStars !== 0 && secondStars !== 0) {
+            if (firstCheck !== null && secondCheck !== null) {
                 resolve()
             } else {
                 alert('Оценка не завершена. Завершите оценку для отчета');
@@ -88,8 +82,8 @@ class Rating5Stars extends Component {
 
     render() {
 
-        const { firstStars, secondStars } = this.state,
-            { add_rating, currentProps, REPLACE_ROUTE } = this.props;
+        const { currentProps, add_rating, REPLACE_ROUTE } = this.props,
+            { firstCheck, secondCheck } = this.state;
 
         return (
             <div>
@@ -97,16 +91,16 @@ class Rating5Stars extends Component {
                     <CardHeader>{currentProps.title}</CardHeader>
                     <CardBody>
                         <CardTitle>Заявленное состояние</CardTitle>
-                        <Stars countStars={5} onClick={i => this.setState({firstStars: i})} />
+                        <Check onClick={(check) => this.setState({firstCheck: check})}/>
                         <CardTitle>Реальное состояние</CardTitle>
-                        <Stars countStars={5} onClick={i => this.setState({secondStars: i})} />
+                        <Check onClick={(check) => this.setState({secondCheck: check})}/>
                         <Button
                             color="primary"
                             block
                             onClick={() => {
                                 this.validate()
                                     .then(() => {
-                                        add_rating(currentProps.testN, {firstStars, secondStars});
+                                        add_rating(currentProps.testN, {firstCheck, secondCheck});
                                         REPLACE_ROUTE(currentProps.nextView)
                                     })
                                     .catch(() => {
@@ -119,9 +113,8 @@ class Rating5Stars extends Component {
                     </CardBody>
                 </Card>
             </div>
-        );
+        )
     }
-
 }
 
 const mapStateToProps = state => {
@@ -137,4 +130,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Rating5Stars);
+export default connect(mapStateToProps, mapDispatchToProps)(RatingCheck);
