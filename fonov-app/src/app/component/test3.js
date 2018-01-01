@@ -19,7 +19,7 @@ class Test3 extends Component {
                 <Text>Удалите защитную пленку или стекло</Text>
                 <Text>Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов.</Text>
                 <Image src={require('../image2/внешний вид/iPhone Front.png')}/>
-                <Text>Осмотрите переднию часть телефона</Text>
+                <Text>Передния часть телефона</Text>
                 <Image src={require('../image2/внешний вид/iPhone Back.png')}/>
                 <Text>Заднию часть телефона</Text>
                 <Image src={require('../image2/внешний вид/sides.png')}/>

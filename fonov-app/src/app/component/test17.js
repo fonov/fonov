@@ -8,9 +8,11 @@ class Test17 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <Title>Проверка Bluetooth</Title>
+                <Title>Проверка Bluetooth {currentModel}</Title>
                 <Image src={require('../image2/BT/IMG_1360.PNG')}/>
                 <Text>
                     Откройти настройки -> Bluetooth. Попробуйте найти bluetooth устройтво и подключиться к нему.
@@ -23,7 +25,9 @@ class Test17 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

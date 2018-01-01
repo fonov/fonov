@@ -9,9 +9,11 @@ class Test18 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <Title>Проверка микрофона</Title>
+                <Title>Проверка микрофона {currentModel}</Title>
                 <Image src={require('../image2/microphone/microphone.jpeg')} />
                 <Text>
                     Откройти приложение микрофон. Сделайте тестувую запись.
@@ -28,7 +30,9 @@ class Test18 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

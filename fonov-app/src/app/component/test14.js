@@ -16,9 +16,11 @@ class Test14 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <Title>Проверка датчика освешености</Title>
+                <Title>Проверка датчика освешености {currentModel}</Title>
                 <Image src={require('../image2/top_sensor/Group.png')} />
                 <Text>
                     Увеличте яркость до максимума

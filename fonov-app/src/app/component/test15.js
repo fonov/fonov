@@ -58,7 +58,9 @@ class Test15 extends Component {
                         </Text>
                         <TestNav testN={15}/>
                     </div>
-                )
+                );
+            default:
+                return null
         }
     }
 
