@@ -42,7 +42,10 @@ class Image extends Component {
             { imgStyle } = this.state;
 
         return (
-            <div className="text-center">
+            <div
+                className="text-center"
+                style={{marginTop: 5, marginBottom: 5}}
+            >
                 <img
                     onLoad={this.onImgLoad}
                     src={src}

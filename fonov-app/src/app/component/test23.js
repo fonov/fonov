@@ -1,37 +1,67 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Text, Title, TestNav, Image } from '../elements/index'
 
 
 class Test23 extends Component {
 
+    secondImei() {
+
+        const { currentModel } = this.props;
+
+        switch(currentModel) {
+            case 'iPhone 6s':
+            case 'iPhone 6s Plus':
+            case 'iPhone 7':
+            case 'iPhone 7 Plus':
+            case 'iPhone 8':
+            case 'iPhone 8 Plus':
+            case 'iPhone X':
+                return (
+                    <div>
+                        <Image src={require('../image2/imei/iphone6s-SIM-card-illustration.png')} />
+                        <Text>На слоте для сим карты</Text>
+                    </div>
+                );
+            case 'iPhone 5':
+            case 'iPhone 5c':
+            case 'iPhone 5s':
+            case 'iPhone 6':
+            case 'iPhone 6 Plus':
+            case 'iPhone SE':
+                return (
+                    <div>
+                        <Image src={require('../image2/imei/iphone6-imei-back-device.jpg')} />
+                        <Text>На задней стороне iphone</Text>
+                    </div>
+                );
+            case 'iPhone':
+            case 'iPhone 3G':
+            case 'iPhone 3GS':
+            case 'iPhone 4':
+            case 'iPhone 4S':
+                return (
+                    <div>
+                        <Image src={require('../image2/imei/SIM-card-illustration.png')} />
+                        <Text>На слоте для сим карты</Text>
+                    </div>
+                )
+        }
+    }
+
     render() {
+
+        const { currentModel } = this.props;
 
         return (
             <div>
-                <h1>Проверка комплектующих</h1>
-                <p>
-                    Проверка совпадение серийного номера с коробкой с серийным номером iPhone. Откройти настройки -> Об этом устройстве -> Серийный номер. Затем сраните серийный номер телефона с сериныйм номером на каробке. Если iPhone ниже 5 то так же достаньте слот для сим карты перевните его и сраните серийный номер с с телофона, с слоита сим карты и коробки. Если на каробке нет наклейки или сериныйный номера не сопадвют значит это не оригинал ьная коробка от телефона
-                </p>
-                <img src={require('../image/components/box-sticker-iphone-serial-number.png')} className="img-fluid"/>
-                <p>
-                    Проверка наущников. Наушнки должны имееть эластичный кабель, приятный и не жесткий на ощупь. Соединительный стыки наушников должны быть идиально поддогнутые и гладкие. Ставьте наушнки и проиграйте песню. В наушниках должны отсутвовать постароние звуки. Сам звук должнем быть чистый без всяких премисей и шумов
-                </p>
-                <img src={require('../image/components/EarPods1.jpg')} className="img-fluid"/>
-                <img src={require('../image/components/EarPods3.jpg')} className="img-fluid"/>
-                <p>
-                    Проверка кабеля зяриядки. Кабель должен быть шероховатый на ощупь и эластичный. Кабель должен иметь заводскую маркировку. Разьем Lightning  должен быть таким как на картинки
-                </p>
-                <img src={require('../image/components/lightning_serial-china.png')} className="img-fluid"/>
-                <img src={require('../image/components/lightning_contacts.png')} className="img-fluid"/>
-                <p>
-                    Блок питания. Все стыки пластика должны быть идиальнро гладкими. Шрифт должен быть серого цвета и ровным.
-                </p>
-                <p>
-                    Использование не оригинального кабеля питания или блока питания может сокранить срок службы вашего iPhone
-                </p>
+                <Title>Проверка совподения IMEI {currentModel}</Title>
+                <Image src={require('../image2/imei/iphone7-ios11-settings-general-about-imei.jpg')} />
+                <Text>Нстройки->Основные->О Устройстве.</Text>
+                {this.secondImei()}
+                <Image src={require('../image2/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
+                <Text>На коробке.</Text>
                 <TestNav testN={23}/>
             </div>
         );
@@ -40,7 +70,9 @@ class Test23 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

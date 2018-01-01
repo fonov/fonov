@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Text, Title, TestNav, Image } from '../elements/index'
+import { REPLACE_ROUTE } from "../actions/route";
 
 
 class Test13 extends Component {
 
+    componentWillMount() {
+
+        const { currentModel, REPLACE_ROUTE } = this.props;
+
+        switch (currentModel) {
+            case 'iPhone 7':
+            case 'iPhone 7 Plus':
+            case 'iPhone 8':
+            case 'iPhone 8 Plus':
+            case 'iPhone X':
+                REPLACE_ROUTE('Test14')
+        }
+
+    }
+
     render() {
+
+        const { currentModel } = this.props;
 
         return (
             <div>
-                <h1>Проверка входа для наушников и наушников</h1>
-                <p>
-                    Вставить наушники и попробывать поиграть звук. Если звук отсутсвует дело может быть либо в неисправном штекере для наушников или в наушниках. Возьмите другие наушники заведомо рабачии и повторите снова
-                </p>
+                <Title>Проверка входа для наушников {currentModel}</Title>
+                <Image src={require('../image2/headpods/headpods.png')} />
+                <Text>
+                    Вставить наушники
+                </Text>
+                <Image src={require('../image2/звуки/step.png')} />
+                <Text>
+                    Проиграть звук. Если звука нет, то попробуйте использоватеть заведомо рабочие наушники
+                </Text>
                 <TestNav testN={13}/>
             </div>
         );
@@ -22,11 +45,15 @@ class Test13 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        REPLACE_ROUTE: route => dispatch(REPLACE_ROUTE(route))
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test13);

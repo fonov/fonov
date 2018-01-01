@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Text, Title, Image, TestNav } from '../elements/index'
 
 
 class Test11 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <h1>Компас и G-sensor</h1>
-                <p>
+                <Title>Компас и G-sensor {currentModel}</Title>
+                <Image src={require('../image2/compas/IMG_1352.PNG')} />
+                <Text>
                     Открыть приложение компас и поврашать телефон. При вращение телефона компас доллжен менять свое положение
-                </p>
-                <img src={require('../image/compas/compass_iphone-azimut.jpg')} className="img-fluid"/>
-                <p>
+                </Text>
+                <Image src={require('../image2/compas/IMG_1353.PNG')} />
+                <Text>
                     Взмахом влево открыть уровень. По переворачивайте телефон, сесор должен работать корректно и плавно.
-                </p>
-                <img src={require('../image/compas/cb883624c6bd41d6437f145aa1f2ef20.jpg')} className="img-fluid"/>
+                </Text>
                 <TestNav testN={11}/>
             </div>
         );
@@ -27,7 +29,9 @@ class Test11 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Image, Text, TestNav, Title } from '../elements/index'
+import {REPLACE_ROUTE} from "../actions/route";
 
 
 class Test14 extends Component {
+
+    componentWillMount() {
+
+        const { REPLACE_ROUTE } = this.props;
+
+        REPLACE_ROUTE('Test15')
+    }
 
     render() {
 
         return (
             <div>
-                <h1>Проверка датчика освешености</h1>
-                <p>
-                    Для проверки датчика освящености необходимо зайти в настройки -> Экран и яркость. Уменьшить яркость до минимума, после этого поднести датчик авто якрости к истучнику освящение. Шкала яркости должна автоматически увеличиться, вместе с яркостью экрана.
-                </p>
-                <img src={require('../image/top_sensor/A4.png')} className="img-fluid"/>
+                <Title>Проверка датчика освешености</Title>
+                <Image src={require('../image2/top_sensor/Group.png')} />
+                <Text>
+                    Увеличте яркость до максимума
+                </Text>
+                <Image src={require('../image2/top_sensor/Bitmap.png')} />
+                <Text>
+                    Заблокируйте телефон. Затем пальцем зайкройте датчик пальцем и включите iPhone. Шкала яркости должна уменьшиться
+                </Text>
                 <TestNav testN={14}/>
             </div>
         );
@@ -23,11 +35,15 @@ class Test14 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        REPLACE_ROUTE: route => dispatch(REPLACE_ROUTE(route))
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test14);

@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { TestNav, Text, Title, Image } from '../elements/index'
 
 
 class Test12 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <h1>Проверка камеры</h1>
-                <p>
-                    Откройти центр управление взмахом с низу вверх. Нажмити на клавишу камеру. Проверьте изображение с фронтальной и передней камерой. Изображение должно быть чистое и без размытия
-                </p>
+                <Title>Проверка камеры {currentModel}</Title>
+                <Image src={require('../image2/controlPanel/camera.png')}/>
+                <Text>
+                    Откройти центр, нажмити на клавишу камеру. Проверьте изображение с фронтальной и передней камерой. Изображение должно быть чистое и без размытия
+                </Text>
                 <TestNav testN={12}/>
             </div>
         );
@@ -22,7 +25,9 @@ class Test12 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

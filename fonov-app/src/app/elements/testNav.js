@@ -11,7 +11,7 @@ class TestNav extends Component {
         super(props);
 
         this.state = {
-            maxTest: 23,
+            maxTest: 24,
             minTest: 2
         }
     }
@@ -27,7 +27,9 @@ class TestNav extends Component {
                     <Button color="primary" block onClick={() => ADD_ROUTE(`Test${testN+1}`)}>
                         Далле <FontAwesome name='chevron-right' />
                     </Button>
-                ) : testN < maxTest-minTest+1 ? (
+                ) : testN === maxTest ? (
+                    <Button color="primary" block onClick={() => ADD_ROUTE('TestResult')}>Завершить тест</Button>
+                ) : (
                     <div>
                         <div className='row'>
                             <div className='col'>
@@ -42,8 +44,6 @@ class TestNav extends Component {
                             </div>
                         </div>
                     </div>
-                ) : (
-                    <Button color="primary" block onClick={() => ADD_ROUTE('TestResult')}>Завершить тест</Button>
                 )}
             </div>
         );

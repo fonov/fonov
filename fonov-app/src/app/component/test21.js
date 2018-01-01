@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Text, Title, TestNav, Image } from '../elements/index'
 
 
 class Test21 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <h1>Порт зарядки</h1>
-                <p>
+                <Title>Порт зарядки {currentModel}</Title>
+                <Image src={require('../image2/charge/iphone_and_cable.png')} />
+                <Text>
                     Подключите телефон к зарядки. Проверте плотно ли находиться разьм зарядки, отсутсвуют ли лифты. Телефон при подключние зарядки сразу же должен начать зарежаться
-                </p>
-                <img src={require('../image/charge/iPhone_-_Зарядка.png')} className="img-fluid"/>
+                </Text>
                 <TestNav testN={21}/>
             </div>
         );
@@ -24,7 +25,9 @@ class Test21 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

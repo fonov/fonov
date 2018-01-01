@@ -1,21 +1,66 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Text, Title, TestNav, Image } from '../elements/index'
 
 
 class Test20 extends Component {
 
+    callWithHeadpods() {
+
+        const { currentModel } = this.props;
+
+        switch (currentModel) {
+            case 'iPhone':
+            case 'iPhone 3G':
+            case 'iPhone 3GS':
+            case 'iPhone 4':
+            case 'iPhone 4S':
+            case 'iPhone 5':
+            case 'iPhone 5c':
+            case 'iPhone 5s':
+            case 'iPhone 6':
+            case 'iPhone 6 Plus':
+            case 'iPhone 6s':
+            case 'iPhone 6s Plus':
+            case 'iPhone SE':
+                return (
+                    <div>
+                        <Image src={require('../image2/call/call_headpods.png')} />
+                        <Text>
+                            Вставьте наушники и попробуйте разговарить через них
+                        </Text>
+                    </div>
+                );
+            default:
+                return null
+        }
+    }
+
     render() {
+
+        const { currentModel } = this.props;
 
         return (
             <div>
-                <h1>Вызов и Датчик приближения</h1>
-                <p>
-                    Вставьте сим карту. Телефон должнен сразу же найти сеть. Если телефон требует активации то активируйте его. Если при попытки активации появляться что телефон не сможет быть активирован с этой сим картой то скорее всего телефон привязан к определенному оператору и не может быть активирован с сим картой вашего оператора. Попробуйте соверщить вызов. При звонке проверьте работу разговорного динамика, микрофона, переключите телефон в режим громкой связи и проверть работу динамика. Так же во премя разговора с выключенной опцией громкая связь поднесите палец к датчику приблежения, экран должен потухнуть
-                </p>
-                <img src={require('../image/top_sensor/iPhone_-_Звонок.png')} className="img-fluid"/>
+                <Title>Вызов и Датчик приближения {currentModel}</Title>
+                <Image src={require('../image2/call/cell.png')} />
+                <Text>
+                    Вставьте сим карту. Телефон должнен сразу же найти сеть.
+                </Text>
+                <Image src={require('../image2/call/call.png')} />
+                <Text>
+                    Попробуйте соверщить вызов.
+                </Text>
+                <Image src={require('../image2/call/spiker_call.png')} />
+                <Text>
+                    Включите громкую связь
+                </Text>
+                {this.callWithHeadpods()}
+                <Image src={require('../image2/call/call_sensor.png')} />
+                <Text>
+                    Выключите громкую связь и зайкройте пальцем сенсор приближения. Экран должен потухнуть
+                </Text>
                 <TestNav testN={20}/>
             </div>
         );
@@ -24,7 +69,9 @@ class Test20 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

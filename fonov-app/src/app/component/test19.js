@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
 import TestNav from '../elements/testNav'
+import {REPLACE_ROUTE} from "../actions/route";
 
 
 class Test19 extends Component {
 
-    render() {
+    componentWillMount() {
 
-        const { changeRoute } = this.props;
+        const { REPLACE_ROUTE } = this.props;
+
+        REPLACE_ROUTE('Test20')
+    }
+
+    render() {
 
         return (
             <div>
@@ -25,11 +30,15 @@ class Test19 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        REPLACE_ROUTE: route => dispatch(REPLACE_ROUTE(route))
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Test19);

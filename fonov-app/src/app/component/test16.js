@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
+import { Image, Text, TestNav, Title } from '../elements/index'
 
 
 class Test16 extends Component {
@@ -10,11 +10,11 @@ class Test16 extends Component {
 
         return (
             <div>
-                <h1>Проверка Wifi</h1>
-                <p>
+                <Title>Проверка Wifi</Title>
+                <Image src={require('../image2/wifi/IMG_1359.PNG')} />
+                <Text>
                     Откройти настройки -> Wi-Fi. Попробуйте подключиться к wifi сети. Если рядом нет доступных wifi точек то попробуйте создать точку доступа на своем смартфоне
-                </p>
-                <img src={require('../image/settings/iPhone-6-Wi-Fi-settings.png')} className="img-fluid"/>
+                </Text>
                 <TestNav testN={16}/>
             </div>
         );
