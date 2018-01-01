@@ -8,9 +8,11 @@ class Test8 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <Title>iCloid</Title>
+                <Title>iCloid {currentModel}</Title>
                 <Image src={require('../image/iCloud/IMG_0001.jpg')}/>
                 <Text>
                     Телефон должен быть отвязан от аккатов iCloud и Apple ID.
@@ -23,7 +25,9 @@ class Test8 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {

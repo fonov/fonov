@@ -51,6 +51,7 @@ class Image extends Component {
                     src={src}
                     className="img-fluid"
                     style={imgStyle}
+                    alt='Test Fonov'
                 />
             </div>
         );

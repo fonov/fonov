@@ -46,7 +46,9 @@ class Test23 extends Component {
                         <Image src={require('../image/imei/SIM-card-illustration.png')} />
                         <Text>На слоте для сим карты</Text>
                     </div>
-                )
+                );
+            default:
+                return null
         }
     }
 

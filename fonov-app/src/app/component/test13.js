@@ -12,12 +12,14 @@ class Test13 extends Component {
         const { currentModel, REPLACE_ROUTE } = this.props;
 
         switch (currentModel) {
+            default:
+                break;
             case 'iPhone 7':
             case 'iPhone 7 Plus':
             case 'iPhone 8':
             case 'iPhone 8 Plus':
             case 'iPhone X':
-                REPLACE_ROUTE('Test14')
+                REPLACE_ROUTE('Test14');
         }
 
     }

@@ -7,10 +7,12 @@ class Test9 extends Component {
 
     render() {
 
+        const { currentModel } = this.props;
+
         return (
             <div>
-                <Title>Проверка вспышки</Title>
-                <img src={require('../image/controlPanel/fl.png')} className="img-fluid"/>
+                <Title>Проверка вспышки {currentModel}</Title>
+                <Image src={require('../image/controlPanel/fl.png')} />
                 <Text>
                     Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
                 </Text>
@@ -22,7 +24,9 @@ class Test9 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
