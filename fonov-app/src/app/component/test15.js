@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Text, Title, TestNav, Image } from '../elements/index'
 import {REPLACE_ROUTE} from "../actions/route";
+import { RatingCheck } from './rating/index'
 
 
 class Test15 extends Component {
@@ -47,6 +47,10 @@ class Test15 extends Component {
                         <Text>
                             Зайдите в настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверте работу Touch ID
                         </Text>
+                        <RatingCheck
+                            title={`Touch ID работают в ${currentModel}?`}
+                            testN={15}
+                        />
                         <TestNav testN={15}/>
                     </div>
                 );
@@ -58,6 +62,10 @@ class Test15 extends Component {
                         <Text>
                             Для проведки Face ID необходимо зайти в настройки -> Face ID и код-пароль. Нажмите cканировать лицо и проверьте работу Face ID
                         </Text>
+                        <RatingCheck
+                            title={`Face ID работают в ${currentModel}?`}
+                            testN={15}
+                        />
                         <TestNav testN={15}/>
                     </div>
                 );

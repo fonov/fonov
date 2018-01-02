@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Image, Text, TestNav, Title } from '../elements/index'
+import { RatingCheck } from './rating/index'
 
 
 class Test17 extends Component {
@@ -12,11 +12,15 @@ class Test17 extends Component {
 
         return (
             <div>
-                <Title>Проверка Bluetooth {currentModel}</Title>
+                <Title>Проверка Bluetooth в {currentModel}</Title>
                 <Image src={require('../image/BT/IMG_1360.PNG')}/>
                 <Text>
-                    Откройти настройки -> Bluetooth. Попробуйте найти bluetooth устройтво и подключиться к нему.
+                    Откройти настройки -> Bluetooth. Попробуйте найти Bluetooth устройтво и подключиться к нему.
                 </Text>
+                <RatingCheck
+                    title={`Bluetooth работают в ${currentModel}?`}
+                    testN={17}
+                />
                 <TestNav testN={17}/>
             </div>
         );

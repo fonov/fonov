@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Text, Title, TestNav, Image } from '../elements/index'
+import {RatingCheck} from './rating/index'
 
 
 class Test23 extends Component {
@@ -64,6 +64,10 @@ class Test23 extends Component {
                 {this.secondImei()}
                 <Image src={require('../image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
                 <Text>На коробке.</Text>
+                <RatingCheck
+                    title={`IMEI совподают?`}
+                    testN={23}
+                />
                 <TestNav testN={23}/>
             </div>
         );

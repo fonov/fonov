@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Text, Title, TestNav, Image } from '../elements/index'
 import { REPLACE_ROUTE } from "../actions/route";
+import { RatingCheck } from './rating/index'
 
 
 class Test13 extends Component {
@@ -39,6 +39,10 @@ class Test13 extends Component {
                 <Text>
                     Проиграть звук. Если звука нет, то попробуйте использоватеть заведомо рабочие наушники
                 </Text>
+                <RatingCheck
+                    title={`Входа для наушников работают в ${currentModel}?`}
+                    testN={13}
+                />
                 <TestNav testN={13}/>
             </div>
         );

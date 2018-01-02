@@ -18,14 +18,18 @@ class TestNav extends Component {
 
     next(nextView) {
 
-        const { rating = null, ADD_ROUTE, testN } = this.props;
+        const { rating, testN, ADD_ROUTE } = this.props;
 
-        if (rating) {
-            ADD_ROUTE(rating.routeName, {title: rating.title, testN: testN, nextView})
-        } else {
-            ADD_ROUTE(nextView)
+        if (typeof rating[testN] !== 'undefined') {
+
+            let keys = Object.keys(rating[testN]),
+                data = rating[testN];
+
+            if (keys.length === 1 || (keys.length === 2 && data[keys[0]] && data[keys[1]]))
+                return ADD_ROUTE(nextView)
         }
 
+        return alert('Сначало завершите оценку!');
     }
 
     render() {
@@ -65,7 +69,9 @@ class TestNav extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        rating: state.rating
+    }
 };
 
 const mapDispatchToProps = dispatch => {

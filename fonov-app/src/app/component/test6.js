@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Title, Image } from '../elements/index'
+import { RatingCheck } from './rating/index'
 
 
 class Test6 extends Component {
@@ -17,6 +17,10 @@ class Test6 extends Component {
                 <Text>
                     Проводить польцем по всему экрану. Сенсор должен работать плавно и без задержок на всей площади экрана.
                 </Text>
+                <RatingCheck
+                    title={`Сенсор работает корректно в ${currentModel}?`}
+                    testN={6}
+                />
                 <TestNav testN={6}/>
             </div>
         );

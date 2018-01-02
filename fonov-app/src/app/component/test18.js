@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Image, Text, TestNav, Title } from '../elements/index'
-
+import {RatingCheck} from './rating/index'
 
 
 class Test18 extends Component {
@@ -22,6 +21,10 @@ class Test18 extends Component {
                 <Text>
                     Прослушайте её. Запись не должна содержать постороних шумов и тресков. Голос должне быть чистым
                 </Text>
+                <RatingCheck
+                    title={`Микрофона работают в ${currentModel}?`}
+                    testN={18}
+                />
                 <TestNav testN={18}/>
             </div>
         );

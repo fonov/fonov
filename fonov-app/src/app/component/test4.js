@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Title} from '../elements/index'
 import Image from "../elements/image";
+import { RatingCheck } from './rating/index'
 
 
 class Test4 extends Component {
@@ -64,7 +64,11 @@ class Test4 extends Component {
                 <Text>
                     Влага оказывает разрушительное влияние на компоненты iPhone. Чтобы определить было ли попадание влаги проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета значит телефон был подвергнут попаданию влаги.
                 </Text>
-                <TestNav testN={4} rating={{routeName: 'RatingCheck', title: `${currentModel} был подвергнут попаданию влаги?`}}/>
+                <RatingCheck
+                    title={`${currentModel} был подвергнут попаданию влаги?`}
+                    testN={4}
+                />
+                <TestNav testN={4}/>
             </div>
         );
     }

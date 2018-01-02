@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import { Row, Col, Card, CardBody, CardTitle, CardHeader, Button } from 'reactstrap';
+import { Row, Col, Card, CardBody, CardHeader, CardSubtitle } from 'reactstrap';
 import { connect } from 'react-redux'
-import { REPLACE_ROUTE } from '../../actions/route'
 import { add_rating } from '../../actions/rating'
 import FontAwesome from 'react-fontawesome'
 
 
 const starStyle = {
-    fontSize: '5em',
-    color: 'gold'
+    fontSize: '3em',
+    color: 'gold',
+    textAlign: 'center'
 };
 
 
@@ -24,9 +23,16 @@ class Stars extends Component {
 
     }
 
+    componentWillMount() {
+
+        const { initStars } = this.props;
+
+        this.setState({startPosition: initStars-1})
+    }
+
     stars(){
 
-        const { countStars, onClick } = this.props,
+        const { countStars, onChange } = this.props,
             { startPosition } = this.state;
 
         let array = [];
@@ -40,7 +46,7 @@ class Stars extends Component {
                         name={startPosition >= i ? 'star' : 'star-o'}
                         onClick={() => {
                             this.setState({startPosition: i});
-                            onClick(i+1)
+                            onChange(i+1)
                         }}
                     />
                 </Col>
@@ -72,50 +78,50 @@ class Rating5Stars extends Component {
 
     }
 
-    validate() {
+    componentWillMount() {
 
-        const { firstStars, secondStars } = this.state;
+        const { rating, testN } = this.props;
 
-        return new Promise((resolve, reject) => {
-            if (firstStars !== 0 && secondStars !== 0) {
-                resolve()
-            } else {
-                alert('Оценка не завершена. Завершите оценку для отчета');
-                reject()
-            }
-        })
+        if (typeof rating[testN] !== 'undefined') {
+            this.setState({
+                firstStars: rating[testN].firstStars,
+                secondStars: rating[testN].secondStars
+            })
+        }
+    }
+
+    saveRating(key, i) {
+
+        const { firstStars, secondStars } = this.state,
+            { add_rating, testN } = this.props;
+
+        this.setState({[key]: i});
+
+        add_rating(testN, Object.assign({firstStars, secondStars}, {[key]: i}));
     }
 
     render() {
 
-        const { firstStars, secondStars } = this.state,
-            { add_rating, currentProps, REPLACE_ROUTE } = this.props;
+        const { title } = this.props,
+            { firstStars, secondStars } = this.state;
 
         return (
             <div>
                 <Card className='bg-light'>
-                    <CardHeader>{currentProps.title}</CardHeader>
+                    <CardHeader>{title}</CardHeader>
                     <CardBody>
-                        <CardTitle>Заявленное состояние</CardTitle>
-                        <Stars countStars={5} onClick={i => this.setState({firstStars: i})} />
-                        <CardTitle>Реальное состояние</CardTitle>
-                        <Stars countStars={5} onClick={i => this.setState({secondStars: i})} />
-                        <Button
-                            color="primary"
-                            block
-                            onClick={() => {
-                                this.validate()
-                                    .then(() => {
-                                        add_rating(currentProps.testN, {firstStars, secondStars});
-                                        REPLACE_ROUTE(currentProps.nextView)
-                                    })
-                                    .catch(() => {
-
-                                    })
-                            }}
-                        >
-                            Завершить оценку
-                        </Button>
+                        <CardSubtitle>Заявленное состояние</CardSubtitle>
+                        <Stars
+                            countStars={5}
+                            initStars={firstStars}
+                            onChange={i => this.saveRating('firstStars', i)}
+                        />
+                        <CardSubtitle>Реальное состояние</CardSubtitle>
+                        <Stars
+                            countStars={5}
+                            initStars={secondStars}
+                            onChange={i => this.saveRating('secondStars', i)}
+                        />
                     </CardBody>
                 </Card>
             </div>
@@ -126,14 +132,14 @@ class Rating5Stars extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentProps: state.route.currentProps
+        currentProps: state.route.currentProps,
+        rating: state.rating
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         add_rating: (testN, data) => dispatch(add_rating(testN, data)),
-        REPLACE_ROUTE: (route, props = null) => dispatch(REPLACE_ROUTE(route, props))
     }
 };
 

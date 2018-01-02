@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Title, Image } from '../elements/index'
+import { RatingCheck } from './rating/index'
 
 
 class Test12 extends Component {
@@ -17,6 +17,10 @@ class Test12 extends Component {
                 <Text>
                     Откройте центр управления, нажмите на клавишу камеру. Проверьте изображение с фронтальной и передней камерой. Изображение должно быть чистое и без размытия
                 </Text>
+                <RatingCheck
+                    title={`Камера работают в ${currentModel}?`}
+                    testN={12}
+                />
                 <TestNav testN={12}/>
             </div>
         );

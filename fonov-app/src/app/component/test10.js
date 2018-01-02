@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Title, Image } from '../elements/index'
+import { RatingCheck } from './rating/index'
 
 
 class Test10 extends Component {
@@ -17,6 +17,10 @@ class Test10 extends Component {
                 <Text>
                     Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
                 </Text>
+                <RatingCheck
+                    title={`Динамики работают в ${currentModel}?`}
+                    testN={10}
+                />
                 <TestNav testN={10}/>
             </div>
         );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
 import { ADD_ROUTE } from '../actions/route'

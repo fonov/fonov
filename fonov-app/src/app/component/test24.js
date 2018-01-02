@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Text, Title, TestNav, Image } from '../elements/index'
+import {RatingCheck} from './rating/index'
 
 
 class Test24 extends Component {
@@ -114,6 +114,10 @@ class Test24 extends Component {
                 <Image src={require('../image/accessories/MD810.jpg')} />
                 <Text>Зарядное устройстов</Text>
                 {this.cable()}
+                <RatingCheck
+                    title={`Комплектация ${currentModel} совпадают с заявленной?`}
+                    testN={24}
+                />
                 <TestNav testN={24}/>
             </div>
         );

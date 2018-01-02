@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Image, Text, Title } from '../elements/index'
+import { RatingCheck } from './rating/index'
 
 
 class Test8 extends Component {
@@ -17,6 +17,10 @@ class Test8 extends Component {
                 <Text>
                     Телефон должен быть отвязан от аккатов iCloud и Apple ID.
                 </Text>
+                <RatingCheck
+                    title={`${currentModel} отвязан от iCloud?`}
+                    testN={8}
+                />
                 <TestNav testN={8}/>
             </div>
         );

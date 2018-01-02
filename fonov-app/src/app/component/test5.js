@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Image, Title } from '../elements/index'
+import { RatingCheck } from './rating/index'
 
 
 class Test5 extends Component {
@@ -21,6 +21,10 @@ class Test5 extends Component {
                 <Text>Клавиша Домой</Text>
                 <Image src={require('../image/кнопки/Кпокпи 3.png')}/>
                 <Text>Клавиша блокировки</Text>
+                <RatingCheck
+                    title={`Работаю кнопки и вибрация в ${currentModel}?`}
+                    testN={5}
+                />
                 <TestNav testN={5}/>
             </div>
         );

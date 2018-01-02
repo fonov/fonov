@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Title, Image } from '../elements/index'
+import { RatingCheck } from './rating/index'
+
 
 class Test9 extends Component {
 
@@ -16,6 +17,10 @@ class Test9 extends Component {
                 <Text>
                     Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
                 </Text>
+                <RatingCheck
+                    title={`Вспышка работает в ${currentModel}?`}
+                    testN={9}
+                />
                 <TestNav testN={9}/>
             </div>
         );

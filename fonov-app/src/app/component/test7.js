@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Text, Image, Title } from '../elements/index'
 import { REPLACE_ROUTE } from "../actions/route";
-
+import { RatingCheck } from './rating'
 
 class Test7 extends Component {
 
@@ -41,6 +40,10 @@ class Test7 extends Component {
                 <Text>
                     Для проверка 3D Touch необходимо сильно понажать на иконки. После этого должен открыться меню
                 </Text>
+                <RatingCheck
+                    title={`3D Touch работает в ${currentModel}?`}
+                    testN={7}
+                />
                 <TestNav testN={7}/>
             </div>
         );

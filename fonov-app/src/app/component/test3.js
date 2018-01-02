@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { TestNav, Title, Text, Image } from '../elements'
+import { Rating5Stars } from './rating'
 
 
 class Test3 extends Component {
@@ -24,7 +24,11 @@ class Test3 extends Component {
                 <Text>Заднию часть телефона</Text>
                 <Image src={require('../image/внешний вид/sides.png')}/>
                 <Text>Боковые грани телефона</Text>
-                <TestNav testN={3} rating={{routeName: 'Rating5Stars', title: 'Оценка внешнего вида'}}/>
+                <Rating5Stars
+                    title={'Оценка внешнего вида'}
+                    testN={3}
+                />
+                <TestNav testN={3}/>
             </div>
         );
     }

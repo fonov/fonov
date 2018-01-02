@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
 import { Text, Title, TestNav, Image } from '../elements/index'
+import {RatingCheck} from './rating/index'
 
 
 class Test20 extends Component {
@@ -61,6 +61,10 @@ class Test20 extends Component {
                 <Text>
                     Выключите громкую связь и зайкройте пальцем сенсор приближения. Экран должен потухнуть
                 </Text>
+                <RatingCheck
+                    title={`Вызов и Датчик приближения работают в ${currentModel}?`}
+                    testN={20}
+                />
                 <TestNav testN={20}/>
             </div>
         );

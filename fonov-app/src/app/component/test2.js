@@ -4,6 +4,7 @@ import { FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux'
 import { TestNav, Title } from '../elements'
 import setCurrentModel from '../actions/currentModel'
+import { RatingCheck } from './rating'
 
 
 class Test2 extends Component {
@@ -422,6 +423,12 @@ class Test2 extends Component {
         this.state = this.defaultState
     }
 
+    componentWillMount() {
+        if (process.env.NODE_ENV === 'development') {
+            this.inputModel("MQ8M2B/A")
+        }
+    }
+
     getInfo(result) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
             { setCurrentModel } = this.props;
@@ -505,7 +512,16 @@ class Test2 extends Component {
                     <li><b>Тип устройства:</b> {type}</li>
                     <li><b>Страна покупки:</b> {country_of_purchase}</li>
                 </ul>
-                {input_valid === true && <TestNav testN={2}/>}
+                {
+                    input_valid === true &&
+                    <div>
+                        <RatingCheck
+                            title={`Заявленная информация о iPhone верна?`}
+                            testN={2}
+                        />
+                        <TestNav testN={2}/>
+                    </div>
+                }
             </div>
         );
     }

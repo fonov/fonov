@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import { Image, Text, TestNav, Title } from '../elements/index'
 import {REPLACE_ROUTE} from "../actions/route";
 
 
@@ -15,31 +13,13 @@ class Test14 extends Component {
     }
 
     render() {
-
-        const { currentModel } = this.props;
-
-        return (
-            <div>
-                <Title>Проверка датчика освешености {currentModel}</Title>
-                <Image src={require('../image/top_sensor/Group.png')} />
-                <Text>
-                    Увеличте яркость до максимума
-                </Text>
-                <Image src={require('../image/top_sensor/Bitmap.png')} />
-                <Text>
-                    Заблокируйте телефон. Затем пальцем зайкройте датчик пальцем и включите iPhone. Шкала яркости должна уменьшиться
-                </Text>
-                <TestNav testN={14}/>
-            </div>
-        );
+        return null
     }
 
 }
 
 const mapStateToProps = state => {
-    return {
-        currentModel: state.currentModel
-    }
+    return {}
 };
 
 const mapDispatchToProps = dispatch => {

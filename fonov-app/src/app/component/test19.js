@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from 'react-redux'
-import TestNav from '../elements/testNav'
 import {REPLACE_ROUTE} from "../actions/route";
 
 
@@ -16,23 +14,15 @@ class Test19 extends Component {
 
     render() {
 
-        return (
-            <div>
-                <h1>Проверка экрана</h1>
-                <p>
-                    Данный тест направлен для выевление дифектов экрана. Включите максимальную яркость дисплея и под разными углами осмотрите экран. На экране должны отсутсвовать битые пиксили и экран должне четко передовать цвет без желтизны и других оттенков. Для теста нужны 3 цвета. Белый, черный, синий
-                </p>
-                <TestNav testN={19}/>
-            </div>
-        );
+        const { currentModel } = this.props;
+
+        return null
     }
 
 }
 
 const mapStateToProps = state => {
-    return {
-        currentModel: state.currentModel
-    }
+    return {}
 };
 
 const mapDispatchToProps = dispatch => {
