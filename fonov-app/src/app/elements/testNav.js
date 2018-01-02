@@ -3,6 +3,7 @@ import { Button } from 'reactstrap';
 import {connect} from "react-redux";
 import { ADD_ROUTE, POP_ROUTE } from "../actions/route";
 import FontAwesome from 'react-fontawesome'
+import {show_modal} from '../actions/modal'
 
 
 class TestNav extends Component {
@@ -18,7 +19,7 @@ class TestNav extends Component {
 
     next(nextView) {
 
-        const { rating, testN, ADD_ROUTE } = this.props;
+        const { rating, testN, ADD_ROUTE, show_modal } = this.props;
 
         if (typeof rating[testN] !== 'undefined') {
 
@@ -29,7 +30,7 @@ class TestNav extends Component {
                 return ADD_ROUTE(nextView)
         }
 
-        return alert('Сначало завершите оценку!');
+        return show_modal('Тест Fonov', 'Оцените тест для формирования отчета');
     }
 
     render() {
@@ -77,7 +78,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         ADD_ROUTE: (route, props = null) => dispatch(ADD_ROUTE(route, props)),
-        POP_ROUTE: () => dispatch(POP_ROUTE())
+        POP_ROUTE: () => dispatch(POP_ROUTE()),
+        show_modal: (title, text) => dispatch(show_modal(title, text))
     }
 };
 

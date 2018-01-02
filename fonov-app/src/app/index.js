@@ -31,6 +31,8 @@ import Test24 from './component/test24'
 import TestResult from './component/testResult'
 import Rating5Stars from './component/rating/rating_5_stars'
 import RatingCheck from './component/rating/rating_check'
+// Elements
+import {FNModal} from './elements/index'
 
 
 class App extends Component {
@@ -39,7 +41,7 @@ class App extends Component {
         const { ADD_ROUTE } = this.props;
 
         if (process.env.NODE_ENV === 'development') {
-            ADD_ROUTE('Test4')
+            ADD_ROUTE('Test24')
         }
     }
 
@@ -110,6 +112,7 @@ class App extends Component {
         return (
             <Container style={{padding: 25}}>
                 {this.currentScene()}
+                <FNModal/>
             </Container>
         );
     }
