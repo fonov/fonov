@@ -9,6 +9,8 @@ class Test22 extends Component {
 
     render() {
 
+        const {currentModel} = this.props;
+
         return (
             <div>
                 <Title>Проверка гарантии</Title>
@@ -35,7 +37,9 @@ class Test22 extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModel: state.currentModel
+    }
 };
 
 const mapDispatchToProps = dispatch => {
