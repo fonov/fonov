@@ -6,7 +6,7 @@ import FontAwesome from 'react-fontawesome'
 
 
 const starStyle = {
-    fontSize: '3em',
+    fontSize: '7vmin',
     color: 'gold',
     textAlign: 'center'
 };
@@ -106,7 +106,7 @@ class Rating5Stars extends Component {
             { firstStars, secondStars } = this.state;
 
         return (
-            <div>
+            <div style={{marginTop: 10, marginBottom: 10}}>
                 <Card className='bg-light'>
                     <CardHeader>{title}</CardHeader>
                     <CardBody>

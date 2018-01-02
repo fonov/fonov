@@ -7,7 +7,7 @@ import FontAwesome from 'react-fontawesome'
 
 const checkStyle = {
     textAlign: 'center',
-    fontSize: '5em'
+    fontSize: '15vmin'
 };
 
 class RatingCheck extends Component {
@@ -43,7 +43,7 @@ class RatingCheck extends Component {
             { check } = this.state;
 
         return (
-            <div>
+            <div style={{marginTop: 10, marginBottom: 10}}>
                 <Card className='bg-light'>
                     <CardHeader>{title}</CardHeader>
                     <CardBody>
