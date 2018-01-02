@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux'
 import {REPLACE_ROUTE} from "../actions/route";
 
@@ -13,9 +13,6 @@ class Test19 extends Component {
     }
 
     render() {
-
-        const { currentModel } = this.props;
-
         return null
     }
 

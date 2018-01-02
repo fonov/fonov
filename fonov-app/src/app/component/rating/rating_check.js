@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, CardBody, CardHeader, Button } from 'reactstrap';
+import { Row, Col, Card, CardBody, CardHeader } from 'reactstrap';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
 import FontAwesome from 'react-fontawesome'
