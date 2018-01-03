@@ -12,7 +12,7 @@ class Test21 extends Component {
 
         return (
             <div>
-                <Title>Порт зарядки в {currentModel}</Title>
+                <Title>Зарядки в {currentModel}</Title>
                 <Image src={require('../image/charge/iphone_and_cable.png')} />
                 <Text>
                     Подключите телефон к зарядки. Проверте плотно ли находиться разьм зарядки, отсутсвуют ли лифты. Телефон при подключние зарядки сразу же должен начать зарежаться
