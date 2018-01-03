@@ -15,7 +15,7 @@ class Test2 extends Component {
         this.iphoneInfo = {
             firstLetter: {
                 F: 'Восстановленный',
-                M: 'Для розничной продаже',
+                M: 'Для розничной продажи',
                 N: 'Подменный iPhone. Выдан в замен не исправного iPhone',
                 P: 'Специальный экземпляр'
             },

@@ -28,7 +28,7 @@ class TestResult extends Component {
                 weight:-100
             },
             5: {
-                title: 'Кнопоки и вибрация',
+                title: 'Кнопки и вибрация',
                 pass: true,
                 warning: 'Мы не рекамендуем к покупки телефон с нерабочими кнопками или вибрацией.',
                 weight:-100
@@ -245,10 +245,10 @@ class TestResult extends Component {
                 <div style={{marginTop: 20, marginBottom: 10}}>{this.conclusion()}</div>
                 <Row>
                     <Col>
-                        <Button color="primary" block onClick={() => POP_ROUTE()}>Назад</Button>
+                        <Button size="lg" color="primary" block onClick={() => POP_ROUTE()}>Назад</Button>
                     </Col>
                     <Col>
-                        <Button color="primary" block onClick={() => ADD_ROUTE('Home')}>Домой</Button>
+                        <Button size="lg" color="primary" block onClick={() => ADD_ROUTE('Home')}>Домой</Button>
                     </Col>
                 </Row>
             </div>

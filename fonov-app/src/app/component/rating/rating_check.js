@@ -49,13 +49,13 @@ class RatingCheck extends Component {
                     <CardBody>
                         <Row className='justify-content-center'>
                             <Col
-                                style={{...checkStyle, color: check === true ? 'green' : 'black'}}
+                                style={{...checkStyle, color: check === true ? 'MediumSeaGreen' : 'Grey'}}
                                 onClick={() => this.saveRating(true)}
                             >
                                 <FontAwesome name={`check-circle${check === true ? '' : '-o'}`} />
                             </Col>
                             <Col
-                                style={{...checkStyle, color: check === false ? 'green' : 'black'}}
+                                style={{...checkStyle, color: check === false ? 'Tomato' : 'Grey'}}
                                 onClick={() => this.saveRating(false)}
                             >
                                 <FontAwesome name={`times-circle${check === false ? '' : '-o'}`} />

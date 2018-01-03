@@ -41,23 +41,29 @@ class TestNav extends Component {
         return (
             <div style={{marginTop: 20}}>
                 { testN === minTest ? (
-                    <Button color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
+                    <Button size="lg" color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
                         Далее <FontAwesome name='chevron-right' />
                     </Button>
-                ) : testN === maxTest ? (
-                    <Button color="primary" block onClick={() => this.next('TestResult')}>Завершить тест</Button>
                 ) : (
                     <div>
                         <div className='row'>
                             <div className='col'>
-                                <Button color="primary" block onClick={() => POP_ROUTE()}>
+                                <Button size="lg" color="primary" block onClick={() => POP_ROUTE()}>
                                     <FontAwesome name='chevron-left' /> Назад
                                 </Button>
                             </div>
                             <div className='col'>
-                                <Button color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
-                                    Далее <FontAwesome name='chevron-right' />
-                                </Button>
+                                {
+                                    testN === maxTest ? (
+                                        <Button size="lg" color="primary" block onClick={() => this.next('TestResult')}>
+                                            Завершить тест <FontAwesome name='flag-checkered' />
+                                        </Button>
+                                    ) : (
+                                        <Button size="lg" color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
+                                            Далее <FontAwesome name='chevron-right' />
+                                        </Button>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
