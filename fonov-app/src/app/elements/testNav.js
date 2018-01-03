@@ -42,7 +42,7 @@ class TestNav extends Component {
             <div style={{marginTop: 20}}>
                 { testN === minTest ? (
                     <Button color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
-                        Далле <FontAwesome name='chevron-right' />
+                        Далее <FontAwesome name='chevron-right' />
                     </Button>
                 ) : testN === maxTest ? (
                     <Button color="primary" block onClick={() => this.next('TestResult')}>Завершить тест</Button>

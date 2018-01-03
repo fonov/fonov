@@ -423,11 +423,11 @@ class Test2 extends Component {
         this.state = this.defaultState
     }
 
-    componentWillMount() {
-        if (process.env.NODE_ENV === 'development') {
-            this.inputModel("MQ8M2B/A")
-        }
-    }
+    // componentWillMount() {
+    //     if (process.env.NODE_ENV === 'development') {
+    //         this.inputModel("mg4q2ll/a")
+    //     }
+    // }
 
     getInfo(result) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
@@ -507,7 +507,7 @@ class Test2 extends Component {
                 </FormGroup>
                 <ul>
                     <li><b>Модель:</b> {iPhone}</li>
-                    <li><b>Кол-во памати:</b> {capacity}</li>
+                    <li><b>Кол-во памяти:</b> {capacity}</li>
                     <li><b>Цвет устройства:</b> {color}</li>
                     <li><b>Тип устройства:</b> {type}</li>
                     <li><b>Страна покупки:</b> {country_of_purchase}</li>

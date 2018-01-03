@@ -14,7 +14,7 @@ class TestResult extends Component {
             2: {
                 title: 'Информация о iPhone',
                 pass: true,
-                warning: 'Информация о телефоне не совпадает с заявленной информацие. Мы не рекамендуем Вам к покупки данный телефон.',
+                warning: 'Информация о телефоне не совпадает с заявленной информацией. Мы не рекомендуем Вам покупать данный телефон.',
                 weight:-100
             },
             3: {
@@ -22,13 +22,13 @@ class TestResult extends Component {
                 weight:7.5
             },
             4: {
-                title: 'Попадание влаги',
+                title: 'Датчик влаги',
                 pass: false,
                 warning: 'Мы не рекамендуем к покупки iPhone после попадания воды. Вода оказывет негативное влияние на внутренные микросхемы iPhone и разрушают его',
                 weight:-100
             },
             5: {
-                title: 'Кнопок и вибрации',
+                title: 'Кнопоки и вибрация',
                 pass: true,
                 warning: 'Мы не рекамендуем к покупки телефон с нерабочими кнопками или вибрацией.',
                 weight:-100
@@ -90,19 +90,19 @@ class TestResult extends Component {
             16: {
                 title: 'WiFi',
                 pass: true,
-                warning: 'Мы не рекамендуем к покупки телефон с не рабочим wifi.',
+                warning: 'Мы не рекамендуем к покупки телефон с нерабочим wifi.',
                 weight:-100
             },
             17: {
                 title: 'Bluetooth',
                 pass: true,
-                warning: 'Мы не рекамендуем к покупки телефон с не рабочим Bluetooth.',
+                warning: 'Мы не рекамендуем к покупки телефон с нерабочим Bluetooth.',
                 weight:-100
             },
             18: {
                 title: 'Микрофон',
                 pass: true,
-                warning: 'Мы не рекамендуем к покупки телефон с не рабочим микрофоном.',
+                warning: 'Мы не рекамендуем к покупки телефон с нерабочим микрофоном.',
                 weight:-100
             },
             20: {
@@ -114,7 +114,7 @@ class TestResult extends Component {
             21: {
                 title: 'Зарядка',
                 pass: true,
-                warning: 'Мы не рекамендуем к покупки телефон с не рабочим зарядкой.',
+                warning: 'Мы не рекамендуем к покупки телефон с нерабочим зарядкой.',
                 weight:-100
             },
             22: {
@@ -123,12 +123,12 @@ class TestResult extends Component {
                 weight:5
             },
             23: {
-                title: 'Совподения IMEI',
+                title: 'Совпадение IMEI',
                 pass: true,
                 weight:5
             },
             24: {
-                title: 'Комплектации',
+                title: 'Комплектация',
                 pass: true,
                 weight:5
             }

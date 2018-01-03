@@ -48,7 +48,7 @@ class Test15 extends Component {
                             Зайдите в настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверте работу Touch ID
                         </Text>
                         <RatingCheck
-                            title={`Touch ID работают в ${currentModel}?`}
+                            title={`Touch ID работает в ${currentModel}?`}
                             testN={15}
                         />
                         <TestNav testN={15}/>
