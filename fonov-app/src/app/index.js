@@ -38,11 +38,11 @@ import {FNModal} from './elements/index'
 class App extends Component {
 
     componentWillMount() {
-        const { ADD_ROUTE } = this.props;
-
-        if (process.env.NODE_ENV === 'development') {
-            ADD_ROUTE('Test3')
-        }
+        // const { ADD_ROUTE } = this.props;
+        //
+        // if (process.env.NODE_ENV === 'development') {
+            // ADD_ROUTE('Test3')
+        // }
     }
 
     currentScene() {

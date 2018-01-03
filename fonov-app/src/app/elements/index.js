@@ -5,6 +5,7 @@ import Image from './image'
 import FNModal from './modal'
 import ListCheck from './listCheck'
 import ListStar from './listStar'
+import BoxShadow from './BoxShadow'
 
 
 export {
@@ -14,5 +15,6 @@ export {
     Image,
     FNModal,
     ListCheck,
-    ListStar
+    ListStar,
+    BoxShadow
 }
