@@ -8,7 +8,9 @@ class Text extends Component {
         const { children } = this.props;
 
         return (
-            <p style={{marginTop: 10, marginBottom: 10}}>{children}</p>
+            <p style={{marginTop: 10, marginBottom: 10}}>
+                {children}
+            </p>
         );
     }
 

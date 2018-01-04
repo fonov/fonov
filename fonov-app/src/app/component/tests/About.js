@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux'
-import { TestNav, Title } from '../elements'
-import setCurrentModel from '../actions/currentModel'
-import { RatingCheck } from './rating'
+import { TestNav, Title } from '../../elements/index'
+import setCurrentModel from '../../actions/currentModel'
+import { RatingCheck } from '../rating/index'
 
 
-class Test2 extends Component {
+class About extends Component {
 
     constructor(props) {
         super(props);
@@ -423,11 +423,11 @@ class Test2 extends Component {
         this.state = this.defaultState
     }
 
-    // componentWillMount() {
-    //     if (process.env.NODE_ENV === 'development') {
-    //         this.inputModel("mg4q2ll/a")
-    //     }
-    // }
+    componentWillMount() {
+        if (process.env.NODE_ENV === 'development') {
+            this.inputModel("mg4q2ll/a")
+        }
+    }
 
     getInfo(result) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
@@ -515,11 +515,10 @@ class Test2 extends Component {
                 {
                     input_valid === true &&
                     <div>
-                        <RatingCheck
-                            title={`Заявленная информация о iPhone верна?`}
-                            testN={2}
-                        />
-                        <TestNav testN={2}/>
+                        <RatingCheck testN='About'>
+                            Заявленная информация о iPhone верна?
+                        </RatingCheck>
+                        <TestNav testN='About'/>
                     </div>
                 }
             </div>
@@ -538,4 +537,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test2);
+export default connect(mapStateToProps, mapDispatchToProps)(About);

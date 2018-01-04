@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Collapse, CardBody, Card, CardHeader } from 'reactstrap';
 import { connect } from 'react-redux'
-import { ADD_ROUTE } from '../actions/route'
-import {BoxShadow} from '../elements/index'
+import {CycleButton} from '../elements/index'
+import { push } from 'react-router-redux'
+import URLS from '../constant/urls'
+import {APP_NAME} from '../constant/config'
 
 
 class Home extends Component {
@@ -67,33 +69,17 @@ class Home extends Component {
 
     render() {
 
-        const { ADD_ROUTE } = this.props;
+        const {push} = this.props;
 
         return (
             <div>
-                <h1 className="display-4">FonovTest</h1>
+                <h1 className="display-4">{APP_NAME}</h1>
                 <h2>Тестирование iPhone перед покупкой</h2>
                 <hr/>
 
-                <BoxShadow
-                    className='text-center text-white'
-                    spreadRadius={3}
-                    blurRadius={16}
-                    color='#067df7'
-                    style={{
-                        width: 200,
-                        height: 200,
-                        borderRadius: '50%',
-                        lineHeight: 6.5,
-                        fontSize: '2em',
-                        backgroundColor: 'DodgerBlue',
-                        margin: '70px auto',
-                        cursor: 'pointer'
-                    }}
-                    onClick={() => ADD_ROUTE('Test2')}
-                >
+                <CycleButton onClick={() => push(URLS.About)}>
                     Начать
-                </BoxShadow>
+                </CycleButton>
 
                 {
                     this.aboutTest.map((item, i) => (
@@ -115,14 +101,12 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        route: state.route
-    }
+    return {}
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        ADD_ROUTE: route => dispatch(ADD_ROUTE(route))
+        push: path =>  dispatch(push(path))
     }
 };
 

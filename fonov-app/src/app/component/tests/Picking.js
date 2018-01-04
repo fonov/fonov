@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Text, Title, TestNav, Image } from '../elements/index'
-import {RatingCheck} from './rating/index'
+import { Text, Title, TestNav, Image } from '../../elements/index'
+import {RatingCheck} from '../rating/index'
+import URLS from "../../constant/urls";
+import {replace} from "react-router-redux";
 
 
-class Test24 extends Component {
+class Picking extends Component {
+
+    componentWillMount() {
+        const {replace, currentModel} = this.props;
+
+        if (currentModel === null) {
+            replace(URLS.Home)
+        }
+    }
 
     earpods() {
 
@@ -17,7 +27,7 @@ class Test24 extends Component {
             case 'iPhone 4':
             case 'iPhone 4S':
                 return (
-                    <Image src={require('../image/accessories/aPPLEMB770_enl.jpg')} />
+                    <Image src={require('../../assets/image/accessories/aPPLEMB770_enl.jpg')} />
                 );
             case 'iPhone 5':
             case 'iPhone 5c':
@@ -33,7 +43,7 @@ class Test24 extends Component {
             case 'iPhone 8 Plus':
             case 'iPhone X':
                 return (
-                    <Image src={require('../image/accessories/Apple-EarPods-with-Remote-and-Mic.png')} />
+                    <Image src={require('../../assets/image/accessories/Apple-EarPods-with-Remote-and-Mic.png')} />
                 );
             default:
                 return null
@@ -52,7 +62,7 @@ class Test24 extends Component {
             case 'iPhone X':
                 return (
                     <div>
-                        <Image src={require('../image/accessories/4c2faf2c784a8663258f2fe9495542b0.jpg')} />
+                        <Image src={require('../../assets/image/accessories/4c2faf2c784a8663258f2fe9495542b0.jpg')} />
                         <Text>Адаптер Lightning/выход 3,5 мм для наушников</Text>
                     </div>
                 );
@@ -73,7 +83,7 @@ class Test24 extends Component {
             case 'iPhone 4S':
                 return (
                     <div>
-                        <Image src={require('../image/accessories/apple-30-pin-cable.jpg')} />
+                        <Image src={require('../../assets/image/accessories/apple-30-pin-cable.jpg')} />
                         <Text>30 пиновый кабель</Text>
                     </div>
                 );
@@ -92,7 +102,7 @@ class Test24 extends Component {
             case 'iPhone X':
                 return (
                     <div>
-                        <Image src={require('../image/accessories/apple-lightning-cable-1_1024x1024.png')} />
+                        <Image src={require('../../assets/image/accessories/apple-lightning-cable-1_1024x1024.png')} />
                         <Text>Кабель Lightning/USB</Text>
                     </div>
                 );
@@ -111,14 +121,13 @@ class Test24 extends Component {
                 {this.earpods()}
                 <Text>Наушники</Text>
                 {this.adapter()}
-                <Image src={require('../image/accessories/MD810.jpg')} />
+                <Image src={require('../../assets/image/accessories/MD810.jpg')} />
                 <Text>Зарядное устройстов</Text>
                 {this.cable()}
-                <RatingCheck
-                    title={`Комплектация ${currentModel} совпадают с заявленной?`}
-                    testN={24}
-                />
-                <TestNav testN={24}/>
+                <RatingCheck testN='Picking'>
+                    Комплектация {currentModel} совпадают с заявленной?
+                </RatingCheck>
+                <TestNav testN='Picking'/>
             </div>
         );
     }
@@ -132,7 +141,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        replace: path =>  dispatch(replace(path))
+    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test24);
+export default connect(mapStateToProps, mapDispatchToProps)(Picking);

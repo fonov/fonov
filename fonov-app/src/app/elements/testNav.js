@@ -1,9 +1,12 @@
 import React, { Component} from 'react';
 import { Button } from 'reactstrap';
 import {connect} from "react-redux";
-import { ADD_ROUTE, POP_ROUTE } from "../actions/route";
 import FontAwesome from 'react-fontawesome'
 import {show_modal} from '../actions/modal'
+import {APP_NAME} from '../constant/config'
+import { push } from 'react-router-redux'
+import SchemeOfTests from '../constant/schemeOfTests'
+import URLS from '../constant/urls'
 
 
 class TestNav extends Component {
@@ -12,14 +15,25 @@ class TestNav extends Component {
         super(props);
 
         this.state = {
-            maxTest: 24,
-            minTest: 2
+            schemeOfTests: null
         }
     }
 
-    next(nextView) {
+    componentWillMount() {
 
-        const { rating, testN, ADD_ROUTE, show_modal } = this.props;
+        const {currentModel} = this.props;
+
+        this.setState({
+            schemeOfTests: SchemeOfTests(currentModel)
+        })
+    }
+
+    next() {
+
+        const { rating, testN, show_modal, push } = this.props,
+            {schemeOfTests} = this.state,
+            nextIndex = schemeOfTests.indexOf(testN)+1;
+
 
         if (typeof rating[testN] !== 'undefined') {
 
@@ -27,65 +41,51 @@ class TestNav extends Component {
                 data = rating[testN];
 
             if (keys.length === 1 || (keys.length === 2 && data[keys[0]] && data[keys[1]]))
-                return ADD_ROUTE(nextView)
+                if (schemeOfTests.length === nextIndex) {
+                    push(URLS.TestResult)
+                } else {
+                    push(URLS[schemeOfTests[nextIndex]])
+                }
+                return
         }
 
-        return show_modal('Тест Fonov', 'Оцените тест для формирования отчета');
+        return show_modal(APP_NAME, 'Оцените тест для формирования отчета');
     }
 
     render() {
 
-        const { maxTest, minTest } = this.state,
-            { testN, POP_ROUTE } = this.props;
+        const { testN } = this.props,
+            {schemeOfTests} = this.state;
 
         return (
             <div style={{marginTop: 20}}>
-                { testN === minTest ? (
-                    <Button size="lg" color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
-                        Далее <FontAwesome name='chevron-right' />
-                    </Button>
-                ) : (
-                    <div>
-                        <div className='row'>
-                            <div className='col'>
-                                <Button size="lg" color="primary" block onClick={() => POP_ROUTE()}>
-                                    <FontAwesome name='chevron-left' /> Назад
-                                </Button>
-                            </div>
-                            <div className='col'>
-                                {
-                                    testN === maxTest ? (
-                                        <Button size="lg" color="primary" block onClick={() => this.next('TestResult')}>
-                                            Завершить тест <FontAwesome name='flag-checkered' />
-                                        </Button>
-                                    ) : (
-                                        <Button size="lg" color="primary" block onClick={() => this.next(`Test${testN+1}`)}>
-                                            Далее <FontAwesome name='chevron-right' />
-                                        </Button>
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </div>
-                )}
+                <Button size="lg" color="primary" block onClick={() => this.next()}>
+                    {testN === schemeOfTests[schemeOfTests.length-1] ? (
+                        <span>
+                            Завершить тест <FontAwesome name='flag-checkered' />
+                        </span>) : (
+                        <span>
+                            Далее <FontAwesome name='chevron-right' />
+                        </span>)
+                    }
+                </Button>
             </div>
         );
-
     }
 
 }
 
 const mapStateToProps = state => {
     return {
-        rating: state.rating
+        rating: state.rating,
+        currentModel: state.currentModel
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        ADD_ROUTE: (route, props = null) => dispatch(ADD_ROUTE(route, props)),
-        POP_ROUTE: () => dispatch(POP_ROUTE()),
-        show_modal: (title, text) => dispatch(show_modal(title, text))
+        show_modal: (title, text) => dispatch(show_modal(title, text)),
+        push: path =>  dispatch(push(path))
     }
 };
 

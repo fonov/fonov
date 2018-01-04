@@ -1,133 +1,65 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
 import { Container } from 'reactstrap';
-import { connect } from 'react-redux'
-import { ADD_ROUTE } from "./actions/route";
-// View
+import { Route } from 'react-router-dom'
+//CSS
+import 'bootstrap/dist/css/bootstrap.css';
+//Component
 import Home from './component/home'
-import Test2 from './component/test2'
-import Test3 from './component/test3'
-import Test4 from './component/test4'
-import Test5 from './component/test5'
-import Test6 from './component/test6'
-import Test7 from './component/test7'
-import Test8 from './component/test8'
-import Test9 from './component/test9'
-import Test10 from './component/test10'
-import Test11 from './component/test11'
-import Test12 from './component/test12'
-import Test13 from './component/test13'
-import Test14 from './component/test14'
-import Test15 from './component/test15'
-import Test16 from './component/test16'
-import Test17 from './component/test17'
-import Test18 from './component/test18'
-import Test19 from './component/test19'
-import Test20 from './component/test20'
-import Test21 from './component/test21'
-import Test22 from './component/test22'
-import Test23 from './component/test23'
-import Test24 from './component/test24'
+import About from './component/tests/About'
+import Appearance from './component/tests/Appearance'
+import WaterSensor from './component/tests/WaterSensor'
+import ButtonsAndVibration from './component/tests/ButtonsAndVibration'
+import Sensor from './component/tests/Sensor'
+import Touch3D from './component/tests/Touch3D'
+import iCloid from './component/tests/iCloid'
+import Flash from './component/tests/Flash'
+import Speaker from './component/tests/Speaker'
+import CompassAndGsensor from './component/tests/CompassAndGsensor'
+import Camera from './component/tests/Camera'
+import HeadphoneJack from './component/tests/HeadphoneJack'
+import TouchIDorFaceID from './component/tests/TouchIDorFaceID'
+import WiFi from './component/tests/WiFi'
+import Bluetooth from './component/tests/Bluetooth'
+import Microphone from './component/tests/Microphone'
+import CallAndProximitySensor from './component/tests/CallAndProximitySensor'
+import Charging from './component/tests/Charging'
+import Warranty from './component/tests/Warranty'
+import IMEI from './component/tests/IMEI'
+import Picking from './component/tests/Picking'
 import TestResult from './component/testResult'
-import Rating5Stars from './component/rating/rating_5_stars'
-import RatingCheck from './component/rating/rating_check'
 // Elements
-import {FNModal} from './elements/index'
+import {Modal} from './elements/index'
+// URLS
+import URLS from './constant/urls'
 
 
-class App extends Component {
+const App = () =>  (
+    <Container style={{padding: 25}}>
+        <Route exact path={URLS.Home} component={Home}/>
+        <Route path={URLS.About} component={About} />
+        <Route path={URLS.Appearance} component={Appearance} />
+        <Route path={URLS.WaterSensor} component={WaterSensor} />
+        <Route path={URLS.ButtonsAndVibration} component={ButtonsAndVibration} />
+        <Route path={URLS.Sensor} component={Sensor} />
+        <Route path={URLS.Touch3D} component={Touch3D} />
+        <Route path={URLS.iCloid} component={iCloid} />
+        <Route path={URLS.Flash} component={Flash} />
+        <Route path={URLS.Speaker} component={Speaker} />
+        <Route path={URLS.CompassAndGsensor} component={CompassAndGsensor} />
+        <Route path={URLS.Camera} component={Camera} />
+        <Route path={URLS.HeadphoneJack} component={HeadphoneJack} />
+        <Route path={URLS.TouchIDorFaceID} component={TouchIDorFaceID} />
+        <Route path={URLS.WiFi} component={WiFi} />
+        <Route path={URLS.Bluetooth} component={Bluetooth} />
+        <Route path={URLS.Microphone} component={Microphone} />
+        <Route path={URLS.CallAndProximitySensor} component={CallAndProximitySensor} />
+        <Route path={URLS.Charging} component={Charging} />
+        <Route path={URLS.Warranty} component={Warranty} />
+        <Route path={URLS.IMEI} component={IMEI} />
+        <Route path={URLS.Picking} component={Picking} />
+        <Route path={URLS.TestResult} component={TestResult} />
+        <Modal/>
+    </Container>
+);
 
-    componentWillMount() {
-        // const { ADD_ROUTE } = this.props;
-        //
-        // if (process.env.NODE_ENV === 'development') {
-            // ADD_ROUTE('Test3')
-        // }
-    }
-
-    currentScene() {
-
-        const { currentRoute } = this.props;
-
-        switch (currentRoute) {
-            case 'Test2':
-                return <Test2/>;
-            case 'Test3':
-                return <Test3/>;
-            case 'Test4':
-                return <Test4/>;
-            case 'Test5':
-                return <Test5/>;
-            case 'Test6':
-                return <Test6/>;
-            case 'Test7':
-                return <Test7/>;
-            case 'Test8':
-                return <Test8/>;
-            case 'Test9':
-                return <Test9/>;
-            case 'Test10':
-                return <Test10/>;
-            case 'Test11':
-                return <Test11/>;
-            case 'Test12':
-                return <Test12/>;
-            case 'Test13':
-                return <Test13/>;
-            case 'Test14':
-                return <Test14/>;
-            case 'Test15':
-                return <Test15/>;
-            case 'Test16':
-                return <Test16/>;
-            case 'Test17':
-                return <Test17/>;
-            case 'Test18':
-                return <Test18/>;
-            case 'Test19':
-                return <Test19/>;
-            case 'Test20':
-                return <Test20/>;
-            case 'Test21':
-                return <Test21/>;
-            case 'Test22':
-                return <Test22/>;
-            case 'Test23':
-                return <Test23/>;
-            case 'Test24':
-                return <Test24/>;
-            case 'TestResult':
-                return <TestResult/>;
-            case 'Rating5Stars':
-                return <Rating5Stars/>;
-            case 'RatingCheck':
-                return <RatingCheck/>;
-            default:
-                return <Home/>
-        }
-    }
-
-    render() {
-
-        return (
-            <Container style={{padding: 25}}>
-                {this.currentScene()}
-                <FNModal/>
-            </Container>
-        );
-    }
-}
-
-const mapStateToProps = state => {
-    return {
-        currentRoute: state.route.currentRoute
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        ADD_ROUTE: route => dispatch(ADD_ROUTE(route))
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App

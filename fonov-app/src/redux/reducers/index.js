@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux'
-import route from './route'
+import { routerReducer } from 'react-router-redux'
 import currentModel from './currentModel'
 import rating from './rating'
 import modal from './modal'
 
 
 const reducers = combineReducers({
-    route,
     currentModel,
     rating,
-    modal
+    modal,
+    router: routerReducer
 });
 
 export default reducers

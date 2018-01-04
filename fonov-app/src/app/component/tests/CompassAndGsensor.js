@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Text, Title, Image, TestNav } from '../elements/index'
-import { RatingCheck } from './rating/index'
+import { Text, Title, Image, TestNav } from '../../elements/index'
+import { RatingCheck } from '../rating/index'
+import URLS from "../../constant/urls";
+import {replace} from "react-router-redux";
 
 
-class Test11 extends Component {
+class CompassAndGsensor extends Component {
+
+    componentWillMount() {
+        const {replace, currentModel} = this.props;
+
+        if (currentModel === null) {
+            replace(URLS.Home)
+        }
+    }
 
     render() {
 
@@ -13,19 +23,18 @@ class Test11 extends Component {
         return (
             <div>
                 <Title>Компас и G-sensor {currentModel}</Title>
-                <Image src={require('../image/compas/IMG_1352.PNG')} />
+                <Image src={require('../../assets/image/compas/IMG_1352.PNG')} />
                 <Text>
                     Открыть приложение компас и поврашать телефон. При вращение телефона компас доллжен менять свое положение
                 </Text>
-                <Image src={require('../image/compas/IMG_1353.PNG')} />
+                <Image src={require('../../assets/image/compas/IMG_1353.PNG')} />
                 <Text>
                     Взмахом влево открыть уровень. По переворачивайте телефон, сесор должен работать корректно и плавно.
                 </Text>
-                <RatingCheck
-                    title={`Компас и G-sensor работают в ${currentModel}?`}
-                    testN={11}
-                />
-                <TestNav testN={11}/>
+                <RatingCheck testN='CompassAndGsensor'>
+                    Компас и G-sensor работают в {currentModel}?
+                </RatingCheck>
+                <TestNav testN='CompassAndGsensor'/>
             </div>
         );
     }
@@ -39,7 +48,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        replace: path =>  dispatch(replace(path))
+    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test11);
+export default connect(mapStateToProps, mapDispatchToProps)(CompassAndGsensor);

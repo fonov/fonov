@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux'
-import { Text, Title, TestNav, Image } from '../elements/index'
-import {RatingCheck} from './rating/index'
+import { Text, Title, TestNav, Image } from '../../elements/index'
+import {RatingCheck} from '../rating/index'
+import {replace} from "react-router-redux";
+import URLS from "../../constant/urls";
 
 
-class Test22 extends Component {
+class Warranty extends Component {
+
+    componentWillMount() {
+        const {replace, currentModel} = this.props;
+
+        if (currentModel === null) {
+            replace(URLS.Home)
+        }
+    }
 
     render() {
 
@@ -14,22 +24,21 @@ class Test22 extends Component {
         return (
             <div>
                 <Title>Проверка гарантии</Title>
-                <Image src={require('../image/waranty/Group 7.png')} />
+                <Image src={require('../../assets/image/waranty/Group 7.png')} />
                 <Text>
                     Зайти в настройки -> основные -> об устройстве -> серийный номер. Нажмите на серийны номер и выбирете скопировать. Затем перейдите на официальный сайт Apple для проверки гарантии
                 </Text>
-                <Image src={require('../image/waranty/Group 8.png')} />
+                <Image src={require('../../assets/image/waranty/Group 8.png')} />
                 <Text>
                     Затем перейдите на официальный сайт Apple для проверки гарантии
                 </Text>
                 <Button color="success" block target="_blank" href='https://checkcoverage.apple.com'>
                     Проверить гарантию
                 </Button>
-                <RatingCheck
-                    title={`Данные о гарантии ${currentModel} совпадают с заявленной информацией?`}
-                    testN={22}
-                />
-                <TestNav testN={22}/>
+                <RatingCheck testN='Warranty'>
+                    Данные о гарантии {currentModel} совпадают с заявленной информацией?
+                </RatingCheck>
+                <TestNav testN='Warranty'/>
             </div>
         );
     }
@@ -43,7 +52,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        replace: path =>  dispatch(replace(path))
+    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test22);
+export default connect(mapStateToProps, mapDispatchToProps)(Warranty);

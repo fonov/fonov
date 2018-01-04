@@ -2,10 +2,11 @@ import TestNav from './testNav'
 import Title from './title'
 import Text from './text'
 import Image from './image'
-import FNModal from './modal'
+import Modal from './modal'
 import ListCheck from './listCheck'
 import ListStar from './listStar'
 import BoxShadow from './BoxShadow'
+import CycleButton from './cycleButton'
 
 
 export {
@@ -13,8 +14,9 @@ export {
     Title,
     Text,
     Image,
-    FNModal,
+    Modal,
     ListCheck,
     ListStar,
-    BoxShadow
+    BoxShadow,
+    CycleButton
 }

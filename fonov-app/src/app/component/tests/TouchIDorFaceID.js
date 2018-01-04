@@ -1,27 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Text, Title, TestNav, Image } from '../elements/index'
-import {REPLACE_ROUTE} from "../actions/route";
-import { RatingCheck } from './rating/index'
+import { Text, Title, TestNav, Image } from '../../elements/index'
+import { RatingCheck } from '../rating/index'
+import URLS from "../../constant/urls";
+import {replace} from "react-router-redux";
 
 
-class Test15 extends Component {
+class TouchIDorFaceID extends Component {
 
     componentWillMount() {
+        const {replace, currentModel} = this.props;
 
-        const { REPLACE_ROUTE, currentModel } = this.props;
-
-        switch (currentModel) {
-            default:
-                break;
-            case 'iPhone':
-            case 'iPhone 3G':
-            case 'iPhone 3GS':
-            case 'iPhone 4':
-            case 'iPhone 4S':
-            case 'iPhone 5':
-            case 'iPhone 5c':
-                REPLACE_ROUTE('Test16');
+        if (currentModel === null) {
+            replace(URLS.Home)
         }
     }
 
@@ -43,30 +34,28 @@ class Test15 extends Component {
                 return (
                     <div>
                         <Title>Проверка Touch ID {currentModel}</Title>
-                        <Image src={require('../image/touchID/Group 2.png')} />
+                        <Image src={require('../../assets/image/touchID/Group 2.png')} />
                         <Text>
                             Зайдите в настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверте работу Touch ID
                         </Text>
-                        <RatingCheck
-                            title={`Touch ID работает в ${currentModel}?`}
-                            testN={15}
-                        />
-                        <TestNav testN={15}/>
+                        <RatingCheck testN='TouchIDorFaceID'>
+                            Touch ID работает в {currentModel}?
+                        </RatingCheck>
+                        <TestNav testN='TouchIDorFaceID'/>
                     </div>
                 );
             case 'iPhone X':
                 return (
                     <div>
                         <Title>Проверка Face ID {currentModel}</Title>
-                        <Image src={require('../image/faceID/Face ID.png')} />
+                        <Image src={require('../../assets/image/faceID/Face ID.png')} />
                         <Text>
                             Для проведки Face ID необходимо зайти в настройки -> Face ID и код-пароль. Нажмите cканировать лицо и проверьте работу Face ID
                         </Text>
-                        <RatingCheck
-                            title={`Face ID работают в ${currentModel}?`}
-                            testN={15}
-                        />
-                        <TestNav testN={15}/>
+                        <RatingCheck testN='TouchIDorFaceID'>
+                            Face ID работают в {currentModel}
+                        </RatingCheck>
+                        <TestNav testN='TouchIDorFaceID'/>
                     </div>
                 );
             default:
@@ -84,8 +73,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        REPLACE_ROUTE: route => dispatch(REPLACE_ROUTE(route))
+        replace: path =>  dispatch(replace(path))
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test15);
+export default connect(mapStateToProps, mapDispatchToProps)(TouchIDorFaceID);

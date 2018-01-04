@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Text, Title, TestNav, Image } from '../elements/index'
-import {RatingCheck} from './rating/index'
+import { Text, Title, TestNav, Image } from '../../elements/index'
+import {RatingCheck} from '../rating/index'
+import URLS from "../../constant/urls";
+import {replace} from "react-router-redux";
 
 
-class Test20 extends Component {
+class CallAndProximitySensor extends Component {
+
+    componentWillMount() {
+        const {replace, currentModel} = this.props;
+
+        if (currentModel === null) {
+            replace(URLS.Home)
+        }
+    }
 
     callWithHeadpods() {
 
@@ -26,7 +36,7 @@ class Test20 extends Component {
             case 'iPhone SE':
                 return (
                     <div>
-                        <Image src={require('../image/call/call_headpods.png')} />
+                        <Image src={require('../../assets/image/call/call_headpods.png')} />
                         <Text>
                             Вставьте наушники и попробуйте разговарить через них
                         </Text>
@@ -44,28 +54,27 @@ class Test20 extends Component {
         return (
             <div>
                 <Title>Вызов и Датчик приближения {currentModel}</Title>
-                <Image src={require('../image/call/cell.png')} />
+                <Image src={require('../../assets/image/call/cell.png')} />
                 <Text>
                     Вставьте сим карту. Телефон должнен сразу же найти сеть.
                 </Text>
-                <Image src={require('../image/call/call.png')} />
+                <Image src={require('../../assets/image/call/call.png')} />
                 <Text>
                     Попробуйте соверщить вызов.
                 </Text>
-                <Image src={require('../image/call/spiker_call.png')} />
+                <Image src={require('../../assets/image/call/spiker_call.png')} />
                 <Text>
                     Включите громкую связь
                 </Text>
                 {this.callWithHeadpods()}
-                <Image src={require('../image/call/call_sensor.png')} />
+                <Image src={require('../../assets/image/call/call_sensor.png')} />
                 <Text>
                     Выключите громкую связь и зайкройте пальцем сенсор приближения. Экран должен потухнуть
                 </Text>
-                <RatingCheck
-                    title={`Вызов и Датчик приближения работают в ${currentModel}?`}
-                    testN={20}
-                />
-                <TestNav testN={20}/>
+                <RatingCheck testN='CallAndProximitySensor'>
+                    Вызов и Датчик приближения работают в {currentModel}?
+                </RatingCheck>
+                <TestNav testN='CallAndProximitySensor'/>
             </div>
         );
     }
@@ -79,7 +88,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        replace: path =>  dispatch(replace(path))
+    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test20);
+export default connect(mapStateToProps, mapDispatchToProps)(CallAndProximitySensor);

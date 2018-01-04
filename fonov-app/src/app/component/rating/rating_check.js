@@ -39,13 +39,13 @@ class RatingCheck extends Component {
 
     render() {
 
-        const { title } = this.props,
+        const { children } = this.props,
             { check } = this.state;
 
         return (
             <div style={{marginTop: 10, marginBottom: 10}}>
                 <Card className='bg-light'>
-                    <CardHeader>{title}</CardHeader>
+                    <CardHeader>{children}</CardHeader>
                     <CardBody>
                         <Row className='justify-content-center'>
                             <Col
@@ -70,7 +70,6 @@ class RatingCheck extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentProps: state.route.currentProps,
         rating: state.rating
     }
 };

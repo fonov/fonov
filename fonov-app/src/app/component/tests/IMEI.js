@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Text, Title, TestNav, Image } from '../elements/index'
-import {RatingCheck} from './rating/index'
+import { Text, Title, TestNav, Image } from '../../elements/index'
+import {RatingCheck} from '../rating/index'
+import URLS from "../../constant/urls";
+import {replace} from "react-router-redux";
 
 
-class Test23 extends Component {
+class IMEI extends Component {
+
+    componentWillMount() {
+        const {replace, currentModel} = this.props;
+
+        if (currentModel === null) {
+            replace(URLS.Home)
+        }
+    }
 
     secondImei() {
 
@@ -20,7 +30,7 @@ class Test23 extends Component {
             case 'iPhone X':
                 return (
                     <div>
-                        <Image src={require('../image/imei/iphone6s-SIM-card-illustration.png')} />
+                        <Image src={require('../../assets/image/imei/iphone6s-SIM-card-illustration.png')} />
                         <Text>На слоте для сим карты</Text>
                     </div>
                 );
@@ -32,7 +42,7 @@ class Test23 extends Component {
             case 'iPhone SE':
                 return (
                     <div>
-                        <Image src={require('../image/imei/iphone6-imei-back-device.jpg')} />
+                        <Image src={require('../../assets/image/imei/iphone6-imei-back-device.jpg')} />
                         <Text>На задней стороне iphone</Text>
                     </div>
                 );
@@ -43,7 +53,7 @@ class Test23 extends Component {
             case 'iPhone 4S':
                 return (
                     <div>
-                        <Image src={require('../image/imei/SIM-card-illustration.png')} />
+                        <Image src={require('../../assets/image/imei/SIM-card-illustration.png')} />
                         <Text>На слоте для сим карты</Text>
                     </div>
                 );
@@ -59,16 +69,15 @@ class Test23 extends Component {
         return (
             <div>
                 <Title>Проверка совподения IMEI {currentModel}</Title>
-                <Image src={require('../image/imei/iphone7-ios11-settings-general-about-imei.jpg')} />
+                <Image src={require('../../assets/image/imei/iphone7-ios11-settings-general-about-imei.jpg')} />
                 <Text>Нстройки->Основные->О Устройстве.</Text>
                 {this.secondImei()}
-                <Image src={require('../image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
+                <Image src={require('../../assets/image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
                 <Text>На коробке.</Text>
-                <RatingCheck
-                    title={`IMEI совподают?`}
-                    testN={23}
-                />
-                <TestNav testN={23}/>
+                <RatingCheck testN='IMEI'>
+                    IMEI совподают?
+                </RatingCheck>
+                <TestNav testN='IMEI'/>
             </div>
         );
     }
@@ -82,7 +91,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        replace: path =>  dispatch(replace(path))
+    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test23);
+export default connect(mapStateToProps, mapDispatchToProps)(IMEI);
