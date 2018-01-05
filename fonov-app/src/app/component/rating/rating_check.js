@@ -39,7 +39,7 @@ class RatingCheck extends Component {
 
     render() {
 
-        const { children } = this.props,
+        const { children, pass = true } = this.props,
             { check } = this.state;
 
         return (
@@ -49,13 +49,13 @@ class RatingCheck extends Component {
                     <CardBody>
                         <Row className='justify-content-center'>
                             <Col
-                                style={{...checkStyle, color: check === true ? 'MediumSeaGreen' : 'Grey'}}
+                                style={{...checkStyle, color: check === true ? pass ? 'MediumSeaGreen' : 'Tomato' : 'Grey'}}
                                 onClick={() => this.saveRating(true)}
                             >
                                 <FontAwesome name={`check-circle${check === true ? '' : '-o'}`} />
                             </Col>
                             <Col
-                                style={{...checkStyle, color: check === false ? 'Tomato' : 'Grey'}}
+                                style={{...checkStyle, color: check === false ? !pass ? 'MediumSeaGreen' : 'Tomato' : 'Grey'}}
                                 onClick={() => this.saveRating(false)}
                             >
                                 <FontAwesome name={`times-circle${check === false ? '' : '-o'}`} />

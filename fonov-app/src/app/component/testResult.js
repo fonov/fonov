@@ -174,7 +174,6 @@ class TestResult extends Component {
             { currentModel } = this.props;
 
         if (rank < 0) {
-            // Не рекомендован
            return (
                <Alert color="danger">
                    <h4 className="alert-heading">{currentModel} не рекомендован к покупке!</h4>
@@ -184,7 +183,6 @@ class TestResult extends Component {
                </Alert>
            )
         } else if (rank === 0) {
-            // Идиально
             return (
                 <Alert color="success">
                     <h4 className="alert-heading">{currentModel} рекомендован к покупке!</h4>
@@ -195,7 +193,6 @@ class TestResult extends Component {
             )
 
         } else if (rank > 0 && rank <= 10) {
-            // Маленькая скидка
             return (
                 <Alert color="success">
                     <h4 className="alert-heading">{currentModel} рекомендован к покупке!</h4>
@@ -206,7 +203,6 @@ class TestResult extends Component {
             )
 
         } else if (rank > 10 && rank <= 20) {
-            // Среднея скидка
             return (
                 <Alert color="warning">
                     <h4 className="alert-heading">{currentModel} рекомендован к покупке!</h4>
@@ -217,7 +213,6 @@ class TestResult extends Component {
             )
 
         } else if (rank > 20 && rank <= 25) {
-            // чуть выше среднего
             return (
                 <Alert color="warning">
                     <h4 className="alert-heading">{currentModel} рекомендован к покупке!</h4>
@@ -227,7 +222,6 @@ class TestResult extends Component {
                 </Alert>
             )
         } else {
-            // Высокая скидка
             return (
                 <Alert color="warning">
                     <h4 className="alert-heading">{currentModel} рекомендован к покупке!</h4>

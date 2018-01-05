@@ -74,7 +74,7 @@ class WaterSensor extends Component {
                 <Text>
                     Влага оказывает разрушительное влияние на компоненты iPhone. Чтобы определить было ли попадание влаги проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета значит телефон был подвергнут попаданию влаги.
                 </Text>
-                <RatingCheck testN='WaterSensor'>
+                <RatingCheck testN='WaterSensor' pass={false}>
                     {currentModel} был подвергнут попаданию влаги?
                 </RatingCheck>
                 <TestNav testN='WaterSensor'/>
