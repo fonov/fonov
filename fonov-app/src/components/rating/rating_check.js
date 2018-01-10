@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
-import { Actions, ActionsLabel, ActionsButton, ActionsGroup, ContentBlock} from 'framework7-react';
-import {TestBtnNext} from '../../elements/index'
+import { ContentBlock, GridRow, GridCol, Button, ContentBlockTitle} from 'framework7-react';
 import {nextTest} from '../../actions/shemeOfTest'
 
 
 class RatingCheck extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            action_sheet: false
-        }
-    }
 
     saveRating(check) {
 
@@ -26,27 +17,28 @@ class RatingCheck extends Component {
 
     render() {
 
-        const { children, testN } = this.props,
-            { action_sheet } = this.state;
+        const { children } = this.props;
 
         return (
-            <ContentBlock>
-                <TestBtnNext testN={testN} onClick={() => this.setState({action_sheet: true})}/>
-                <Actions opened={action_sheet} onActionsClose={() => this.setState({action_sheet: false})}>
-                    <ActionsGroup>
-                        <ActionsLabel>{children}</ActionsLabel>
-                        <ActionsButton onClick={() => this.saveRating(true)}>
-                            Да
-                        </ActionsButton>
-                        <ActionsButton onClick={() => this.saveRating(false)}>
-                            Нет
-                        </ActionsButton>
-                    </ActionsGroup>
-                    <ActionsGroup>
-                        <ActionsButton color="red" bold>Отмена</ActionsButton>
-                    </ActionsGroup>
-                </Actions>
-            </ContentBlock>
+            <div>
+                <ContentBlockTitle>
+                    {children}
+                </ContentBlockTitle>
+                <ContentBlock>
+                    <GridRow>
+                        <GridCol>
+                            <Button big onClick={() => this.saveRating(true)}>
+                                Да
+                            </Button>
+                        </GridCol>
+                        <GridCol>
+                            <Button big onClick={() => this.saveRating(false)}>
+                                Нет
+                            </Button>
+                        </GridCol>
+                    </GridRow>
+                </ContentBlock>
+            </div>
         )
     }
 }
