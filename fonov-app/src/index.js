@@ -4,36 +4,36 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
 import { store, history } from './redux/store'
 import { ConnectedRouter } from 'react-router-redux'
-import { Container } from 'reactstrap';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router'
+import { Framework7App } from 'framework7-react';
 //CSS
-import 'bootstrap/dist/css/bootstrap.css';
+import 'framework7/dist/css/framework7.ios.min.css';
+import 'framework7/dist/css/framework7.ios.colors.min.css';
+import './assets/css/fonov_test.css'
 //Component
-import Home from './component/home'
-import About from './component/tests/About'
-import Appearance from './component/tests/Appearance'
-import WaterSensor from './component/tests/WaterSensor'
-import ButtonsAndVibration from './component/tests/ButtonsAndVibration'
-import Sensor from './component/tests/Sensor'
-import Touch3D from './component/tests/Touch3D'
-import iCloid from './component/tests/iCloid'
-import Flash from './component/tests/Flash'
-import Speaker from './component/tests/Speaker'
-import CompassAndGsensor from './component/tests/CompassAndGsensor'
-import Camera from './component/tests/Camera'
-import HeadphoneJack from './component/tests/HeadphoneJack'
-import TouchIDorFaceID from './component/tests/TouchIDorFaceID'
-import WiFi from './component/tests/WiFi'
-import Bluetooth from './component/tests/Bluetooth'
-import Microphone from './component/tests/Microphone'
-import CallAndProximitySensor from './component/tests/CallAndProximitySensor'
-import Charging from './component/tests/Charging'
-import Warranty from './component/tests/Warranty'
-import IMEI from './component/tests/IMEI'
-import Picking from './component/tests/Picking'
-import TestResult from './component/testResult'
-// Elements
-import {Modal} from './elements/index'
+import Home from './components/home'
+import About from './components/tests/About'
+import Appearance from './components/tests/Appearance'
+import WaterSensor from './components/tests/WaterSensor'
+import ButtonsAndVibration from './components/tests/ButtonsAndVibration'
+import Sensor from './components/tests/Sensor'
+import Touch3D from './components/tests/Touch3D'
+import iCloid from './components/tests/iCloid'
+import Flash from './components/tests/Flash'
+import Speaker from './components/tests/Speaker'
+import CompassAndGsensor from './components/tests/CompassAndGsensor'
+import Camera from './components/tests/Camera'
+import HeadphoneJack from './components/tests/HeadphoneJack'
+import TouchIDorFaceID from './components/tests/TouchIDorFaceID'
+import WiFi from './components/tests/WiFi'
+import Bluetooth from './components/tests/Bluetooth'
+import Microphone from './components/tests/Microphone'
+import CallAndProximitySensor from './components/tests/CallAndProximitySensor'
+import Charging from './components/tests/Charging'
+import Warranty from './components/tests/Warranty'
+import IMEI from './components/tests/IMEI'
+import Picking from './components/tests/Picking'
+import TestResult from './components/testResult'
 // URLS
 import URLS from './constant/urls'
 
@@ -41,7 +41,7 @@ import URLS from './constant/urls'
 ReactDOM.render(
     <Provider store={store()}>
         <ConnectedRouter history={history}>
-            <Container style={{padding: 25}}>
+            <Framework7App themeType="ios">
                 <Route exact path={URLS.Home} component={Home}/>
                 <Route path={URLS.About} component={About} />
                 <Route path={URLS.Appearance} component={Appearance} />
@@ -65,8 +65,7 @@ ReactDOM.render(
                 <Route path={URLS.IMEI} component={IMEI} />
                 <Route path={URLS.Picking} component={Picking} />
                 <Route path={URLS.TestResult} component={TestResult} />
-                <Modal/>
-            </Container>
+            </Framework7App>
         </ConnectedRouter>
     </Provider>,
     document.getElementById('root')

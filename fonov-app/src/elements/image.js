@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {APP_NAME} from '../constant/config'
 
 
 class Image extends Component {
@@ -29,10 +30,16 @@ class Image extends Component {
 
     onImgLoad({target:img}) {
 
-        const { height } = this.state;
+        const { height, width } = this.state;
 
-        if (img.offsetHeight > height/2) {
-            this.setState({imgStyle: {height: height*0.5}})
+        if (img.offsetHeight > img.offsetWidth) {
+            if (img.offsetHeight > height/2) {
+                this.setState({imgStyle: {height: height*0.5}})
+            }
+        } else {
+            if(img.offsetWidth > width) {
+                this.setState({imgStyle: {width: width*0.8}})
+            }
         }
     }
 
@@ -42,16 +49,12 @@ class Image extends Component {
             { imgStyle } = this.state;
 
         return (
-            <div
-                className="text-center"
-                style={{marginTop: 5, marginBottom: 5}}
-            >
+            <div style={{textAlign: 'center'}}>
                 <img
                     onLoad={this.onImgLoad}
                     src={src}
-                    className="img-fluid"
                     style={imgStyle}
-                    alt='Test Fonov'
+                    alt={APP_NAME}
                 />
             </div>
         );

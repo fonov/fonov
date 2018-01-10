@@ -2,13 +2,13 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import currentModel from './currentModel'
 import rating from './rating'
-import modal from './modal'
+import schemeOfTest from './schemeOfTest'
 
 
 const reducers = combineReducers({
     currentModel,
     rating,
-    modal,
+    schemeOfTest,
     router: routerReducer
 });
 
