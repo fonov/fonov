@@ -5,3 +5,9 @@
     line-height: 1.2;
     white-space: normal;
 }
+
+.stars {
+    font-size: 7vw;
+    color: gold;
+    text-align: center;
+}

@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
 import FontAwesome from 'react-fontawesome'
-import { ContentBlock, ContentBlockTitle, Link, PickerModal, Toolbar, GridRow, GridCol} from 'framework7-react';
+import { ContentBlock, ContentBlockTitle, Link, PickerModal, Toolbar,
+    GridRow, GridCol, Page} from 'framework7-react';
 import {TestBtnNext} from '../../elements/index'
 import {nextTest} from '../../actions/shemeOfTest'
-
-
-const starStyle = {
-    fontSize: '8vmin',
-    color: 'yellow',
-    textAlign: 'center'
-};
 
 
 class Stars extends Component {
@@ -22,7 +16,6 @@ class Stars extends Component {
         this.state = {
             startPosition: -1
         }
-
     }
 
     stars(){
@@ -33,10 +26,7 @@ class Stars extends Component {
         let array = [];
         for (let i = 0; i < countStars; i++) {
             array.push(
-                <GridCol
-                    key={`start_${i}`}
-                    style={starStyle}
-                >
+                <GridCol key={`start_${i}`} className='stars'>
                     <FontAwesome
                         name={startPosition >= i ? 'star' : 'star-o'}
                         onClick={() => {
@@ -103,7 +93,7 @@ class Rating5Stars extends Component {
             { testN, nextTest } = this.props;
 
         if (firstStars !== 0 && secondStars !== 0) {
-            nextTest(testN);
+            setTimeout(() => nextTest(testN), 200)
         }
     }
 
@@ -122,18 +112,20 @@ class Rating5Stars extends Component {
                             Закрыть
                         </Link>
                     </Toolbar>
-                    <Stars
-                        countStars={5}
-                        initStars={firstStars}
-                        onChange={i => this.saveRating('firstStars', i)}
-                        title={firstTitle}
-                    />
-                    <Stars
-                        countStars={5}
-                        initStars={secondStars}
-                        onChange={i => this.saveRating('secondStars', i)}
-                        title={lastTitle}
-                    />
+                    <Page>
+                        <Stars
+                            countStars={5}
+                            initStars={firstStars}
+                            onChange={i => this.saveRating('firstStars', i)}
+                            title={firstTitle}
+                        />
+                        <Stars
+                            countStars={5}
+                            initStars={secondStars}
+                            onChange={i => this.saveRating('secondStars', i)}
+                            title={lastTitle}
+                        />
+                    </Page>
                 </PickerModal>
             </ContentBlock>
         );
