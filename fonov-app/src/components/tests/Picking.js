@@ -4,7 +4,8 @@ import { Image } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader} from 'framework7-react';
+import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
+} from 'framework7-react';
 
 
 class Picking extends Component {
@@ -132,7 +133,9 @@ class Picking extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>Проверка комплектации {currentModel}</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

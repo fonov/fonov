@@ -4,7 +4,7 @@ import { push } from 'react-router-redux'
 import URLS from '../constant/urls'
 import {APP_NAME} from '../constant/config'
 import { View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
-    List, ListItem, Views, NavCenter, AccordionContent, Button
+    List, ListItem, Views, NavCenter, AccordionContent, Button, NavLeft, NavRight
 } from 'framework7-react';
 
 
@@ -62,7 +62,9 @@ class Home extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>{APP_NAME}</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

@@ -5,7 +5,7 @@ import URLS from '../constant/urls'
 import {ExitTest} from '../actions/test'
 import FontAwesome from 'react-fontawesome'
 import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock,
-    ContentBlockTitle, Button, List, ListItem, Badge
+    ContentBlockTitle, Button, List, ListItem, Badge, NavLeft, NavRight
 } from 'framework7-react';
 
 
@@ -292,7 +292,9 @@ class TestResult extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>Результаты теста {currentModel}</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

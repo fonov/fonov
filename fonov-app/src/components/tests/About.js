@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import setCurrentModel from '../../actions/currentModel'
 import { RatingCheck } from '../rating/index'
 import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem,
-    Views, NavCenter, FormInput
+    Views, NavCenter, FormInput, NavLeft, NavRight
 } from 'framework7-react';
 
 
@@ -499,7 +499,9 @@ class About extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>О iPhone</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

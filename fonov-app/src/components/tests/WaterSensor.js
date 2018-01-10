@@ -4,7 +4,8 @@ import {Image} from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardFooter, CardContent} from 'framework7-react';
+import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardFooter, CardContent, NavLeft, NavRight
+} from 'framework7-react';
 
 
 class WaterSensor extends Component {
@@ -71,7 +72,9 @@ class WaterSensor extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>Попадание влаги в {currentModel}</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

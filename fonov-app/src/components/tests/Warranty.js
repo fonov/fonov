@@ -5,7 +5,7 @@ import {RatingCheck} from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import {View, Navbar, Pages, Page, Views, NavCenter, Card,
-    CardContent, CardHeader, Button, ContentBlock} from 'framework7-react';
+    CardContent, CardHeader, Button, ContentBlock, NavLeft, NavRight} from 'framework7-react';
 
 
 class Warranty extends Component {
@@ -26,7 +26,9 @@ class Warranty extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>Проверка гарантии</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

@@ -4,7 +4,8 @@ import { Image } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader} from 'framework7-react';
+import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
+} from 'framework7-react';
 
 
 class Microphone extends Component {
@@ -25,7 +26,9 @@ class Microphone extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>Проверка микрофона {currentModel}</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>

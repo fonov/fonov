@@ -4,7 +4,8 @@ import { Image } from '../../elements/index'
 import { Rating5Stars } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from '../../constant/urls'
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardHeader, CardFooter, CardContent} from 'framework7-react';
+import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardHeader, CardFooter, CardContent, NavLeft, NavRight
+} from 'framework7-react';
 
 
 class Appearance extends Component {
@@ -26,7 +27,9 @@ class Appearance extends Component {
             <Views>
                 <View navbarThrough>
                     <Navbar>
+                        <NavLeft/>
                         <NavCenter>Внешний вид {currentModel}</NavCenter>
+                        <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
