@@ -503,9 +503,8 @@ class About extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-
                             <ContentBlockTitle>Введите модель iPhone</ContentBlockTitle>
-                            <List form inset>
+                            <List inset>
                                 <ListItem>
                                     <FormInput
                                         type="text"
