@@ -9,7 +9,8 @@ class Image extends Component {
         this.state = {
             width: '0',
             height: '0',
-            imgStyle: {}
+            imgStyle: {},
+            visibility: 'hidden'
         };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.onImgLoad = this.onImgLoad.bind(this);
@@ -31,29 +32,32 @@ class Image extends Component {
     onImgLoad({target:img}) {
 
         const { height, width } = this.state;
+        let new_state = {};
 
         if (img.offsetHeight > img.offsetWidth) {
             if (img.offsetHeight > height/2) {
-                this.setState({imgStyle: {height: height*0.5}})
+                new_state = {imgStyle: {height: height*0.5}}
             }
         } else {
             if(img.offsetWidth > width) {
-                this.setState({imgStyle: {width: width*0.8}})
+                new_state = {imgStyle: {width: width*0.8}}
             }
         }
+
+        this.setState({...new_state, visibility: 'visible'})
     }
 
     render() {
 
         const { src } = this.props,
-            { imgStyle } = this.state;
+            { imgStyle, visibility } = this.state;
 
         return (
             <div style={{textAlign: 'center'}}>
                 <img
                     onLoad={this.onImgLoad}
                     src={src}
-                    style={imgStyle}
+                    style={{...imgStyle, visibility}}
                     alt={APP_NAME}
                 />
             </div>
