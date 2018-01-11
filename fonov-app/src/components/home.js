@@ -98,7 +98,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        initialTest: state.schemeOfTest[state.schemeOfTest.length-1]
+        initialTest: state.schemeOfTest[0]
     }
 };
 
