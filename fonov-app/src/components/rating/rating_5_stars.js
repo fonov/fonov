@@ -46,7 +46,7 @@ class Stars extends Component {
 
         return (
             <div>
-                <ContentBlockTitle>{title}</ContentBlockTitle>
+                <ContentBlockTitle className='content_block_title'>{title}</ContentBlockTitle>
                 <ContentBlock>
                     <GridRow>
                         {this.stars()}

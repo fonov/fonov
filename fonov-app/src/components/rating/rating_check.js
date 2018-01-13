@@ -21,7 +21,7 @@ class RatingCheck extends Component {
 
         return (
             <div>
-                <ContentBlockTitle>
+                <ContentBlockTitle className='content_block_title'>
                     {children}
                 </ContentBlockTitle>
                 <ContentBlock>

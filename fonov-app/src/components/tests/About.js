@@ -515,12 +515,14 @@ class About extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>О iPhone</NavCenter>
+                            <NavCenter>О iPhone</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
-                            <ContentBlockTitle>Введите модель iPhone</ContentBlockTitle>
+                            <ContentBlockTitle className='content_block_title'>
+                                Введите модель iPhone
+                            </ContentBlockTitle>
 
                             <List inset>
                                 <ListItem>

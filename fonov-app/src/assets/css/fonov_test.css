@@ -19,3 +19,7 @@
     background-color: #ff3b30;
     color: white
 }
+.content_block_title {
+    white-space: normal;
+    line-height: 1.5em;
+}

@@ -6,6 +6,7 @@ import {APP_NAME} from '../constant/config'
 import { View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
     List, ListItem, Views, NavCenter, AccordionContent, Button, NavLeft, NavRight
 } from 'framework7-react';
+import {version} from '../../package.json';
 
 
 class Home extends Component {
@@ -63,12 +64,14 @@ class Home extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>{APP_NAME}</NavCenter>
+                            <NavCenter>{APP_NAME}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
-                            <ContentBlockTitle>Тестирование iPhone перед покупкой.</ContentBlockTitle>
+                            <ContentBlockTitle className='content_block_title'>
+                                Тестирование iPhone перед покупкой.
+                            </ContentBlockTitle>
 
                             <ContentBlock>
                                 <Button big color="red" fill onClick={() => push(URLS[initialTest])}>
@@ -87,6 +90,9 @@ class Home extends Component {
                                     ))
                                 }
                             </List>
+                            <ContentBlock inset>
+                                Version: {version}
+                            </ContentBlock>
                         </Page>
                     </Pages>
                 </View>

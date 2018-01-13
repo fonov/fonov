@@ -1,6 +1,6 @@
 {
   "name": "fonov-app",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "private": true,
   "dependencies": {
     "history": "^4.7.2",
