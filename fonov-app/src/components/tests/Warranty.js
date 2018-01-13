@@ -41,15 +41,6 @@ class Warranty extends Component {
                                 </CardContent>
                             </Card>
 
-                            <Card>
-                                <CardHeader>
-                                    Затем перейдите на официальный сайт Apple для проверки гарантии
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={require('../../assets/image/waranty/Group 8.png')} />
-                                </CardContent>
-                            </Card>
-
                             <ContentBlock>
                                 <Button
                                     fill
@@ -60,6 +51,15 @@ class Warranty extends Component {
                                     Проверить гарантию
                                 </Button>
                             </ContentBlock>
+
+                            <Card>
+                                <CardHeader>
+                                    Затем перейдите на официальный сайт Apple для проверки гарантии
+                                </CardHeader>
+                                <CardContent>
+                                    <Image src={require('../../assets/image/waranty/Group 8.png')} />
+                                </CardContent>
+                            </Card>
 
                             <RatingCheck testN='Warranty'>
                                 Данные о гарантии {currentModel} совпадают с заявленной информацией?

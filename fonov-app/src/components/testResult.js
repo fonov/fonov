@@ -4,8 +4,8 @@ import {replace} from 'react-router-redux';
 import URLS from '../constant/urls'
 import {ExitTest} from '../actions/test'
 import FontAwesome from 'react-fontawesome'
-import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock,
-    ContentBlockTitle, Button, List, ListItem, Badge, NavLeft, NavRight
+import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock, Button, List, ListItem, Badge, NavLeft,
+    NavRight, Card, CardContent, CardHeader
 } from 'framework7-react';
 
 
@@ -138,7 +138,7 @@ class TestResult extends Component {
             }
         };
 
-        this.state = {rank: null, testList: null}
+        this.state = {testList: null, conclusion: null}
     }
 
     componentWillMount() {
@@ -183,10 +183,14 @@ class TestResult extends Component {
                 if (tResult.firstStars > tResult.secondStars) {
                     rank = rank+(tResult.firstStars-tResult.secondStars)*rTest.weight
                 }
-                const {firstStars, secondStars} = tResult;
+                const {firstStars, secondStars} = tResult,
+                    difference_star = (firstStars <= secondStars) ? 0 : tResult.firstStars - tResult.secondStars;
+
                 testList.push(
                     <ListItem title={rTest.title}>
-                        <Badge color='blue'>
+                        <Badge
+                            color={difference_star === 0 ? 'green' : difference_star === 1 ? 'orange' : 'red'}
+                        >
                             {`${firstStars}/${secondStars}`} <FontAwesome name='star-o'/>
                         </Badge>
                     </ListItem>
@@ -194,99 +198,68 @@ class TestResult extends Component {
             }
         }
 
-        this.setState({rank, testList});
+        Promise.all([
+            this.setState({testList}),
+            this.conclusion(rank)
+        ])
     }
 
-    conclusion() {
+    conclusion(rank) {
 
-        const { rank } = this.state,
-            { currentModel } = this.props;
+        const { currentModel } = this.props,
+            set_conclusion = (type, title, text) => {
+                this.setState({
+                    conclusion: {
+                        type,
+                        title,
+                        text
+                    }
+                })
+            };
 
         if (rank < 0) {
-            return (
-                <div>
-                    <ContentBlockTitle>
-                        <Badge color='red'>
-                            {currentModel} не рекомендован к покупке!
-                        </Badge>
-                    </ContentBlockTitle>
-                    <ContentBlock inner inset>
-                        {currentModel} содержит критические недостатки.
-                    </ContentBlock>
-                </div>
-            )
+            return set_conclusion(
+                'card_header_danger',
+                `${currentModel} не рекомендован к покупке!`,
+                `${currentModel} содержит критические недостатки.`
+            );
         } else if (rank === 0) {
-            return (
-                <div>
-                    <ContentBlockTitle>
-                        <Badge color='green'>
-                            {currentModel} рекомендован к покупке!
-                        </Badge>
-                    </ContentBlockTitle>
-                    <ContentBlock inner inset>
-                        {currentModel} полностью соответствует заявленной информацией и абсолютно рабочий.
-                    </ContentBlock>
-                </div>
-            )
+            return set_conclusion(
+                'card_header_success',
+                `${currentModel} рекомендован к покупке!`,
+                `${currentModel} полностью соответствует заявленной информацией и абсолютно рабочий.`
+            );
         } else if (rank > 0 && rank <= 10) {
-            return (
-                <div>
-                    <ContentBlockTitle>
-                        <Badge color='green'>
-                            {currentModel} рекомендован к покупке!
-                        </Badge>
-                    </ContentBlockTitle>
-                    <ContentBlock inner inset>
-                        {currentModel} имеет маленькие не достатки. Вы можете расчитывать на не большую скидку от продовца.
-                    </ContentBlock>
-                </div>
-            )
+            return set_conclusion(
+                'card_header_success',
+                `${currentModel} рекомендован к покупке!`,
+                `${currentModel} имеет маленькие не достатки. Вы можете расчитывать на не большую скидку от продовца.`
+            );
         } else if (rank > 10 && rank <= 20) {
-            return (
-                <div>
-                    <ContentBlockTitle>
-                        <Badge color='green'>
-                            {currentModel} рекомендован к покупке!
-                        </Badge>
-                    </ContentBlockTitle>
-                    <ContentBlock inner inset>
-                        {currentModel} имеет не достатки, но не критические. Вы можете расчитывать на среднию скидку от продовца.
-                    </ContentBlock>
-                </div>
-            )
+            return set_conclusion(
+                'card_header_success',
+                `${currentModel} рекомендован к покупке!`,
+                `${currentModel} имеет не достатки, но не критические. Вы можете расчитывать на среднию скидку от продовца.`
+            );
         } else if (rank > 20 && rank <= 25) {
-            return (
-                <div>
-                    <ContentBlockTitle>
-                        <Badge color='green'>
-                            {currentModel} рекомендован к покупке!
-                        </Badge>
-                    </ContentBlockTitle>
-                    <ContentBlock inner inset>
-                        {currentModel} имеет не достатки, но не критические. Вы можете расчитывать на скидку выше среднего от продовца.
-                    </ContentBlock>
-                </div>
-            )
+            return set_conclusion(
+                'card_header_success',
+                `${currentModel} рекомендован к покупке!`,
+                `${currentModel} имеет не достатки, но не критические. Вы можете расчитывать на скидку выше среднего от продовца.`
+            );
         } else {
-            return (
-                <div>
-                    <ContentBlockTitle>
-                        <Badge color='green'>
-                            {currentModel} рекомендован к покупке!
-                        </Badge>
-                    </ContentBlockTitle>
-                    <ContentBlock inner inset>
-                        {currentModel} имеет не достатки, но не критические. Вы можете расчитывать на высокую скидку от продовца.
-                    </ContentBlock>
-                </div>
-            )
+            return set_conclusion(
+                'card_header_success',
+                `${currentModel} рекомендован к покупке!`,
+                `${currentModel} имеет не достатки, но не критические. Вы можете расчитывать на высокую скидку от продовца.`
+            );
         }
     }
 
     render() {
 
         const { currentModel, exit_test } = this.props,
-            { testList } = this.state;
+            { testList, conclusion } = this.state;
 
         return (
             <Views>
@@ -302,7 +275,18 @@ class TestResult extends Component {
                                 {testList !== null && testList}
                             </List>
 
-                            {this.conclusion()}
+                            {
+                                conclusion && (
+                                    <Card>
+                                        <CardHeader className={conclusion.type}>
+                                            {conclusion.title}
+                                        </CardHeader>
+                                        <CardContent>
+                                            {conclusion.text}
+                                        </CardContent>
+                                    </Card>
+                                )
+                            }
 
                             <ContentBlock>
                                 <Button big color="blue" onClick={() => exit_test()}>

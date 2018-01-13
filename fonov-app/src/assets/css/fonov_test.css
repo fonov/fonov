@@ -11,3 +11,11 @@
     color: gold;
     text-align: center;
 }
+.card_header_success {
+    background-color: #4cd964;
+    color: white
+}
+.card_header_danger {
+    background-color: #ff3b30;
+    color: white
+}

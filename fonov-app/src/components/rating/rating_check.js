@@ -27,13 +27,13 @@ class RatingCheck extends Component {
                 <ContentBlock>
                     <GridRow>
                         <GridCol>
-                            <Button big onClick={() => this.saveRating(true)}>
-                                Да
+                            <Button big onClick={() => this.saveRating(false)}>
+                                Нет
                             </Button>
                         </GridCol>
                         <GridCol>
-                            <Button big onClick={() => this.saveRating(false)}>
-                                Нет
+                            <Button big onClick={() => this.saveRating(true)}>
+                                Да
                             </Button>
                         </GridCol>
                     </GridRow>
