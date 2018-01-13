@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import setCurrentModel from '../../actions/currentModel'
 import { RatingCheck } from '../rating/index'
-import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem,
-    Views, NavCenter, FormInput, NavLeft, NavRight
+import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, NavCenter, FormInput, NavLeft, NavRight,
+    Card, CardHeader, CardContent
 } from 'framework7-react';
 
 
@@ -411,6 +411,21 @@ class About extends Component {
             }
         };
 
+        this.colorScheme = {
+            Black: 'Черный',
+            Gold: 'Золотой',
+            'Jet Black': 'Черный оникс',
+            Red: 'Красный',
+            'Rose Gold': 'Розовое золото',
+            Silver: 'Серебристый',
+            'Space Gray': 'Серый космос',
+            Blue: 'Синий',
+            Green: 'Зеленый',
+            Pink: 'Розовый',
+            White: 'Белый',
+            Yellow: 'Желтый'
+        };
+
         this.defaultState = {
             rowModel: '',
             iPhone: '-',
@@ -426,7 +441,7 @@ class About extends Component {
 
     componentWillMount() {
         if (process.env.NODE_ENV === 'development') {
-            this.inputModel("mg4q2ll/a")
+            this.inputModel("ng4q2ll/a")
         }
     }
 
@@ -445,7 +460,7 @@ class About extends Component {
                     if (modelInfo[iPhone][color][capacity].indexOf(result.code) !== -1) {
                         add_sate = {
                             iPhone,
-                            color,
+                            color: this.colorScheme[color],
                             capacity,
                             type: firstLetter[result.firstLetter] || "-",
                             country_of_purchase: country[result.code_country] || '-',
@@ -506,6 +521,7 @@ class About extends Component {
                     <Pages>
                         <Page>
                             <ContentBlockTitle>Введите модель iPhone</ContentBlockTitle>
+
                             <List inset>
                                 <ListItem>
                                     <FormInput
@@ -517,13 +533,26 @@ class About extends Component {
                                 </ListItem>
                             </List>
 
-                            <List inset>
-                                <ListItem title="Модель:" after={iPhone}/>
-                                <ListItem title="Кол-во памяти:" after={capacity}/>
-                                <ListItem title="Цвет устройства:" after={color}/>
-                                <ListItem title="Тип устройства:" after={type}/>
-                                <ListItem title="Страна покупки:" after={country_of_purchase}/>
-                            </List>
+                            <Card>
+                                <CardHeader>Модель:</CardHeader>
+                                <CardContent>{iPhone}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>Кол-во памяти:</CardHeader>
+                                <CardContent>{capacity}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>Цвет устройства:</CardHeader>
+                                <CardContent>{color}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>Тип устройства:</CardHeader>
+                                <CardContent>{type}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>Страна покупки:</CardHeader>
+                                <CardContent>{country_of_purchase}</CardContent>
+                            </Card>
                             {
                                 input_valid === true &&
                                 <RatingCheck testN='About'>
