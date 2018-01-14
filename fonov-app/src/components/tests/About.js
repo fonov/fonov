@@ -537,9 +537,9 @@ class About extends Component {
                                     <AccordionContent>
                                         <ContentBlock>
                                             <p>Настройки -> Основыные -> О телефоне -> Модель</p>
-                                            <Image src={require('../../assets/image/imei/iphone7-ios11-settings-general-about-imei.jpg')}/>
+                                            <Image src={require('../../assets/image/about/iphone-model.png')}/>
                                             <p>На задней строне коробки</p>
-                                            <Image src={require('../../assets/image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')}/>
+                                            <Image src={require('../../assets/image/about/box-model.png')}/>
                                         </ContentBlock>
                                     </AccordionContent>
                                 </ListItem>
