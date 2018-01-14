@@ -7,7 +7,9 @@ const testForRemove = currentModel => {
             return [
                 'Touch3D',
                 'Flash',
-                'TouchIDorFaceID'
+                'TouchIDorFaceID',
+                'Warranty',
+                'iCloid'
             ];
         case 'iPhone 4':
         case 'iPhone 4S':
@@ -15,7 +17,8 @@ const testForRemove = currentModel => {
         case 'iPhone 5c':
             return [
                 'Touch3D',
-                'TouchIDorFaceID'
+                'TouchIDorFaceID',
+                'Warranty'
             ];
         case 'iPhone 5s':
         case 'iPhone 6':
@@ -26,7 +29,9 @@ const testForRemove = currentModel => {
             ];
         case 'iPhone 6s':
         case 'iPhone 6s Plus':
-            return [];
+            return [
+
+            ];
         case 'iPhone 7':
         case 'iPhone 7 Plus':
         case 'iPhone 8':
