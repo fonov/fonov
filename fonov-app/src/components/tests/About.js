@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import setCurrentModel from '../../actions/currentModel'
 import { RatingCheck } from '../rating/index'
-import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, NavCenter, FormInput, NavLeft, NavRight,
-    Card, CardHeader, CardContent
+import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, NavCenter, NavLeft, NavRight,
+    Card, CardHeader, CardContent, AccordionContent, ContentBlock
 } from 'framework7-react';
+import { Image } from '../../elements/index'
 
 
 class About extends Component {
@@ -427,7 +428,6 @@ class About extends Component {
         };
 
         this.defaultState = {
-            rowModel: '',
             iPhone: '-',
             capacity: '-',
             color: '-',
@@ -445,7 +445,7 @@ class About extends Component {
         }
     }
 
-    getInfo(result, rowModel) {
+    getInfo(result) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
             { setCurrentModel } = this.props;
 
@@ -464,8 +464,7 @@ class About extends Component {
                             capacity,
                             type: firstLetter[result.firstLetter] || "-",
                             country_of_purchase: country[result.code_country] || '-',
-                            input_valid: true,
-                            rowModel
+                            input_valid: true
                         };
                         setCurrentModel(iPhone);
                         break;
@@ -499,16 +498,16 @@ class About extends Component {
 
         this.getCleanModel(rowModel)
             .then(result => {
-                this.getInfo(result, rowModel);
+                this.getInfo(result);
             })
             .catch(() => {
-                this.setState({...this.defaultState, input_valid: false, rowModel})
+                this.setState({...this.defaultState, input_valid: false})
             });
     }
 
     render() {
 
-        const { iPhone, capacity, color, type, country_of_purchase, input_valid, rowModel } = this.state;
+        const { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state;
 
         return (
             <Views>
@@ -524,14 +523,25 @@ class About extends Component {
                                 Введите модель iPhone
                             </ContentBlockTitle>
 
-                            <List inset>
+                            <List inset accordion>
                                 <ListItem>
-                                    <FormInput
-                                        type="text"
-                                        placeholder="MQ8M2B/A"
-                                        value={rowModel}
-                                        onChange={event => this.inputModel(rowModel+event.target.value)}
-                                    />
+                                    <div className="item-input">
+                                        <input
+                                            type="text"
+                                            placeholder="MQ8M2B/A"
+                                            onChange={event => this.inputModel(event.target.value)}
+                                        />
+                                    </div>
+                                </ListItem>
+                                <ListItem accordionItem title="Где найти модель?">
+                                    <AccordionContent>
+                                        <ContentBlock>
+                                            <p>Настройки -> Основыные -> О телефоне -> Модель</p>
+                                            <Image src={require('../../assets/image/imei/iphone7-ios11-settings-general-about-imei.jpg')}/>
+                                            <p>На задней строне коробки</p>
+                                            <Image src={require('../../assets/image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')}/>
+                                        </ContentBlock>
+                                    </AccordionContent>
                                 </ListItem>
                             </List>
 
