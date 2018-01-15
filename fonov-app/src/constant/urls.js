@@ -19,7 +19,7 @@ const CallAndProximitySensor = '/call_and_proximity_sensor';
 const Charging = '/charging';
 const Warranty = '/warranty';
 const IMEI = '/imei';
-const Picking = '/picking';
+const Package = '/package';
 const TestResult = '/test_result';
 
 
@@ -45,6 +45,6 @@ export default {
     Charging,
     Warranty,
     IMEI,
-    Picking,
+    Package,
     TestResult
 }

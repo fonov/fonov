@@ -72,7 +72,7 @@ const schemeOfTests = currentModel => {
         'Charging',
         'Warranty',
         'IMEI',
-        'Picking'
+        'Package'
     ];
 
     let test_for_remove = testForRemove(currentModel);

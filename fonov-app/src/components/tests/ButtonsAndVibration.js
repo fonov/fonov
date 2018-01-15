@@ -18,6 +18,26 @@ class ButtonsAndVibration extends Component {
         }
     }
 
+    lockButton() {
+
+        const { currentModel } = this.props;
+
+        switch (currentModel) {
+            case 'iPhone':
+            case 'iPhone 3G':
+            case 'iPhone 3GS':
+            case 'iPhone 4':
+            case 'iPhone 4S':
+            case 'iPhone 5':
+            case 'iPhone 5c':
+            case 'iPhone 5s':
+            case 'iPhone SE':
+                return <Image src={require('../../assets/image/ButtonsAndVibration/iphone-topBotton.png')}/>;
+            default:
+                return <Image src={require('../../assets/image/ButtonsAndVibration/Кпокпи 3.png')}/>;
+        }
+    }
+
     render() {
 
         const { currentModel } = this.props;
@@ -38,7 +58,7 @@ class ButtonsAndVibration extends Component {
                                     Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/кнопки/Кпокпи 2.png')}/>
+                                    <Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи 2.png')}/>
                                 </CardContent>
                             </Card>
 
@@ -47,7 +67,7 @@ class ButtonsAndVibration extends Component {
                                     Клавиша Домой
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/кнопки/Кпокпи.png')}/>
+                                    <Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи.png')}/>
                                 </CardContent>
                             </Card>
 
@@ -56,7 +76,7 @@ class ButtonsAndVibration extends Component {
                                     Клавиша блокировки
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/кнопки/Кпокпи 3.png')}/>
+                                    {this.lockButton()}
                                 </CardContent>
                             </Card>
 

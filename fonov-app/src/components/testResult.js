@@ -131,7 +131,7 @@ class TestResult extends Component {
                 pass: true,
                 weight:5
             },
-            Picking: {
+            Package: {
                 title: 'Комплектация',
                 pass: true,
                 weight:5

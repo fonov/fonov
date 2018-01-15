@@ -8,7 +8,7 @@ import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHead
 } from 'framework7-react';
 
 
-class Picking extends Component {
+class Package extends Component {
 
     componentWillMount() {
         const {replace, currentModel} = this.props;
@@ -161,7 +161,7 @@ class Picking extends Component {
 
                             {this.cable()}
 
-                            <RatingCheck testN='Picking'>
+                            <RatingCheck testN='Package'>
                                 Комплектация {currentModel} совпадают с заявленной?
                             </RatingCheck>
                         </Page>
@@ -185,4 +185,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Picking);
+export default connect(mapStateToProps, mapDispatchToProps)(Package);

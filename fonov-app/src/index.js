@@ -32,7 +32,7 @@ import CallAndProximitySensor from './components/tests/CallAndProximitySensor'
 import Charging from './components/tests/Charging'
 import Warranty from './components/tests/Warranty'
 import IMEI from './components/tests/IMEI'
-import Picking from './components/tests/Picking'
+import Package from './components/tests/Package'
 import TestResult from './components/testResult'
 // URLS
 import URLS from './constant/urls'
@@ -63,7 +63,7 @@ ReactDOM.render(
                 <Route path={URLS.Charging} component={Charging} />
                 <Route path={URLS.Warranty} component={Warranty} />
                 <Route path={URLS.IMEI} component={IMEI} />
-                <Route path={URLS.Picking} component={Picking} />
+                <Route path={URLS.Package} component={Package} />
                 <Route path={URLS.TestResult} component={TestResult} />
             </Framework7App>
         </ConnectedRouter>
