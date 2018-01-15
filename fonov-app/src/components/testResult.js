@@ -49,10 +49,10 @@ class TestResult extends Component {
                 warning: 'Мы не рекамендуем к покупки телефон с не работающим 3D Touch, скорей всего экран был поврежден и был замен на более дешевыф аналог без поддержки 3D Touch',
                 weight:-100
             },
-            iCloid: {
+            iCloud: {
                 title: 'iCloud',
                 pass: true,
-                warning: 'Мы категорически не рекамендуем к покупки iPhone с приявязкой к iCloid. Вы не сможете ввести свой iCloud а так же iPhone можеи быть заблокирован.',
+                warning: 'Мы категорически не рекамендуем к покупки iPhone с приявязкой к iCloud. Вы не сможете ввести свой iCloud а так же iPhone можеи быть заблокирован.',
                 weight:-100
             },
             Flash: {

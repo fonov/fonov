@@ -5,7 +5,7 @@ const WaterSensor = '/water_sensor';
 const ButtonsAndVibration = '/buttons_and_vibration';
 const Sensor = '/sensor';
 const Touch3D = '/3d_touch';
-const iCloid = '/icloid';
+const iCloud = '/iсloud';
 const Flash = '/flash';
 const Speaker = '/speaker';
 const CompassAndGsensor = '/compass_and_gsensor';
@@ -31,7 +31,7 @@ export default {
     ButtonsAndVibration,
     Sensor,
     Touch3D,
-    iCloid,
+    iCloud,
     Flash,
     Speaker,
     CompassAndGsensor,

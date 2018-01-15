@@ -7,7 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight} from 'framework7-react';
 
 
-class iCloid extends Component {
+class iCloud extends Component {
 
     componentWillMount() {
         const {replace, currentModel} = this.props;
@@ -26,7 +26,7 @@ class iCloid extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>iCloid {currentModel}</NavCenter>
+                        <NavCenter>iCloud {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -40,7 +40,7 @@ class iCloid extends Component {
                                 </CardContent>
                             </Card>
 
-                            <RatingCheck testN='iCloid'>
+                            <RatingCheck testN='iCloud'>
                                 {currentModel} отвязан от iCloud?
                             </RatingCheck>
                         </Page>
@@ -64,4 +64,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(iCloid);
+export default connect(mapStateToProps, mapDispatchToProps)(iCloud);

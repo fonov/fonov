@@ -18,7 +18,7 @@ import WaterSensor from './components/tests/WaterSensor'
 import ButtonsAndVibration from './components/tests/ButtonsAndVibration'
 import Sensor from './components/tests/Sensor'
 import Touch3D from './components/tests/Touch3D'
-import iCloid from './components/tests/iCloid'
+import iCloud from './components/tests/iCloud'
 import Flash from './components/tests/Flash'
 import Speaker from './components/tests/Speaker'
 import CompassAndGsensor from './components/tests/CompassAndGsensor'
@@ -49,7 +49,7 @@ ReactDOM.render(
                 <Route path={URLS.ButtonsAndVibration} component={ButtonsAndVibration} />
                 <Route path={URLS.Sensor} component={Sensor} />
                 <Route path={URLS.Touch3D} component={Touch3D} />
-                <Route path={URLS.iCloid} component={iCloid} />
+                <Route path={URLS.iCloud} component={iCloud} />
                 <Route path={URLS.Flash} component={Flash} />
                 <Route path={URLS.Speaker} component={Speaker} />
                 <Route path={URLS.CompassAndGsensor} component={CompassAndGsensor} />

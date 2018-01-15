@@ -58,7 +58,7 @@ const schemeOfTests = currentModel => {
         'ButtonsAndVibration',
         'Sensor',
         'Touch3D',
-        'iCloid',
+        'iCloud',
         'Flash',
         'Speaker',
         'CompassAndGsensor',
