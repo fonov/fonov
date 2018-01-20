@@ -6,7 +6,6 @@ import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
-import current_iphone from "../../redux/reducers/current-iphone";
 
 
 class Bluetooth extends Component {

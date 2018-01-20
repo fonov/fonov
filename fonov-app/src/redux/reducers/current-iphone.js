@@ -1,4 +1,4 @@
-const init_state = {model: null, color: null};
+const init_state = {model: null, color: null, model_code: null};
 
 const current_iphone = (state = init_state, action) => {
     switch (action.type) {

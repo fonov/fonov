@@ -58,7 +58,7 @@ class ButtonsAndVibration extends Component {
                                     Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи 2.png')}/>
+                                    {/*<Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи 2.png')}/>*/}
                                 </CardContent>
                             </Card>
 
@@ -67,7 +67,7 @@ class ButtonsAndVibration extends Component {
                                     Клавиша Домой
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи.png')}/>
+                                    {/*<Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи.png')}/>*/}
                                 </CardContent>
                             </Card>
 

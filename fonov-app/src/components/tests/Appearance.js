@@ -4,9 +4,10 @@ import { Image } from '../../elements/index'
 import { Rating5Stars } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from '../../constant/urls'
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardHeader, CardFooter, CardContent, NavLeft, NavRight
+import { View, Navbar, Pages, Page, Views, NavCenter,
+    Card, CardHeader, CardContent, NavLeft, NavRight, ContentBlockTitle
 } from 'framework7-react';
-import current_iphone from "../../redux/reducers/current-iphone";
+import image_manager from '../../actions/image-manager'
 
 
 class Appearance extends Component {
@@ -22,7 +23,7 @@ class Appearance extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -34,42 +35,33 @@ class Appearance extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-
+                            <ContentBlockTitle className='content_block_title'>
+                                Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов.
+                            </ContentBlockTitle>
                             <Card>
-                                <CardHeader>Извлеките iPhone из чехла</CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/внешний вид/removeCase.png')} />
+                                    <p>Извлеките iPhone из чехла</p>
+                                    <p>Удалите защитную пленку или стекло</p>
                                 </CardContent>
                             </Card>
-
-                            <Card>
-                                <CardHeader>Удалите защитную пленку или стекло</CardHeader>
-                                <CardContent>
-                                    <Image src={require('../../assets/image/внешний вид/removeFilm.png')} />
-                                </CardContent>
-                                <CardFooter>
-                                    Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов.
-                                </CardFooter>
-                            </Card>
-
                             <Card>
                                 <CardHeader>Передния часть телефона</CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/внешний вид/iPhone Front.png')}/>
+                                    <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
 
                             <Card>
                                 <CardHeader>Заднию часть телефона</CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/внешний вид/iPhone Back.png')}/>
+                                    <Image src={image_manager(2)}/>
                                 </CardContent>
                             </Card>
 
                             <Card>
                                 <CardHeader>Боковые грани телефона</CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/внешний вид/sides.png')}/>
+                                    <Image src={image_manager(3)}/>
                                 </CardContent>
                             </Card>
 
@@ -97,7 +89,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('Appearance', number))
     }
 };
 

@@ -6,6 +6,7 @@ import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, Na
     Card, CardHeader, CardContent, AccordionContent, ContentBlock
 } from 'framework7-react';
 import { Image } from '../../elements/index'
+import image_manager from "../../actions/image-manager";
 
 
 class About extends Component {
@@ -440,12 +441,18 @@ class About extends Component {
     }
 
     componentWillMount() {
+        const {currentModelCode} = this.props;
+
+        if (currentModelCode) {
+            this.inputModel(currentModelCode)
+        }
+
         if (process.env.NODE_ENV === 'development') {
             this.inputModel("ng4q2ll/a")
         }
     }
 
-    getInfo(result) {
+    getInfo(result, rowModel) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
             { setCurrentiPhone } = this.props;
 
@@ -466,7 +473,7 @@ class About extends Component {
                             country_of_purchase: country[result.code_country] || '-',
                             input_valid: true
                         };
-                        setCurrentiPhone(iPhone, color);
+                        setCurrentiPhone(iPhone, color, rowModel);
                         break;
                     }
                 }
@@ -498,7 +505,7 @@ class About extends Component {
 
         this.getCleanModel(rowModel)
             .then(result => {
-                this.getInfo(result);
+                this.getInfo(result, rowModel);
             })
             .catch(() => {
                 this.setState({...this.defaultState, input_valid: false})
@@ -507,7 +514,8 @@ class About extends Component {
 
     render() {
 
-        const { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state;
+        const { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state,
+            {image_manager} = this.props;
 
         return (
             <Views>
@@ -537,9 +545,9 @@ class About extends Component {
                                     <AccordionContent>
                                         <ContentBlock>
                                             <p>Настройки -> Основыные -> О телефоне -> Модель</p>
-                                            <Image src={require('../../assets/image/about/iphone-model.png')}/>
+                                            <Image src={image_manager(1)}/>
                                             <p>На задней строне коробки</p>
-                                            <Image src={require('../../assets/image/about/box-model.png')}/>
+                                            <Image src={image_manager(2)}/>
                                         </ContentBlock>
                                     </AccordionContent>
                                 </ListItem>
@@ -581,12 +589,15 @@ class About extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        currentModelCode: state.current_iphone.model_code
+    }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        setCurrentiPhone: (model, color) => dispatch(setCurrentiPhone(model, color)),
+        setCurrentiPhone: (model, color, model_code) => dispatch(setCurrentiPhone(model, color, model_code)),
+        image_manager: number => dispatch(image_manager('About', number))
     }
 };
 
