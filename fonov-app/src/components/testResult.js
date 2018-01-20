@@ -7,6 +7,7 @@ import FontAwesome from 'react-fontawesome'
 import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock, Button, List, ListItem, Badge, NavLeft,
     NavRight, Card, CardContent, CardHeader
 } from 'framework7-react';
+import current_iphone from "../redux/reducers/current-iphone";
 
 
 class TestResult extends Component {
@@ -304,7 +305,7 @@ class TestResult extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentModel: state.currentModel,
+        currentModel: state.current_iphone.model,
         rating: state.rating
     }
 };

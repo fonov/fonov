@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import currentModel from './currentModel'
+import current_iphone from './current-iphone'
 import rating from './rating'
 import schemeOfTest from './schemeOfTest'
 
 
 const reducers = combineReducers({
-    currentModel,
+    current_iphone,
     rating,
     schemeOfTest,
     router: routerReducer

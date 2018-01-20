@@ -6,6 +6,7 @@ import {replace} from "react-router-redux";
 import URLS from '../../constant/urls'
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardHeader, CardFooter, CardContent, NavLeft, NavRight
 } from 'framework7-react';
+import current_iphone from "../../redux/reducers/current-iphone";
 
 
 class Appearance extends Component {
@@ -90,7 +91,7 @@ class Appearance extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentModel: state.currentModel
+        currentModel: state.current_iphone.model
     }
 };
 

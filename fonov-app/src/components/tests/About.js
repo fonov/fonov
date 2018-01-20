@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import setCurrentModel from '../../actions/currentModel'
+import setCurrentiPhone from '../../actions/current-iphone'
 import { RatingCheck } from '../rating/index'
 import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, NavCenter, NavLeft, NavRight,
     Card, CardHeader, CardContent, AccordionContent, ContentBlock
@@ -447,7 +447,7 @@ class About extends Component {
 
     getInfo(result) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
-            { setCurrentModel } = this.props;
+            { setCurrentiPhone } = this.props;
 
         let add_sate = {
             ...this.defaultState,
@@ -466,7 +466,7 @@ class About extends Component {
                             country_of_purchase: country[result.code_country] || '-',
                             input_valid: true
                         };
-                        setCurrentModel(iPhone);
+                        setCurrentiPhone(iPhone, color);
                         break;
                     }
                 }
@@ -586,7 +586,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setCurrentModel: model => dispatch(setCurrentModel(model)),
+        setCurrentiPhone: (model, color) => dispatch(setCurrentiPhone(model, color)),
     }
 };
 

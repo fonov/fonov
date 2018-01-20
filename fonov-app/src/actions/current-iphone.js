@@ -1,11 +1,11 @@
 import SchemeOfTests from "../constant/schemeOfTests";
 
 
-const setCurrentModel = model => {
+const setCurrentiPhone = (model, color) => {
     return (dispatch, getState) => {
-        dispatch({type: 'SET_MODEL', model});
+        dispatch({type: 'SET_IPHONE', iphone: {model, color}});
         dispatch({type: 'SET_SCHEMEOFTEST', scheme: SchemeOfTests(model)})
     };
 };
 
-export default setCurrentModel
+export default setCurrentiPhone

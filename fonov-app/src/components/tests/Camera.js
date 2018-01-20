@@ -55,7 +55,7 @@ class Camera extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentModel: state.currentModel
+        currentModel: state.current_iphone.model
     }
 };
 

@@ -55,7 +55,7 @@ class Touch3D extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentModel: state.currentModel
+        currentModel: state.current_iphone.model
     }
 };
 
