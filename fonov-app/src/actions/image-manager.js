@@ -5,11 +5,11 @@ const get_absolut_path = path => require(`../assets/img/${path}`);
 
 const image_manager = (test, number) => {
     return (dispatch, getState) => {
-        const { current_iphone } = getState(),
-            {model, color} = current_iphone;
-
-        // const current_iphone = {model: 'iPhone 6', color: 'Gold'},
+        // const { current_iphone } = getState(),
         //     {model, color} = current_iphone;
+
+        const current_iphone = {model: 'iPhone 6', color: 'Gold'},
+            {model, color} = current_iphone;
 
         if (model && color) {
             if(typeof maps[test] === 'undefined') {
@@ -22,6 +22,12 @@ const image_manager = (test, number) => {
                 }
             } else if (typeof maps[test][model] === 'undefined') {
                 throw new Error(`Model "${model}" for ${test} not found!`)
+            } else if (typeof maps[test][model]["default"] !== 'undefined') {
+                if (typeof maps[test][model]["default"][number] === 'undefined') {
+                    throw new Error(`Image ${number} for ${test}/${model}/default not found!`)
+                } else {
+                    return get_absolut_path(maps[test][model]["default"][number])
+                }
             } else if (typeof maps[test][model][color] === 'undefined') {
                 throw new Error(`Color "${color}" for ${test}/${model} not found!`)
             } else if (typeof maps[test][model][color][number] === 'undefined'){

@@ -6,6 +6,7 @@ import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardFooter, CardContent, NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class WaterSensor extends Component {
@@ -18,55 +19,9 @@ class WaterSensor extends Component {
         }
     }
 
-    currentWaterIndicatorImage() {
-        const { currentModel } = this.props;
-
-        switch (currentModel){
-            case 'iPhone':
-                return require('../../assets/image/water_damage/iphone_original.png');
-            case 'iPhone 3G':
-                return require('../../assets/image/water_damage/iphone3GS-water_damage.png');
-            case 'iPhone 3GS':
-                return require('../../assets/image/water_damage/iphone3GS-water_damage.png');
-            case 'iPhone 4':
-                return require('../../assets/image/water_damage/iphone_4_activated.png');
-            case 'iPhone 4S':
-                return require('../../assets/image/water_damage/iphone_4_activated.png');
-            case 'iPhone 5':
-                return require('../../assets/image/water_damage/iphone_5-water_damage.png');
-            case 'iPhone 5c':
-                return require('../../assets/image/water_damage/iphone_5-water_damage.png');
-            case 'iPhone 5s':
-                return require('../../assets/image/water_damage/iphone_5-water_damage.png');
-            case 'iPhone 6':
-                return require('../../assets/image/water_damage/iphone_6-water_damage.png');
-            case 'iPhone 6 Plus':
-                return require('../../assets/image/water_damage/iphone_6-water_damage.png');
-            case 'iPhone 6s':
-                return require('../../assets/image/water_damage/iphone_6-water_damage.png');
-            case 'iPhone 6s Plus':
-                return require('../../assets/image/water_damage/iphone_6-water_damage.png');
-            case 'iPhone SE':
-                return require('../../assets/image/water_damage/iphone_5-water_damage.png');
-            case 'iPhone 7':
-                return require('../../assets/image/water_damage/iphone7-liquid-contact-indicator.png');
-            case 'iPhone 7 Plus':
-                return require('../../assets/image/water_damage/iphone7-liquid-contact-indicator.png');
-            case 'iPhone 8':
-                return require('../../assets/image/water_damage/iphone8-liquid-contact-indicator.png');
-            case 'iPhone 8 Plus':
-                return require('../../assets/image/water_damage/iphone8-liquid-contact-indicator.png');
-            case 'iPhone X':
-                return require('../../assets/image/water_damage/iphone-x-liquid-contact-indicator.png');
-            default:
-                return require('../../assets/image/water_damage/iphone-x-liquid-contact-indicator.png')
-        }
-
-    }
-
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -78,16 +33,14 @@ class WaterSensor extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-
                             <Card>
                                 <CardContent>
-                                    <Image src={this.currentWaterIndicatorImage()} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                                 <CardFooter>
                                     Влага оказывает разрушительное влияние на компоненты iPhone. Чтобы определить было ли попадание влаги проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета значит телефон был подвергнут попаданию влаги.
                                 </CardFooter>
                             </Card>
-
                             <RatingCheck testN='WaterSensor'>
                                 {currentModel} был подвергнут попаданию влаги?
                             </RatingCheck>
@@ -108,7 +61,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('WaterSensor', number))
     }
 };
 
