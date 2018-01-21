@@ -6,7 +6,7 @@ const ExitTest = () => {
     return distpath => {
         Promise.all([
             distpath(goBack(URLS.Home)),
-            distpath({type: 'CLEAN_MODEL'}),
+            distpath({type: 'CLEAN_IPHONE'}),
             distpath({type: 'CLEAN_RATING'}),
             distpath({type: 'CLEAN_SCHEMEOFTEST'})
         ])

@@ -9,19 +9,22 @@ const image_manager = (test, number) => {
             {model, color} = current_iphone;
 
         test = test.toLowerCase();
-        model = model.toLowerCase();
-        color = color.toLowerCase();
+
+        if(typeof maps[test] === 'undefined') {
+            throw new Error(`Test "${test}" not found!`)
+        } else if (typeof maps[test]["default"] !== 'undefined') {
+            if (typeof maps[test]["default"][number] === 'undefined') {
+                throw new Error(`Image ${number} for ${test}/default not found!`)
+            } else {
+                return get_absolut_path(maps[test]["default"][number])
+            }
+        }
 
         if (model && color) {
-            if(typeof maps[test] === 'undefined') {
-                throw new Error(`Test "${test}" not found!`)
-            } else if (typeof maps[test]["default"] !== 'undefined') {
-                if (typeof maps[test]["default"][number] === 'undefined') {
-                    throw new Error(`Image ${number} for ${test}/default not found!`)
-                } else {
-                    return get_absolut_path(maps[test]["default"][number])
-                }
-            } else if (typeof maps[test][model] === 'undefined') {
+            model = model.toLowerCase();
+            color = color.toLowerCase();
+
+            if (typeof maps[test][model] === 'undefined') {
                 throw new Error(`Model "${model}" for ${test} not found!`)
             } else if (typeof maps[test][model]["default"] !== 'undefined') {
                 if (typeof maps[test][model]["default"][number] === 'undefined') {
@@ -36,9 +39,9 @@ const image_manager = (test, number) => {
             } else {
                 return get_absolut_path(maps[test][model][color][number])
             }
-        } else {
-            return get_absolut_path('default.png')
         }
+
+        return get_absolut_path('default.png')
     }
 };
 

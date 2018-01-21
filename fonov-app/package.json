@@ -1,7 +1,8 @@
 {
   "name": "fonov-app",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "private": true,
+  "homepage" : "https://mounlion.github.io",
   "dependencies": {
     "history": "^4.7.2",
     "react": "^16.2.0",
