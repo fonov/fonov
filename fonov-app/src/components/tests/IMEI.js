@@ -81,14 +81,14 @@ class IMEI extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Совпадение IMEI {currentModel}</NavCenter>
+                        <NavCenter>Совпадение IMEI</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>

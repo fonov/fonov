@@ -21,14 +21,14 @@ class Bluetooth extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Bluetooth в {currentModel}</NavCenter>
+                        <NavCenter>Bluetooth</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -43,7 +43,7 @@ class Bluetooth extends Component {
                             </Card>
 
                             <RatingCheck testN='Bluetooth'>
-                                Bluetooth работает в {currentModel}?
+                                Bluetooth работает?
                             </RatingCheck>
                         </Page>
                     </Pages>

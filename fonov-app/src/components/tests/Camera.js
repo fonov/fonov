@@ -21,29 +21,43 @@ class Camera extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager, no_front_camera } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Камера {currentModel}</NavCenter>
+                        <NavCenter>Камера</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройте Центр управления, нажмите на иконку "Камера". Проверьте изображение с фронтальной и передней камеры. Изображение должно быть чистым, без размытия.
+                                    {
+                                        no_front_camera ? (
+                                            <span>
+                                                Откройте приложение камера.
+                                                Проверьте изображение с камеры.
+                                                Изображение должно быть чистым, без размытия.
+                                            </span>
+                                        ) : (
+                                            <span>
+                                                Откройте Центр управления, нажмите на иконку "Камера".
+                                                Проверьте изображение с фронтальной и передней камеры.
+                                                Изображение должно быть чистым, без размытия.
+                                            </span>
+                                        )
+                                    }
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={image_manager(1)}/>
+                                    <Image src={image_manager(no_front_camera ? 2 : 1)}/>
                                 </CardContent>
                             </Card>
 
                             <RatingCheck testN='Camera'>
-                                Камера работает в {currentModel}?
+                                Камера работает?
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -56,7 +70,8 @@ class Camera extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentModel: state.current_iphone.model
+        currentModel: state.current_iphone.model,
+        no_front_camera: !(['iphone', 'iphone 3g', 'iphone 3gs'].indexOf(state.current_iphone.model.toLowerCase()) === -1)
     }
 };
 

@@ -266,7 +266,7 @@ class TestResult extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Результаты теста {currentModel}</NavCenter>
+                        <NavCenter>Результаты теста</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>

@@ -23,14 +23,14 @@ class Appearance extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Внешний вид {currentModel}</NavCenter>
+                        <NavCenter>Внешний вид</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>

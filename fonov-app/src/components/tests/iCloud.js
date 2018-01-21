@@ -20,14 +20,14 @@ class iCloud extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>iCloud {currentModel}</NavCenter>
+                        <NavCenter>iCloud</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -42,7 +42,7 @@ class iCloud extends Component {
                             </Card>
 
                             <RatingCheck testN='iCloud'>
-                                {currentModel} отвязан от iCloud?
+                                iPhone отвязан от iCloud?
                             </RatingCheck>
                         </Page>
                     </Pages>

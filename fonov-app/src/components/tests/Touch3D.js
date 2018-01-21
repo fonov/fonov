@@ -21,14 +21,14 @@ class Touch3D extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>3D Touch в {currentModel}</NavCenter>
+                        <NavCenter>3D Touch</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -43,7 +43,7 @@ class Touch3D extends Component {
                             </Card>
 
                             <RatingCheck testN='Touch3D'>
-                                3D Touch работает в {currentModel}?
+                                3D Touch работает?
                             </RatingCheck>
                         </Page>
                     </Pages>

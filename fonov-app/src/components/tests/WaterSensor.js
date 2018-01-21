@@ -4,7 +4,10 @@ import {Image} from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardFooter, CardContent, NavLeft, NavRight
+import {
+    View, Navbar, Pages, Page, Views,
+    NavCenter,Card, CardContent,
+    NavLeft, NavRight, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 
@@ -34,12 +37,12 @@ class WaterSensor extends Component {
                     <Pages>
                         <Page>
                             <Card>
+                                <CardHeader>
+                                    Влага оказывает разрушительное воздействие на элементы iPhone. Чтобы определить было ли попадание влаги, проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета, значит телефон был подвергнут попаданию влаги.
+                                </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
                                 </CardContent>
-                                <CardFooter>
-                                    Влага оказывает разрушительное воздействие на элементы iPhone. Чтобы определить было ли попадание влаги, проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета, значит телефон был подвергнут попаданию влаги.
-                                </CardFooter>
                             </Card>
                             <RatingCheck testN='WaterSensor'>
                                 {currentModel} был подвергнут попаданию влаги?

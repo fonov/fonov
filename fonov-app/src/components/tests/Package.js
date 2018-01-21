@@ -346,14 +346,12 @@ class Package extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
-
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Комплектации {currentModel}</NavCenter>
+                        <NavCenter>Комплектация</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -377,7 +375,7 @@ class Package extends Component {
                             </Card>
                             {this.cable()}
                             <RatingCheck testN='Package'>
-                                Комплектация {currentModel} совпадает с заявленной?
+                                Комплектация iPhone совпадает с заявленной?
                             </RatingCheck>
                         </Page>
                     </Pages>

@@ -21,14 +21,14 @@ class CompassAndGsensor extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Компас и G-sensor {currentModel}</NavCenter>
+                        <NavCenter>Компас и G-sensor</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -52,7 +52,7 @@ class CompassAndGsensor extends Component {
                             </Card>
 
                             <RatingCheck testN='CompassAndGsensor'>
-                                Компас и G-sensor работают в {currentModel}?
+                                Компас и G-sensor работают?
                             </RatingCheck>
                         </Page>
                     </Pages>

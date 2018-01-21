@@ -54,14 +54,14 @@ class CallAndProximitySensor extends Component {
 
     render() {
 
-        const { currentModel, cell_status_image, image_manager } = this.props;
+        const { cell_status_image, image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Вызов и Датчик приближения {currentModel}</NavCenter>
+                        <NavCenter>Вызов и Датчик приближения</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -105,7 +105,7 @@ class CallAndProximitySensor extends Component {
                             {this.callWithHeadpods()}
 
                             <RatingCheck testN='CallAndProximitySensor'>
-                                Вызов и Датчик приближения работают в {currentModel}?
+                                Вызов и Датчик приближения работают?
                             </RatingCheck>
                         </Page>
                     </Pages>

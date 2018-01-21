@@ -21,14 +21,14 @@ class WiFi extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>WiFi {currentModel}</NavCenter>
+                        <NavCenter>WiFi</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -43,7 +43,7 @@ class WiFi extends Component {
                             </Card>
 
                             <RatingCheck testN='WiFi'>
-                                Wi-Fi работает в {currentModel}?
+                                Wi-Fi работает?
                             </RatingCheck>
                         </Page>
                     </Pages>

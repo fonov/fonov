@@ -39,7 +39,7 @@ class TouchIDorFaceID extends Component {
                         <View navbarThrough>
                             <Navbar>
                                 <NavLeft/>
-                                <NavCenter>Touch ID {currentModel}</NavCenter>
+                                <NavCenter>Touch ID</NavCenter>
                                 <NavRight/>
                             </Navbar>
                             <Pages>
@@ -54,7 +54,7 @@ class TouchIDorFaceID extends Component {
                                     </Card>
 
                                     <RatingCheck testN='TouchIDorFaceID'>
-                                        Touch ID работает в {currentModel}?
+                                        Touch ID работает?
                                     </RatingCheck>
                                 </Page>
                             </Pages>
@@ -67,7 +67,7 @@ class TouchIDorFaceID extends Component {
                         <View navbarThrough>
                             <Navbar>
                                 <NavLeft/>
-                                <NavCenter>Face ID {currentModel}</NavCenter>
+                                <NavCenter>Face ID</NavCenter>
                                 <NavRight/>
                             </Navbar>
                             <Pages>
@@ -82,7 +82,7 @@ class TouchIDorFaceID extends Component {
                                     </Card>
 
                                     <RatingCheck testN='TouchIDorFaceID'>
-                                        Face ID работают в {currentModel}
+                                        Face ID работает?
                                     </RatingCheck>
                                 </Page>
                             </Pages>

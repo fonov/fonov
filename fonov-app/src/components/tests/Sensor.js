@@ -24,14 +24,14 @@ class Sensor extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Сенсор в {currentModel}</NavCenter>
+                        <NavCenter>Сенсор</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -46,7 +46,7 @@ class Sensor extends Component {
                             </Card>
 
                             <RatingCheck testN='Sensor'>
-                                Сенсор работает корректно в {currentModel}?
+                                Сенсор работает корректно?
                             </RatingCheck>
                         </Page>
                     </Pages>

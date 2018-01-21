@@ -21,14 +21,14 @@ class Speaker extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Динамики {currentModel}</NavCenter>
+                        <NavCenter>Динамики</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -43,7 +43,7 @@ class Speaker extends Component {
                             </Card>
 
                             <RatingCheck testN='Speaker'>
-                                Динамики работают в {currentModel}?
+                                Динамики работают?
                             </RatingCheck>
                         </Page>
                     </Pages>

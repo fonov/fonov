@@ -21,14 +21,14 @@ class Microphone extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Микрофон {currentModel}</NavCenter>
+                        <NavCenter>Микрофон</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -52,7 +52,7 @@ class Microphone extends Component {
                             </Card>
 
                             <RatingCheck testN='Microphone'>
-                                Микрофон работает в {currentModel}?
+                                Микрофон работает?
                             </RatingCheck>
                         </Page>
                     </Pages>

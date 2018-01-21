@@ -21,14 +21,14 @@ class Charging extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Порт зарядки {currentModel}</NavCenter>
+                        <NavCenter>Порт зарядки</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -42,7 +42,7 @@ class Charging extends Component {
                                 </CardContent>
                             </Card>
                             <RatingCheck testN='Charging'>
-                                Зарядка работает в {currentModel}?
+                                Порт зарядки работает?
                             </RatingCheck>
                         </Page>
                     </Pages>

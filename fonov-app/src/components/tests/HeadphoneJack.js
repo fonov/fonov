@@ -24,14 +24,14 @@ class HeadphoneJack extends Component {
 
     render() {
 
-        const { currentModel, image_manager, image_speaker } = this.props;
+        const { image_manager, image_speaker } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Входа для наушников {currentModel}</NavCenter>
+                        <NavCenter>Входа для наушников</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -56,7 +56,7 @@ class HeadphoneJack extends Component {
                                 </CardFooter>
                             </Card>
                             <RatingCheck testN='HeadphoneJack'>
-                                Вход для наушников работает в {currentModel}?
+                                Вход для наушников работает?
                             </RatingCheck>
                         </Page>
                     </Pages>

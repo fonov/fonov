@@ -23,7 +23,7 @@ class Warranty extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { image_manager } = this.props;
 
         return (
             <Views>
@@ -77,7 +77,7 @@ class Warranty extends Component {
                             </Card>
 
                             <RatingCheck testN='Warranty'>
-                                Данные о гарантии {currentModel} совпадают с заявленной информацией?
+                                Данные о гарантии iPhone совпадают с заявленной информацией?
                             </RatingCheck>
                         </Page>
                     </Pages>

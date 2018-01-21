@@ -49,7 +49,7 @@ class ButtonsAndVibration extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Кнопки и вибрация {currentModel}</NavCenter>
+                        <NavCenter>Кнопки и вибрация</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -73,7 +73,7 @@ class ButtonsAndVibration extends Component {
                             </Card>
 
                             <RatingCheck testN='ButtonsAndVibration'>
-                                Работают кнопки и вибрация в {currentModel}?
+                                Работают кнопки и вибрация?
                             </RatingCheck>
                         </Page>
                     </Pages>
