@@ -4,8 +4,12 @@ import { Image } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
+import {
+    View, Navbar, Pages, Page, Views,
+    NavCenter,Card, CardContent, CardHeader,
+    NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class Sensor extends Component {
@@ -20,7 +24,7 @@ class Sensor extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -37,7 +41,7 @@ class Sensor extends Component {
                                     Проводить польцем по всему экрану. Сенсор должен работать плавно и без задержок на всей площади экрана.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/screen/iPhone-screen-touch-600x402.png')}/>
+                                    <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
 
@@ -61,7 +65,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('Sensor', number))
     }
 };
 
