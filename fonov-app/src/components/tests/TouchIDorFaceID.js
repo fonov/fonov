@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class TouchIDorFaceID extends Component {
@@ -20,7 +21,7 @@ class TouchIDorFaceID extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         switch (currentModel) {
             case 'iPhone 5s':
@@ -48,7 +49,7 @@ class TouchIDorFaceID extends Component {
                                             Зайдите в настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверте работу Touch ID
                                         </CardHeader>
                                         <CardContent>
-                                            <Image src={require('../../assets/image/touchID/Group 2.png')} />
+                                            <Image src={image_manager(1)} />
                                         </CardContent>
                                     </Card>
 
@@ -76,7 +77,7 @@ class TouchIDorFaceID extends Component {
                                             Для проведки Face ID необходимо зайти в настройки -> Face ID и код-пароль. Нажмите cканировать лицо и проверьте работу Face ID
                                         </CardHeader>
                                         <CardContent>
-                                            <Image src={require('../../assets/image/faceID/Face ID.png')} />
+                                            <Image src={image_manager(1)} />
                                         </CardContent>
                                     </Card>
 
@@ -103,7 +104,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('TouchIDorFaceID', number))
     }
 };
 

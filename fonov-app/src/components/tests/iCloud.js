@@ -5,6 +5,7 @@ import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight} from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class iCloud extends Component {
@@ -19,7 +20,7 @@ class iCloud extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -36,7 +37,7 @@ class iCloud extends Component {
                                     Телефон должен быть отвязан от аккатов iCloud и Apple ID.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/iCloud/IMG_0001.jpg')}/>
+                                    <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
 
@@ -60,7 +61,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('iCloud', number))
     }
 };
 

@@ -6,6 +6,7 @@ import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class Bluetooth extends Component {
@@ -20,7 +21,7 @@ class Bluetooth extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -37,7 +38,7 @@ class Bluetooth extends Component {
                                     Откройти настройки -> Bluetooth. Попробуйте найти Bluetooth устройтво и подключиться к нему.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/BT/IMG_1360.PNG')}/>
+                                    <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
 
@@ -61,7 +62,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('Bluetooth', number))
     }
 };
 

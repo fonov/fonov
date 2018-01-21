@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class IMEI extends Component {
@@ -20,7 +21,7 @@ class IMEI extends Component {
 
     secondImei() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         switch(currentModel) {
             case 'iPhone 6s':
@@ -36,7 +37,7 @@ class IMEI extends Component {
                             На слоте для сим карты
                         </CardHeader>
                         <CardContent>
-                            <Image src={require('../../assets/image/imei/iphone6s-SIM-card-illustration.png')} />
+                            <Image src={image_manager(3)} />
                         </CardContent>
                     </Card>
                 );
@@ -52,7 +53,7 @@ class IMEI extends Component {
                             На задней стороне iphone
                         </CardHeader>
                         <CardContent>
-                            <Image src={require('../../assets/image/imei/iphone6-imei-back-device.jpg')} />
+                            <Image src={image_manager(4)} />
                         </CardContent>
                     </Card>
                 );
@@ -67,7 +68,7 @@ class IMEI extends Component {
                             На слоте для сим карты
                         </CardHeader>
                         <CardContent>
-                            <Image src={require('../../assets/image/imei/SIM-card-illustration.png')} />
+                            <Image src={image_manager(1)} />
                         </CardContent>
                     </Card>
                 );
@@ -78,7 +79,7 @@ class IMEI extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -95,7 +96,7 @@ class IMEI extends Component {
                                     Нстройки->Основные->О Устройстве.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/imei/iphone7-ios11-settings-general-about-imei.jpg')} />
+                                    <Image src={image_manager(2)} />
                                 </CardContent>
                             </Card>
 
@@ -106,7 +107,7 @@ class IMEI extends Component {
                                     На коробке.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/imei/How-to-Find-IMEI-Number-Correctly-before-Unlock-11.jpg')} />
+                                    <Image src={image_manager(5)} />
                                 </CardContent>
                             </Card>
 
@@ -130,7 +131,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('IMEI', number))
     }
 };
 

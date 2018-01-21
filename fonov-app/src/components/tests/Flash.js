@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class Flash extends Component {
@@ -20,7 +21,7 @@ class Flash extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -37,7 +38,7 @@ class Flash extends Component {
                                     Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/controlPanel/fl.png')} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
 
@@ -61,7 +62,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('Flash', number))
     }
 };
 

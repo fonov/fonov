@@ -1,3 +1,3 @@
 const maps = require('./maps.json');
 
-console.log(Object.keys(maps['buttonsandvibration']));
+console.log(Object.keys(maps));

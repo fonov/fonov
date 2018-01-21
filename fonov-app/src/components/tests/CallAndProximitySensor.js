@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class CallAndProximitySensor extends Component {
@@ -20,7 +21,7 @@ class CallAndProximitySensor extends Component {
 
     callWithHeadpods() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         switch (currentModel) {
             case 'iPhone':
@@ -42,7 +43,7 @@ class CallAndProximitySensor extends Component {
                             Вставьте наушники и попробуйте разговарить через них
                         </CardHeader>
                         <CardContent>
-                            <Image src={require('../../assets/image/call/call_headpods.png')} />
+                            <Image src={image_manager(3)} />
                         </CardContent>
                     </Card>
                 );
@@ -53,7 +54,7 @@ class CallAndProximitySensor extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, cell_status_image, image_manager } = this.props;
 
         return (
             <Views>
@@ -70,7 +71,7 @@ class CallAndProximitySensor extends Component {
                                     Вставьте сим карту. Телефон должнен сразу же найти сеть.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/call/cell.png')} />
+                                    <Image src={cell_status_image(1)} />
                                 </CardContent>
                             </Card>
 
@@ -79,7 +80,7 @@ class CallAndProximitySensor extends Component {
                                     Попробуйте соверщить вызов.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/call/call.png')} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
 
@@ -88,7 +89,7 @@ class CallAndProximitySensor extends Component {
                                     Включите громкую связь
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/call/spiker_call.png')} />
+                                    <Image src={image_manager(2)} />
                                 </CardContent>
                             </Card>
 
@@ -99,7 +100,7 @@ class CallAndProximitySensor extends Component {
                                     Выключите громкую связь и зайкройте пальцем сенсор приближения. Экран должен потухнуть
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/call/call_sensor.png')} />
+                                    <Image src={image_manager(4)} />
                                 </CardContent>
                             </Card>
 
@@ -123,7 +124,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('CallAndProximitySensor', number)),
+        cell_status_image: () => dispatch(image_manager('CellStatus', 1))
     }
 };
 

@@ -469,7 +469,7 @@ class About extends Component {
                             country_of_purchase: country[result.code_country] || '-',
                             input_valid: true
                         };
-                        setCurrentiPhone(iPhone, color, rowModel);
+                        setCurrentiPhone(iPhone, color, rowModel, result.code_country);
                         break;
                     }
                 }
@@ -592,7 +592,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setCurrentiPhone: (model, color, model_code) => dispatch(setCurrentiPhone(model, color, model_code)),
+        setCurrentiPhone: (model, color, model_code, country_code) => dispatch(setCurrentiPhone(model, color, model_code, country_code)),
         image_manager: number => dispatch(image_manager('About', number))
     }
 };

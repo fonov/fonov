@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class Charging extends Component {
@@ -20,7 +21,7 @@ class Charging extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -37,10 +38,9 @@ class Charging extends Component {
                                     Подключите телефон к зарядки. Проверте плотно ли находиться разьм зарядки, отсутсвуют ли лифты. Телефон при подключние зарядки сразу же должен начать зарежаться
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/charge/iphone_and_cable.png')} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
-
                             <RatingCheck testN='Charging'>
                                 Зарядка работают в {currentModel}?
                             </RatingCheck>
@@ -61,7 +61,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('Charging', number))
     }
 };
 

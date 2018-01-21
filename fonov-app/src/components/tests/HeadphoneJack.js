@@ -4,7 +4,12 @@ import { Image } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight} from 'framework7-react';
+import {
+    View, Navbar, Pages, Page,
+    Views, NavCenter,Card, CardContent,
+    CardHeader, NavLeft, NavRight, CardFooter
+} from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class HeadphoneJack extends Component {
@@ -19,7 +24,7 @@ class HeadphoneJack extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager, image_speaker } = this.props;
 
         return (
             <Views>
@@ -36,19 +41,20 @@ class HeadphoneJack extends Component {
                                     Вставить наушники
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/headpods/headpods.png')} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
-
                             <Card>
                                 <CardHeader>
-                                    Проиграть звук. Если звука нет, то попробуйте использоватеть заведомо рабочие наушники
+                                    Проиграть звук.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/звуки/step.png')} />
+                                    <Image src={image_speaker()} />
                                 </CardContent>
+                                <CardFooter>
+                                    Если звука нет, то попробуйте использоватеть заведомо рабочие наушники
+                                </CardFooter>
                             </Card>
-
                             <RatingCheck testN='HeadphoneJack'>
                                 Входа для наушников работают в {currentModel}?
                             </RatingCheck>
@@ -69,7 +75,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('HeadphoneJack', number)),
+        image_speaker: () => dispatch(image_manager('Speaker', 1))
     }
 };
 

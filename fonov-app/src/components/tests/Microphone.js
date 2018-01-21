@@ -6,6 +6,7 @@ import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class Microphone extends Component {
@@ -20,7 +21,7 @@ class Microphone extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -37,7 +38,7 @@ class Microphone extends Component {
                                     Откройти приложение микрофон. Сделайте тестувую запись.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/microphone/microphone.jpeg')} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
 
@@ -46,7 +47,7 @@ class Microphone extends Component {
                                     Прослушайте её. Запись не должна содержать постороних шумов и тресков. Голос должне быть чистым
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/microphone/IMG_1361.PNG')} />
+                                    <Image src={image_manager(2)} />
                                 </CardContent>
                             </Card>
 
@@ -70,7 +71,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('Microphone', number))
     }
 };
 

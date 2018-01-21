@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class CompassAndGsensor extends Component {
@@ -20,7 +21,7 @@ class CompassAndGsensor extends Component {
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -37,7 +38,7 @@ class CompassAndGsensor extends Component {
                                     Открыть приложение компас и поврашать телефон. При вращение телефона компас доллжен менять свое положение
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/compas/IMG_1352.PNG')} />
+                                    <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
 
@@ -46,7 +47,7 @@ class CompassAndGsensor extends Component {
                                     Взмахом влево открыть уровень. По переворачивайте телефон, сесор должен работать корректно и плавно.
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={require('../../assets/image/compas/IMG_1353.PNG')} />
+                                    <Image src={image_manager(2)} />
                                 </CardContent>
                             </Card>
 
@@ -70,7 +71,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('CompassAndGsensor', number))
     }
 };
 
