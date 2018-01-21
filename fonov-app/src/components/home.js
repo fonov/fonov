@@ -43,11 +43,13 @@ class Home extends Component {
                 {
                     title: 'Что нужно для теста?',
                     desc: (
-                        <List>
-                            <ListItem title="Скрепка"/>
-                            <ListItem title="Розетка/PowerBank"/>
-                            <ListItem title="Смартфон с функцией раздачи Wi-Fi"/>
-                        </List>
+                        <p>
+                            <ul>
+                                <li>Скрепка</li>
+                                <li>Розетка/PowerBank</li>
+                                <li>Смартфон с функцией раздачи Wi-Fi</li>
+                            </ul>
+                        </p>
                     )
                 }
             ]

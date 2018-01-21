@@ -39,7 +39,7 @@ class Image extends Component {
                 new_state = {imgStyle: {height: height*0.5}}
             }
         } else {
-            if(img.offsetWidth > width) {
+            if(img.offsetWidth > width/2) {
                 new_state = {imgStyle: {width: width*0.8}}
             }
         }
