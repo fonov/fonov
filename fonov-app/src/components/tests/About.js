@@ -446,10 +446,6 @@ class About extends Component {
         if (currentModelCode) {
             this.inputModel(currentModelCode)
         }
-
-        if (process.env.NODE_ENV === 'development') {
-            this.inputModel("ng4q2ll/a")
-        }
     }
 
     getInfo(result, rowModel) {
