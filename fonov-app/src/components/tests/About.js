@@ -441,14 +441,14 @@ class About extends Component {
     }
 
     componentWillMount() {
-        const {currentModelCode} = this.props;
+        const {currentModelInfo} = this.props;
 
-        if (currentModelCode) {
-            this.inputModel(currentModelCode)
+        if (currentModelInfo.firstLetter && currentModelInfo.code && currentModelInfo.code_country) {
+            this.inputModel(`${currentModelInfo.firstLetter}${currentModelInfo.code}${currentModelInfo.code_country}/A`)
         }
     }
 
-    getInfo(result, rowModel) {
+    getInfo(result) {
         const { firstLetter, modelInfo, country } = this.iphoneInfo,
             { setCurrentiPhone } = this.props;
 
@@ -469,7 +469,7 @@ class About extends Component {
                             country_of_purchase: country[result.code_country] || '-',
                             input_valid: true
                         };
-                        setCurrentiPhone(iPhone, color, rowModel, result.code_country);
+                        setCurrentiPhone(iPhone, color, result);
                         break;
                     }
                 }
@@ -501,7 +501,7 @@ class About extends Component {
 
         this.getCleanModel(rowModel)
             .then(result => {
-                this.getInfo(result, rowModel);
+                this.getInfo(result);
             })
             .catch(() => {
                 this.setState({...this.defaultState, input_valid: false})
@@ -586,13 +586,13 @@ class About extends Component {
 
 const mapStateToProps = state => {
     return {
-        currentModelCode: state.current_iphone.model_code
+        currentModelInfo: state.current_iphone.model_info
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        setCurrentiPhone: (model, color, model_code, country_code) => dispatch(setCurrentiPhone(model, color, model_code, country_code)),
+        setCurrentiPhone: (model, color, model_info) => dispatch(setCurrentiPhone(model, color, model_info)),
         image_manager: number => dispatch(image_manager('About', number))
     }
 };

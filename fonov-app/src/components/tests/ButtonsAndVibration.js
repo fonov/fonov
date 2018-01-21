@@ -65,7 +65,7 @@ class ButtonsAndVibration extends Component {
                             {this.home_button()}
                             <Card>
                                 <CardHeader>
-                                    Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
+                                    Клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>

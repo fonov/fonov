@@ -1,7 +1,7 @@
-let init_state = {model: null, color: null, model_code: null, country_code: null};
+let init_state = {model: null, color: null, model_info: {firstLetter: null, code: null, code_country: null}};
 
 if (process.env.NODE_ENV === 'development') {
-    init_state = {model: 'iPhone X', color: 'Silver', model_code: 'MQCT2RR/A', country_code: 'RR'};
+    init_state = {model: 'iPhone X', color: 'Silver', model_info: {firstLetter: 'M', code: 'QCT2', code_country: 'RR'}};
     // init_state = {model: 'iPhone 6', color: 'gold', model_code: 'MKUF2RR/A'};
 }
 

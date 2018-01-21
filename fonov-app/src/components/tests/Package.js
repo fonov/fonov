@@ -127,9 +127,9 @@ class Package extends Component {
     }
 
     powerAdapter() {
-        const { country_code, image_manager } = this.props;
+        const { currentModelInfo, image_manager } = this.props;
 
-        switch (country_code) {
+        switch (currentModelInfo.code_country) {
             //Канада
             case 'A':
                 return <Image src={image_manager(5)} />;
@@ -392,7 +392,7 @@ class Package extends Component {
 const mapStateToProps = state => {
     return {
         currentModel: state.current_iphone.model,
-        country_code: state.current_iphone.country_code
+        currentModelInfo: state.current_iphone.model_info
     }
 };
 
