@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
+import image_manager from "../../actions/image-manager";
 
 
 class ButtonsAndVibration extends Component {
@@ -18,29 +19,30 @@ class ButtonsAndVibration extends Component {
         }
     }
 
-    lockButton() {
+    home_button() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         switch (currentModel) {
-            case 'iPhone':
-            case 'iPhone 3G':
-            case 'iPhone 3GS':
-            case 'iPhone 4':
-            case 'iPhone 4S':
-            case 'iPhone 5':
-            case 'iPhone 5c':
-            case 'iPhone 5s':
-            case 'iPhone SE':
-                return <Image src={require('../../assets/image/ButtonsAndVibration/iphone-topBotton.png')}/>;
+            case 'iPhone X':
+                return null;
             default:
-                return <Image src={require('../../assets/image/ButtonsAndVibration/Кпокпи 3.png')}/>;
+                return (
+                    <Card>
+                        <CardHeader>
+                            Клавиша Домой
+                        </CardHeader>
+                        <CardContent>
+                            <Image src={image_manager(2)}/>
+                        </CardContent>
+                    </Card>
+                )
         }
     }
 
     render() {
 
-        const { currentModel } = this.props;
+        const { currentModel, image_manager } = this.props;
 
         return (
             <Views>
@@ -52,31 +54,21 @@ class ButtonsAndVibration extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-
-                            <Card>
-                                <CardHeader>
-                                    Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
-                                </CardHeader>
-                                <CardContent>
-                                    {/*<Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи 2.png')}/>*/}
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardHeader>
-                                    Клавиша Домой
-                                </CardHeader>
-                                <CardContent>
-                                    {/*<Image src={require('../../assets/ButtonsAndVibration/кнопки/Кпокпи.png')}/>*/}
-                                </CardContent>
-                            </Card>
-
                             <Card>
                                 <CardHeader>
                                     Клавиша блокировки
                                 </CardHeader>
                                 <CardContent>
-                                    {this.lockButton()}
+                                    <Image src={image_manager(1)}/>
+                                </CardContent>
+                            </Card>
+                            {this.home_button()}
+                            <Card>
+                                <CardHeader>
+                                    Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
+                                </CardHeader>
+                                <CardContent>
+                                    <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
                                 </CardContent>
                             </Card>
 
@@ -100,7 +92,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path))
+        replace: path =>  dispatch(replace(path)),
+        image_manager: number => dispatch(image_manager('ButtonsAndVibration', number))
     }
 };
 

@@ -20,8 +20,8 @@ for(let item of arr_for_rename) {
 
 
                     for(let key3 of files3) {
-                        let name = key3.split('.')[0],
-                            type = key3.split('.')[1];
+                        let name = key3.split('.')[0];
+                            // type = key3.split('.')[1];
 
                         // if (name == '_1') {
                         //     fs.rename(base_path+'/'+item+'/'+key2+'/'+key3, base_path+'/'+item+'/'+key2+`/1.${type}`, function(err) {
@@ -34,7 +34,7 @@ for(let item of arr_for_rename) {
                         //     });
                         // }
 
-                        if (name == 'undefined') {
+                        if (name === 'undefined') {
                             fs.unlink(base_path+'/'+item+'/'+key2+'/'+key3,function(err){
 
                             })
