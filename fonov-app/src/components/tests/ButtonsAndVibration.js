@@ -49,7 +49,7 @@ class ButtonsAndVibration extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка кнопок и вибрации {currentModel}</NavCenter>
+                        <NavCenter>Кнопки и вибрация {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -65,7 +65,7 @@ class ButtonsAndVibration extends Component {
                             {this.home_button()}
                             <Card>
                                 <CardHeader>
-                                    Клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумных телефон должен завибрировать
+                                    Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумный режим, телефон должен завибрировать.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
@@ -73,7 +73,7 @@ class ButtonsAndVibration extends Component {
                             </Card>
 
                             <RatingCheck testN='ButtonsAndVibration'>
-                                Работаю кнопки и вибрация в {currentModel}?
+                                Работают кнопки и вибрация в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

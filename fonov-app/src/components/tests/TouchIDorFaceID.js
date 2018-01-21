@@ -39,14 +39,14 @@ class TouchIDorFaceID extends Component {
                         <View navbarThrough>
                             <Navbar>
                                 <NavLeft/>
-                                <NavCenter>Проверка Touch ID {currentModel}</NavCenter>
+                                <NavCenter>Touch ID {currentModel}</NavCenter>
                                 <NavRight/>
                             </Navbar>
                             <Pages>
                                 <Page>
                                     <Card>
                                         <CardHeader>
-                                            Зайдите в настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверте работу Touch ID
+                                            Зайдите в Настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверьте работу Touch ID.
                                         </CardHeader>
                                         <CardContent>
                                             <Image src={image_manager(1)} />
@@ -67,14 +67,14 @@ class TouchIDorFaceID extends Component {
                         <View navbarThrough>
                             <Navbar>
                                 <NavLeft/>
-                                <NavCenter>Проверка Face ID {currentModel}</NavCenter>
+                                <NavCenter>Face ID {currentModel}</NavCenter>
                                 <NavRight/>
                             </Navbar>
                             <Pages>
                                 <Page>
                                     <Card>
                                         <CardHeader>
-                                            Для проведки Face ID необходимо зайти в настройки -> Face ID и код-пароль. Нажмите cканировать лицо и проверьте работу Face ID
+                                            Для проверки Face ID зайдите в Настройки -> Face ID и код-пароль. Нажмите сканировать лицо и проверьте работу Face ID.
                                         </CardHeader>
                                         <CardContent>
                                             <Image src={image_manager(1)} />

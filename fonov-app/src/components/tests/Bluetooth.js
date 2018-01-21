@@ -28,14 +28,14 @@ class Bluetooth extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка Bluetooth в {currentModel}</NavCenter>
+                        <NavCenter>Bluetooth в {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройти настройки -> Bluetooth. Попробуйте найти Bluetooth устройтво и подключиться к нему.
+                                    Откройте Настройки -> Bluetooth. Попробуйте найти bluetooth-устройство и подключиться к нему.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -43,7 +43,7 @@ class Bluetooth extends Component {
                             </Card>
 
                             <RatingCheck testN='Bluetooth'>
-                                Bluetooth работают в {currentModel}?
+                                Bluetooth работает в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

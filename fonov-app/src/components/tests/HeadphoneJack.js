@@ -31,14 +31,14 @@ class HeadphoneJack extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка входа для наушников {currentModel}</NavCenter>
+                        <NavCenter>Входа для наушников {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Вставить наушники
+                                    Вставьте наушники.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -46,17 +46,17 @@ class HeadphoneJack extends Component {
                             </Card>
                             <Card>
                                 <CardHeader>
-                                    Проиграть звук.
+                                    Проиграйте любой звук в Настройки -> Звуки -> Тактильные сигналы.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_speaker()} />
                                 </CardContent>
                                 <CardFooter>
-                                    Если звука нет, то попробуйте использоватеть заведомо рабочие наушники
+                                    Если звука нет, попробуйте использовать другие наушники иначе вход для наушников не работает.
                                 </CardFooter>
                             </Card>
                             <RatingCheck testN='HeadphoneJack'>
-                                Входа для наушников работают в {currentModel}?
+                                Вход для наушников работает в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

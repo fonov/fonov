@@ -28,14 +28,14 @@ class Camera extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка камеры {currentModel}</NavCenter>
+                        <NavCenter>Камера {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройте центр управления, нажмите на клавишу камеру. Проверьте изображение с фронтальной и передней камерой. Изображение должно быть чистое и без размытия
+                                    Откройте Центр управления, нажмите на иконку "Камера". Проверьте изображение с фронтальной и передней камеры. Изображение должно быть чистым, без размытия.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -43,7 +43,7 @@ class Camera extends Component {
                             </Card>
 
                             <RatingCheck testN='Camera'>
-                                Камера работают в {currentModel}?
+                                Камера работает в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

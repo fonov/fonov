@@ -66,7 +66,7 @@ class Package extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Адаптер Lightning/выход 3,5 мм для наушников
+                            Адаптер Lightning/выход 3,5 мм для наушников.
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(8)} />
@@ -91,7 +91,7 @@ class Package extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            30 пиновый кабель
+                            30-пиновый кабель.
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(1)} />
@@ -114,7 +114,7 @@ class Package extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Кабель Lightning/USB
+                            Кабель Lightning/USB.
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(2)} />
@@ -353,14 +353,14 @@ class Package extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка комплектации {currentModel}</NavCenter>
+                        <NavCenter>Комплектации {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Наушники
+                                    Наушники.
                                 </CardHeader>
                                 <CardContent>
                                     {this.earpods()}
@@ -369,16 +369,15 @@ class Package extends Component {
                             {this.adapter()}
                             <Card>
                                 <CardHeader>
-                                    Зарядное устройстов
+                                    Зарядное устройство.
                                 </CardHeader>
                                 <CardContent>
                                     {this.powerAdapter()}
                                 </CardContent>
                             </Card>
-
                             {this.cable()}
                             <RatingCheck testN='Package'>
-                                Комплектация {currentModel} совпадают с заявленной?
+                                Комплектация {currentModel} совпадает с заявленной?
                             </RatingCheck>
                         </Page>
                     </Pages>

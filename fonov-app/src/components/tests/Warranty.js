@@ -30,20 +30,20 @@ class Warranty extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка гарантии</NavCenter>
+                        <NavCenter>Гарантии</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Зайти в настройки -> основные -> об устройстве -> серийный номер. Нажмите на серийны номер и выбирете скопировать.
+                                    Зайдите в Настройки -> Основные -> Об этом устройстве -> Серийный номер. Нажмите на серийный номер и выберите "Скопировать".
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                                 <CardFooter>
-                                    Затем перейдите на официальный сайт Apple для проверки гарантии
+                                    Затем перейдите на официальный сайт Apple для проверки гарантии.
                                 </CardFooter>
                             </Card>
 

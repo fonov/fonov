@@ -28,14 +28,14 @@ class WiFi extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка WiFi в {currentModel}</NavCenter>
+                        <NavCenter>WiFi {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройти настройки -> Wi-Fi. Попробуйте подключиться к wifi сети. Если рядом нет доступных wifi точек то попробуйте создать точку доступа на своем смартфоне
+                                    Откройте Настройки -> Wi-Fi. Попробуйте подключиться к Wi-Fi сети. Если рядом нет доступных Wi-Fi  точек, попробуйте создать точку доступа на своем смартфоне.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -43,7 +43,7 @@ class WiFi extends Component {
                             </Card>
 
                             <RatingCheck testN='WiFi'>
-                                Wifi работают в {currentModel}?
+                                Wi-Fi работает в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

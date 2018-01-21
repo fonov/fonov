@@ -40,7 +40,7 @@ class CallAndProximitySensor extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Вставьте наушники и попробуйте разговарить через них
+                            Выключите громкую связь, вставьте наушники и попробуйте говорить через них.
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(3)} />
@@ -68,7 +68,7 @@ class CallAndProximitySensor extends Component {
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Вставьте сим карту. Телефон должнен сразу же найти сеть.
+                                    Вставьте SIM-карту. Телефон должен сразу найти сеть.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={cell_status_image(1)} />
@@ -77,7 +77,7 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Попробуйте соверщить вызов.
+                                    Попробуйте совершить вызов.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -86,7 +86,16 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Включите громкую связь
+                                    Закройте пальцем Сенсор приближения, экран должен потухнуть.
+                                </CardHeader>
+                                <CardContent>
+                                    <Image src={image_manager(4)} />
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    Включите громкую связь для проверки Динамика.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -94,15 +103,6 @@ class CallAndProximitySensor extends Component {
                             </Card>
 
                             {this.callWithHeadpods()}
-
-                            <Card>
-                                <CardHeader>
-                                    Выключите громкую связь и зайкройте пальцем сенсор приближения. Экран должен потухнуть
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(4)} />
-                                </CardContent>
-                            </Card>
 
                             <RatingCheck testN='CallAndProximitySensor'>
                                 Вызов и Датчик приближения работают в {currentModel}?

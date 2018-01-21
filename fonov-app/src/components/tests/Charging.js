@@ -28,21 +28,21 @@ class Charging extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка зарядки в {currentModel}</NavCenter>
+                        <NavCenter>Порт зарядки {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Подключите телефон к зарядки. Проверте плотно ли находиться разьм зарядки, отсутсвуют ли лифты. Телефон при подключние зарядки сразу же должен начать зарежаться
+                                    Подключите телефон к зарядке, он сразу должен начать заряжаться. Проверьте, насколько плотно (надежно) вставляется штекер.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
                             <RatingCheck testN='Charging'>
-                                Зарядка работают в {currentModel}?
+                                Зарядка работает в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

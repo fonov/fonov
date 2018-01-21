@@ -4,7 +4,9 @@ import { Image } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
+import {
+    View, Navbar, Pages, Page, Views, NavCenter,
+    Card, CardContent, CardHeader, NavLeft, NavRight, ContentBlockTitle
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 
@@ -34,7 +36,7 @@ class IMEI extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            На слоте для сим карты
+                            На слоте для SIM-карты.
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(3)} />
@@ -50,7 +52,7 @@ class IMEI extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            На задней стороне iphone
+                            На задней стороне iPhone.
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(4)} />
@@ -86,14 +88,18 @@ class IMEI extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка совподения IMEI {currentModel}</NavCenter>
+                        <NavCenter>Совпадение IMEI {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
+                            <ContentBlockTitle className='content_block_title'>
+                                Проверьте, совпадает ли IMEI телефона с его комплектующими.
+                            </ContentBlockTitle>
+
                             <Card>
                                 <CardHeader>
-                                    Нстройки->Основные->О Устройстве.
+                                    Настройки -> Основные -> Об этом устройстве -> IMEI.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -112,7 +118,7 @@ class IMEI extends Component {
                             </Card>
 
                             <RatingCheck testN='IMEI'>
-                                IMEI совподают?
+                                IMEI совпадают?
                             </RatingCheck>
                         </Page>
                     </Pages>

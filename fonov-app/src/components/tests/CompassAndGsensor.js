@@ -35,7 +35,7 @@ class CompassAndGsensor extends Component {
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Открыть приложение компас и поврашать телефон. При вращение телефона компас доллжен менять свое положение
+                                    Откройте приложение Компас и повращайте телефон. При вращении компас должен менять свое положение.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -44,7 +44,7 @@ class CompassAndGsensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Взмахом влево открыть уровень. По переворачивайте телефон, сесор должен работать корректно и плавно.
+                                    Взмахом влево откройте Уровень. Попереворачивайте телефон, G-sensor должен работать корректно и плавно.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />

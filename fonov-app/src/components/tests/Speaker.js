@@ -28,14 +28,14 @@ class Speaker extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка динамиков на {currentModel}</NavCenter>
+                        <NavCenter>Динамики {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Для проверки звука необходимо открыть настройки. Звонки и проиграть пару стандартных звуков
+                                    Для проверки звука необходимо открыть Настройки -> Звуки, тактильные сигналы и проиграть пару стандартных звуков.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>

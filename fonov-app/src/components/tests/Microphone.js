@@ -28,14 +28,14 @@ class Microphone extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка микрофона {currentModel}</NavCenter>
+                        <NavCenter>Микрофон {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройти приложение микрофон. Сделайте тестувую запись.
+                                    Откройте приложение Диктофон. Сделайте тестовую запись.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -44,7 +44,7 @@ class Microphone extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Прослушайте её. Запись не должна содержать постороних шумов и тресков. Голос должне быть чистым
+                                    Прослушайте её. Запись не должна содержать посторонних шумов и тресков. Голос должен быть чистым.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -52,7 +52,7 @@ class Microphone extends Component {
                             </Card>
 
                             <RatingCheck testN='Microphone'>
-                                Микрофона работают в {currentModel}?
+                                Микрофон работает в {currentModel}?
                             </RatingCheck>
                         </Page>
                     </Pages>

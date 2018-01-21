@@ -35,7 +35,7 @@ class Touch3D extends Component {
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Для проверка 3D Touch необходимо сильно понажать на иконки. После этого должен открыться меню.
+                                    Для проверки 3D Touch необходимо сильно нажать на какую-нибудь иконку. После этого должно открыться меню.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>

@@ -28,14 +28,14 @@ class Flash extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Проверка вспышки {currentModel}</NavCenter>
+                        <NavCenter>Вспышка {currentModel}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройти центр управления взмахом с низу в верх. Нажмите на клавишу фанарик и проверьте работу светадиода.
+                                    Откройте Центр управления. Для этого в нижней части экрана проведите пальцем снизу вверх. Нажмите на иконку "Фонарик" и проверьте работу светодиода.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />

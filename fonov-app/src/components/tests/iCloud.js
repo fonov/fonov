@@ -34,7 +34,7 @@ class iCloud extends Component {
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Телефон должен быть отвязан от аккатов iCloud и Apple ID.
+                                    Телефон должен быть отвязан от аккаунтов iCloud и Apple ID.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>

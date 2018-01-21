@@ -40,26 +40,26 @@ class Appearance extends Component {
                             </ContentBlockTitle>
                             <Card>
                                 <CardContent>
-                                    <p>Извлеките iPhone из чехла</p>
-                                    <p>Удалите защитную пленку или стекло</p>
+                                    <p>Извлеките iPhone из чехла.</p>
+                                    <p>Удалите защитную пленку или стекло.</p>
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardHeader>Передния часть телефона</CardHeader>
+                                <CardHeader>Передняя часть телефона.</CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
 
                             <Card>
-                                <CardHeader>Заднию часть телефона</CardHeader>
+                                <CardHeader>Задняя часть телефона.</CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)}/>
                                 </CardContent>
                             </Card>
 
                             <Card>
-                                <CardHeader>Боковые грани телефона</CardHeader>
+                                <CardHeader>Боковые грани телефона.</CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(3)}/>
                                 </CardContent>
@@ -70,7 +70,7 @@ class Appearance extends Component {
                                 firstTitle='Заявленное состояние'
                                 lastTitle='Реальное состояние'
                             >
-                                Оценка внешнего вида
+                                Оценка внешнего вида.
                             </Rating5Stars>
                         </Page>
                     </Pages>
