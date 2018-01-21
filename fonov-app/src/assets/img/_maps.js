@@ -1,5 +1,5 @@
 const fs = require('fs'),
-    ignore = ['.DS_Store', 'maps.js', 'refactor.js', 'maps.json'];
+    ignore = ['.DS_Store', 'maps.js', 'refactor.js', 'maps.json', 'ls_maps.js'];
 
 
 let maps = {};
@@ -30,7 +30,8 @@ const openFolder = (path, init=false) => {
                     const absolut_path = path[path.length-1] === '/' ? `${path}${file}`: `${path}/${file}`,
                         is_dir = fs.lstatSync(absolut_path).isDirectory();
 
-                    let s_path = absolut_path.slice(2, absolut_path.length);
+                    let s_path = absolut_path.toLowerCase().slice(2, absolut_path.length),
+                        file_path = absolut_path.slice(2, absolut_path.length);
 
                     if (init) {
                         maps[s_path] = {};
@@ -48,7 +49,7 @@ const openFolder = (path, init=false) => {
 
                             let clean_name = clean_file_name(dff[2]);
                             s_dir.forEach(item => {
-                                maps[dff[0]][item][clean_name] = is_dir ? {} : s_path
+                                maps[dff[0]][item][clean_name] = is_dir ? {} : file_path
                             });
                         }
                         if (dff.length === 4) {
@@ -56,7 +57,7 @@ const openFolder = (path, init=false) => {
 
                             let clean_name = clean_file_name(dff[3]);
                             s_dir.forEach(item => {
-                                maps[dff[0]][item][dff[2]][clean_name] = is_dir ? {} : s_path
+                                maps[dff[0]][item][dff[2]][clean_name] = is_dir ? {} : file_path
                             });
                         }
                     }
@@ -80,6 +81,7 @@ setTimeout(() => {
             return console.log(err);
         }
 
-        console.log("The file was saved!");
+        console.log("Maps create\n\n" +
+            "=========================\n\n" + JSON.stringify(maps));
     });
 }, 500);

@@ -5,11 +5,12 @@ const get_absolut_path = path => require(`../assets/img/${path}`);
 
 const image_manager = (test, number) => {
     return (dispatch, getState) => {
-        // const { current_iphone } = getState(),
-        //     {model, color} = current_iphone;
-
-        const current_iphone = {model: 'iPhone 6', color: 'Gold'},
+        let { current_iphone } = getState(),
             {model, color} = current_iphone;
+
+        test = test.toLowerCase();
+        model = model.toLowerCase();
+        color = color.toLowerCase();
 
         if (model && color) {
             if(typeof maps[test] === 'undefined') {
