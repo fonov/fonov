@@ -52,7 +52,7 @@ class HeadphoneJack extends Component {
                                     <Image src={image_speaker()} />
                                 </CardContent>
                                 <CardFooter>
-                                    Если звука нет, попробуйте использовать другие наушники иначе вход для наушников не работает.
+                                    Если звука нет, попробуйте использовать другие наушники. Если звука все равно нет, значит вход для наушников не работает.
                                 </CardFooter>
                             </Card>
                             <RatingCheck testN='HeadphoneJack'>
