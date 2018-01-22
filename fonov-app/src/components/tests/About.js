@@ -548,32 +548,34 @@ class About extends Component {
                                     </AccordionContent>
                                 </ListItem>
                             </List>
-
-                            <Card>
-                                <CardHeader>Модель:</CardHeader>
-                                <CardContent>{iPhone}</CardContent>
-                            </Card>
-                            <Card>
-                                <CardHeader>Кол-во памяти:</CardHeader>
-                                <CardContent>{capacity}</CardContent>
-                            </Card>
-                            <Card>
-                                <CardHeader>Цвет устройства:</CardHeader>
-                                <CardContent>{color}</CardContent>
-                            </Card>
-                            <Card>
-                                <CardHeader>Тип устройства:</CardHeader>
-                                <CardContent>{type}</CardContent>
-                            </Card>
-                            <Card>
-                                <CardHeader>Страна покупки:</CardHeader>
-                                <CardContent>{country_of_purchase}</CardContent>
-                            </Card>
                             {
-                                input_valid === true &&
-                                <RatingCheck testN='About'>
-                                    Заявленная информация о iPhone верна?
-                                </RatingCheck>
+                                input_valid === true && (
+                                    <div>
+                                        <Card>
+                                            <CardHeader>Модель:</CardHeader>
+                                            <CardContent>{iPhone}</CardContent>
+                                        </Card>
+                                        <Card>
+                                            <CardHeader>Кол-во памяти:</CardHeader>
+                                            <CardContent>{capacity}</CardContent>
+                                        </Card>
+                                        <Card>
+                                            <CardHeader>Цвет устройства:</CardHeader>
+                                            <CardContent>{color}</CardContent>
+                                        </Card>
+                                        <Card>
+                                            <CardHeader>Тип устройства:</CardHeader>
+                                            <CardContent>{type}</CardContent>
+                                        </Card>
+                                        <Card>
+                                            <CardHeader>Страна покупки:</CardHeader>
+                                            <CardContent>{country_of_purchase}</CardContent>
+                                        </Card>
+                                        <RatingCheck testN='About'>
+                                            Заявленная информация о iPhone верна?
+                                        </RatingCheck>
+                                    </div>
+                                )
                             }
                         </Page>
                     </Pages>

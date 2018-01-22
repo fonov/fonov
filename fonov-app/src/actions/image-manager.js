@@ -14,7 +14,7 @@ const image_manager = (test, number) => {
             throw new Error(`Test "${test}" not found!`)
         } else if (typeof maps[test]["default"] !== 'undefined') {
             if (typeof maps[test]["default"][number] === 'undefined') {
-                throw new Error(`Image ${number} for ${test}/default not found!`)
+                console.error(`Image ${number} for ${test}/default not found!`)
             } else {
                 return get_absolut_path(maps[test]["default"][number])
             }
@@ -28,14 +28,14 @@ const image_manager = (test, number) => {
                 throw new Error(`Model "${model}" for ${test} not found!`)
             } else if (typeof maps[test][model]["default"] !== 'undefined') {
                 if (typeof maps[test][model]["default"][number] === 'undefined') {
-                    throw new Error(`Image ${number} for ${test}/${model}/default not found!`)
+                    console.error(`Image ${number} for ${test}/${model}/default not found!`)
                 } else {
                     return get_absolut_path(maps[test][model]["default"][number])
                 }
             } else if (typeof maps[test][model][color] === 'undefined') {
-                throw new Error(`Color "${color}" for ${test}/${model} not found!`)
+                console.error(`Color "${color}" for ${test}/${model} not found!`)
             } else if (typeof maps[test][model][color][number] === 'undefined'){
-                throw new Error(`Image ${number} for ${test}/${model}/${color} not found!`)
+                console.error(`Image ${number} for ${test}/${model}/${color} not found!`)
             } else {
                 return get_absolut_path(maps[test][model][color][number])
             }
