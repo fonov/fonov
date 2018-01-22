@@ -258,7 +258,7 @@ class TestResult extends Component {
 
     render() {
 
-        const { currentModel, exit_test } = this.props,
+        const { exit_test } = this.props,
             { testList, conclusion } = this.state;
 
         return (
