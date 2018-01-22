@@ -2,9 +2,12 @@
   "name": "fonov-app",
   "version": "0.2.6",
   "private": true,
-  "homepage" : "https://mounlion.github.io",
+  "homepage": "https://mounlion.github.io",
   "dependencies": {
+    "framework7": "^1.5.3",
+    "framework7-react": "0.9.3-2",
     "history": "^4.7.2",
+    "raven-js": "^3.22.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
@@ -14,9 +17,7 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
-    "framework7": "^1.5.3",
-    "framework7-react": "0.9.3-2"
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

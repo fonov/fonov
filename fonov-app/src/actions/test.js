@@ -1,7 +1,3 @@
-import {push} from "react-router-redux";
-import URLS from '../constant/urls'
-
-
 const clean_test = () => {
     return distpath => {
         Promise.all([

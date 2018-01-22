@@ -36,7 +36,11 @@ import Package from './components/tests/Package'
 import TestResult from './components/testResult'
 // URLS
 import URLS from './constant/urls'
+//Sentry
+import Raven from 'raven-js';
 
+
+Raven.config('https://fa8991ecd0fc44beb7daa608ffe5d886@sentry.io/275162').install();
 
 ReactDOM.render(
     <Provider store={store()}>
