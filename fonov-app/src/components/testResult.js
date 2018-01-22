@@ -79,7 +79,7 @@ class TestResult extends Component {
                 weight:-100
             },
             HeadphoneJack: {
-                title: 'Входа для наушников',
+                title: 'Вход для наушников',
                 pass: true,
                 warning: 'Мы не рекомендуем покупать телефон с нерабочим входом для наушников.',
                 weight:-100

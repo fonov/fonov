@@ -46,7 +46,7 @@ class TouchIDorFaceID extends Component {
                                 <Page>
                                     <Card>
                                         <CardHeader>
-                                            Зайдите в Настройки -> Touch ID и код-пароль. Нажмите Добавить палец и проверьте работу Touch ID.
+                                            Зайдите в Настройки -> Touch ID и код-пароль. Нажмите Добавить "палец" и проверьте работу Touch ID.
                                         </CardHeader>
                                         <CardContent>
                                             <Image src={image_manager(1)} />

@@ -60,7 +60,7 @@ class Warranty extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Вставьте серийный номер, введите captcher и нажмите далее
+                                    Вставьте серийный номер, введите captcher и нажмите далее.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -69,7 +69,7 @@ class Warranty extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Пролистайте вниз до статуса гарантии
+                                    Пролистайте вниз до статуса гарантии.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(3)} />
