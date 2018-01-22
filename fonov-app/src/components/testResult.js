@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {replace} from 'react-router-redux';
+import {replace, push} from 'react-router-redux';
 import URLS from '../constant/urls'
-import {ExitTest} from '../actions/test'
 import FontAwesome from 'react-fontawesome'
 import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock, Button, List, ListItem, Badge, NavLeft,
     NavRight, Card, CardContent, CardHeader
@@ -258,7 +257,7 @@ class TestResult extends Component {
 
     render() {
 
-        const { exit_test } = this.props,
+        const { push } = this.props,
             { testList, conclusion } = this.state;
 
         return (
@@ -289,7 +288,7 @@ class TestResult extends Component {
                             }
 
                             <ContentBlock>
-                                <Button big color="blue" onClick={() => exit_test()}>
+                                <Button big color="blue" onClick={() => push(URLS.Home)}>
                                     Домой
                                 </Button>
                             </ContentBlock>
@@ -312,7 +311,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         replace: path =>  dispatch(replace(path)),
-        exit_test: () => dispatch(ExitTest())
+        push: path => dispatch(push(path))
     }
 };
 

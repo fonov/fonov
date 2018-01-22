@@ -446,6 +446,10 @@ class About extends Component {
         if (currentModelInfo.firstLetter && currentModelInfo.code && currentModelInfo.code_country) {
             this.inputModel(`${currentModelInfo.firstLetter}${currentModelInfo.code}${currentModelInfo.code_country}/A`)
         }
+
+        // if (process.env.NODE_ENV === 'development') {
+        //     this.inputModel('RKQ52RU/A')
+        // }
     }
 
     getInfo(result) {

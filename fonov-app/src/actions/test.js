@@ -1,11 +1,10 @@
-import {goBack} from "react-router-redux";
+import {push} from "react-router-redux";
 import URLS from '../constant/urls'
 
 
-const ExitTest = () => {
+const clean_test = () => {
     return distpath => {
         Promise.all([
-            distpath(goBack(URLS.Home)),
             distpath({type: 'CLEAN_IPHONE'}),
             distpath({type: 'CLEAN_RATING'}),
             distpath({type: 'CLEAN_SCHEMEOFTEST'})
@@ -14,5 +13,5 @@ const ExitTest = () => {
 };
 
 export {
-    ExitTest
+    clean_test
 }

@@ -7,6 +7,7 @@ import { View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
     List, ListItem, Views, NavCenter, AccordionContent, Button, NavLeft, NavRight
 } from 'framework7-react';
 import {version} from '../../package.json';
+import {clean_test} from '../actions/test'
 
 
 class Home extends Component {
@@ -54,6 +55,14 @@ class Home extends Component {
                 }
             ]
         };
+    }
+
+    componentWillMount() {
+        const {clean_test, currentModel} = this.props;
+
+        if (currentModel !== null) {
+            clean_test()
+        }
     }
 
     render() {
@@ -106,13 +115,15 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        initialTest: state.schemeOfTest[0]
+        initialTest: state.schemeOfTest[0],
+        currentModel: state.current_iphone.model
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: path =>  dispatch(push(path))
+        push: path =>  dispatch(push(path)),
+        clean_test: () => dispatch(clean_test())
     }
 };
 
