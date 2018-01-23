@@ -28,7 +28,7 @@ class WiFi extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>WiFi</NavCenter>
+                        <NavCenter>Wi-Fi</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>

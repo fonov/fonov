@@ -31,7 +31,7 @@ class HeadphoneJack extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Входа для наушников</NavCenter>
+                        <NavCenter>Вход для наушников</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>

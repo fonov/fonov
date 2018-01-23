@@ -91,7 +91,7 @@ class TestResult extends Component {
                 weight:-100
             },
             WiFi: {
-                title: 'WiFi',
+                title: 'Wi-Fi',
                 pass: true,
                 warning: 'Мы не рекомендуем покупать телефон с нерабочим Wi-Fi.',
                 weight:-100

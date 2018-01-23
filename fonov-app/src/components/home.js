@@ -44,13 +44,13 @@ class Home extends Component {
                 {
                     title: 'Что нужно для теста?',
                     desc: (
-                        <p>
+                        <div style={{padding: 8}}>
                             <ul>
                                 <li>Скрепка</li>
                                 <li>Розетка/PowerBank</li>
                                 <li>Смартфон с функцией раздачи Wi-Fi</li>
                             </ul>
-                        </p>
+                        </div>
                     )
                 }
             ]

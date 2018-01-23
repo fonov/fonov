@@ -86,7 +86,7 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Закройте пальцем Сенсор приближения, экран должен потухнуть.
+                                    Закройте пальцем Датчик приближения, экран должен потухнуть.
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(4)} />
