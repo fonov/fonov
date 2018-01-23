@@ -23,7 +23,7 @@ class IMEI extends Component {
 
     secondImei() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, imei_back_side_image_manager } = this.props;
 
         switch(currentModel) {
             case 'iPhone 6s':
@@ -55,7 +55,7 @@ class IMEI extends Component {
                             На задней стороне iPhone.
                         </CardHeader>
                         <CardContent>
-                            <Image src={image_manager(4)} />
+                            <Image src={imei_back_side_image_manager(1)} />
                         </CardContent>
                     </Card>
                 );
@@ -138,7 +138,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         replace: path =>  dispatch(replace(path)),
-        image_manager: number => dispatch(image_manager('IMEI', number))
+        image_manager: number => dispatch(image_manager('IMEI', number)),
+        imei_back_side_image_manager: number => dispatch(image_manager('ImeiBackSide', number))
     }
 };
 
