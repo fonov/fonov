@@ -1,0 +1,422 @@
+{
+  "test_iphone": [
+    "Test the iPhone before buying",
+    "Тестирование iPhone перед покупкой"
+  ],
+  "start_test": [
+    "Start",
+    "Начать"
+  ],
+  "what_is_${app_name}?": [
+    "What is ${APP_NAME}?",
+    "Что это ${APP_NAME}?"
+  ],
+  "test_for_iphone_before_bu...": [
+    "Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test the program will give You recommendations on purchasing the iPhone.",
+    "Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста программа даст Вам рекомендации относительно покупки iPhone."
+  ],
+  "why_is_it_necessary?": [
+    "Why is it necessary?",
+    "Зачем это нужно?"
+  ],
+  "most_people_don't_know_ho...": [
+    "Most people don't know how to run a complete diagnostic on iPhone before buying, and it is fraught with loss of time, money and nerves. ${APP_NAME} is directed to every person regardless of his knowledge of the iPhone, could make it a complete diagnostics before buying, the arguments to reduce the price due to the identified deficiencies and to buy a serviceable iPhone no hidden defects.",
+    "Большинство людей не знают как провести полную диагностику iPhone перед покупкой, а это чревато потерей времени, денег и нервов. ${APP_NAME} направлен на то, чтобы каждый человек в независимости от его познаний в iPhone, мог провести его полную диагностику перед покупкой, аргументированно снизить цену из-за выявленных недостатков и купить исправный iPhone без скрытых дефектов."
+  ],
+  "why_${app_name}?": [
+    "Why ${APP_NAME}?",
+    "Почему ${APP_NAME}?"
+  ],
+  "${app_name}_is_completely...": [
+    "${APP_NAME} is completely free and contains no advertising. We conduct full testing iPhone both outside and inside. Our test supports multiple languages. Our mission is to help people save time, money and nerves. We are constantly developing ${APP_NAME} and improve it every day.",
+    "${APP_NAME} абсолютно бесплатный и не содержит рекламу. Мы проводим полное тестирование iPhone как снаружи, так и изнутри. Наш тест поддерживает несколько языков. Наша миссия - помогать людям экономить время, деньги и нервы. Мы постоянно развиваем ${APP_NAME} и совершенствуем его каждый день."
+  ],
+  "what_you_need_for_the_tes...": [
+    "What you need for the test?",
+    "Что нужно для теста?"
+  ],
+  "clip": [
+    "Clip",
+    "Скрепка"
+  ],
+  "socket/powerbank": [
+    "Socket/PowerBank",
+    "Розетка/PowerBank"
+  ],
+  "smartphone_with_the_funct...": [
+    "Smartphone with the function of distribution of Wi-Fi",
+    "Смартфон с функцией раздачи Wi-Fi"
+  ],
+  "restored": [
+    "Restored",
+    "Восстановленный"
+  ],
+  "for_retail_sale": [
+    "For retail sale",
+    "Для розничной продажи"
+  ],
+  "a_replacement_iphone._iss...": [
+    "A replacement iPhone. Issued in exchange not working properly iPhone",
+    "Подменный iPhone. Выдан в замен не исправного iPhone"
+  ],
+  "a_special_copy": [
+    "A special copy",
+    "Специальный экземпляр"
+  ],
+  "canada": [
+    "Canada",
+    "Канада"
+  ],
+  "uae,_bahrain,_kuwait,_qat...": [
+    "UAE, Bahrain, Kuwait, Qatar, Saudi Arabia",
+    "ОАЭ, Бахрейн, Кувейт, Катар, Саудовская Аравия"
+  ],
+  "egypt,_jordan,_saudi_arab...": [
+    "Egypt, Jordan, Saudi Arabia, United Arab Emirates",
+    "Египет, Иордания, Саудовская Аравия, Объединенные Арабские Эмираты"
+  ],
+  "bahrain,_kuwait": [
+    "Bahrain, Kuwait",
+    "Бахрейн, Кувейт"
+  ],
+  "uk_or_ireland": [
+    "UK or Ireland",
+    "Великобритания или Ирландия"
+  ],
+  "brazil_(assembled_in_braz...": [
+    "Brazil (assembled in Brazil)",
+    "Бразилия (собран в Бразилии)"
+  ],
+  "brazil_(assembled_in_chin...": [
+    "Brazil (assembled in China)",
+    "Бразилия (собран в Китае)"
+  ],
+  "china": [
+    "China",
+    "Китай"
+  ],
+  "czech_republic": [
+    "Czech Republic",
+    "Чешская Республика"
+  ],
+  "germany": [
+    "Germany",
+    "Германия"
+  ],
+  "austria,_germany,_netherl...": [
+    "Austria, Germany, Netherlands",
+    "Австрия, Германия, Нидерланды"
+  ],
+  "mexico": [
+    "Mexico",
+    "Мексика"
+  ],
+  "estonia": [
+    "Estonia",
+    "Эстония"
+  ],
+  "luxembourg": [
+    "Luxembourg",
+    "Люксембург"
+  ],
+  "france": [
+    "France",
+    "Франция"
+  ],
+  "liechtenstein,_austria,_o...": [
+    "Liechtenstein, Austria, or Switzerland",
+    "Лихтенштейн, Австрия, или Швейцария"
+  ],
+  "greece": [
+    "Greece",
+    "Греция"
+  ],
+  "india": [
+    "India",
+    "Индия"
+  ],
+  "italy": [
+    "Italy",
+    "Италия"
+  ],
+  "israel": [
+    "Israel",
+    "Израиль"
+  ],
+  "japan": [
+    "Japan",
+    "Япония"
+  ],
+  "korea": [
+    "Korea",
+    "Корея"
+  ],
+  "norway": [
+    "Norway",
+    "Норвегия"
+  ],
+  "finland,_sweden": [
+    "Finland, Sweden",
+    "Финляндия, Швеция"
+  ],
+  "finland": [
+    "Finland",
+    "Финляндия"
+  ],
+  "colombia,_ecuador,_el_sal...": [
+    "Colombia, Ecuador, El Salvador, Guatemala, Honduras, Peru",
+    "Колумбия, Эквадор, Сальвадор, Гватемала, Гондурас, Перу"
+  ],
+  "argentina": [
+    "Argentina",
+    "Аргентина"
+  ],
+  "usa,_canada": [
+    "USA, Canada",
+    "США, Канада"
+  ],
+  "chile,_paraguay,_uruguay": [
+    "Chile, Paraguay, Uruguay",
+    "Чили, Парагвай, Уругвай"
+  ],
+  "hungary": [
+    "Hungary",
+    "Венгрия"
+  ],
+  "macau": [
+    "Macau",
+    "Макао"
+  ],
+  "malaysia": [
+    "Malaysia",
+    "Малайзия"
+  ],
+  "belgium,_france,_luxembou...": [
+    "Belgium, France, Luxembourg",
+    "Бельгии, Франции, Люксембурга"
+  ],
+  "poland": [
+    "Poland",
+    "Польша"
+  ],
+  "portugal": [
+    "Portugal",
+    "Португалия"
+  ],
+  "philippines": [
+    "Philippines",
+    "Филиппины"
+  ],
+  "romania": [
+    "Romania",
+    "Румыния"
+  ],
+  "russia": [
+    "Russia",
+    "Россия"
+  ],
+  "slovakia": [
+    "Slovakia",
+    "Словакия"
+  ],
+  "latvia": [
+    "Latvia",
+    "Латвия"
+  ],
+  "south_africa": [
+    "South Africa",
+    "ЮАР"
+  ],
+  "taiwan": [
+    "Taiwan",
+    "Тайвань"
+  ],
+  "turkey": [
+    "Turkey",
+    "Турция"
+  ],
+  "australia,_new_zealand": [
+    "Australia, New Zealand",
+    "Австралия, Новая Зеландия"
+  ],
+  "spain": [
+    "Spain",
+    "Испания"
+  ],
+  "singapore": [
+    "Singapore",
+    "Сингапур"
+  ],
+  "hong_kong,_macau": [
+    "Hong Kong, Macau",
+    "Гонконг, Макао"
+  ],
+  "italy,_spain,_portugal": [
+    "Italy, Spain, Portugal",
+    "Италия, Испания, Португалия"
+  ],
+  "kazakhstan": [
+    "Kazakhstan",
+    "Казахстан"
+  ],
+  "ukraine": [
+    "Ukraine",
+    "Украина"
+  ],
+  "lithuania": [
+    "Lithuania",
+    "Литва"
+  ],
+  "finland,_poland": [
+    "Finland, Poland",
+    "Финляндия, Польша"
+  ],
+  "denmark,_norway,_sweden,_...": [
+    "Denmark, Norway, Sweden, Iceland",
+    "Дания, Норвегия, Швеция, Исландия"
+  ],
+  "russia_or_kazakhstan": [
+    "Russia or Kazakhstan",
+    "Россия или Казахстан"
+  ],
+  "serbia": [
+    "Serbia",
+    "Сербия"
+  ],
+  "germany,_belgium,_luxembo...": [
+    "Germany, Belgium, Luxembourg, Netherlands, Austria, France, Switzerland, Monaco",
+    "Германия, Бельгия, Люксембург, Нидерланды, Австрия, Франция, Швейцария, Монако"
+  ],
+  "black": [
+    "Black",
+    "Черный"
+  ],
+  "gold": [
+    "Gold",
+    "Золотой"
+  ],
+  "black_onyx": [
+    "Black onyx",
+    "Черный оникс"
+  ],
+  "red": [
+    "Red",
+    "Красный"
+  ],
+  "rose_gold": [
+    "Rose gold",
+    "Розовое золото"
+  ],
+  "silver": [
+    "Silver",
+    "Серебристый"
+  ],
+  "space_grey": [
+    "Space grey",
+    "Серый космос"
+  ],
+  "blue": [
+    "Blue",
+    "Синий"
+  ],
+  "green": [
+    "Green",
+    "Зеленый"
+  ],
+  "pink": [
+    "Pink",
+    "Розовый"
+  ],
+  "white": [
+    "White",
+    "Белый"
+  ],
+  "yellow": [
+    "Yellow",
+    "Желтый"
+  ],
+  "enter_the_iphone_model": [
+    "Enter the iPhone model",
+    "Введите модель iPhone"
+  ],
+  "settings_->_master_->_abo...": [
+    "Settings -> Master -> About phone -> Model",
+    "Настройки -> Основыные -> О телефоне -> Модель"
+  ],
+  "on_the_back_side_of_the_b...": [
+    "On the back side of the box",
+    "На задней строне коробки"
+  ],
+  "model": [
+    "Model",
+    "Модель"
+  ],
+  "amount_of_memory": [
+    "Amount of memory",
+    "Кол-во памяти"
+  ],
+  "the_color_of_the_device": [
+    "The color of the device",
+    "Цвет устройства"
+  ],
+  "device_type": [
+    "Device type",
+    "Тип устройства"
+  ],
+  "the_country_of_purchase": [
+    "The country of purchase",
+    "Страна покупки"
+  ],
+  "the_stated_information_is...": [
+    "The stated information is correct on iPhone?",
+    "Заявленная информация о iPhone верна?"
+  ],
+  "о_iphone": [
+    "О iPhone",
+    "О iPhone"
+  ],
+  "where_to_find_the_model?": [
+    "Where to find the model?",
+    "Где найти модель?"
+  ],
+  "appearance": [
+    "Appearance",
+    "Внешний вид"
+  ],
+  "inspect_the_iphone_for_sc...": [
+    "Inspect the iPhone for scratches, scuffs, cracks, chips.",
+    "Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов."
+  ],
+  "remove_the_iphone_from_th...": [
+    "Remove the iPhone from the case.",
+    "Извлеките iPhone из чехла."
+  ],
+  "remove_the_protective_fil...": [
+    "Remove the protective film or glass.",
+    "Удалите защитную пленку или стекло."
+  ],
+  "the_front_part_of_the_pho...": [
+    "The front part of the phone.",
+    "Передняя часть телефона."
+  ],
+  "the_back_of_the_phone.": [
+    "The back of the phone.",
+    "Задняя часть телефона."
+  ],
+  "the_side_of_the_phone.": [
+    "The side of the phone.",
+    "Боковые грани телефона."
+  ],
+  "claimed_as": [
+    "Claimed as",
+    "Заявленное состояние"
+  ],
+  "real_state": [
+    "Real state",
+    "Реальное состояние"
+  ],
+  "rating_of_appearance.": [
+    "Rating of appearance.",
+    "Оценка внешнего вида."
+  ]
+}

@@ -1,9 +1,9 @@
 const clean_test = () => {
-    return distpath => {
+    return dispatch => {
         Promise.all([
-            distpath({type: 'CLEAN_IPHONE'}),
-            distpath({type: 'CLEAN_RATING'}),
-            distpath({type: 'CLEAN_SCHEMEOFTEST'})
+            dispatch({type: 'CLEAN_IPHONE'}),
+            dispatch({type: 'CLEAN_RATING'}),
+            dispatch({type: 'CLEAN_SCHEMEOFTEST'})
         ])
     }
 };

@@ -8,6 +8,7 @@ import { View, Navbar, Pages, Page, Views, NavCenter,
     Card, CardHeader, CardContent, NavLeft, NavRight, ContentBlockTitle
 } from 'framework7-react';
 import image_manager from '../../actions/image-manager'
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Appearance extends Component {
@@ -23,43 +24,43 @@ class Appearance extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Внешний вид</NavCenter>
+                        <NavCenter>{_('appearance')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <ContentBlockTitle className='content_block_title'>
-                                Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов.
+                                {_('inspect_the_iphone_for_sc...')}
                             </ContentBlockTitle>
                             <Card>
                                 <CardContent>
-                                    <p>Извлеките iPhone из чехла.</p>
-                                    <p>Удалите защитную пленку или стекло.</p>
+                                    <p>{_('remove_the_iphone_from_th...')}</p>
+                                    <p>{_('remove_the_protective_fil...')}</p>
                                 </CardContent>
                             </Card>
                             <Card>
-                                <CardHeader>Передняя часть телефона.</CardHeader>
+                                <CardHeader>{_('the_front_part_of_the_pho...')}</CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
 
                             <Card>
-                                <CardHeader>Задняя часть телефона.</CardHeader>
+                                <CardHeader>{_('the_back_of_the_phone.')}</CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)}/>
                                 </CardContent>
                             </Card>
 
                             <Card>
-                                <CardHeader>Боковые грани телефона.</CardHeader>
+                                <CardHeader>{_('the_side_of_the_phone.')}</CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(3)}/>
                                 </CardContent>
@@ -67,10 +68,10 @@ class Appearance extends Component {
 
                             <Rating5Stars
                                 testN='Appearance'
-                                firstTitle='Заявленное состояние'
-                                lastTitle='Реальное состояние'
+                                firstTitle={_('claimed_as')}
+                                lastTitle={_('real_state')}
                             >
-                                Оценка внешнего вида.
+                                {_('rating_of_appearance.')}
                             </Rating5Stars>
                         </Page>
                     </Pages>
@@ -83,6 +84,8 @@ class Appearance extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

@@ -27,10 +27,11 @@ const image_manager = (test, number) => {
             color = color.toLowerCase();
 
             if (typeof maps[test][model] === 'undefined') {
-                throw new Error(`Model "${model}" for ${test} not found!`)
+                Raven.captureException(`Model "${model}" for ${test} not found!`);
+                console.error(`Model "${model}" for ${test} not found!`);
             } else if (typeof maps[test][model]["default"] !== 'undefined') {
                 if (typeof maps[test][model]["default"][number] === 'undefined') {
-                    Raven.captureException();
+                    Raven.captureException(`Image ${number} for ${test}/${model}/default not found!`);
                     console.error(`Image ${number} for ${test}/${model}/default not found!`)
                 } else {
                     return get_absolut_path(maps[test][model]["default"][number])

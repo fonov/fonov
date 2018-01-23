@@ -8,6 +8,7 @@ import { View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
 } from 'framework7-react';
 import {version} from '../../package.json';
 import {clean_test} from '../actions/test'
+import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
 
 
 class Home extends Component {
@@ -18,37 +19,31 @@ class Home extends Component {
         this.state = {
             aboutTest: [
                 {
-                    title: `Что это ${APP_NAME}?`,
+                    title: props._('what_is_${app_name}?', {APP_NAME}),
                     desc: (
-                        <p>
-                            Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста программа даст Вам рекомендации относительно покупки iPhone.
-                        </p>
+                        <p>{props._('test_for_iphone_before_bu...')}</p>
                     )
                 },
                 {
-                    title: 'Зачем это нужно?',
+                    title: props._('why_is_it_necessary?'),
                     desc: (
-                        <p>
-                            Большинство людей не знают как провести полную диагностику iPhone перед покупкой, а это чревато потерей времени, денег и нервов. FonovTest направлен на то, чтобы каждый человек в независимости от его познаний в iPhone, мог провести его полную диагностику перед покупкой, аргументированно снизить цену из-за выявленных недостатков и купить исправный iPhone без скрытых дефектов.
-                        </p>
+                        <p>{props._('most_people_don\'t_know_ho...')}</p>
                     )
                 },
                 {
-                    title: `Почему ${APP_NAME}?`,
+                    title: props._('why_${app_name}?', {APP_NAME}),
                     desc: (
-                        <p>
-                            FonovTest абсолютно бесплатный и не содержит рекламу. Мы проводим полное тестирование iPhone как снаружи, так и изнутри. Наш тест поддерживает несколько языков. Наша миссия - помогать людям экономить время, деньги и нервы. Мы постоянно развиваем {APP_NAME} и совершенствуем его каждый день.
-                        </p>
+                        <p>{props._('${app_name}_is_completely...', {APP_NAME})}</p>
                     )
                 },
                 {
-                    title: 'Что нужно для теста?',
+                    title: props._('what_you_need_for_the_tes...'),
                     desc: (
                         <div style={{padding: 8}}>
                             <ul>
-                                <li>Скрепка</li>
-                                <li>Розетка/PowerBank</li>
-                                <li>Смартфон с функцией раздачи Wi-Fi</li>
+                                <li>{props._('clip')}</li>
+                                <li>{props._('socket/powerbank')}</li>
+                                <li>{props._('smartphone_with_the_funct...')}</li>
                             </ul>
                         </div>
                     )
@@ -67,7 +62,7 @@ class Home extends Component {
 
     render() {
 
-        const {push, initialTest} = this.props,
+        const {push, initialTest, _} = this.props,
             {aboutTest} = this.state;
 
         return (
@@ -81,12 +76,12 @@ class Home extends Component {
                     <Pages>
                         <Page>
                             <ContentBlockTitle className='content_block_title'>
-                                Тестирование iPhone перед покупкой
+                                {_('test_iphone')}
                             </ContentBlockTitle>
 
                             <ContentBlock>
                                 <Button big color="red" fill onClick={() => push(URLS[initialTest])}>
-                                    Начать
+                                    {_('start_test')}
                                 </Button>
                             </ContentBlock>
 
@@ -115,6 +110,8 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         initialTest: state.schemeOfTest[0],
         currentModel: state.current_iphone.model
     }

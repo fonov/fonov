@@ -7,6 +7,7 @@ import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, Na
 } from 'framework7-react';
 import { Image } from '../../elements/index'
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class About extends Component {
@@ -14,12 +15,14 @@ class About extends Component {
     constructor(props) {
         super(props);
 
+        const {_} = props;
+
         this.iphoneInfo = {
             firstLetter: {
-                F: 'Восстановленный',
-                M: 'Для розничной продажи',
-                N: 'Подменный iPhone. Выдан в замен не исправного iPhone',
-                P: 'Специальный экземпляр'
+                F: _("restored"),
+                M: _("for_retail_sale"),
+                N: _("a_special_copy"),
+                P: _("a_special_copy")
             },
             modelInfo: {
                 'iPhone': {
@@ -341,91 +344,78 @@ class About extends Component {
                 }
             },
             country: {
-                A: 'Канада',
-                AE: 'ОАЭ, Бахрейн, Кувейт, Катар, Саудовская Аравия',
-                AB: 'Египет, Иордания, Саудовская Аравия, Объединенные Арабские Эмираты',
-                AH: 'Бахрейн, Кувейт',
-                B: 'Великобритания или Ирландия',
-                BR: 'Бразилия (собран в Бразилии)',
-                BZ: 'Бразилия (собран в Китае)',
-                C: 'Канада',
-                CL: 'Канада',
-                CH: 'Китай',
-                CZ: 'Чешская Республика',
-                D: 'Германия',
-                DN: 'Австрия, Германия, Нидерланды',
-                E: 'Мексика',
-                EE: 'Эстония',
-                FB: 'Люксембург',
-                F: 'Франция',
-                FD: 'Лихтенштейн, Австрия, или Швейцария',
-                GR: 'Греция',
-                HN: 'Индия',
-                IP: 'Италия',
-                HB: 'Израиль',
-                J: 'Япония',
-                KH: 'Корея',
-                KN: 'Норвегия',
-                KS: 'Финляндия, Швеция',
-                FS: 'Финляндия',
-                LA: 'Колумбия, Эквадор, Сальвадор, Гватемала, Гондурас, Перу',
-                LE: 'Аргентина',
-                LL: 'США, Канада',
-                LZ: 'Чили, Парагвай, Уругвай',
-                MG: 'Венгрия',
-                MO: 'Макао',
-                MY: 'Малайзия',
-                NF: 'Бельгии, Франции, Люксембурга',
-                PL: 'Польша',
-                LP: 'Польша',
-                PO: 'Португалия',
-                PP: 'Филиппины',
-                RO: 'Румыния',
-                RS: 'Россия',
-                RR: 'Россия',
-                RU: 'Россия',
-                RP: 'Россия',
-                SL: 'Словакия',
-                LV: 'Латвия',
-                SO: 'ЮАР',
-                T: 'Италия',
-                TA: 'Тайвань',
-                TU: 'Турция',
-                TY: 'Италия',
-                VC: 'Канада',
-                X: 'Австралия, Новая Зеландия',
-                Y: 'Испания',
-                ZA: 'Сингапур',
-                ZP: 'Гонконг, Макао',
-                QL: 'Италия, Испания, Португалия',
-                RK: 'Казахстан',
-                SU: 'Украина',
-                UA: 'Украина',
-                CN: 'Словакия',
-                ET: 'Эстония',
-                LT: 'Литва',
-                PK: 'Финляндия, Польша',
-                PM: 'Польша',
-                QN: 'Дания, Норвегия, Швеция, Исландия',
-                RM: 'Россия или Казахстан',
-                SE: 'Сербия',
-                ZD: 'Германия, Бельгия, Люксембург, Нидерланды, Австрия, Франция, Швейцария, Монако'
+                A: _("canada"),
+                AE: _("uae,_bahrain,_kuwait,_qat..."),
+                AB: _("egypt,_jordan,_saudi_arab..."),
+                AH: _("bahrain,_kuwait"),
+                B: _("uk_or_ireland"),
+                BR: _("brazil_(assembled_in_braz..."),
+                BZ: _("brazil_(assembled_in_chin..."),
+                C: _("china"),
+                CL: _("czech_republic"),
+                CH: _("germany"),
+                CZ: _("austria,_germany,_netherl..."),
+                D: _("mexico"),
+                DN: _("estonia"),
+                E: _("luxembourg"),
+                EE: _("france"),
+                FB: _("liechtenstein,_austria,_o..."),
+                F: _("greece"),
+                FD: _("india"),
+                GR: _("italy"),
+                HN: _("israel"),
+                IP: _("japan"),
+                HB: _("korea"),
+                J: _("norway"),
+                KH: _("finland,_sweden"),
+                KN: _("finland"),
+                KS: _("colombia,_ecuador,_el_sal..."),
+                FS: _("argentina"),
+                LA: _("usa,_canada"),
+                LE: _("chile,_paraguay,_uruguay"),
+                LL: _("hungary"),
+                LZ: _("macau"),
+                MG: _("malaysia"),
+                MO: _("belgium,_france,_luxembou..."),
+                MY: _("poland"),
+                NF: _("portugal"),
+                PL: _("philippines"),
+                LP: _("romania"),
+                PO: _("russia"),
+                PP: _("slovakia"),
+                RO: _("latvia"),
+                RS: _("south_africa"),
+                RR: _("taiwan"),
+                RU: _("turkey"),
+                RP: _("australia,_new_zealand"),
+                SL: _("spain"),
+                LV: _("singapore"),
+                SO: _("hong_kong,_macau"),
+                T: _("italy,_spain,_portugal"),
+                TA: _("kazakhstan"),
+                TU: _("ukraine"),
+                TY: _("lithuania"),
+                VC: _("finland,_poland"),
+                X: _("denmark,_norway,_sweden,_..."),
+                Y: _("russia_or_kazakhstan"),
+                ZA: _("serbia"),
+                ZP: _("germany,_belgium,_luxembo...")
             }
         };
 
         this.colorScheme = {
-            Black: 'Черный',
-            Gold: 'Золотой',
-            'Jet Black': 'Черный оникс',
-            Red: 'Красный',
-            'Rose Gold': 'Розовое золото',
-            Silver: 'Серебристый',
-            'Space Gray': 'Серый космос',
-            Blue: 'Синий',
-            Green: 'Зеленый',
-            Pink: 'Розовый',
-            White: 'Белый',
-            Yellow: 'Желтый'
+            Black: _("black"),
+            Gold: _("gold"),
+            'Jet Black': _("black_onyx"),
+            Red: _("red"),
+            'Rose Gold': _("rose_gold"),
+            Silver: _("silver"),
+            'Space Gray': _("space_grey"),
+            Blue: _("blue"),
+            Green: _("green"),
+            Pink: _("pink"),
+            White: _("white"),
+            Yellow: _("yellow"),
         };
 
         this.defaultState = {
@@ -515,20 +505,20 @@ class About extends Component {
     render() {
 
         const { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state,
-            {image_manager} = this.props;
+            {image_manager, _} = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                            <NavCenter>О iPhone</NavCenter>
+                            <NavCenter>{_('о_iphone')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <ContentBlockTitle className='content_block_title'>
-                                Введите модель iPhone
+                                {_('enter_the_iphone_model')}
                             </ContentBlockTitle>
 
                             <List inset accordion>
@@ -541,12 +531,12 @@ class About extends Component {
                                         />
                                     </div>
                                 </ListItem>
-                                <ListItem accordionItem title="Где найти модель?">
+                                <ListItem accordionItem title={_('where_to_find_the_model?')}>
                                     <AccordionContent>
                                         <ContentBlock>
-                                            <p>Настройки -> Основыные -> О телефоне -> Модель</p>
+                                            <p>{_('settings_->_master_->_abo...')}</p>
                                             <Image src={image_manager(1)}/>
-                                            <p>На задней строне коробки</p>
+                                            <p>{_('on_the_back_side_of_the_b...')}</p>
                                             <Image src={image_manager(2)}/>
                                         </ContentBlock>
                                     </AccordionContent>
@@ -556,27 +546,27 @@ class About extends Component {
                                 input_valid === true && (
                                     <div>
                                         <Card>
-                                            <CardHeader>Модель:</CardHeader>
+                                            <CardHeader>{_('model')}:</CardHeader>
                                             <CardContent>{iPhone}</CardContent>
                                         </Card>
                                         <Card>
-                                            <CardHeader>Кол-во памяти:</CardHeader>
+                                            <CardHeader>{_('amount_of_memory')}:</CardHeader>
                                             <CardContent>{capacity}</CardContent>
                                         </Card>
                                         <Card>
-                                            <CardHeader>Цвет устройства:</CardHeader>
+                                            <CardHeader>{_('the_color_of_the_device')}:</CardHeader>
                                             <CardContent>{color}</CardContent>
                                         </Card>
                                         <Card>
-                                            <CardHeader>Тип устройства:</CardHeader>
+                                            <CardHeader>{_('device_type')}:</CardHeader>
                                             <CardContent>{type}</CardContent>
                                         </Card>
                                         <Card>
-                                            <CardHeader>Страна покупки:</CardHeader>
+                                            <CardHeader>{_('the_country_of_purchase')}:</CardHeader>
                                             <CardContent>{country_of_purchase}</CardContent>
                                         </Card>
                                         <RatingCheck testN='About'>
-                                            Заявленная информация о iPhone верна?
+                                            {_('the_stated_information_is...')}
                                         </RatingCheck>
                                     </div>
                                 )
@@ -592,6 +582,8 @@ class About extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModelInfo: state.current_iphone.model_info
     }
 };

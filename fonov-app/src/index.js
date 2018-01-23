@@ -6,6 +6,8 @@ import { store, history } from './redux/store'
 import { ConnectedRouter } from 'react-router-redux'
 import { Route } from 'react-router'
 import { Framework7App } from 'framework7-react';
+import {LANGUAGES} from "./constant/config";
+import {addTranslation, initialize} from "react-localize-redux/lib/index";
 //CSS
 import 'framework7/dist/css/framework7.ios.min.css';
 import 'framework7/dist/css/framework7.ios.colors.min.css';
@@ -41,9 +43,15 @@ import Raven from 'raven-js';
 
 
 Raven.config('https://fa8991ecd0fc44beb7daa608ffe5d886@sentry.io/275162').install();
+// Store
+const _store = store();
+// Location
+_store.dispatch(initialize(LANGUAGES));
+const json = require('./location/global.locale.json');
+_store.dispatch(addTranslation(json));
 
 ReactDOM.render(
-    <Provider store={store()}>
+    <Provider store={_store}>
         <ConnectedRouter history={history}>
             <Framework7App themeType="ios">
                 <Route exact path={URLS.Home} component={Home}/>
