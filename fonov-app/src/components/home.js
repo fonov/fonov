@@ -39,7 +39,7 @@ class Home extends Component {
             {
                 title: _('why_is_it_necessary?'),
                 desc: (
-                    <p>{_('most_people_don\'t_know_ho...')}</p>
+                    <p>{_('most_people_don\'t_know_ho...', {APP_NAME})}</p>
                 )
             },
             {
