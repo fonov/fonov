@@ -926,5 +926,13 @@
 	"home": [
 		"Home",
 		"Домой"
+	],
+	"version": [
+		"Version",
+		"Версия"
+	],
+	"language": [
+		"Language",
+		"Язык"
 	]
 }

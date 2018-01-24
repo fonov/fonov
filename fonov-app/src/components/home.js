@@ -2,57 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import URLS from '../constant/urls'
-import {APP_NAME} from '../constant/config'
-import { View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
-    List, ListItem, Views, NavCenter, AccordionContent, Button, NavLeft, NavRight
+import {APP_NAME, LANGUAGES} from '../constant/config'
+import { View, Navbar, Pages, Page,
+    ContentBlock, ContentBlockTitle,
+    List, ListItem, Views, NavCenter,
+    AccordionContent, Button,
+    NavLeft, NavRight
 } from 'framework7-react';
 import {version} from '../../package.json';
 import {clean_test} from '../actions/test'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
+import {ListItem as ListItem16} from '../elements/index'
+import {setActiveLanguage} from "react-localize-redux";
 
 
 class Home extends Component {
-
-    constructor(props) {
-        super(props);
-
-        const {_} = props;
-
-        this.state = {
-            aboutTest: [
-                {
-                    title: _('what_is_{app_name}?', {APP_NAME}),
-                    desc: (
-                        <p>{_('test_for_iphone_before_bu...')}</p>
-                    )
-                },
-                {
-                    title: _('why_is_it_necessary?'),
-                    desc: (
-                        <p>{_('most_people_don\'t_know_ho...')}</p>
-                    )
-                },
-                {
-                    title: _('why_{app_name}?', {APP_NAME}),
-                    desc: (
-                        <p>{_('{app_name}_is_completely...', {APP_NAME})}</p>
-                    )
-                },
-                {
-                    title: _('what_you_need_for_the_tes...'),
-                    desc: (
-                        <div style={{padding: 8}}>
-                            <ul>
-                                <li>{_('clip')}</li>
-                                <li>{_('socket/powerbank')}</li>
-                                <li>{_('smartphone_with_the_funct...')}</li>
-                            </ul>
-                        </div>
-                    )
-                }
-            ]
-        };
-    }
 
     componentWillMount() {
         const {clean_test, currentModel} = this.props;
@@ -62,10 +26,46 @@ class Home extends Component {
         }
     }
 
+    aboutTest() {
+        const {_} = this.props;
+
+        return [
+            {
+                title: _('what_is_{app_name}?', {APP_NAME}),
+                desc: (
+                    <p>{_('test_for_iphone_before_bu...')}</p>
+                )
+            },
+            {
+                title: _('why_is_it_necessary?'),
+                desc: (
+                    <p>{_('most_people_don\'t_know_ho...')}</p>
+                )
+            },
+            {
+                title: _('why_{app_name}?', {APP_NAME}),
+                desc: (
+                    <p>{_('{app_name}_is_completely...', {APP_NAME})}</p>
+                )
+            },
+            {
+                title: _('what_you_need_for_the_tes...'),
+                desc: (
+                    <div style={{padding: 8}}>
+                        <ul>
+                            <li>{_('clip')}</li>
+                            <li>{_('socket/powerbank')}</li>
+                            <li>{_('smartphone_with_the_funct...')}</li>
+                        </ul>
+                    </div>
+                )
+            }
+        ]
+    }
+
     render() {
 
-        const {push, initialTest, _} = this.props,
-            {aboutTest} = this.state;
+        const {push, initialTest, _, currentLanguage, setActiveLanguage} = this.props;
 
         return (
             <Views>
@@ -80,16 +80,39 @@ class Home extends Component {
                             <ContentBlockTitle className='content_block_title'>
                                 {_('test_iphone')}
                             </ContentBlockTitle>
-
                             <ContentBlock>
                                 <Button big color="red" fill onClick={() => push(URLS[initialTest])}>
                                     {_('start_test')}
                                 </Button>
                             </ContentBlock>
-
+                            <ContentBlockTitle className='content_block_title'>
+                                <span role="img" aria-label="Globified">🌐</span> {_('language')}
+                            </ContentBlockTitle>
+                            <List inset>
+                                {
+                                    Object.keys(LANGUAGES).map((lang, i) => (
+                                        <ListItem16
+                                            onClick={() => setActiveLanguage(lang)}
+                                            key={i}
+                                            title={(
+                                                <span>
+                                                    <span
+                                                        role="img"
+                                                        aria-label={LANGUAGES[lang].emoji_name}
+                                                    >
+                                                        {LANGUAGES[lang].emoji}
+                                                    </span> {LANGUAGES[lang].name}
+                                                </span>
+                                            )}
+                                            after={currentLanguage === lang ?
+                                                <span role="img" aria-label="Green Check Mark">✅</span> : null}
+                                        />
+                                    ))
+                                }
+                            </List>
                             <List accordion inset>
                                 {
-                                    aboutTest.map((item, i) => (
+                                    this.aboutTest().map((item, i) => (
                                         <ListItem accordionItem title={item.title}>
                                             <AccordionContent>
                                                 <ContentBlock>{item.desc}</ContentBlock>
@@ -99,7 +122,7 @@ class Home extends Component {
                                 }
                             </List>
                             <ContentBlock inset>
-                                Version: {version}
+                                {`${_('version')}: ${version}`}
                             </ContentBlock>
                         </Page>
                     </Pages>
@@ -122,7 +145,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         push: path =>  dispatch(push(path)),
-        clean_test: () => dispatch(clean_test())
+        clean_test: () => dispatch(clean_test()),
+        setActiveLanguage: code => dispatch(setActiveLanguage(code))
     }
 };
 
