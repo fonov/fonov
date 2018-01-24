@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class TouchIDorFaceID extends Component {
@@ -21,7 +22,7 @@ class TouchIDorFaceID extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         switch (currentModel) {
             case 'iPhone 5s':
@@ -39,14 +40,14 @@ class TouchIDorFaceID extends Component {
                         <View navbarThrough>
                             <Navbar>
                                 <NavLeft/>
-                                <NavCenter>Touch ID</NavCenter>
+                                <NavCenter>{_('touch_id')}</NavCenter>
                                 <NavRight/>
                             </Navbar>
                             <Pages>
                                 <Page>
                                     <Card>
                                         <CardHeader>
-                                            Зайдите в Настройки -> Touch ID и код-пароль. Нажмите "Добавить палец" и проверьте работу Touch ID.
+                                            {_('go_to_settings_->_touch_i...')}
                                         </CardHeader>
                                         <CardContent>
                                             <Image src={image_manager(1)} />
@@ -54,7 +55,7 @@ class TouchIDorFaceID extends Component {
                                     </Card>
 
                                     <RatingCheck testN='TouchIDorFaceID'>
-                                        Touch ID работает?
+                                        {_('touch_id_works?')}
                                     </RatingCheck>
                                 </Page>
                             </Pages>
@@ -67,14 +68,14 @@ class TouchIDorFaceID extends Component {
                         <View navbarThrough>
                             <Navbar>
                                 <NavLeft/>
-                                <NavCenter>Face ID</NavCenter>
+                                <NavCenter>{_('face_id')}</NavCenter>
                                 <NavRight/>
                             </Navbar>
                             <Pages>
                                 <Page>
                                     <Card>
                                         <CardHeader>
-                                            Для проверки Face ID зайдите в Настройки -> Face ID и код-пароль. Нажмите сканировать лицо и проверьте работу Face ID.
+                                            {_('to_check_face_id_go_to_se...')}
                                         </CardHeader>
                                         <CardContent>
                                             <Image src={image_manager(1)} />
@@ -82,7 +83,7 @@ class TouchIDorFaceID extends Component {
                                     </Card>
 
                                     <RatingCheck testN='TouchIDorFaceID'>
-                                        Face ID работает?
+                                        {_('face_id_works?')}
                                     </RatingCheck>
                                 </Page>
                             </Pages>
@@ -98,6 +99,8 @@ class TouchIDorFaceID extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

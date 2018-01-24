@@ -6,6 +6,7 @@ import { ContentBlock, ContentBlockTitle, Link, PickerModal, Toolbar,
     GridRow, GridCol, Page} from 'framework7-react';
 import {TestBtnNext} from '../../elements/index'
 import {nextTest} from '../../actions/shemeOfTest'
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Stars extends Component {
@@ -99,7 +100,7 @@ class Rating5Stars extends Component {
 
     render() {
 
-        const { children, firstTitle, lastTitle, testN } = this.props,
+        const { children, firstTitle, lastTitle, testN, _ } = this.props,
             { firstStars, secondStars, picker_modal } = this.state;
 
         return (
@@ -109,7 +110,7 @@ class Rating5Stars extends Component {
                     <Toolbar>
                         <Link color="gray">{children}</Link>
                         <Link onClick={() => this.setState({picker_modal: false})}>
-                            Закрыть
+                            {_('close')}
                         </Link>
                     </Toolbar>
                     <Page>
@@ -134,7 +135,10 @@ class Rating5Stars extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code
+    }
 };
 
 const mapDispatchToProps = dispatch => {

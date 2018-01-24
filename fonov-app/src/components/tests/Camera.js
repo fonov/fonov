@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Camera extends Component {
@@ -21,14 +22,14 @@ class Camera extends Component {
 
     render() {
 
-        const { image_manager, no_front_camera } = this.props;
+        const { image_manager, no_front_camera, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Камера</NavCenter>
+                        <NavCenter>{_('camera')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -37,17 +38,9 @@ class Camera extends Component {
                                 <CardHeader>
                                     {
                                         no_front_camera ? (
-                                            <span>
-                                                Откройте приложение камера.
-                                                Проверьте изображение с камеры.
-                                                Изображение должно быть чистым, без размытия.
-                                            </span>
+                                            <span>{_('open_the_camera_app._chec...')}</span>
                                         ) : (
-                                            <span>
-                                                Откройте Центр управления, нажмите на иконку "Камера".
-                                                Проверьте изображение с фронтальной и передней камеры.
-                                                Изображение должно быть чистым, без размытия.
-                                            </span>
+                                            <span>{_('open_the_control_center_...')}</span>
                                         )
                                     }
                                 </CardHeader>
@@ -57,7 +50,7 @@ class Camera extends Component {
                             </Card>
 
                             <RatingCheck testN='Camera'>
-                                Камера работает?
+                                {_('the_camera_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -70,6 +63,8 @@ class Camera extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model,
         no_front_camera: !(['iphone', 'iphone 3g', 'iphone 3gs'].indexOf(state.current_iphone.model.toLowerCase()) === -1)
     }

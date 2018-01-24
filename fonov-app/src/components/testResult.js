@@ -6,6 +6,7 @@ import FontAwesome from 'react-fontawesome'
 import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock, Button, List, ListItem, Badge, NavLeft,
     NavRight, Card, CardContent, CardHeader
 } from 'framework7-react';
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class TestResult extends Component {
@@ -13,125 +14,127 @@ class TestResult extends Component {
     constructor(props) {
         super(props);
 
+        const {_, currentModel} = props;
+
         this.ratingTest = {
             About: {
-                title: 'Информация о iPhone',
+                title: _('0_information_about_the_iph...'),
                 pass: true,
-                warning: 'Информация о телефоне не совпадает с заявленной информацией. Мы не рекомендуем Вам покупать данный телефон.',
+                warning: _('1_information_about_phone_d...'),
                 weight:-100
             },
             Appearance: {
-                title: 'Внешний вид iPhone',
+                title: _('2_the_appearance_of_the_iph...'),
                 weight:7.5
             },
             WaterSensor: {
-                title: 'Датчик влаги',
+                title: _('moisture_sensor'),
                 pass: false,
-                warning: 'Мы не рекомендуем покупать iPhone, если индикатор влаги красного цвета. Вода оказывает негативное влияние на микросхемы iPhone и разрушает его изнутри.',
+                warning: _('4_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             ButtonsAndVibration: {
-                title: 'Кнопки и вибрация',
+                title: _('buttons_and_vibration'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочими кнопками или вибрацией.',
+                warning: _('6_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Sensor: {
-                title: 'Сенсор',
+                title: _('sensor'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с некорректно работающим сенсором.',
+                warning: _('8_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Touch3D: {
-                title: '3D Touch',
+                title: _('3d_touch'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с неработающим 3D Touch, т.к. скорее всего экран был поврежден и заменен на более дешевый аналог без поддержки 3D Touch.',
+                warning: _('10_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             iCloud: {
-                title: 'iCloud',
+                title: _('icloud'),
                 pass: true,
-                warning: 'Мы категорически не рекомендуем покупать iPhone, привязанный к iCloud. Вы не сможете ввести свой iCloud  или iPhone и вовсе может быть заблокирован.',
+                warning: _('12_we_strongly_recommend_you...'),
                 weight:-100
             },
             Flash: {
-                title: 'Вспышка',
+                title: _('flash'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочей вспышкой.',
+                warning: _('14_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Speaker: {
-                title: 'Динамики',
+                title: _('dynamics'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочими динамиками.',
+                warning: _('16_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             CompassAndGsensor: {
-                title: 'Компас и G-sensor',
+                title: _('compass_and_g-sensor'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочим Компасом или G-sensor.',
+                warning: _('18_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Camera: {
-                title: 'Камера',
+                title: _('camera'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочей камерой.',
+                warning: _('20_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             HeadphoneJack: {
-                title: 'Вход для наушников',
+                title: _('headphone_jack'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочим входом для наушников.',
+                warning: _('22_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             TouchIDorFaceID: {
                 title: props.currentModel === 'iPhone X' ? 'Face ID' : 'Touch ID',
                 pass: true,
-                warning: `Мы не рекомендуем покупать телефон с нерабочим ${props.currentModel === 'iPhone X' ? 'Face ID' : 'Touch ID'}.`,
+                warning: _('23_we_do_not_recommend_buyin...', {sensor: currentModel === 'iPhone X' ? 'Face ID' : 'Touch ID'}),
                 weight:-100
             },
             WiFi: {
-                title: 'Wi-Fi',
+                title: _('wi-fi'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочим Wi-Fi.',
+                warning: _('25_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Bluetooth: {
-                title: 'Bluetooth',
+                title: _('bluetooth'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочим Bluetooth.',
+                warning: _('27_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Microphone: {
-                title: 'Микрофон',
+                title: _('microphone'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочим микрофоном.',
+                warning: _('29_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             CallAndProximitySensor: {
-                title: 'Вызов и Датчик приближения',
+                title: _('call_and_proximity_sensor'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон без возможности вызова или с неработающим Датчиком приближения.',
+                warning: _('31_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Charging: {
-                title: 'Зарядка',
+                title: _('charging'),
                 pass: true,
-                warning: 'Мы не рекомендуем покупать телефон с нерабочим зарядным устройством.',
+                warning: _('33_we_do_not_recommend_buyin...'),
                 weight:-100
             },
             Warranty: {
-                title: 'Гарантия',
+                title: _('guarantee'),
                 pass: true,
                 weight:5
             },
             IMEI: {
-                title: 'Совпадение IMEI',
+                title: _('coincidence_imei'),
                 pass: true,
                 weight:5
             },
             Package: {
-                title: 'Комплектация',
+                title: _('equipment'),
                 pass: true,
                 weight:5
             }
@@ -205,7 +208,7 @@ class TestResult extends Component {
 
     conclusion(rank) {
 
-        const { currentModel } = this.props,
+        const { currentModel, _ } = this.props,
             set_conclusion = (type, title, text) => {
                 this.setState({
                     conclusion: {
@@ -219,45 +222,45 @@ class TestResult extends Component {
         if (rank < 0) {
             return set_conclusion(
                 'card_header_danger',
-                `${currentModel} не рекомендован к покупке!`,
-                `${currentModel} содержит критические недостатки.`
+                _('0_{currentmodel}_is_not_re...', {currentModel}),
+                _('1_{currentmodel}_contains_...', {currentModel})
             );
         } else if (rank === 0) {
             return set_conclusion(
                 'card_header_success',
-                `${currentModel} рекомендован к покупке!`,
-                `${currentModel} полностью соответствует заявленной информации и находится в рабочем состоянии.`
+                _('2_{currentmodel}_recommend...', {currentModel}),
+                _('3_{currentmodel}_is_fully_...', {currentModel})
             );
         } else if (rank > 0 && rank <= 10) {
             return set_conclusion(
                 'card_header_success',
-                `${currentModel} рекомендован к покупке!`,
-                `${currentModel} имеет незначительные недостатки. Вы можете рассчитывать на небольшую скидку от продавца.`
+                _('4_{currentmodel}_recommend...', {currentModel}),
+                _('5_{currentmodel}_has_minor...', {currentModel})
             );
         } else if (rank > 10 && rank <= 20) {
             return set_conclusion(
                 'card_header_success',
-                `${currentModel} рекомендован к покупке!`,
-                `${currentModel} имеет незначительные недостатки. Вы можете рассчитывать на среднюю скидку от продавца.`
+                _('6_{currentmodel}_recommend...', {currentModel}),
+                _('7_{currentmodel}_has_minor...', {currentModel})
             );
         } else if (rank > 20 && rank <= 25) {
             return set_conclusion(
                 'card_header_success',
-                `${currentModel} рекомендован к покупке!`,
-                `${currentModel} имеет незначительные недостатки. Вы можете рассчитывать на скидку "выше среднего" от продавца.`
+                _('8_{currentmodel}_recommend...', {currentModel}),
+                _('9_{currentmodel}_has_minor...', {currentModel})
             );
         } else {
             return set_conclusion(
                 'card_header_success',
-                `${currentModel} рекомендован к покупке!`,
-                `${currentModel} имеет недостатки. Вы можете рассчитывать на высокую скидку от продавца.`
+                _('10_{currentmodel}_recommend...', {currentModel}),
+                _('11_{currentmodel}_has_flaws...', {currentModel})
             );
         }
     }
 
     render() {
 
-        const { push } = this.props,
+        const { push, _ } = this.props,
             { testList, conclusion } = this.state;
 
         return (
@@ -265,7 +268,7 @@ class TestResult extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Результаты теста</NavCenter>
+                        <NavCenter>{_('test_results')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
@@ -289,7 +292,7 @@ class TestResult extends Component {
 
                             <ContentBlock>
                                 <Button big color="blue" onClick={() => push(URLS.Home)}>
-                                    Домой
+                                    {_('home')}
                                 </Button>
                             </ContentBlock>
                         </Page>
@@ -303,6 +306,8 @@ class TestResult extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model,
         rating: state.rating
     }

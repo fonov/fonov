@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class ButtonsAndVibration extends Component {
@@ -21,7 +22,7 @@ class ButtonsAndVibration extends Component {
 
     home_button() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         switch (currentModel) {
             case 'iPhone X':
@@ -30,7 +31,7 @@ class ButtonsAndVibration extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Клавиша Домой
+                            {_('key_home')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(2)}/>
@@ -42,21 +43,21 @@ class ButtonsAndVibration extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Кнопки и вибрация</NavCenter>
+                        <NavCenter>{_('buttons_and_vibration')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Клавиша блокировки
+                                    {_('lock_key')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -65,15 +66,14 @@ class ButtonsAndVibration extends Component {
                             {this.home_button()}
                             <Card>
                                 <CardHeader>
-                                    Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумный режим, телефон должен завибрировать.
+                                    {_('check_the_volume_keys_and...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
                                 </CardContent>
                             </Card>
-
                             <RatingCheck testN='ButtonsAndVibration'>
-                                Работают кнопки и вибрация?
+                                {_('work_button_and_vibration...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -86,6 +86,8 @@ class ButtonsAndVibration extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

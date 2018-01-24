@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class CompassAndGsensor extends Component {
@@ -21,21 +22,21 @@ class CompassAndGsensor extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Компас и G-sensor</NavCenter>
+                        <NavCenter>{_('compass_and_g-sensor')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройте приложение Компас и повращайте телефон. При вращении компас должен менять свое положение.
+                                    {_('open_the_compass_app_and_...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -44,7 +45,7 @@ class CompassAndGsensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Взмахом влево откройте Уровень. Попереворачивайте телефон, G-sensor должен работать корректно и плавно.
+                                    {_('swipe_to_the_left_to_open...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -52,7 +53,7 @@ class CompassAndGsensor extends Component {
                             </Card>
 
                             <RatingCheck testN='CompassAndGsensor'>
-                                Компас и G-sensor работают?
+                                {_('compass_and_g-sensor_work...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -65,6 +66,8 @@ class CompassAndGsensor extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

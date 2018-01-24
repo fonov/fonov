@@ -9,6 +9,7 @@ import {
     Card, CardContent, CardHeader, NavLeft, NavRight, ContentBlockTitle
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class IMEI extends Component {
@@ -23,7 +24,7 @@ class IMEI extends Component {
 
     secondImei() {
 
-        const { currentModel, image_manager, imei_back_side_image_manager } = this.props;
+        const { currentModel, image_manager, imei_back_side_image_manager, _ } = this.props;
 
         switch(currentModel) {
             case 'iPhone 6s':
@@ -36,7 +37,7 @@ class IMEI extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            На слоте для SIM-карты.
+                            {_('the_slot_for_the_sim_card...')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(3)} />
@@ -52,7 +53,7 @@ class IMEI extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            На задней стороне iPhone.
+                            {_('on_the_back_side_of_the_i...')}
                         </CardHeader>
                         <CardContent>
                             <Image src={imei_back_side_image_manager(1)} />
@@ -67,7 +68,7 @@ class IMEI extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            На слоте для сим карты
+                            {_('the_slot_for_sim_card')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(1)} />
@@ -81,25 +82,25 @@ class IMEI extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Совпадение IMEI</NavCenter>
+                        <NavCenter>{_('coincidence_imei')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <ContentBlockTitle className='content_block_title'>
-                                Проверьте, совпадает ли IMEI телефона с его комплектующими.
+                                {_('check_whether_the_imei_of...')}
                             </ContentBlockTitle>
 
                             <Card>
                                 <CardHeader>
-                                    Настройки -> Основные -> Об этом устройстве -> IMEI.
+                                    {_('settings_->_general_->_ab...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -110,7 +111,7 @@ class IMEI extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    На коробке.
+                                    {_('on_the_box.')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(5)} />
@@ -118,7 +119,7 @@ class IMEI extends Component {
                             </Card>
 
                             <RatingCheck testN='IMEI'>
-                                IMEI совпадают?
+                                {_('imei_the_same?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -131,6 +132,8 @@ class IMEI extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

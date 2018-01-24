@@ -7,6 +7,7 @@ import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Bluetooth extends Component {
@@ -21,21 +22,21 @@ class Bluetooth extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Bluetooth</NavCenter>
+                        <NavCenter>{_('bluetooth')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройте Настройки -> Bluetooth. Попробуйте найти bluetooth-устройство и подключиться к нему.
+                                    {_('open_settings_->_bluetoot...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -43,7 +44,7 @@ class Bluetooth extends Component {
                             </Card>
 
                             <RatingCheck testN='Bluetooth'>
-                                Bluetooth работает?
+                                {_('the_bluetooth_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -56,6 +57,8 @@ class Bluetooth extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

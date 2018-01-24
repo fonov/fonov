@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class CallAndProximitySensor extends Component {
@@ -21,7 +22,7 @@ class CallAndProximitySensor extends Component {
 
     callWithHeadpods() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         switch (currentModel) {
             case 'iPhone':
@@ -40,7 +41,7 @@ class CallAndProximitySensor extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Выключите громкую связь, вставьте наушники и попробуйте говорить через них.
+                            {_('turn_off_the_speakerphone...')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(3)} />
@@ -54,21 +55,21 @@ class CallAndProximitySensor extends Component {
 
     render() {
 
-        const { cell_status_image, image_manager } = this.props;
+        const { cell_status_image, image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Вызов и Датчик приближения</NavCenter>
+                        <NavCenter>{_('call_and_proximity_sensor')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Вставьте SIM-карту. Телефон должен сразу найти сеть.
+                                    {_('insert_the_sim_card._the_...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={cell_status_image(1)} />
@@ -77,7 +78,7 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Попробуйте совершить вызов.
+                                    {_('try_to_make_a_call.')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -86,7 +87,7 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Закройте пальцем Датчик приближения, экран должен потухнуть.
+                                    {_('close_with_a_finger_the_p...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(4)} />
@@ -95,7 +96,7 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Включите громкую связь для проверки Динамика.
+                                    {_('put_it_on_speaker_to_chec...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -105,7 +106,7 @@ class CallAndProximitySensor extends Component {
                             {this.callWithHeadpods()}
 
                             <RatingCheck testN='CallAndProximitySensor'>
-                                Вызов и Датчик приближения работают?
+                                {_('call_and_the_proximity_se...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -118,6 +119,8 @@ class CallAndProximitySensor extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

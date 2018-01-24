@@ -9,6 +9,7 @@ import {View, Navbar, Pages, Page, Views, NavCenter, Card,
     NavLeft, NavRight, CardFooter
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Warranty extends Component {
@@ -23,27 +24,27 @@ class Warranty extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Гарантии</NavCenter>
+                        <NavCenter>{_('warranty')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Зайдите в Настройки -> Основные -> Об этом устройстве -> Серийный номер. Нажмите на серийный номер и выберите "Скопировать".
+                                    {_('go_to_settings_->_general...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                                 <CardFooter>
-                                    Затем перейдите на официальный сайт Apple для проверки гарантии.
+                                    {_('then_go_to_the_official_...')}
                                 </CardFooter>
                             </Card>
 
@@ -54,13 +55,13 @@ class Warranty extends Component {
                                     color='green'
                                     onClick={() => window.open("https://checkcoverage.apple.com")}
                                 >
-                                    Проверить гарантию
+                                    {_('check_guarantee')}
                                 </Button>
                             </ContentBlock>
 
                             <Card>
                                 <CardHeader>
-                                    Вставьте серийный номер, введите captcher и нажмите далее.
+                                    {_('insert_the_serial_number...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -69,7 +70,7 @@ class Warranty extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Пролистайте вниз до статуса гарантии.
+                                    {_('scroll_down_to_warranty_s...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(3)} />
@@ -77,7 +78,7 @@ class Warranty extends Component {
                             </Card>
 
                             <RatingCheck testN='Warranty'>
-                                Данные о гарантии iPhone совпадают с заявленной информацией?
+                                {_('information_about_warrant...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -90,6 +91,8 @@ class Warranty extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

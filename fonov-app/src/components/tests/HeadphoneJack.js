@@ -10,6 +10,7 @@ import {
     CardHeader, NavLeft, NavRight, CardFooter
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class HeadphoneJack extends Component {
@@ -24,21 +25,21 @@ class HeadphoneJack extends Component {
 
     render() {
 
-        const { image_manager, image_speaker } = this.props;
+        const { image_manager, image_speaker, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Вход для наушников</NavCenter>
+                        <NavCenter>{_('headphone_jack')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Вставьте наушники.
+                                    {_('insert_the_earphone.')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -46,17 +47,17 @@ class HeadphoneJack extends Component {
                             </Card>
                             <Card>
                                 <CardHeader>
-                                    Проиграйте любой звук в Настройки -> Звуки -> Тактильные сигналы.
+                                    {_('play_any_sound_in_setting...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_speaker()} />
                                 </CardContent>
                                 <CardFooter>
-                                    Если звука нет, попробуйте использовать другие наушники. Если звука все равно нет, значит вход для наушников не работает.
+                                    {_('if_no_sound_try_using_ot...')}
                                 </CardFooter>
                             </Card>
                             <RatingCheck testN='HeadphoneJack'>
-                                Вход для наушников работает?
+                                {_('the_headphone_jack_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -69,6 +70,8 @@ class HeadphoneJack extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

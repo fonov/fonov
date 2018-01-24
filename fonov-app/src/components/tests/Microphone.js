@@ -7,6 +7,7 @@ import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Microphone extends Component {
@@ -21,21 +22,21 @@ class Microphone extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Микрофон</NavCenter>
+                        <NavCenter>{_('microphone')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройте приложение Диктофон. Сделайте тестовую запись.
+                                    {_('open_the_voice_recorder._...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -44,7 +45,7 @@ class Microphone extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    Прослушайте её. Запись не должна содержать посторонних шумов и тресков. Голос должен быть чистым.
+                                    {_('listen_to_it._the_entry_m...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(2)} />
@@ -52,7 +53,7 @@ class Microphone extends Component {
                             </Card>
 
                             <RatingCheck testN='Microphone'>
-                                Микрофон работает?
+                                {_('the_microphone_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -65,6 +66,8 @@ class Microphone extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

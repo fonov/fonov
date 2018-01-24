@@ -10,6 +10,7 @@ import {
     NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Sensor extends Component {
@@ -24,21 +25,21 @@ class Sensor extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Сенсор</NavCenter>
+                        <NavCenter>{_('sensor')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Проведите пальцем по всему экрану. Сенсор должен работать плавно и без задержек на всей площади экрана.
+                                    {_('swipe_your_finger_across_...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -46,7 +47,7 @@ class Sensor extends Component {
                             </Card>
 
                             <RatingCheck testN='Sensor'>
-                                Сенсор работает корректно?
+                                {_('the_sensor_is_working_cor...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -59,6 +60,8 @@ class Sensor extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

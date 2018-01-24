@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Charging extends Component {
@@ -21,28 +22,28 @@ class Charging extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Порт зарядки</NavCenter>
+                        <NavCenter>{_('charging_port')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Подключите телефон к зарядке, он сразу должен начать заряжаться. Проверьте, насколько плотно (надежно) вставляется штекер.
+                                    {_('connect_your_phone_to_cha...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
                             <RatingCheck testN='Charging'>
-                                Порт зарядки работает?
+                                {_('charging_port_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -55,6 +56,8 @@ class Charging extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

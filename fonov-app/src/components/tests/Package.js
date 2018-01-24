@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Package extends Component {
@@ -55,7 +56,7 @@ class Package extends Component {
 
     adapter() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         switch (currentModel) {
             case 'iPhone 7':
@@ -66,7 +67,7 @@ class Package extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Адаптер Lightning/выход 3,5 мм для наушников.
+                            {_('lightning_adapter/3.5_mm_...')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(8)} />
@@ -80,7 +81,7 @@ class Package extends Component {
 
     cable() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         switch (currentModel) {
             case 'iPhone':
@@ -91,7 +92,7 @@ class Package extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            30-пиновый кабель.
+                            {_('30-pin_cable.')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(1)} />
@@ -114,7 +115,7 @@ class Package extends Component {
                 return (
                     <Card>
                         <CardHeader>
-                            Кабель Lightning/USB.
+                            {_('lightning_to_usb_cable.')}
                         </CardHeader>
                         <CardContent>
                             <Image src={image_manager(2)} />
@@ -346,19 +347,21 @@ class Package extends Component {
 
     render() {
 
+        const {_} = this.props;
+
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Комплектация</NavCenter>
+                        <NavCenter>{_('equipment')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Наушники.
+                                    {_('headphones.')}
                                 </CardHeader>
                                 <CardContent>
                                     {this.earpods()}
@@ -367,7 +370,7 @@ class Package extends Component {
                             {this.adapter()}
                             <Card>
                                 <CardHeader>
-                                    Зарядное устройство.
+                                    {_('charger.')}
                                 </CardHeader>
                                 <CardContent>
                                     {this.powerAdapter()}
@@ -375,7 +378,7 @@ class Package extends Component {
                             </Card>
                             {this.cable()}
                             <RatingCheck testN='Package'>
-                                Комплектация iPhone совпадает с заявленной?
+                                {_('package_contents_iphone_i...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -388,6 +391,8 @@ class Package extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model,
         currentModelInfo: state.current_iphone.model_info
     }

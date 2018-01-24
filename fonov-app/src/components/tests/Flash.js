@@ -7,6 +7,7 @@ import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Flash extends Component {
@@ -21,21 +22,21 @@ class Flash extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Вспышка</NavCenter>
+                        <NavCenter>{_('flash')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Откройте Центр управления. Для этого в нижней части экрана проведите пальцем снизу вверх. Нажмите на иконку "Фонарик" и проверьте работу светодиода.
+                                    {_('open_the_control_center._...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
@@ -43,7 +44,7 @@ class Flash extends Component {
                             </Card>
 
                             <RatingCheck testN='Flash'>
-                                Вспышка работает?
+                                {_('the_flash_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -56,6 +57,8 @@ class Flash extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

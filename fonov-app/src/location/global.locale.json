@@ -1,422 +1,930 @@
 {
-  "test_iphone": [
-    "Test the iPhone before buying",
-    "Тестирование iPhone перед покупкой"
-  ],
-  "start_test": [
-    "Start",
-    "Начать"
-  ],
-  "what_is_${app_name}?": [
-    "What is ${APP_NAME}?",
-    "Что это ${APP_NAME}?"
-  ],
-  "test_for_iphone_before_bu...": [
-    "Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test the program will give You recommendations on purchasing the iPhone.",
-    "Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста программа даст Вам рекомендации относительно покупки iPhone."
-  ],
-  "why_is_it_necessary?": [
-    "Why is it necessary?",
-    "Зачем это нужно?"
-  ],
-  "most_people_don't_know_ho...": [
-    "Most people don't know how to run a complete diagnostic on iPhone before buying, and it is fraught with loss of time, money and nerves. ${APP_NAME} is directed to every person regardless of his knowledge of the iPhone, could make it a complete diagnostics before buying, the arguments to reduce the price due to the identified deficiencies and to buy a serviceable iPhone no hidden defects.",
-    "Большинство людей не знают как провести полную диагностику iPhone перед покупкой, а это чревато потерей времени, денег и нервов. ${APP_NAME} направлен на то, чтобы каждый человек в независимости от его познаний в iPhone, мог провести его полную диагностику перед покупкой, аргументированно снизить цену из-за выявленных недостатков и купить исправный iPhone без скрытых дефектов."
-  ],
-  "why_${app_name}?": [
-    "Why ${APP_NAME}?",
-    "Почему ${APP_NAME}?"
-  ],
-  "${app_name}_is_completely...": [
-    "${APP_NAME} is completely free and contains no advertising. We conduct full testing iPhone both outside and inside. Our test supports multiple languages. Our mission is to help people save time, money and nerves. We are constantly developing ${APP_NAME} and improve it every day.",
-    "${APP_NAME} абсолютно бесплатный и не содержит рекламу. Мы проводим полное тестирование iPhone как снаружи, так и изнутри. Наш тест поддерживает несколько языков. Наша миссия - помогать людям экономить время, деньги и нервы. Мы постоянно развиваем ${APP_NAME} и совершенствуем его каждый день."
-  ],
-  "what_you_need_for_the_tes...": [
-    "What you need for the test?",
-    "Что нужно для теста?"
-  ],
-  "clip": [
-    "Clip",
-    "Скрепка"
-  ],
-  "socket/powerbank": [
-    "Socket/PowerBank",
-    "Розетка/PowerBank"
-  ],
-  "smartphone_with_the_funct...": [
-    "Smartphone with the function of distribution of Wi-Fi",
-    "Смартфон с функцией раздачи Wi-Fi"
-  ],
-  "restored": [
-    "Restored",
-    "Восстановленный"
-  ],
-  "for_retail_sale": [
-    "For retail sale",
-    "Для розничной продажи"
-  ],
-  "a_replacement_iphone._iss...": [
-    "A replacement iPhone. Issued in exchange not working properly iPhone",
-    "Подменный iPhone. Выдан в замен не исправного iPhone"
-  ],
-  "a_special_copy": [
-    "A special copy",
-    "Специальный экземпляр"
-  ],
-  "canada": [
-    "Canada",
-    "Канада"
-  ],
-  "uae,_bahrain,_kuwait,_qat...": [
-    "UAE, Bahrain, Kuwait, Qatar, Saudi Arabia",
-    "ОАЭ, Бахрейн, Кувейт, Катар, Саудовская Аравия"
-  ],
-  "egypt,_jordan,_saudi_arab...": [
-    "Egypt, Jordan, Saudi Arabia, United Arab Emirates",
-    "Египет, Иордания, Саудовская Аравия, Объединенные Арабские Эмираты"
-  ],
-  "bahrain,_kuwait": [
-    "Bahrain, Kuwait",
-    "Бахрейн, Кувейт"
-  ],
-  "uk_or_ireland": [
-    "UK or Ireland",
-    "Великобритания или Ирландия"
-  ],
-  "brazil_(assembled_in_braz...": [
-    "Brazil (assembled in Brazil)",
-    "Бразилия (собран в Бразилии)"
-  ],
-  "brazil_(assembled_in_chin...": [
-    "Brazil (assembled in China)",
-    "Бразилия (собран в Китае)"
-  ],
-  "china": [
-    "China",
-    "Китай"
-  ],
-  "czech_republic": [
-    "Czech Republic",
-    "Чешская Республика"
-  ],
-  "germany": [
-    "Germany",
-    "Германия"
-  ],
-  "austria,_germany,_netherl...": [
-    "Austria, Germany, Netherlands",
-    "Австрия, Германия, Нидерланды"
-  ],
-  "mexico": [
-    "Mexico",
-    "Мексика"
-  ],
-  "estonia": [
-    "Estonia",
-    "Эстония"
-  ],
-  "luxembourg": [
-    "Luxembourg",
-    "Люксембург"
-  ],
-  "france": [
-    "France",
-    "Франция"
-  ],
-  "liechtenstein,_austria,_o...": [
-    "Liechtenstein, Austria, or Switzerland",
-    "Лихтенштейн, Австрия, или Швейцария"
-  ],
-  "greece": [
-    "Greece",
-    "Греция"
-  ],
-  "india": [
-    "India",
-    "Индия"
-  ],
-  "italy": [
-    "Italy",
-    "Италия"
-  ],
-  "israel": [
-    "Israel",
-    "Израиль"
-  ],
-  "japan": [
-    "Japan",
-    "Япония"
-  ],
-  "korea": [
-    "Korea",
-    "Корея"
-  ],
-  "norway": [
-    "Norway",
-    "Норвегия"
-  ],
-  "finland,_sweden": [
-    "Finland, Sweden",
-    "Финляндия, Швеция"
-  ],
-  "finland": [
-    "Finland",
-    "Финляндия"
-  ],
-  "colombia,_ecuador,_el_sal...": [
-    "Colombia, Ecuador, El Salvador, Guatemala, Honduras, Peru",
-    "Колумбия, Эквадор, Сальвадор, Гватемала, Гондурас, Перу"
-  ],
-  "argentina": [
-    "Argentina",
-    "Аргентина"
-  ],
-  "usa,_canada": [
-    "USA, Canada",
-    "США, Канада"
-  ],
-  "chile,_paraguay,_uruguay": [
-    "Chile, Paraguay, Uruguay",
-    "Чили, Парагвай, Уругвай"
-  ],
-  "hungary": [
-    "Hungary",
-    "Венгрия"
-  ],
-  "macau": [
-    "Macau",
-    "Макао"
-  ],
-  "malaysia": [
-    "Malaysia",
-    "Малайзия"
-  ],
-  "belgium,_france,_luxembou...": [
-    "Belgium, France, Luxembourg",
-    "Бельгии, Франции, Люксембурга"
-  ],
-  "poland": [
-    "Poland",
-    "Польша"
-  ],
-  "portugal": [
-    "Portugal",
-    "Португалия"
-  ],
-  "philippines": [
-    "Philippines",
-    "Филиппины"
-  ],
-  "romania": [
-    "Romania",
-    "Румыния"
-  ],
-  "russia": [
-    "Russia",
-    "Россия"
-  ],
-  "slovakia": [
-    "Slovakia",
-    "Словакия"
-  ],
-  "latvia": [
-    "Latvia",
-    "Латвия"
-  ],
-  "south_africa": [
-    "South Africa",
-    "ЮАР"
-  ],
-  "taiwan": [
-    "Taiwan",
-    "Тайвань"
-  ],
-  "turkey": [
-    "Turkey",
-    "Турция"
-  ],
-  "australia,_new_zealand": [
-    "Australia, New Zealand",
-    "Австралия, Новая Зеландия"
-  ],
-  "spain": [
-    "Spain",
-    "Испания"
-  ],
-  "singapore": [
-    "Singapore",
-    "Сингапур"
-  ],
-  "hong_kong,_macau": [
-    "Hong Kong, Macau",
-    "Гонконг, Макао"
-  ],
-  "italy,_spain,_portugal": [
-    "Italy, Spain, Portugal",
-    "Италия, Испания, Португалия"
-  ],
-  "kazakhstan": [
-    "Kazakhstan",
-    "Казахстан"
-  ],
-  "ukraine": [
-    "Ukraine",
-    "Украина"
-  ],
-  "lithuania": [
-    "Lithuania",
-    "Литва"
-  ],
-  "finland,_poland": [
-    "Finland, Poland",
-    "Финляндия, Польша"
-  ],
-  "denmark,_norway,_sweden,_...": [
-    "Denmark, Norway, Sweden, Iceland",
-    "Дания, Норвегия, Швеция, Исландия"
-  ],
-  "russia_or_kazakhstan": [
-    "Russia or Kazakhstan",
-    "Россия или Казахстан"
-  ],
-  "serbia": [
-    "Serbia",
-    "Сербия"
-  ],
-  "germany,_belgium,_luxembo...": [
-    "Germany, Belgium, Luxembourg, Netherlands, Austria, France, Switzerland, Monaco",
-    "Германия, Бельгия, Люксембург, Нидерланды, Австрия, Франция, Швейцария, Монако"
-  ],
-  "black": [
-    "Black",
-    "Черный"
-  ],
-  "gold": [
-    "Gold",
-    "Золотой"
-  ],
-  "black_onyx": [
-    "Black onyx",
-    "Черный оникс"
-  ],
-  "red": [
-    "Red",
-    "Красный"
-  ],
-  "rose_gold": [
-    "Rose gold",
-    "Розовое золото"
-  ],
-  "silver": [
-    "Silver",
-    "Серебристый"
-  ],
-  "space_grey": [
-    "Space grey",
-    "Серый космос"
-  ],
-  "blue": [
-    "Blue",
-    "Синий"
-  ],
-  "green": [
-    "Green",
-    "Зеленый"
-  ],
-  "pink": [
-    "Pink",
-    "Розовый"
-  ],
-  "white": [
-    "White",
-    "Белый"
-  ],
-  "yellow": [
-    "Yellow",
-    "Желтый"
-  ],
-  "enter_the_iphone_model": [
-    "Enter the iPhone model",
-    "Введите модель iPhone"
-  ],
-  "settings_->_master_->_abo...": [
-    "Settings -> Master -> About phone -> Model",
-    "Настройки -> Основыные -> О телефоне -> Модель"
-  ],
-  "on_the_back_side_of_the_b...": [
-    "On the back side of the box",
-    "На задней строне коробки"
-  ],
-  "model": [
-    "Model",
-    "Модель"
-  ],
-  "amount_of_memory": [
-    "Amount of memory",
-    "Кол-во памяти"
-  ],
-  "the_color_of_the_device": [
-    "The color of the device",
-    "Цвет устройства"
-  ],
-  "device_type": [
-    "Device type",
-    "Тип устройства"
-  ],
-  "the_country_of_purchase": [
-    "The country of purchase",
-    "Страна покупки"
-  ],
-  "the_stated_information_is...": [
-    "The stated information is correct on iPhone?",
-    "Заявленная информация о iPhone верна?"
-  ],
-  "о_iphone": [
-    "О iPhone",
-    "О iPhone"
-  ],
-  "where_to_find_the_model?": [
-    "Where to find the model?",
-    "Где найти модель?"
-  ],
-  "appearance": [
-    "Appearance",
-    "Внешний вид"
-  ],
-  "inspect_the_iphone_for_sc...": [
-    "Inspect the iPhone for scratches, scuffs, cracks, chips.",
-    "Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов."
-  ],
-  "remove_the_iphone_from_th...": [
-    "Remove the iPhone from the case.",
-    "Извлеките iPhone из чехла."
-  ],
-  "remove_the_protective_fil...": [
-    "Remove the protective film or glass.",
-    "Удалите защитную пленку или стекло."
-  ],
-  "the_front_part_of_the_pho...": [
-    "The front part of the phone.",
-    "Передняя часть телефона."
-  ],
-  "the_back_of_the_phone.": [
-    "The back of the phone.",
-    "Задняя часть телефона."
-  ],
-  "the_side_of_the_phone.": [
-    "The side of the phone.",
-    "Боковые грани телефона."
-  ],
-  "claimed_as": [
-    "Claimed as",
-    "Заявленное состояние"
-  ],
-  "real_state": [
-    "Real state",
-    "Реальное состояние"
-  ],
-  "rating_of_appearance.": [
-    "Rating of appearance.",
-    "Оценка внешнего вида."
-  ]
+	"test_iphone": [
+		"Test the iPhone before buying",
+		"Тестирование iPhone перед покупкой"
+	],
+	"start_test": [
+		"Start",
+		"Начать"
+	],
+	"what_is_{app_name}?": [
+		"What is ${APP_NAME}?",
+		"Что это ${APP_NAME}?"
+	],
+	"test_for_iphone_before_bu...": [
+		"Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test the program will give You recommendations on purchasing the iPhone.",
+		"Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста программа даст Вам рекомендации относительно покупки iPhone."
+	],
+	"why_is_it_necessary?": [
+		"Why is it necessary?",
+		"Зачем это нужно?"
+	],
+	"most_people_don't_know_ho...": [
+		"Most people don't know how to run a complete diagnostic on iPhone before buying, and it is fraught with loss of time, money and nerves. ${APP_NAME} is directed to every person regardless of his knowledge of the iPhone, could make it a complete diagnostics before buying, the arguments to reduce the price due to the identified deficiencies and to buy a serviceable iPhone no hidden defects.",
+		"Большинство людей не знают как провести полную диагностику iPhone перед покупкой, а это чревато потерей времени, денег и нервов. ${APP_NAME} направлен на то, чтобы каждый человек в независимости от его познаний в iPhone, мог провести его полную диагностику перед покупкой, аргументированно снизить цену из-за выявленных недостатков и купить исправный iPhone без скрытых дефектов."
+	],
+	"why_{app_name}?": [
+		"Why ${APP_NAME}?",
+		"Почему ${APP_NAME}?"
+	],
+	"{app_name}_is_completely...": [
+		"${APP_NAME} is completely free and contains no advertising. We conduct full testing iPhone both outside and inside. Our test supports multiple languages. Our mission is to help people save time, money and nerves. We are constantly developing ${APP_NAME} and improve it every day.",
+		"${APP_NAME} абсолютно бесплатный и не содержит рекламу. Мы проводим полное тестирование iPhone как снаружи, так и изнутри. Наш тест поддерживает несколько языков. Наша миссия - помогать людям экономить время, деньги и нервы. Мы постоянно развиваем ${APP_NAME} и совершенствуем его каждый день."
+	],
+	"what_you_need_for_the_tes...": [
+		"What you need for the test?",
+		"Что нужно для теста?"
+	],
+	"clip": [
+		"Clip",
+		"Скрепка"
+	],
+	"socket/powerbank": [
+		"Socket/PowerBank",
+		"Розетка/PowerBank"
+	],
+	"smartphone_with_the_funct...": [
+		"Smartphone with the function of distribution of Wi-Fi",
+		"Смартфон с функцией раздачи Wi-Fi"
+	],
+	"restored": [
+		"Restored",
+		"Восстановленный"
+	],
+	"for_retail_sale": [
+		"For retail sale",
+		"Для розничной продажи"
+	],
+	"a_replacement_iphone._iss...": [
+		"A replacement iPhone. Issued in exchange not working properly iPhone",
+		"Подменный iPhone. Выдан в замен не исправного iPhone"
+	],
+	"a_special_copy": [
+		"A special copy",
+		"Специальный экземпляр"
+	],
+	"canada": [
+		"Canada",
+		"Канада"
+	],
+	"uae,_bahrain,_kuwait,_qat...": [
+		"UAE, Bahrain, Kuwait, Qatar, Saudi Arabia",
+		"ОАЭ, Бахрейн, Кувейт, Катар, Саудовская Аравия"
+	],
+	"egypt,_jordan,_saudi_arab...": [
+		"Egypt, Jordan, Saudi Arabia, United Arab Emirates",
+		"Египет, Иордания, Саудовская Аравия, Объединенные Арабские Эмираты"
+	],
+	"bahrain,_kuwait": [
+		"Bahrain, Kuwait",
+		"Бахрейн, Кувейт"
+	],
+	"uk_or_ireland": [
+		"UK or Ireland",
+		"Великобритания или Ирландия"
+	],
+	"brazil_(assembled_in_braz...": [
+		"Brazil (assembled in Brazil)",
+		"Бразилия (собран в Бразилии)"
+	],
+	"brazil_(assembled_in_chin...": [
+		"Brazil (assembled in China)",
+		"Бразилия (собран в Китае)"
+	],
+	"china": [
+		"China",
+		"Китай"
+	],
+	"czech_republic": [
+		"Czech Republic",
+		"Чешская Республика"
+	],
+	"germany": [
+		"Germany",
+		"Германия"
+	],
+	"austria,_germany,_netherl...": [
+		"Austria, Germany, Netherlands",
+		"Австрия, Германия, Нидерланды"
+	],
+	"mexico": [
+		"Mexico",
+		"Мексика"
+	],
+	"estonia": [
+		"Estonia",
+		"Эстония"
+	],
+	"luxembourg": [
+		"Luxembourg",
+		"Люксембург"
+	],
+	"france": [
+		"France",
+		"Франция"
+	],
+	"liechtenstein,_austria,_o...": [
+		"Liechtenstein, Austria, or Switzerland",
+		"Лихтенштейн, Австрия, или Швейцария"
+	],
+	"greece": [
+		"Greece",
+		"Греция"
+	],
+	"india": [
+		"India",
+		"Индия"
+	],
+	"italy": [
+		"Italy",
+		"Италия"
+	],
+	"israel": [
+		"Israel",
+		"Израиль"
+	],
+	"japan": [
+		"Japan",
+		"Япония"
+	],
+	"korea": [
+		"Korea",
+		"Корея"
+	],
+	"norway": [
+		"Norway",
+		"Норвегия"
+	],
+	"finland,_sweden": [
+		"Finland, Sweden",
+		"Финляндия, Швеция"
+	],
+	"finland": [
+		"Finland",
+		"Финляндия"
+	],
+	"colombia,_ecuador,_el_sal...": [
+		"Colombia, Ecuador, El Salvador, Guatemala, Honduras, Peru",
+		"Колумбия, Эквадор, Сальвадор, Гватемала, Гондурас, Перу"
+	],
+	"argentina": [
+		"Argentina",
+		"Аргентина"
+	],
+	"usa,_canada": [
+		"USA, Canada",
+		"США, Канада"
+	],
+	"chile,_paraguay,_uruguay": [
+		"Chile, Paraguay, Uruguay",
+		"Чили, Парагвай, Уругвай"
+	],
+	"hungary": [
+		"Hungary",
+		"Венгрия"
+	],
+	"macau": [
+		"Macau",
+		"Макао"
+	],
+	"malaysia": [
+		"Malaysia",
+		"Малайзия"
+	],
+	"belgium,_france,_luxembou...": [
+		"Belgium, France, Luxembourg",
+		"Бельгии, Франции, Люксембурга"
+	],
+	"poland": [
+		"Poland",
+		"Польша"
+	],
+	"portugal": [
+		"Portugal",
+		"Португалия"
+	],
+	"philippines": [
+		"Philippines",
+		"Филиппины"
+	],
+	"romania": [
+		"Romania",
+		"Румыния"
+	],
+	"russia": [
+		"Russia",
+		"Россия"
+	],
+	"slovakia": [
+		"Slovakia",
+		"Словакия"
+	],
+	"latvia": [
+		"Latvia",
+		"Латвия"
+	],
+	"south_africa": [
+		"South Africa",
+		"ЮАР"
+	],
+	"taiwan": [
+		"Taiwan",
+		"Тайвань"
+	],
+	"turkey": [
+		"Turkey",
+		"Турция"
+	],
+	"australia,_new_zealand": [
+		"Australia, New Zealand",
+		"Австралия, Новая Зеландия"
+	],
+	"spain": [
+		"Spain",
+		"Испания"
+	],
+	"singapore": [
+		"Singapore",
+		"Сингапур"
+	],
+	"hong_kong,_macau": [
+		"Hong Kong, Macau",
+		"Гонконг, Макао"
+	],
+	"italy,_spain,_portugal": [
+		"Italy, Spain, Portugal",
+		"Италия, Испания, Португалия"
+	],
+	"kazakhstan": [
+		"Kazakhstan",
+		"Казахстан"
+	],
+	"ukraine": [
+		"Ukraine",
+		"Украина"
+	],
+	"lithuania": [
+		"Lithuania",
+		"Литва"
+	],
+	"finland,_poland": [
+		"Finland, Poland",
+		"Финляндия, Польша"
+	],
+	"denmark,_norway,_sweden,_...": [
+		"Denmark, Norway, Sweden, Iceland",
+		"Дания, Норвегия, Швеция, Исландия"
+	],
+	"russia_or_kazakhstan": [
+		"Russia or Kazakhstan",
+		"Россия или Казахстан"
+	],
+	"serbia": [
+		"Serbia",
+		"Сербия"
+	],
+	"germany,_belgium,_luxembo...": [
+		"Germany, Belgium, Luxembourg, Netherlands, Austria, France, Switzerland, Monaco",
+		"Германия, Бельгия, Люксембург, Нидерланды, Австрия, Франция, Швейцария, Монако"
+	],
+	"black": [
+		"Black",
+		"Черный"
+	],
+	"gold": [
+		"Gold",
+		"Золотой"
+	],
+	"black_onyx": [
+		"Black onyx",
+		"Черный оникс"
+	],
+	"red": [
+		"Red",
+		"Красный"
+	],
+	"rose_gold": [
+		"Rose gold",
+		"Розовое золото"
+	],
+	"silver": [
+		"Silver",
+		"Серебристый"
+	],
+	"space_grey": [
+		"Space grey",
+		"Серый космос"
+	],
+	"blue": [
+		"Blue",
+		"Синий"
+	],
+	"green": [
+		"Green",
+		"Зеленый"
+	],
+	"pink": [
+		"Pink",
+		"Розовый"
+	],
+	"white": [
+		"White",
+		"Белый"
+	],
+	"yellow": [
+		"Yellow",
+		"Желтый"
+	],
+	"enter_the_iphone_model": [
+		"Enter the iPhone model",
+		"Введите модель iPhone"
+	],
+	"settings_->_master_->_abo...": [
+		"Settings -> Master -> About phone -> Model",
+		"Настройки -> Основыные -> О телефоне -> Модель"
+	],
+	"on_the_back_side_of_the_b...": [
+		"On the back side of the box",
+		"На задней строне коробки"
+	],
+	"model": [
+		"Model",
+		"Модель"
+	],
+	"amount_of_memory": [
+		"Amount of memory",
+		"Кол-во памяти"
+	],
+	"the_color_of_the_device": [
+		"The color of the device",
+		"Цвет устройства"
+	],
+	"device_type": [
+		"Device type",
+		"Тип устройства"
+	],
+	"the_country_of_purchase": [
+		"The country of purchase",
+		"Страна покупки"
+	],
+	"the_stated_information_is...": [
+		"The stated information is correct on iPhone?",
+		"Заявленная информация о iPhone верна?"
+	],
+	"о_iphone": [
+		"О iPhone",
+		"О iPhone"
+	],
+	"where_to_find_the_model?": [
+		"Where to find the model?",
+		"Где найти модель?"
+	],
+	"appearance": [
+		"Appearance",
+		"Внешний вид"
+	],
+	"inspect_the_iphone_for_sc...": [
+		"Inspect the iPhone for scratches, scuffs, cracks, chips.",
+		"Осмотрите iPhone на наличие царапин, потертостей, трещин, сколов."
+	],
+	"remove_the_iphone_from_th...": [
+		"Remove the iPhone from the case.",
+		"Извлеките iPhone из чехла."
+	],
+	"remove_the_protective_fil...": [
+		"Remove the protective film or glass.",
+		"Удалите защитную пленку или стекло."
+	],
+	"the_front_part_of_the_pho...": [
+		"The front part of the phone.",
+		"Передняя часть телефона."
+	],
+	"the_back_of_the_phone.": [
+		"The back of the phone.",
+		"Задняя часть телефона."
+	],
+	"the_side_of_the_phone.": [
+		"The side of the phone.",
+		"Боковые грани телефона."
+	],
+	"claimed_as": [
+		"Claimed as",
+		"Заявленное состояние"
+	],
+	"real_state": [
+		"Real state",
+		"Реальное состояние"
+	],
+	"rating_of_appearance.": [
+		"Rating of appearance.",
+		"Оценка внешнего вида."
+	],
+	"close": [
+		"Close",
+		"Закрыть"
+	],
+	"no": [
+		"No",
+		"Нет"
+	],
+	"yes": [
+		"Yes",
+		"Да"
+	],
+	"open_settings_->_bluetoot...": [
+		"Open Settings -> Bluetooth. Try to find a specific bluetooth device and connect to it.",
+		"Откройте Настройки -> Bluetooth. Попробуйте найти bluetooth-устройство и подключиться к нему."
+	],
+	"the_bluetooth_works?": [
+		"The Bluetooth works?",
+		"Bluetooth работает?"
+	],
+	"buttons_and_vibration": [
+		"Buttons and vibration",
+		"Кнопки и вибрация"
+	],
+	"lock_key": [
+		"Lock key",
+		"Клавиша блокировки"
+	],
+	"check_the_volume_keys_and...": [
+		"Check the volume keys and the button silent mode. When transferring the iPhone in silent mode, the phone must Severinovich.",
+		"Проверьте клавиши громкости и кнопку бесшумного режима. При переводе iPhone в бесшумный режим, телефон должен завибрировать."
+	],
+	"work_button_and_vibration...": [
+		"Work button and vibration?",
+		"Работают кнопки и вибрация?"
+	],
+	"key_home": [
+		"Key Home",
+		"Клавиша Домой"
+	],
+	"turn_off_the_speakerphone...": [
+		"Turn off the speakerphone, put the headphones and try to talk through them.",
+		"Выключите громкую связь, вставьте наушники и попробуйте говорить через них."
+	],
+	"call_and_proximity_sensor": [
+		"Call and proximity Sensor",
+		"Вызов и Датчик приближения"
+	],
+	"insert_the_sim_card._the_...": [
+		"Insert the SIM card. The phone should find network.",
+		"Вставьте SIM-карту. Телефон должен сразу найти сеть."
+	],
+	"try_to_make_a_call.": [
+		"Try to make a call.",
+		"Попробуйте совершить вызов."
+	],
+	"close_with_a_finger_the_p...": [
+		"Close with a finger the proximity Sensor, the screen should fade.",
+		"Закройте пальцем Датчик приближения, экран должен потухнуть."
+	],
+	"put_it_on_speaker_to_chec...": [
+		"Put it on speaker to check the speaker.",
+		"Включите громкую связь для проверки Динамика."
+	],
+	"call_and_the_proximity_se...": [
+		"Call and the proximity Sensor work?",
+		"Вызов и Датчик приближения работают?"
+	],
+	"camera": [
+		"Camera",
+		"Камера"
+	],
+	"open_the_camera_app._chec...": [
+		"Open the camera app.\nCheck the picture from the camera.\nThe image must be clean, without any blur.",
+		"Откройте приложение камера.\nПроверьте изображение с камеры.\nИзображение должно быть чистым, без размытия."
+	],
+	"open_the_control_center_...": [
+		"Open the control Center, click on the icon \"Camera\".\nCheck the picture with the front and front camera.\nThe image must be clean, without any blur.",
+		"Откройте Центр управления, нажмите на иконку \"Камера\".\nПроверьте изображение с фронтальной и передней камеры.\nИзображение должно быть чистым, без размытия."
+	],
+	"the_camera_works?": [
+		"The camera works?",
+		"Камера работает?"
+	],
+	"charging_port": [
+		"Charging port",
+		"Порт зарядки"
+	],
+	"connect_your_phone_to_cha...": [
+		"Connect your phone to charging, it should immediately start charging. Check how tightly (securely) is inserted into the plug.",
+		"Подключите телефон к зарядке, он сразу должен начать заряжаться. Проверьте, насколько плотно (надежно) вставляется штекер."
+	],
+	"charging_port_works?": [
+		"Charging port works?",
+		"Порт зарядки работает?"
+	],
+	"compass_and_g-sensor": [
+		"Compass and G-sensor",
+		"Компас и G-sensor"
+	],
+	"open_the_compass_app_and_...": [
+		"Open the Compass app and rotate the phone. Upon rotation of the compass needs to change its position.",
+		"Откройте приложение Компас и повращайте телефон. При вращении компас должен менять свое положение."
+	],
+	"swipe_to_the_left_to_open...": [
+		"Swipe to the left to open the Level. Poperiposivat phone, G-sensor must operate correctly and smoothly.",
+		"Взмахом влево откройте Уровень. Попереворачивайте телефон, G-sensor должен работать корректно и плавно."
+	],
+	"compass_and_g-sensor_work...": [
+		"Compass and G-sensor work?",
+		"Компас и G-sensor работают?"
+	],
+	"flash": [
+		"Flash",
+		"Вспышка"
+	],
+	"open_the_control_center._...": [
+		"Open the control Center. In the bottom of the screen, swipe up from the bottom. Click on the \"Flashlight\" and check the operation of the led.",
+		"Откройте Центр управления. Для этого в нижней части экрана проведите пальцем снизу вверх. Нажмите на иконку \"Фонарик\" и проверьте работу светодиода."
+	],
+	"the_flash_works?": [
+		"The flash works?",
+		"Вспышка работает?"
+	],
+	"headphone_jack": [
+		"Headphone Jack",
+		"Вход для наушников"
+	],
+	"insert_the_earphone.": [
+		"Insert the earphone.",
+		"Вставьте наушники."
+	],
+	"play_any_sound_in_setting...": [
+		"Play any sound in Settings -> Sounds -> Haptic signals.",
+		"Проиграйте любой звук в Настройки -> Звуки -> Тактильные сигналы."
+	],
+	"if_no_sound_try_using_ot...": [
+		"If no sound, try using other headphones. If the sound is still there, so the headphone Jack is not working.",
+		"Если звука нет, попробуйте использовать другие наушники. Если звука все равно нет, значит вход для наушников не работает."
+	],
+	"the_headphone_jack_works?": [
+		"The headphone Jack works?",
+		"Вход для наушников работает?"
+	],
+	"icloud": [
+		"iCloud",
+		"iCloud"
+	],
+	"the_phone_must_be_untethe...": [
+		"The phone must be untethered from iCloud accounts and Apple ID.",
+		"Телефон должен быть отвязан от аккаунтов iCloud и Apple ID."
+	],
+	"iphone_untethered_jailbre...": [
+		"iPhone untethered jailbreak from iCloud?",
+		"iPhone отвязан от iCloud?"
+	],
+	"the_slot_for_the_sim_card...": [
+		"The slot for the SIM card.",
+		"На слоте для SIM-карты."
+	],
+	"on_the_back_side_of_the_i...": [
+		"On the back side of the iPhone.",
+		"На задней стороне iPhone."
+	],
+	"the_slot_for_sim_card": [
+		"The slot for SIM card",
+		"На слоте для сим карты"
+	],
+	"coincidence_imei": [
+		"Coincidence IMEI",
+		"Совпадение IMEI"
+	],
+	"check_whether_the_imei_of...": [
+		"Check whether the IMEI of the phone with its accessories.",
+		"Проверьте, совпадает ли IMEI телефона с его комплектующими."
+	],
+	"settings_->_general_->_ab...": [
+		"Settings -> General -> About -> IMEI.",
+		"Настройки -> Основные -> Об этом устройстве -> IMEI."
+	],
+	"on_the_box.": [
+		"On the box.",
+		"На коробке."
+	],
+	"imei_the_same?": [
+		"IMEI the same?",
+		"IMEI совпадают?"
+	],
+	"microphone": [
+		"Microphone",
+		"Микрофон"
+	],
+	"open_the_voice_recorder._...": [
+		"Open the voice Recorder. Make a test recording.",
+		"Откройте приложение Диктофон. Сделайте тестовую запись."
+	],
+	"listen_to_it._the_entry_m...": [
+		"Listen to it. The entry must not contain any extraneous noise and crackles. The voice must be clear.",
+		"Прослушайте её. Запись не должна содержать посторонних шумов и тресков. Голос должен быть чистым."
+	],
+	"the_microphone_works?": [
+		"The microphone works?",
+		"Микрофон работает?"
+	],
+	"lightning_adapter/3.5_mm_...": [
+		"Lightning adapter/3.5 mm output for headphones.",
+		"Адаптер Lightning/выход 3,5 мм для наушников."
+	],
+	"30-pin_cable.": [
+		"30-pin cable.",
+		"30-пиновый кабель."
+	],
+	"lightning_to_usb_cable.": [
+		"Lightning to USB cable.",
+		"Кабель Lightning/USB."
+	],
+	"equipment": [
+		"Equipment",
+		"Комплектация"
+	],
+	"headphones.": [
+		"Headphones.",
+		"Наушники."
+	],
+	"charger.": [
+		"Charger.",
+		"Зарядное устройство."
+	],
+	"package_contents_iphone_i...": [
+		"Package contents iPhone identical specs?",
+		"Комплектация iPhone совпадает с заявленной?"
+	],
+	"sensor": [
+		"Sensor",
+		"Сенсор"
+	],
+	"swipe_your_finger_across_...": [
+		"Swipe your finger across the screen. The sensor must operate smoothly and without delays in the entire area of the screen.",
+		"Проведите пальцем по всему экрану. Сенсор должен работать плавно и без задержек на всей площади экрана."
+	],
+	"the_sensor_is_working_cor...": [
+		"The sensor is working correctly?",
+		"Сенсор работает корректно?"
+	],
+	"dynamics": [
+		"Dynamics",
+		"Динамики"
+	],
+	"to_check_sound_you_will_...": [
+		"To check sound, you will need to open Settings -> Sounds, tactile signals, and to lose a couple of standard sounds.",
+		"Для проверки звука необходимо открыть Настройки -> Звуки, тактильные сигналы и проиграть пару стандартных звуков."
+	],
+	"the_speakers_are_working?": [
+		"The speakers are working?",
+		"Динамики работают?"
+	],
+	"3d_touch": [
+		"3D Touch",
+		"3D Touch"
+	],
+	"to_check_3d_touch_must_st...": [
+		"To check 3D Touch must strongly press on any icon. After that should open the menu.",
+		"Для проверки 3D Touch необходимо сильно нажать на какую-нибудь иконку. После этого должно открыться меню."
+	],
+	"3d_touch_works?": [
+		"3D Touch works?",
+		"3D Touch работает?"
+	],
+	"touch_id": [
+		"Touch ID",
+		"Touch ID"
+	],
+	"go_to_settings_->_touch_i...": [
+		"Go to Settings -> Touch ID and passcode. Click the \"Add finger\" and test the Touch ID.",
+		"Зайдите в Настройки -> Touch ID и код-пароль. Нажмите \"Добавить палец\" и проверьте работу Touch ID."
+	],
+	"touch_id_works?": [
+		"Touch ID works?",
+		"Touch ID работает?"
+	],
+	"face_id": [
+		"Face ID",
+		"Face ID"
+	],
+	"to_check_face_id_go_to_se...": [
+		"To check Face ID go to Settings -> Face ID and passcode. Click to scan your face and check the Face ID.",
+		"Для проверки Face ID зайдите в Настройки -> Face ID и код-пароль. Нажмите сканировать лицо и проверьте работу Face ID."
+	],
+	"face_id_works?": [
+		"Face ID works?",
+		"Face ID работает?"
+	],
+	"warranty": [
+		"Warranty",
+		"Гарантии"
+	],
+	"go_to_settings_->_general...": [
+		"Go to Settings -> General -> About -> Serial number. Click on the serial number and select \"Copy\".",
+		"Зайдите в Настройки -> Основные -> Об этом устройстве -> Серийный номер. Нажмите на серийный номер и выберите \"Скопировать\"."
+	],
+	"then_go_to_the_official_...": [
+		"Then, go to the official Apple website to check warranty.",
+		"Затем перейдите на официальный сайт Apple для проверки гарантии."
+	],
+	"check_guarantee": [
+		"Check guarantee",
+		"Проверить гарантию"
+	],
+	"insert_the_serial_number...": [
+		"Insert the serial number, enter the captcher and click next.",
+		"Вставьте серийный номер, введите captcher и нажмите далее."
+	],
+	"scroll_down_to_warranty_s...": [
+		"Scroll down to warranty status.",
+		"Пролистайте вниз до статуса гарантии."
+	],
+	"information_about_warrant...": [
+		"Information about warranty iPhone coincide with the stated information?",
+		"Данные о гарантии iPhone совпадают с заявленной информацией?"
+	],
+	"moisture_indicator": [
+		"Moisture indicator",
+		"Индикатор влаги"
+	],
+	"moisture_has_a_devastatin...": [
+		"Moisture has a devastating impact on elements of the iPhone. To determine if any moisture, check the moisture indicator as illustrated. If the indicator is red, it means the phone was exposed to moisture.",
+		"Влага оказывает разрушительное воздействие на элементы iPhone. Чтобы определить было ли попадание влаги, проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета, значит телефон был подвергнут попаданию влаги."
+	],
+	"{currentmodel}_was_subje...": [
+		"${currentModel} was subjected to moisture?",
+		"${currentModel} был подвергнут попаданию влаги?"
+	],
+	"wi-fi": [
+		"Wi-Fi",
+		"Wi-Fi"
+	],
+	"open_settings_->_wi-fi._t...": [
+		"Open Settings -> Wi-Fi. Try to connect to the Wi-Fi network. If there are no available Wi-Fi access points, try to create a hotspot on your smartphone.",
+		"Откройте Настройки -> Wi-Fi. Попробуйте подключиться к Wi-Fi сети. Если рядом нет доступных Wi-Fi  точек, попробуйте создать точку доступа на своем смартфоне."
+	],
+	"wi-fi_works?": [
+		"Wi-Fi works?",
+		"Wi-Fi работает?"
+	],
+	"information_about_the_iph...": [
+		"Information about the iPhone",
+		"Информация о iPhone"
+	],
+	"information_about_phone_d...": [
+		"Information about phone does not match with the stated information. We do not recommend You to buy this phone.",
+		"Информация о телефоне не совпадает с заявленной информацией. Мы не рекомендуем Вам покупать данный телефон."
+	],
+	"the_appearance_of_the_iph...": [
+		"The appearance of the iPhone",
+		"Внешний вид iPhone"
+	],
+	"moisture_sensor": [
+		"Moisture sensor",
+		"Датчик влаги"
+	],
+	"we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working charger.",
+		"Мы не рекомендуем покупать телефон с нерабочим зарядным устройством."
+	],
+	"bluetooth": [
+		"Bluetooth",
+		"Bluetooth"
+	],
+	"charging": [
+		"Charging",
+		"Зарядка"
+	],
+	"guarantee": [
+		"Guarantee",
+		"Гарантия"
+	],
+	"0_information_about_the_iph...": [
+		"Information about the iPhone",
+		"Информация о iPhone"
+	],
+	"1_information_about_phone_d...": [
+		"Information about phone does not match with the stated information. We do not recommend You to buy this phone.",
+		"Информация о телефоне не совпадает с заявленной информацией. Мы не рекомендуем Вам покупать данный телефон."
+	],
+	"2_the_appearance_of_the_iph...": [
+		"The appearance of the iPhone",
+		"Внешний вид iPhone"
+	],
+	"4_we_do_not_recommend_buyin...": [
+		"We do not recommend buying the iPhone if the moisture indicator is red. Water has a negative impact on the chip iPhone and destroys it from the inside.",
+		"Мы не рекомендуем покупать iPhone, если индикатор влаги красного цвета. Вода оказывает негативное влияние на микросхемы iPhone и разрушает его изнутри."
+	],
+	"6_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working buttons or vibration.",
+		"Мы не рекомендуем покупать телефон с нерабочими кнопками или вибрацией."
+	],
+	"8_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a malfunctioning sensor.",
+		"Мы не рекомендуем покупать телефон с некорректно работающим сенсором."
+	],
+	"10_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a broken 3D Touch, because most likely the screen was damaged and replaced with a cheaper alternative without 3D support Touch.",
+		"Мы не рекомендуем покупать телефон с неработающим 3D Touch, т.к. скорее всего экран был поврежден и заменен на более дешевый аналог без поддержки 3D Touch."
+	],
+	"12_we_strongly_recommend_you...": [
+		"We strongly recommend you to buy an iPhone linked to iCloud. You will not be able to enter your iCloud or iPhone might even be blocked.",
+		"Мы категорически не рекомендуем покупать iPhone, привязанный к iCloud. Вы не сможете ввести свой iCloud  или iPhone и вовсе может быть заблокирован."
+	],
+	"14_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a broken flash.",
+		"Мы не рекомендуем покупать телефон с нерабочей вспышкой."
+	],
+	"16_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working speakers.",
+		"Мы не рекомендуем покупать телефон с нерабочими динамиками."
+	],
+	"18_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a non-working Compass or G-sensor.",
+		"Мы не рекомендуем покупать телефон с нерабочим Компасом или G-sensor."
+	],
+	"20_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a broken camera.",
+		"Мы не рекомендуем покупать телефон с нерабочей камерой."
+	],
+	"22_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a non-working headphone Jack.",
+		"Мы не рекомендуем покупать телефон с нерабочим входом для наушников."
+	],
+	"23_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working ${sensor}.",
+		"Мы не рекомендуем покупать телефон с нерабочим ${sensor}."
+	],
+	"25_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working Wi-Fi.",
+		"Мы не рекомендуем покупать телефон с нерабочим Wi-Fi."
+	],
+	"27_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working Bluetooth.",
+		"Мы не рекомендуем покупать телефон с нерабочим Bluetooth."
+	],
+	"29_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with a non-working microphone.",
+		"Мы не рекомендуем покупать телефон с нерабочим микрофоном."
+	],
+	"31_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with no call features or non-working proximity Sensor.",
+		"Мы не рекомендуем покупать телефон без возможности вызова или с неработающим Датчиком приближения."
+	],
+	"33_we_do_not_recommend_buyin...": [
+		"We do not recommend buying a phone with non-working charger.",
+		"Мы не рекомендуем покупать телефон с нерабочим зарядным устройством."
+	],
+	"0_{currentmodel}_is_not_re...": [
+		"${currentModel} is not recommended for purchase!",
+		"${currentModel} не рекомендован к покупке!"
+	],
+	"1_{currentmodel}_contains_...": [
+		"${currentModel} contains critical flaws.",
+		"${currentModel} содержит критические недостатки."
+	],
+	"2_{currentmodel}_recommend...": [
+		"${currentModel} recommended for purchase!",
+		"${currentModel} рекомендован к покупке!"
+	],
+	"3_{currentmodel}_is_fully_...": [
+		"${currentModel} is fully consistent information and is in working condition.",
+		"${currentModel} полностью соответствует заявленной информации и находится в рабочем состоянии."
+	],
+	"4_{currentmodel}_recommend...": [
+		"${currentModel} recommended for purchase!",
+		"${currentModel} рекомендован к покупке!"
+	],
+	"5_{currentmodel}_has_minor...": [
+		"${currentModel} has minor flaws. You can expect a small discount from the seller.",
+		"${currentModel} имеет незначительные недостатки. Вы можете рассчитывать на небольшую скидку от продавца."
+	],
+	"6_{currentmodel}_recommend...": [
+		"${currentModel} recommended for purchase!",
+		"${currentModel} рекомендован к покупке!"
+	],
+	"7_{currentmodel}_has_minor...": [
+		"${currentModel} has minor flaws. You can expect an average discount from the seller.",
+		"${currentModel} имеет незначительные недостатки. Вы можете рассчитывать на среднюю скидку от продавца."
+	],
+	"8_{currentmodel}_recommend...": [
+		"${currentModel} recommended for purchase!",
+		"${currentModel} рекомендован к покупке!"
+	],
+	"9_{currentmodel}_has_minor...": [
+		"${currentModel} has minor flaws. You can expect a discount \"above average\" from the seller.",
+		"${currentModel} имеет незначительные недостатки. Вы можете рассчитывать на скидку \"выше среднего\" от продавца."
+	],
+	"10_{currentmodel}_recommend...": [
+		"${currentModel} recommended for purchase!",
+		"${currentModel} рекомендован к покупке!"
+	],
+	"11_{currentmodel}_has_flaws...": [
+		"${currentModel} has flaws. You can expect good discount from the seller.",
+		"${currentModel} имеет недостатки. Вы можете рассчитывать на высокую скидку от продавца."
+	],
+	"test_results": [
+		"Test results",
+		"Результаты теста"
+	],
+	"home": [
+		"Home",
+		"Домой"
+	]
 }

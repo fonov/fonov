@@ -7,6 +7,7 @@ import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
     NavLeft, NavRight} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Touch3D extends Component {
@@ -21,21 +22,21 @@ class Touch3D extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>3D Touch</NavCenter>
+                        <NavCenter>{_('3d_touch')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Для проверки 3D Touch необходимо сильно нажать на какую-нибудь иконку. После этого должно открыться меню.
+                                    {_('to_check_3d_touch_must_st...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -43,7 +44,7 @@ class Touch3D extends Component {
                             </Card>
 
                             <RatingCheck testN='Touch3D'>
-                                3D Touch работает?
+                                {_('3d_touch_works?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -56,6 +57,8 @@ class Touch3D extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

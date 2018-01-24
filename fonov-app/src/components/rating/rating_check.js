@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
 import { ContentBlock, GridRow, GridCol, Button, ContentBlockTitle} from 'framework7-react';
 import {nextTest} from '../../actions/shemeOfTest'
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class RatingCheck extends Component {
@@ -17,7 +18,7 @@ class RatingCheck extends Component {
 
     render() {
 
-        const { children } = this.props;
+        const { children, _ } = this.props;
 
         return (
             <div>
@@ -28,12 +29,12 @@ class RatingCheck extends Component {
                     <GridRow>
                         <GridCol>
                             <Button big onClick={() => this.saveRating(false)}>
-                                Нет
+                                {_('no')}
                             </Button>
                         </GridCol>
                         <GridCol>
                             <Button big onClick={() => this.saveRating(true)}>
-                                Да
+                                {_('yes')}
                             </Button>
                         </GridCol>
                     </GridRow>
@@ -44,7 +45,10 @@ class RatingCheck extends Component {
 }
 
 const mapStateToProps = state => {
-    return {}
+    return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code
+    }
 };
 
 const mapDispatchToProps = dispatch => {

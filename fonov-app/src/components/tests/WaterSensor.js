@@ -10,6 +10,7 @@ import {
     NavLeft, NavRight, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class WaterSensor extends Component {
@@ -24,28 +25,28 @@ class WaterSensor extends Component {
 
     render() {
 
-        const { currentModel, image_manager } = this.props;
+        const { currentModel, image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Попадание влаги в {currentModel}</NavCenter>
+                        <NavCenter>{_('moisture_indicator')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Влага оказывает разрушительное воздействие на элементы iPhone. Чтобы определить было ли попадание влаги, проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета, значит телефон был подвергнут попаданию влаги.
+                                    {_('moisture_has_a_devastatin...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
                             <RatingCheck testN='WaterSensor'>
-                                {currentModel} был подвергнут попаданию влаги?
+                                {_('{currentmodel}_was_subje...', {currentModel})}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -58,6 +59,8 @@ class WaterSensor extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

@@ -6,6 +6,7 @@ import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class iCloud extends Component {
@@ -20,21 +21,21 @@ class iCloud extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>iCloud</NavCenter>
+                        <NavCenter>{_('icloud')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Телефон должен быть отвязан от аккаунтов iCloud и Apple ID.
+                                    {_('the_phone_must_be_untethe...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -42,7 +43,7 @@ class iCloud extends Component {
                             </Card>
 
                             <RatingCheck testN='iCloud'>
-                                iPhone отвязан от iCloud?
+                                {_('iphone_untethered_jailbre...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -55,6 +56,8 @@ class iCloud extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

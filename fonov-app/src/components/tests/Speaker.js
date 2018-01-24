@@ -7,6 +7,7 @@ import URLS from "../../constant/urls";
 import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
+import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
 class Speaker extends Component {
@@ -21,21 +22,21 @@ class Speaker extends Component {
 
     render() {
 
-        const { image_manager } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                        <NavCenter>Динамики</NavCenter>
+                        <NavCenter>{_('dynamics')}</NavCenter>
                         <NavRight/>
                     </Navbar>
                     <Pages>
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    Для проверки звука необходимо открыть Настройки -> Звуки, тактильные сигналы и проиграть пару стандартных звуков.
+                                    {_('to_check_sound_you_will_...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>
@@ -43,7 +44,7 @@ class Speaker extends Component {
                             </Card>
 
                             <RatingCheck testN='Speaker'>
-                                Динамики работают?
+                                {_('the_speakers_are_working?')}
                             </RatingCheck>
                         </Page>
                     </Pages>
@@ -56,6 +57,8 @@ class Speaker extends Component {
 
 const mapStateToProps = state => {
     return {
+        _: getTranslate(state.locale),
+        currentLanguage: getActiveLanguage(state.locale).code,
         currentModel: state.current_iphone.model
     }
 };

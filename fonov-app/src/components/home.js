@@ -16,34 +16,36 @@ class Home extends Component {
     constructor(props) {
         super(props);
 
+        const {_} = props;
+
         this.state = {
             aboutTest: [
                 {
-                    title: props._('what_is_${app_name}?', {APP_NAME}),
+                    title: _('what_is_{app_name}?', {APP_NAME}),
                     desc: (
-                        <p>{props._('test_for_iphone_before_bu...')}</p>
+                        <p>{_('test_for_iphone_before_bu...')}</p>
                     )
                 },
                 {
-                    title: props._('why_is_it_necessary?'),
+                    title: _('why_is_it_necessary?'),
                     desc: (
-                        <p>{props._('most_people_don\'t_know_ho...')}</p>
+                        <p>{_('most_people_don\'t_know_ho...')}</p>
                     )
                 },
                 {
-                    title: props._('why_${app_name}?', {APP_NAME}),
+                    title: _('why_{app_name}?', {APP_NAME}),
                     desc: (
-                        <p>{props._('${app_name}_is_completely...', {APP_NAME})}</p>
+                        <p>{_('{app_name}_is_completely...', {APP_NAME})}</p>
                     )
                 },
                 {
-                    title: props._('what_you_need_for_the_tes...'),
+                    title: _('what_you_need_for_the_tes...'),
                     desc: (
                         <div style={{padding: 8}}>
                             <ul>
-                                <li>{props._('clip')}</li>
-                                <li>{props._('socket/powerbank')}</li>
-                                <li>{props._('smartphone_with_the_funct...')}</li>
+                                <li>{_('clip')}</li>
+                                <li>{_('socket/powerbank')}</li>
+                                <li>{_('smartphone_with_the_funct...')}</li>
                             </ul>
                         </div>
                     )
