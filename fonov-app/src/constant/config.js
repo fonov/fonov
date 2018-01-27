@@ -11,3 +11,5 @@ export const LANGUAGES = {
         emoji_name: 'Russian Flag'
     }
 };
+export const COOKIE_LANGUAGE = 'active_language';
+export const COOKIE_MAXAGE = 60*60*24*180;

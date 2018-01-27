@@ -10,6 +10,7 @@
     "history": "^4.7.2",
     "raven-js": "^3.22.1",
     "react": "^16.2.0",
+    "react-cookie": "^2.1.2",
     "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
     "react-localize-redux": "^2.14.0",

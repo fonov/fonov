@@ -13,7 +13,7 @@ import {version} from '../../package.json';
 import {clean_test} from '../actions/test'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
 import {ListItem as ListItem16} from '../elements/index'
-import {setActiveLanguage} from "react-localize-redux";
+import {set_active_language} from '../actions/localize'
 
 
 class Home extends Component {
@@ -65,7 +65,7 @@ class Home extends Component {
 
     render() {
 
-        const {push, initialTest, _, currentLanguage, setActiveLanguage} = this.props;
+        const {push, initialTest, _, currentLanguage, set_active_language} = this.props;
 
         return (
             <Views>
@@ -92,7 +92,7 @@ class Home extends Component {
                                 {
                                     Object.keys(LANGUAGES).map((lang, i) => (
                                         <ListItem16
-                                            onClick={() => setActiveLanguage(lang)}
+                                            onClick={() => set_active_language(lang)}
                                             key={i}
                                             title={(
                                                 <span>
@@ -146,7 +146,7 @@ const mapDispatchToProps = dispatch => {
     return {
         push: path =>  dispatch(push(path)),
         clean_test: () => dispatch(clean_test()),
-        setActiveLanguage: code => dispatch(setActiveLanguage(code))
+        set_active_language: code => dispatch(set_active_language(code))
     }
 };
 
