@@ -67,15 +67,15 @@
 		"Canada",
 		"Канада"
 	],
-	"uae,_bahrain,_kuwait,_qat...": [
+	"1_uae_bahrain_kuwait_qat...": [
 		"UAE, Bahrain, Kuwait, Qatar, Saudi Arabia",
 		"ОАЭ, Бахрейн, Кувейт, Катар, Саудовская Аравия"
 	],
-	"egypt,_jordan,_saudi_arab...": [
+	"2_egypt_jordan_saudi_arab...": [
 		"Egypt, Jordan, Saudi Arabia, United Arab Emirates",
 		"Египет, Иордания, Саудовская Аравия, Объединенные Арабские Эмираты"
 	],
-	"bahrain,_kuwait": [
+	"bahrain_kuwait": [
 		"Bahrain, Kuwait",
 		"Бахрейн, Кувейт"
 	],
@@ -83,11 +83,11 @@
 		"UK or Ireland",
 		"Великобритания или Ирландия"
 	],
-	"brazil_(assembled_in_braz...": [
+	"5_brazil_(assembled_in_braz...": [
 		"Brazil (assembled in Brazil)",
 		"Бразилия (собран в Бразилии)"
 	],
-	"brazil_(assembled_in_chin...": [
+	"6_brazil_(assembled_in_chin...": [
 		"Brazil (assembled in China)",
 		"Бразилия (собран в Китае)"
 	],
@@ -103,7 +103,7 @@
 		"Germany",
 		"Германия"
 	],
-	"austria,_germany,_netherl...": [
+	"12_austria_germany_netherl...": [
 		"Austria, Germany, Netherlands",
 		"Австрия, Германия, Нидерланды"
 	],
@@ -123,7 +123,7 @@
 		"France",
 		"Франция"
 	],
-	"liechtenstein,_austria,_o...": [
+	"17_liechtenstein_austria_o...": [
 		"Liechtenstein, Austria, or Switzerland",
 		"Лихтенштейн, Австрия, или Швейцария"
 	],
@@ -155,7 +155,7 @@
 		"Norway",
 		"Норвегия"
 	],
-	"finland,_sweden": [
+	"finland_sweden": [
 		"Finland, Sweden",
 		"Финляндия, Швеция"
 	],
@@ -163,7 +163,7 @@
 		"Finland",
 		"Финляндия"
 	],
-	"colombia,_ecuador,_el_sal...": [
+	"27_colombia_ecuador_el_sal...": [
 		"Colombia, Ecuador, El Salvador, Guatemala, Honduras, Peru",
 		"Колумбия, Эквадор, Сальвадор, Гватемала, Гондурас, Перу"
 	],
@@ -171,11 +171,11 @@
 		"Argentina",
 		"Аргентина"
 	],
-	"usa,_canada": [
+	"usa_canada": [
 		"USA, Canada",
 		"США, Канада"
 	],
-	"chile,_paraguay,_uruguay": [
+	"chile_paraguay_uruguay": [
 		"Chile, Paraguay, Uruguay",
 		"Чили, Парагвай, Уругвай"
 	],
@@ -183,15 +183,15 @@
 		"Hungary",
 		"Венгрия"
 	],
-	"macau": [
-		"Macau",
+	"macao": [
+		"Macao",
 		"Макао"
 	],
 	"malaysia": [
 		"Malaysia",
 		"Малайзия"
 	],
-	"belgium,_france,_luxembou...": [
+	"34_belgium_france_luxembou...": [
 		"Belgium, France, Luxembourg",
 		"Бельгии, Франции, Люксембурга"
 	],
@@ -223,8 +223,8 @@
 		"Latvia",
 		"Латвия"
 	],
-	"south_africa": [
-		"South Africa",
+	"sa": [
+		"SA",
 		"ЮАР"
 	],
 	"taiwan": [
@@ -235,7 +235,7 @@
 		"Turkey",
 		"Турция"
 	],
-	"australia,_new_zealand": [
+	"australia_new_zealand": [
 		"Australia, New Zealand",
 		"Австралия, Новая Зеландия"
 	],
@@ -247,11 +247,11 @@
 		"Singapore",
 		"Сингапур"
 	],
-	"hong_kong,_macau": [
+	"hong_kong_macau": [
 		"Hong Kong, Macau",
 		"Гонконг, Макао"
 	],
-	"italy,_spain,_portugal": [
+	"italy_spain_portugal": [
 		"Italy, Spain, Portugal",
 		"Италия, Испания, Португалия"
 	],
@@ -267,11 +267,11 @@
 		"Lithuania",
 		"Литва"
 	],
-	"finland,_poland": [
+	"finland_poland": [
 		"Finland, Poland",
 		"Финляндия, Польша"
 	],
-	"denmark,_norway,_sweden,_...": [
+	"65_denmark_norway_sweden_...": [
 		"Denmark, Norway, Sweden, Iceland",
 		"Дания, Норвегия, Швеция, Исландия"
 	],
@@ -283,7 +283,7 @@
 		"Serbia",
 		"Сербия"
 	],
-	"germany,_belgium,_luxembo...": [
+	"68_germany_belgium_luxembo...": [
 		"Germany, Belgium, Luxembourg, Netherlands, Austria, France, Switzerland, Monaco",
 		"Германия, Бельгия, Люксембург, Нидерланды, Австрия, Франция, Швейцария, Монако"
 	],
