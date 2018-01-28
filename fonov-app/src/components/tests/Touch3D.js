@@ -36,7 +36,7 @@ class Touch3D extends Component {
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    {_('to_check_3d_touch_must_st...')}
+                                    {_('0_to_check_3d_touch_must_fo...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)}/>

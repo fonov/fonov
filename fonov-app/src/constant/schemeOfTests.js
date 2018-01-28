@@ -55,6 +55,7 @@ const schemeOfTests = currentModel => {
         'About',
         'Appearance',
         'WaterSensor',
+        'IMEI',
         'ButtonsAndVibration',
         'Sensor',
         'Touch3D',
@@ -71,7 +72,6 @@ const schemeOfTests = currentModel => {
         'CallAndProximitySensor',
         'Charging',
         'Warranty',
-        'IMEI',
         'Package'
     ];
 

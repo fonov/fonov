@@ -7,10 +7,6 @@
 		"Start",
 		"Начать"
 	],
-	"what_is_{app_name}?": [
-		"What is ${APP_NAME}?",
-		"Что это ${APP_NAME}?"
-	],
 	"test_for_iphone_before_bu...": [
 		"Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test the program will give You recommendations on purchasing the iPhone.",
 		"Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста программа даст Вам рекомендации относительно покупки iPhone."
@@ -535,10 +531,6 @@
 		"Flash",
 		"Вспышка"
 	],
-	"open_the_control_center._...": [
-		"Open the control Center. In the bottom of the screen, swipe up from the bottom. Click on the \"Flashlight\" and check the operation of the led.",
-		"Откройте Центр управления. Для этого в нижней части экрана проведите пальцем снизу вверх. Нажмите на иконку \"Фонарик\" и проверьте работу светодиода."
-	],
 	"the_flash_works?": [
 		"The flash works?",
 		"Вспышка работает?"
@@ -679,9 +671,9 @@
 		"3D Touch",
 		"3D Touch"
 	],
-	"to_check_3d_touch_must_st...": [
-		"To check 3D Touch must strongly press on any icon. After that should open the menu.",
-		"Для проверки 3D Touch необходимо сильно нажать на какую-нибудь иконку. После этого должно открыться меню."
+	"0_to_check_3d_touch_must_fo...": [
+		"To check 3D Touch must force you click on any icon. After that should open the menu.",
+		"Для проверки 3D Touch необходимо с усилием нажать на какую-нибудь иконку. После этого должно открыться меню."
 	],
 	"3d_touch_works?": [
 		"3D Touch works?",
@@ -934,5 +926,13 @@
 	"language": [
 		"Language",
 		"Язык"
+	],
+	"0_open_the_control_center_...": [
+		"Open the control Center, to check on the flash, click on the \"Flashlight\" and check the operation of the led.",
+		"Откройте Центр управления, что бы проверить вспышку, нажмите на иконку \"Фонарик\" и проверьте работу светодиода."
+	],
+	"{app_name}_-_what_is_it?": [
+		"${APP_NAME} - what is it?",
+		"${APP_NAME} - что это такое?"
 	]
 }

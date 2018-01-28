@@ -14,6 +14,7 @@ import {clean_test} from '../actions/test'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
 import {ListItem as ListItem16} from '../elements/index'
 import {set_active_language} from '../actions/localize'
+import FontAwesome from 'react-fontawesome'
 
 
 class Home extends Component {
@@ -31,7 +32,7 @@ class Home extends Component {
 
         return [
             {
-                title: _('what_is_{app_name}?', {APP_NAME}),
+                title: _('{app_name}_-_what_is_it?', {APP_NAME}),
                 desc: (
                     <p>{_('test_for_iphone_before_bu...')}</p>
                 )
@@ -104,8 +105,7 @@ class Home extends Component {
                                                     </span> {LANGUAGES[lang].name}
                                                 </span>
                                             )}
-                                            after={currentLanguage === lang ?
-                                                <span role="img" aria-label="Green Check Mark">✅</span> : null}
+                                            after={currentLanguage === lang ? <FontAwesome name="check" />  : null}
                                         />
                                     ))
                                 }

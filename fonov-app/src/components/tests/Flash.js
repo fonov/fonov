@@ -36,7 +36,7 @@ class Flash extends Component {
                         <Page>
                             <Card>
                                 <CardHeader>
-                                    {_('open_the_control_center._...')}
+                                    {_('0_open_the_control_center_...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(1)} />
