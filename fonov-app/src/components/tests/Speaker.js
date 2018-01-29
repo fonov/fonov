@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
+import {
+    View, Navbar, Pages, Page,
+    Views, NavCenter,
+    NavLeft, NavRight,
 } from 'framework7-react';
-import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {PlayAudio} from '../../elements/index'
 
 
 class Speaker extends Component {
@@ -22,7 +24,7 @@ class Speaker extends Component {
 
     render() {
 
-        const { image_manager, _ } = this.props;
+        const {_} = this.props;
 
         return (
             <Views>
@@ -34,15 +36,7 @@ class Speaker extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('to_check_sound_you_will_...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)}/>
-                                </CardContent>
-                            </Card>
-
+                            <PlayAudio />
                             <RatingCheck testN='Speaker'>
                                 {_('the_speakers_are_working?')}
                             </RatingCheck>
@@ -65,8 +59,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        replace: path =>  dispatch(replace(path)),
-        image_manager: number => dispatch(image_manager('Speaker', number))
+        replace: path =>  dispatch(replace(path))
     }
 };
 

@@ -934,5 +934,13 @@
 	"{app_name}_-_what_is_it?": [
 		"${APP_NAME} - what is it?",
 		"${APP_NAME} - что это такое?"
+	],
+	"play_the_sound": [
+		"Play the sound",
+		"Проиграйте звук"
+	],
+	"0_during_the_call_close_th...": [
+		"During the call, close the proximity sensor. The screen should fade.",
+		"Во время звонка закройте датчик приближения. Экран должен потухнуть."
 	]
 }

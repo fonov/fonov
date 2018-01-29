@@ -87,7 +87,7 @@ class CallAndProximitySensor extends Component {
 
                             <Card>
                                 <CardHeader>
-                                    {_('close_with_a_finger_the_p...')}
+                                    {_('0_during_the_call_close_th...')}
                                 </CardHeader>
                                 <CardContent>
                                     <Image src={image_manager(4)} />

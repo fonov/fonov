@@ -11,6 +11,7 @@ import {
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {PlayAudio} from '../../elements/index'
 
 
 class HeadphoneJack extends Component {
@@ -45,17 +46,7 @@ class HeadphoneJack extends Component {
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
-                            <Card>
-                                <CardHeader>
-                                    {_('play_any_sound_in_setting...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_speaker()} />
-                                </CardContent>
-                                <CardFooter>
-                                    {_('if_no_sound_try_using_ot...')}
-                                </CardFooter>
-                            </Card>
+                            <PlayAudio/>
                             <RatingCheck testN='HeadphoneJack'>
                                 {_('the_headphone_jack_works?')}
                             </RatingCheck>
@@ -79,8 +70,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         replace: path =>  dispatch(replace(path)),
-        image_manager: number => dispatch(image_manager('HeadphoneJack', number)),
-        image_speaker: () => dispatch(image_manager('Speaker', 1))
+        image_manager: number => dispatch(image_manager('HeadphoneJack', number))
     }
 };
 
