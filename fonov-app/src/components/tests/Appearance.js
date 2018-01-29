@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import { Rating5Stars } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from '../../constant/urls'
@@ -32,7 +32,7 @@ class Appearance extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('appearance')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='Appearance' />
                     </Navbar>
                     <Pages>
                         <Page>

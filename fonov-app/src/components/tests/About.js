@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import setCurrentiPhone from '../../actions/current-iphone'
 import { RatingCheck } from '../rating/index'
-import { View, Navbar, Pages, Page, ContentBlockTitle, List, ListItem, Views, NavCenter, NavLeft, NavRight,
-    Card, CardHeader, CardContent, AccordionContent, ContentBlock
+import { View, Navbar, Pages,
+    Page, ContentBlockTitle,
+    List, ListItem, Views,
+    NavCenter, NavLeft, NavRight,
+    Card, CardHeader, CardContent,
+    AccordionContent, ContentBlock, Link
 } from 'framework7-react';
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -525,8 +529,8 @@ class About extends Component {
                 <View navbarThrough>
                     <Navbar>
                         <NavLeft/>
-                            <NavCenter>{_('о_iphone')}</NavCenter>
-                        <NavRight/>
+                        <NavCenter>{_('о_iphone')}</NavCenter>
+                        <TestStatus test={'About'} />
                     </Navbar>
                     <Pages>
                         <Page>

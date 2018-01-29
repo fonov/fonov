@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
@@ -30,7 +30,7 @@ class CompassAndGsensor extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('compass_and_g-sensor')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='CompassAndGsensor' />
                     </Navbar>
                     <Pages>
                         <Page>

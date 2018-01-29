@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
     View, Navbar, Pages, Page,
     Views, NavCenter,Card, CardContent,
-    CardHeader, NavLeft, NavRight, CardFooter
+    CardHeader, NavLeft, NavRight
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -34,7 +34,7 @@ class HeadphoneJack extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('headphone_jack')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='HeadphoneJack' />
                     </Navbar>
                     <Pages>
                         <Page>

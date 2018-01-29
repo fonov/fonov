@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
@@ -30,7 +30,7 @@ class WiFi extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('wi-fi')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='WiFi' />
                     </Navbar>
                     <Pages>
                         <Page>

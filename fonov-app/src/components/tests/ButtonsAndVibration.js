@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {Image} from '../../elements/index'
+import {Image, TestStatus} from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
@@ -51,7 +51,7 @@ class ButtonsAndVibration extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('buttons_and_vibration')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='ButtonsAndVibration' />
                     </Navbar>
                     <Pages>
                         <Page>

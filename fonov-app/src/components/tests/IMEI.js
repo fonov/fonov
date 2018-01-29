@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
@@ -90,7 +90,7 @@ class IMEI extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('coincidence_imei')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='IMEI' />
                     </Navbar>
                     <Pages>
                         <Page>

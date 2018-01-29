@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
@@ -32,7 +32,7 @@ class Warranty extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('warranty')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='Warranty' />
                     </Navbar>
                     <Pages>
                         <Page>

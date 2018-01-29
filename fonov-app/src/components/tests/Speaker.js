@@ -9,7 +9,7 @@ import {
     NavLeft, NavRight,
 } from 'framework7-react';
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {PlayAudio} from '../../elements/index'
+import {PlayAudio, TestStatus} from '../../elements/index'
 
 
 class Speaker extends Component {
@@ -32,7 +32,7 @@ class Speaker extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('dynamics')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='Speaker'/>
                     </Navbar>
                     <Pages>
                         <Page>

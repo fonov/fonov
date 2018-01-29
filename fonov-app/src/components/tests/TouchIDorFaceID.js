@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
-    NavLeft, NavRight} from 'framework7-react';
+import {
+    View, Navbar, Pages,
+    Page, Views, NavCenter,
+    Card, CardContent, CardHeader,
+    NavLeft
+} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -41,7 +45,7 @@ class TouchIDorFaceID extends Component {
                             <Navbar>
                                 <NavLeft/>
                                 <NavCenter>{_('touch_id')}</NavCenter>
-                                <NavRight/>
+                                <TestStatus test='TouchIDorFaceID' />
                             </Navbar>
                             <Pages>
                                 <Page>
@@ -69,7 +73,7 @@ class TouchIDorFaceID extends Component {
                             <Navbar>
                                 <NavLeft/>
                                 <NavCenter>{_('face_id')}</NavCenter>
-                                <NavRight/>
+                                <TestStatus test='TouchIDorFaceID' />
                             </Navbar>
                             <Pages>
                                 <Page>

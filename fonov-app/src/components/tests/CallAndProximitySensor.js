@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
@@ -63,7 +63,7 @@ class CallAndProximitySensor extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('call_and_proximity_sensor')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test="CallAndProximitySensor" />
                     </Navbar>
                     <Pages>
                         <Page>
@@ -72,7 +72,7 @@ class CallAndProximitySensor extends Component {
                                     {_('insert_the_sim_card._the_...')}
                                 </CardHeader>
                                 <CardContent>
-                                    <Image src={cell_status_image(1)} />
+                                    <Image src={cell_status_image()} />
                                 </CardContent>
                             </Card>
 

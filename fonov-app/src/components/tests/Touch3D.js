@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image } from '../../elements/index'
+import { Image, TestStatus } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
@@ -30,7 +30,7 @@ class Touch3D extends Component {
                     <Navbar>
                         <NavLeft/>
                         <NavCenter>{_('3d_touch')}</NavCenter>
-                        <NavRight/>
+                        <TestStatus test='Touch3D'/>
                     </Navbar>
                     <Pages>
                         <Page>
