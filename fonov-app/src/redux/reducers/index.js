@@ -5,13 +5,13 @@ import { localeReducer as locale } from 'react-localize-redux';
 import { combineReducers } from 'redux'
 import current_iphone from './current-iphone'
 import rating from './rating'
-import schemeOfTest from './schemeOfTest'
+import test from './test'
 
 
 const reducers = combineReducers({
     current_iphone,
     rating,
-    schemeOfTest,
+    test,
     router: routerReducer,
     locale
 });

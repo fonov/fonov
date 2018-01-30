@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
-import URLS from '../constant/urls'
-import {APP_NAME, LANGUAGES} from '../constant/config'
+import {APP_NAME, LANGUAGES, TEST_TYPE_0, TEST_TYPE_1} from '../constant/config'
 import { View, Navbar, Pages, Page,
     ContentBlock, ContentBlockTitle,
     List, ListItem, Views, NavCenter,
     AccordionContent, Button,
-    NavLeft, NavRight
+    NavLeft, NavRight, Actions,
+    ActionsGroup, ActionsLabel, ActionsButton
 } from 'framework7-react';
 import {version} from '../../package.json';
 import {clean_test} from '../actions/test'
@@ -15,9 +14,18 @@ import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
 import {ListItem as ListItem16} from '../elements/index'
 import {set_active_language} from '../actions/localize'
 import FontAwesome from 'react-fontawesome'
+import {start_test} from '../actions/test'
 
 
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            select_type_test: false
+        }
+    }
 
     componentWillMount() {
         const {clean_test, currentModel} = this.props;
@@ -64,9 +72,16 @@ class Home extends Component {
         ]
     }
 
+    action_select_type_test() {
+        const {select_type_test} = this.state;
+
+        this.setState({select_type_test: !select_type_test})
+    }
+
     render() {
 
-        const {push, initialTest, _, currentLanguage, set_active_language} = this.props;
+        const {_, currentLanguage, set_active_language, start_test} = this.props,
+            {select_type_test} = this.state;
 
         return (
             <Views>
@@ -81,11 +96,36 @@ class Home extends Component {
                             <ContentBlockTitle className='content_block_title'>
                                 {_('test_iphone')}
                             </ContentBlockTitle>
+
                             <ContentBlock>
-                                <Button big color="red" fill onClick={() => push(URLS[initialTest])}>
+                                <Button big color="red" fill onClick={() => this.action_select_type_test()}>
                                     {_('start_test')}
                                 </Button>
                             </ContentBlock>
+
+                            <Actions opened={select_type_test} onActionsClosed={() => this.action_select_type_test()}>
+                                <ActionsGroup>
+                                    <ActionsLabel>
+                                        {_('0_select_which_iphone_you_w...')}
+                                    </ActionsLabel>
+                                    <ActionsButton
+                                        onClick={() => start_test(TEST_TYPE_0)}
+                                    >
+                                        {_('to_test_this_iphone')}
+                                    </ActionsButton>
+                                    <ActionsButton
+                                        onClick={() => start_test(TEST_TYPE_1)}
+                                    >
+                                        {_('another_test_iphone')}
+                                    </ActionsButton>
+                                </ActionsGroup>
+                                <ActionsGroup>
+                                    <ActionsButton color="red" bold>
+                                        {_('cancel')}
+                                    </ActionsButton>
+                                </ActionsGroup>
+                            </Actions>
+
                             <ContentBlockTitle className='content_block_title'>
                                 <span role="img" aria-label="Globified">🌐</span> {_('language')}
                             </ContentBlockTitle>
@@ -105,7 +145,8 @@ class Home extends Component {
                                                     </span> {LANGUAGES[lang].name}
                                                 </span>
                                             )}
-                                            after={currentLanguage === lang ? <FontAwesome name="check" />  : null}
+                                            after={currentLanguage === lang ?
+                                                <FontAwesome name="check" style={{color: '#c7c7cd'}} />  : null}
                                         />
                                     ))
                                 }
@@ -137,16 +178,15 @@ const mapStateToProps = state => {
     return {
         _: getTranslate(state.locale),
         currentLanguage: getActiveLanguage(state.locale).code,
-        initialTest: state.schemeOfTest[0],
         currentModel: state.current_iphone.model
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        push: path =>  dispatch(push(path)),
         clean_test: () => dispatch(clean_test()),
-        set_active_language: code => dispatch(set_active_language(code))
+        set_active_language: code => dispatch(set_active_language(code)),
+        start_test: test_type => dispatch(start_test(test_type))
     }
 };
 

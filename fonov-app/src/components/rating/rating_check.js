@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
 import { ContentBlock, GridRow, GridCol, Button, ContentBlockTitle} from 'framework7-react';
-import {nextTest} from '../../actions/shemeOfTest'
+import {nextTest} from '../../actions/test'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 

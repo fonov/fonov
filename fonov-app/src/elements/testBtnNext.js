@@ -19,7 +19,7 @@ class TestBtnNext extends Component {
 
 const mapStateToProps = state => {
     return {
-        lastTest: state.schemeOfTest[state.schemeOfTest.length-1],
+        lastTest: state.test.scheme[state.test.scheme.length-1],
     }
 };
 

@@ -7,7 +7,7 @@ import {replace} from "react-router-redux";
 import {
     View, Navbar, Pages, Page,
     Views, NavCenter,Card, CardContent,
-    CardHeader, NavLeft, NavRight
+    CardHeader, NavLeft
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -26,7 +26,7 @@ class HeadphoneJack extends Component {
 
     render() {
 
-        const { image_manager, image_speaker, _ } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>

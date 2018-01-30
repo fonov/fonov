@@ -4,7 +4,10 @@ import { Image, TestStatus } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft, NavRight
+import {
+    View, Navbar, Pages, Page,
+    Views, NavCenter,Card, CardContent,
+    CardHeader, NavLeft
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";

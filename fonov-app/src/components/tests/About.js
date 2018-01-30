@@ -5,9 +5,9 @@ import { RatingCheck } from '../rating/index'
 import { View, Navbar, Pages,
     Page, ContentBlockTitle,
     List, ListItem, Views,
-    NavCenter, NavLeft, NavRight,
+    NavCenter, NavLeft,
     Card, CardHeader, CardContent,
-    AccordionContent, ContentBlock, Link
+    AccordionContent, ContentBlock
 } from 'framework7-react';
 import { Image, TestStatus } from '../../elements/index'
 import image_manager from "../../actions/image-manager";

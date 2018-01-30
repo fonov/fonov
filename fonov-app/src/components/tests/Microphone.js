@@ -8,7 +8,7 @@ import {
     View, Navbar, Pages, Page,
     Views, NavCenter, Card,
     CardContent, CardHeader,
-    NavLeft, NavRight
+    NavLeft
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";

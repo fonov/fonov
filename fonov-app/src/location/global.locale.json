@@ -946,5 +946,21 @@
 	"0_click_on_a_circle_so_that...": [
 		"Press on a circle so that it is completely filled in red.",
 		"Нажмите на круг так чтобы он полностью заполнился красным цветом."
+	],
+	"0_select_which_iphone_you_w...": [
+		"Select which iPhone You will test?",
+		"Выберите какой iPhone Вы будете тестировать?"
+	],
+	"to_test_this_iphone": [
+		"To test this iPhone",
+		"Тестировать этот iPhone"
+	],
+	"another_test_iphone": [
+		"Another test iPhone",
+		"Тестировать другой iPhone"
+	],
+	"cancel": [
+		"Cancel",
+		"Отмена"
 	]
 }

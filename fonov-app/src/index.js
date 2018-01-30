@@ -42,7 +42,9 @@ import URLS from './constant/urls'
 import Raven from 'raven-js';
 
 
-Raven.config('https://fa8991ecd0fc44beb7daa608ffe5d886@sentry.io/275162').install();
+if (process.env.NODE_ENV !== 'development') {
+    Raven.config('https://fa8991ecd0fc44beb7daa608ffe5d886@sentry.io/275162').install();
+}
 // Store
 const _store = store();
 // Location

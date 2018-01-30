@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {NavRight, Link, PickerModal} from 'framework7-react';
+import {NavRight, Link} from 'framework7-react';
 import {connect} from "react-redux";
 import {getTranslate} from "react-localize-redux/lib/index";
 
@@ -21,7 +21,7 @@ class TestStatus extends Component {
 const mapStateToProps = state => {
     return {
         _: getTranslate(state.locale),
-        schemeOfTest: state.schemeOfTest
+        schemeOfTest: state.test.scheme
     }
 };
 

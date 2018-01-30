@@ -1,0 +1,3 @@
+export const SET_SCHEMEOFTEST = 'SET_SCHEMEOFTEST';
+export const SET_TESTTYPE = 'SET_TESTTYPE';
+export const CLEAN_TEST = 'CLEAN_TEST';

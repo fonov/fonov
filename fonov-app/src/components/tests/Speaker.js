@@ -6,7 +6,7 @@ import URLS from "../../constant/urls";
 import {
     View, Navbar, Pages, Page,
     Views, NavCenter,
-    NavLeft, NavRight,
+    NavLeft
 } from 'framework7-react';
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {PlayAudio, TestStatus} from '../../elements/index'
