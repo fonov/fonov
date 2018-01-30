@@ -739,10 +739,6 @@
 		"Moisture has a devastating impact on elements of the iPhone. To determine if any moisture, check the moisture indicator as illustrated. If the indicator is red, it means the phone was exposed to moisture.",
 		"Влага оказывает разрушительное воздействие на элементы iPhone. Чтобы определить было ли попадание влаги, проверьте индикатор влаги согласно рисунку. Если индикатор красного цвета, значит телефон был подвергнут попаданию влаги."
 	],
-	"{currentmodel}_was_subje...": [
-		"${currentModel} was subjected to moisture?",
-		"${currentModel} был подвергнут попаданию влаги?"
-	],
 	"wi-fi": [
 		"Wi-Fi",
 		"Wi-Fi"
@@ -962,5 +958,9 @@
 	"cancel": [
 		"Cancel",
 		"Отмена"
+	],
+	"0_iphone_was_exposed_to_moi...": [
+		"iPhone was exposed to moisture?",
+		"iPhone был подвергнут попаданию влаги?"
 	]
 }

@@ -46,7 +46,7 @@ class WaterSensor extends Component {
                                 </CardContent>
                             </Card>
                             <RatingCheck testN='WaterSensor'>
-                                {_('{currentmodel}_was_subje...', {currentModel})}
+                                {_('0_iphone_was_exposed_to_moi...')}
                             </RatingCheck>
                         </Page>
                     </Pages>
