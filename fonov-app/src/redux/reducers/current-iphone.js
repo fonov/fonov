@@ -3,9 +3,9 @@ let init_state = {model: null, color: null, model_info: {firstLetter: null, code
 
 if (process.env.NODE_ENV === 'development') {
     init_state = {
-        model: 'iPhone 5c',
-        color: 'blue',
-        model_info: {firstLetter: 'M', code: 'F151', code_country: 'RR'}
+        model: 'iPhone 6s',
+        color: 'silver',
+        model_info: {firstLetter: 'M', code: 'N0N2', code_country: 'RR'}
     };
 }
 

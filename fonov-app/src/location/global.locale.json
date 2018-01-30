@@ -942,5 +942,9 @@
 	"0_during_the_call_close_th...": [
 		"During the call, close the proximity sensor. The screen should fade.",
 		"Во время звонка закройте датчик приближения. Экран должен потухнуть."
+	],
+	"0_click_on_a_circle_so_that...": [
+		"Press on a circle so that it is completely filled in red.",
+		"Нажмите на круг так чтобы он полностью заполнился красным цветом."
 	]
 }

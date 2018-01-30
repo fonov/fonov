@@ -22,3 +22,11 @@
     white-space: normal;
     line-height: 1.5em;
 }
+.cycle_3d_touch {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px auto;
+    background-color: #ff3b30;
+    border: #ff3b30 solid;
+}

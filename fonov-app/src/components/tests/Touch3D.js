@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, TestStatus, Cycle3DTouch } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader,
-    NavLeft, NavRight} from 'framework7-react';
+import {
+    View, Navbar, Pages,
+    Page, Views, NavCenter,
+    Card, CardContent, CardHeader,
+    NavLeft, ContentBlockTitle
+} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -42,6 +46,12 @@ class Touch3D extends Component {
                                     <Image src={image_manager(1)}/>
                                 </CardContent>
                             </Card>
+
+                            <ContentBlockTitle className='content_block_title'>
+                                {_('0_click_on_a_circle_so_that...')}
+                            </ContentBlockTitle>
+
+                            <Cycle3DTouch />
 
                             <RatingCheck testN='Touch3D'>
                                 {_('3d_touch_works?')}
