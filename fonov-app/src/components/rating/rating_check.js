@@ -18,10 +18,10 @@ class RatingCheck extends Component {
 
     render() {
 
-        const { children, _ } = this.props;
+        const { children, _, style = {} } = this.props;
 
         return (
-            <div>
+            <div style={style}>
                 <ContentBlockTitle className='content_block_title'>
                     {children}
                 </ContentBlockTitle>

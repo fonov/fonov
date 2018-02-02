@@ -1,4 +1,4 @@
-import {TEST_TYPE_0} from '../../constant/config'
+import {TEST_TYPE_0, TEST_TYPE_1} from '../../constant/config'
 import {SET_SCHEMEOFTEST, CLEAN_TEST, SET_TESTTYPE} from '../../constant/actions'
 
 

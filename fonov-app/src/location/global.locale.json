@@ -962,5 +962,9 @@
 	"0_iphone_was_exposed_to_moi...": [
 		"iPhone was exposed to moisture?",
 		"iPhone был подвергнут попаданию влаги?"
+	],
+	"0_for_move_the_image_around...": [
+		"For move the image around on the screen",
+		"По перемещайте изображение по экрану"
 	]
 }

@@ -12,6 +12,7 @@ import {
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {TEST_TYPE_0} from '../../constant/config'
 
 
 class Touch3D extends Component {
@@ -26,7 +27,7 @@ class Touch3D extends Component {
 
     render() {
 
-        const { image_manager, _ } = this.props;
+        const { image_manager, _, test_type } = this.props;
 
         return (
             <Views>
@@ -38,21 +39,26 @@ class Touch3D extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('0_to_check_3d_touch_must_fo...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)}/>
-                                </CardContent>
-                            </Card>
+                            {
+                                test_type === TEST_TYPE_0 ? (
+                                    <div>
+                                        <ContentBlockTitle className='content_block_title'>
+                                            {_('0_click_on_a_circle_so_that...')}
+                                        </ContentBlockTitle>
 
-                            <ContentBlockTitle className='content_block_title'>
-                                {_('0_click_on_a_circle_so_that...')}
-                            </ContentBlockTitle>
-
-                            <Cycle3DTouch />
-
+                                        <Cycle3DTouch />
+                                    </div>
+                                ) : (
+                                    <Card>
+                                        <CardHeader>
+                                            {_('0_to_check_3d_touch_must_fo...')}
+                                        </CardHeader>
+                                        <CardContent>
+                                            <Image src={image_manager(1)}/>
+                                        </CardContent>
+                                    </Card>
+                                )
+                            }
                             <RatingCheck testN='Touch3D'>
                                 {_('3d_touch_works?')}
                             </RatingCheck>
@@ -69,7 +75,8 @@ const mapStateToProps = state => {
     return {
         _: getTranslate(state.locale),
         currentLanguage: getActiveLanguage(state.locale).code,
-        currentModel: state.current_iphone.model
+        currentModel: state.current_iphone.model,
+        test_type: state.test.type
     }
 };
 

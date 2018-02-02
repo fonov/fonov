@@ -25,7 +25,7 @@ class WaterSensor extends Component {
 
     render() {
 
-        const { currentModel, image_manager, _ } = this.props;
+        const { image_manager, _ } = this.props;
 
         return (
             <Views>
