@@ -10,7 +10,7 @@ import {
     CardContent
 } from 'framework7-react';
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {PlayAudio, TestStatus, Image} from '../../elements/index'
+import {AudioTest, TestStatus, Image} from '../../elements/index'
 import image_manager from '../../actions/image-manager'
 import {TEST_TYPE_0} from '../../constant/config'
 
@@ -39,20 +39,7 @@ class Speaker extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-                            {
-                                test_type === TEST_TYPE_0 ? (
-                                    <PlayAudio />
-                                ) : (
-                                    <Card>
-                                        <CardHeader>
-                                            {_('to_check_sound_you_will_...')}
-                                        </CardHeader>
-                                        <CardContent>
-                                            <Image src={image_manager(1)}/>
-                                        </CardContent>
-                                    </Card>
-                                )
-                            }
+                            <AudioTest/>
                             <RatingCheck testN='Speaker'>
                                 {_('the_speakers_are_working?')}
                             </RatingCheck>

@@ -11,7 +11,7 @@ import {
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {PlayAudio} from '../../elements/index'
+import {AudioTest} from '../../elements/index'
 
 
 class HeadphoneJack extends Component {
@@ -46,7 +46,7 @@ class HeadphoneJack extends Component {
                                     <Image src={image_manager(1)} />
                                 </CardContent>
                             </Card>
-                            <PlayAudio/>
+                            <AudioTest/>
                             <RatingCheck testN='HeadphoneJack'>
                                 {_('the_headphone_jack_works?')}
                             </RatingCheck>
