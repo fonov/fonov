@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import { View, Navbar, Pages, Page, Views, NavCenter,Card, CardContent, CardHeader, NavLeft} from 'framework7-react';
+import {
+    Card, CardContent, CardHeader
+} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -24,31 +26,20 @@ class iCloud extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('icloud')}</NavCenter>
-                        <TestStatus test='iCloud' />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('the_phone_must_be_untethe...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)}/>
-                                </CardContent>
-                            </Card>
+            <BaseTest test='iCloud' title={_('icloud')}>
+                <Card>
+                    <CardHeader>
+                        {_('the_phone_must_be_untethe...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(1)}/>
+                    </CardContent>
+                </Card>
 
-                            <RatingCheck testN='iCloud'>
-                                {_('iphone_untethered_jailbre...')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+                <RatingCheck testN='iCloud'>
+                    {_('iphone_untethered_jailbre...')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

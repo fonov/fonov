@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
-    View, Navbar, Pages, Page, Views,
-    NavCenter,Card, CardContent, CardHeader, NavLeft
+    Card, CardContent, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -352,40 +351,29 @@ class Package extends Component {
         const {_} = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('equipment')}</NavCenter>
-                        <TestStatus test='Package' />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('headphones.')}
-                                </CardHeader>
-                                <CardContent>
-                                    {this.earpods()}
-                                </CardContent>
-                            </Card>
-                            {this.adapter()}
-                            <Card>
-                                <CardHeader>
-                                    {_('charger.')}
-                                </CardHeader>
-                                <CardContent>
-                                    {this.powerAdapter()}
-                                </CardContent>
-                            </Card>
-                            {this.cable()}
-                            <RatingCheck testN='Package'>
-                                {_('package_contents_iphone_i...')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+            <BaseTest test='Package' title={_('equipment')}>
+                <Card>
+                    <CardHeader>
+                        {_('headphones.')}
+                    </CardHeader>
+                    <CardContent>
+                        {this.earpods()}
+                    </CardContent>
+                </Card>
+                {this.adapter()}
+                <Card>
+                    <CardHeader>
+                        {_('charger.')}
+                    </CardHeader>
+                    <CardContent>
+                        {this.powerAdapter()}
+                    </CardContent>
+                </Card>
+                {this.cable()}
+                <RatingCheck testN='Package'>
+                    {_('package_contents_iphone_i...')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

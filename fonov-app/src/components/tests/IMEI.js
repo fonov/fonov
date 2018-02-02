@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
-    View, Navbar, Pages,
-    Page, Views, NavCenter,
     Card, CardContent,
-    CardHeader, NavLeft, ContentBlockTitle
+    CardHeader, ContentBlockTitle
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -87,46 +85,35 @@ class IMEI extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('coincidence_imei')}</NavCenter>
-                        <TestStatus test='IMEI' />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <ContentBlockTitle className='content_block_title'>
-                                {_('check_whether_the_imei_of...')}
-                            </ContentBlockTitle>
+            <BaseTest test='IMEI' title={_('coincidence_imei')}>
+                <ContentBlockTitle className='content_block_title'>
+                    {_('check_whether_the_imei_of...')}
+                </ContentBlockTitle>
 
-                            <Card>
-                                <CardHeader>
-                                    {_('settings_->_general_->_ab...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(2)} />
-                                </CardContent>
-                            </Card>
+                <Card>
+                    <CardHeader>
+                        {_('settings_->_general_->_ab...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(2)} />
+                    </CardContent>
+                </Card>
 
-                            {this.secondImei()}
+                {this.secondImei()}
 
-                            <Card>
-                                <CardHeader>
-                                    {_('on_the_box.')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(5)} />
-                                </CardContent>
-                            </Card>
+                <Card>
+                    <CardHeader>
+                        {_('on_the_box.')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(5)} />
+                    </CardContent>
+                </Card>
 
-                            <RatingCheck testN='IMEI'>
-                                {_('imei_the_same?')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+                <RatingCheck testN='IMEI'>
+                    {_('imei_the_same?')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

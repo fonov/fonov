@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
-    View, Navbar, Pages, Page, Views,
-    NavCenter,Card, CardContent, CardHeader, NavLeft
+    Card, CardContent, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -60,60 +59,49 @@ class CallAndProximitySensor extends Component {
         const { cell_status_image, image_manager, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('call_and_proximity_sensor')}</NavCenter>
-                        <TestStatus test="CallAndProximitySensor" />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('insert_the_sim_card._the_...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={cell_status_image()} />
-                                </CardContent>
-                            </Card>
+            <BaseTest test="CallAndProximitySensor" title={_('call_and_proximity_sensor')}>
+                <Card>
+                    <CardHeader>
+                        {_('insert_the_sim_card._the_...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={cell_status_image()} />
+                    </CardContent>
+                </Card>
 
-                            <Card>
-                                <CardHeader>
-                                    {_('try_to_make_a_call.')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)} />
-                                </CardContent>
-                            </Card>
+                <Card>
+                    <CardHeader>
+                        {_('try_to_make_a_call.')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(1)} />
+                    </CardContent>
+                </Card>
 
-                            <Card>
-                                <CardHeader>
-                                    {_('0_during_the_call_close_th...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(4)} />
-                                </CardContent>
-                            </Card>
+                <Card>
+                    <CardHeader>
+                        {_('0_during_the_call_close_th...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(4)} />
+                    </CardContent>
+                </Card>
 
-                            <Card>
-                                <CardHeader>
-                                    {_('put_it_on_speaker_to_chec...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(2)} />
-                                </CardContent>
-                            </Card>
+                <Card>
+                    <CardHeader>
+                        {_('put_it_on_speaker_to_chec...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(2)} />
+                    </CardContent>
+                </Card>
 
-                            {this.callWithHeadpods()}
+                {this.callWithHeadpods()}
 
-                            <RatingCheck testN='CallAndProximitySensor'>
-                                {_('call_and_the_proximity_se...')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+                <RatingCheck testN='CallAndProximitySensor'>
+                    {_('call_and_the_proximity_se...')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

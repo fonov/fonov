@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
-    View, Navbar, Pages, Page, Views, NavCenter,
-    Card, CardContent, CardHeader, NavLeft
+    Card, CardContent, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -27,37 +26,26 @@ class Camera extends Component {
         const { image_manager, no_front_camera, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('camera')}</NavCenter>
-                        <TestStatus test='Camera' />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {
-                                        no_front_camera ? (
-                                            <span>{_('open_the_camera_app._chec...')}</span>
-                                        ) : (
-                                            <span>{_('open_the_control_center_...')}</span>
-                                        )
-                                    }
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(no_front_camera ? 2 : 1)}/>
-                                </CardContent>
-                            </Card>
+            <BaseTest test='Camera' title={_('camera')}>
+                <Card>
+                    <CardHeader>
+                        {
+                            no_front_camera ? (
+                                <span>{_('open_the_camera_app._chec...')}</span>
+                            ) : (
+                                <span>{_('open_the_control_center_...')}</span>
+                            )
+                        }
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(no_front_camera ? 2 : 1)}/>
+                    </CardContent>
+                </Card>
 
-                            <RatingCheck testN='Camera'>
-                                {_('the_camera_works?')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+                <RatingCheck testN='Camera'>
+                    {_('the_camera_works?')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import setCurrentiPhone from '../../actions/current-iphone'
 import { RatingCheck } from '../rating/index'
-import { View, Navbar, Pages,
-    Page, ContentBlockTitle,
-    List, ListItem, Views,
-    NavCenter, NavLeft,
+import {
+    List, ListItem,
     Card, CardHeader, CardContent,
     AccordionContent, ContentBlock
 } from 'framework7-react';
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -525,73 +523,58 @@ class About extends Component {
             {image_manager, _} = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('о_iphone')}</NavCenter>
-                        <TestStatus test={'About'} />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <ContentBlockTitle className='content_block_title'>
-                                {_('enter_the_iphone_model')}
-                            </ContentBlockTitle>
-
-                            <List inset accordion>
-                                <ListItem>
-                                    <div className="item-input">
-                                        <input
-                                            type="text"
-                                            placeholder="MQ8M2B/A"
-                                            onChange={event => this.inputModel(event.target.value)}
-                                        />
-                                    </div>
-                                </ListItem>
-                                <ListItem accordionItem title={_('where_to_find_the_model?')}>
-                                    <AccordionContent>
-                                        <ContentBlock>
-                                            <p>{_('settings_->_master_->_abo...')}</p>
-                                            <Image src={image_manager(1)}/>
-                                            <p>{_('on_the_back_side_of_the_b...')}</p>
-                                            <Image src={image_manager(2)}/>
-                                        </ContentBlock>
-                                    </AccordionContent>
-                                </ListItem>
-                            </List>
-                            {
-                                input_valid === true && (
-                                    <div>
-                                        <Card>
-                                            <CardHeader>{_('model')}:</CardHeader>
-                                            <CardContent>{iPhone}</CardContent>
-                                        </Card>
-                                        <Card>
-                                            <CardHeader>{_('amount_of_memory')}:</CardHeader>
-                                            <CardContent>{capacity}</CardContent>
-                                        </Card>
-                                        <Card>
-                                            <CardHeader>{_('the_color_of_the_device')}:</CardHeader>
-                                            <CardContent>{color}</CardContent>
-                                        </Card>
-                                        <Card>
-                                            <CardHeader>{_('device_type')}:</CardHeader>
-                                            <CardContent>{type}</CardContent>
-                                        </Card>
-                                        <Card>
-                                            <CardHeader>{_('the_country_of_purchase')}:</CardHeader>
-                                            <CardContent>{country_of_purchase}</CardContent>
-                                        </Card>
-                                        <RatingCheck testN='About'>
-                                            {_('the_stated_information_is...')}
-                                        </RatingCheck>
-                                    </div>
-                                )
-                            }
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+            <BaseTest test={'About'} title={_('о_iphone')}>
+                <List inset accordion>
+                    <ListItem>
+                        <div className="item-input">
+                            <input
+                                type="text"
+                                placeholder="MQ8M2B/A"
+                                onChange={event => this.inputModel(event.target.value)}
+                            />
+                        </div>
+                    </ListItem>
+                    <ListItem accordionItem title={_('where_to_find_the_model?')}>
+                        <AccordionContent>
+                            <ContentBlock>
+                                <p>{_('settings_->_master_->_abo...')}</p>
+                                <Image src={image_manager(1)}/>
+                                <p>{_('on_the_back_side_of_the_b...')}</p>
+                                <Image src={image_manager(2)}/>
+                            </ContentBlock>
+                        </AccordionContent>
+                    </ListItem>
+                </List>
+                {
+                    input_valid === true && (
+                        <div>
+                            <Card>
+                                <CardHeader>{_('model')}:</CardHeader>
+                                <CardContent>{iPhone}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>{_('amount_of_memory')}:</CardHeader>
+                                <CardContent>{capacity}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>{_('the_color_of_the_device')}:</CardHeader>
+                                <CardContent>{color}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>{_('device_type')}:</CardHeader>
+                                <CardContent>{type}</CardContent>
+                            </Card>
+                            <Card>
+                                <CardHeader>{_('the_country_of_purchase')}:</CardHeader>
+                                <CardContent>{country_of_purchase}</CardContent>
+                            </Card>
+                            <RatingCheck testN='About'>
+                                {_('the_stated_information_is...')}
+                            </RatingCheck>
+                        </div>
+                    )
+                }
+            </BaseTest>
         );
     }
 

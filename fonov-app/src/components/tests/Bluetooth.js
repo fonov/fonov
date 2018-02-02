@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import {
-    View, Navbar, Pages, Page,
-    Views, NavCenter,Card, CardContent,
-    CardHeader, NavLeft
+    Card, CardContent, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -28,31 +26,20 @@ class Bluetooth extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('bluetooth')}</NavCenter>
-                        <TestStatus test='Bluetooth' />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('open_settings_->_bluetoot...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)}/>
-                                </CardContent>
-                            </Card>
+            <BaseTest test='Bluetooth' title={_('bluetooth')}>
+                <Card>
+                    <CardHeader>
+                        {_('open_settings_->_bluetoot...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(1)}/>
+                    </CardContent>
+                </Card>
 
-                            <RatingCheck testN='Bluetooth'>
-                                {_('the_bluetooth_works?')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+                <RatingCheck testN='Bluetooth'>
+                    {_('the_bluetooth_works?')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

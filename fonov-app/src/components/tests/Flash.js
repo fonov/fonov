@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
-    View, Navbar, Pages, Page,
-    Views, NavCenter,Card, CardContent, CardHeader, NavLeft
+    Card, CardContent, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -27,31 +26,20 @@ class Flash extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('flash')}</NavCenter>
-                        <TestStatus test='Flash' />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('0_open_the_control_center_...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)} />
-                                </CardContent>
-                            </Card>
+            <BaseTest test='Flash' title={_('flash')}>
+                <Card>
+                    <CardHeader>
+                        {_('0_open_the_control_center_...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(1)} />
+                    </CardContent>
+                </Card>
 
-                            <RatingCheck testN='Flash'>
-                                {_('the_flash_works?')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+                <RatingCheck testN='Flash'>
+                    {_('the_flash_works?')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 

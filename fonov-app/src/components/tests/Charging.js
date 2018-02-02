@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, TestStatus } from '../../elements/index'
+import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import {
-    View, Navbar, Pages,
-    Page, Views, NavCenter,
-    Card, CardContent, CardHeader, NavLeft
+    Card, CardContent, CardHeader
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -28,30 +26,19 @@ class Charging extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('charging_port')}</NavCenter>
-                        <TestStatus test="Charging" />
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <Card>
-                                <CardHeader>
-                                    {_('connect_your_phone_to_cha...')}
-                                </CardHeader>
-                                <CardContent>
-                                    <Image src={image_manager(1)} />
-                                </CardContent>
-                            </Card>
-                            <RatingCheck testN='Charging'>
-                                {_('charging_port_works?')}
-                            </RatingCheck>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
+            <BaseTest test="Charging" title={_('charging_port')}>
+                <Card>
+                    <CardHeader>
+                        {_('connect_your_phone_to_cha...')}
+                    </CardHeader>
+                    <CardContent>
+                        <Image src={image_manager(1)} />
+                    </CardContent>
+                </Card>
+                <RatingCheck testN='Charging'>
+                    {_('charging_port_works?')}
+                </RatingCheck>
+            </BaseTest>
         );
     }
 
