@@ -26,13 +26,13 @@ class BaseTest extends Component {
                             <Link>{`${testNumber}/${testCount}`}</Link>
                         </NavRight>
                     </Navbar>
+                    <Progressbar
+                        progress={Math.floor(testNumber/testCount*100)}
+                        color={'red'}
+                        style={ProgressStyle}
+                    />
                     <Pages>
                         <Page>
-                            <Progressbar
-                                progress={Math.floor(testNumber/testCount*100)}
-                                color={'red'}
-                                style={ProgressStyle}
-                            />
                             {children}
                         </Page>
                     </Pages>

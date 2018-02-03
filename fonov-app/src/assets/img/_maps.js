@@ -1,5 +1,5 @@
 const fs = require('fs'),
-    ignore = ['.DS_Store', 'maps.js', 'refactor.js', 'maps.json', 'ls_maps.js'];
+    ignore = ['.DS_Store', '_maps.js', '_refactor.js', 'maps.json', '_ls_maps.js', '_rename_img.js'];
 
 
 let maps = {};
