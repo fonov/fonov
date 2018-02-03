@@ -83,7 +83,7 @@ class CallAndProximitySensor extends Component {
                         {_('0_during_the_call_close_th...')}
                     </CardHeader>
                     <CardContent>
-                        <Image src={call_image(2)} />
+                        <Image src={image_manager(4)} />
                     </CardContent>
                 </Card>
 
@@ -92,7 +92,7 @@ class CallAndProximitySensor extends Component {
                         {_('put_it_on_speaker_to_chec...')}
                     </CardHeader>
                     <CardContent>
-                        <Image src={image_manager(2)} />
+                        <Image src={call_image(2)} />
                     </CardContent>
                 </Card>
 
