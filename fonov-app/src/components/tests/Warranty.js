@@ -10,6 +10,7 @@ import {
 } from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {TEST_TYPE_0} from '../../constant/config'
 
 
 class Warranty extends Component {
@@ -24,13 +25,13 @@ class Warranty extends Component {
 
     render() {
 
-        const { image_manager, _ } = this.props;
+        const { image_manager, _, test_type } = this.props;
 
         return (
             <BaseTest test='Warranty' title={_('warranty')}>
                 <Card>
                     <CardHeader>
-                        {_('go_to_settings_->_general...')}
+                        {_(test_type === TEST_TYPE_0 ? 'go_to_settings_->_general...' : '0_locate_the_serial_number....')}
                     </CardHeader>
                     <CardContent>
                         <Image src={image_manager(1)} />
@@ -82,7 +83,8 @@ const mapStateToProps = state => {
     return {
         _: getTranslate(state.locale),
         currentLanguage: getActiveLanguage(state.locale).code,
-        currentModel: state.current_iphone.model
+        currentModel: state.current_iphone.model,
+        test_type: state.test.type
     }
 };
 

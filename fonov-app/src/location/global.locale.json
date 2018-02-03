@@ -720,8 +720,8 @@
 		"Проверить гарантию"
 	],
 	"insert_the_serial_number...": [
-		"Insert the serial number, enter the captcher and click next.",
-		"Вставьте серийный номер, введите captcher и нажмите далее."
+		"Insert the serial number, enter the reCAPTCHA and click next.",
+		"Вставьте серийный номер, введите reCAPTCHA и нажмите далее."
 	],
 	"scroll_down_to_warranty_s...": [
 		"Scroll down to warranty status.",
@@ -970,5 +970,9 @@
 	"Apple_Warranty_URI": [
 		"https://checkcoverage.apple.com/us/en/",
 		"https://checkcoverage.apple.com/ru/ru/"
+	],
+	"0_locate_the_serial_number....": [
+		"Locate the serial number. Go to Settings -> General -> About -> Serial number.",
+		"Найдите серийный номер. Зайдите в Настройки -> Основные -> Об этом устройстве -> Серийный номер."
 	]
 }
