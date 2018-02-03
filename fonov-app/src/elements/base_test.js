@@ -11,13 +11,13 @@ class BaseTest extends Component {
 
     render() {
 
-        const {test, schemeOfTest, title, children, testCount} = this.props,
+        const {test, schemeOfTest, title, children, testCount, navStyle = {}, ProgressStyle = {}} = this.props,
             testNumber = schemeOfTest.indexOf(test)+1;
 
         return (
             <Views>
                 <View navbarThrough>
-                    <Navbar>
+                    <Navbar style={navStyle}>
                         <NavLeft/>
                         <NavCenter>
                             {title}
@@ -28,7 +28,11 @@ class BaseTest extends Component {
                     </Navbar>
                     <Pages>
                         <Page>
-                            <Progressbar progress={Math.floor(testNumber/testCount*100)} color={'red'}>21</Progressbar>
+                            <Progressbar
+                                progress={Math.floor(testNumber/testCount*100)}
+                                color={'red'}
+                                style={ProgressStyle}
+                            />
                             {children}
                         </Page>
                     </Pages>

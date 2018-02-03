@@ -56,7 +56,7 @@ class CallAndProximitySensor extends Component {
 
     render() {
 
-        const { cell_status_image, image_manager, _ } = this.props;
+        const { cell_status_image, image_manager, _, call_image} = this.props;
 
         return (
             <BaseTest test="CallAndProximitySensor" title={_('call_and_proximity_sensor')}>
@@ -74,7 +74,7 @@ class CallAndProximitySensor extends Component {
                         {_('try_to_make_a_call.')}
                     </CardHeader>
                     <CardContent>
-                        <Image src={image_manager(1)} />
+                        <Image src={call_image(1)} />
                     </CardContent>
                 </Card>
 
@@ -83,7 +83,7 @@ class CallAndProximitySensor extends Component {
                         {_('0_during_the_call_close_th...')}
                     </CardHeader>
                     <CardContent>
-                        <Image src={image_manager(4)} />
+                        <Image src={call_image(2)} />
                     </CardContent>
                 </Card>
 
@@ -119,7 +119,8 @@ const mapDispatchToProps = dispatch => {
     return {
         replace: path =>  dispatch(replace(path)),
         image_manager: number => dispatch(image_manager('CallAndProximitySensor', number)),
-        cell_status_image: () => dispatch(image_manager('CellStatus', 1))
+        cell_status_image: () => dispatch(image_manager('CellStatus', 1)),
+        call_image: number => dispatch(image_manager('Call', number))
     }
 };
 

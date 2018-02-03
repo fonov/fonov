@@ -38,7 +38,7 @@ class Sensor extends Component {
             {opacity} = this.state;
 
         return (
-            <BaseTest test='Sensor' title={_('sensor')}>
+            <BaseTest test='Sensor' title={_('sensor')} navStyle={{opacity}} ProgressStyle={{opacity}}>
                 {
                     test_type === TEST_TYPE_0 ? (
                         <div>

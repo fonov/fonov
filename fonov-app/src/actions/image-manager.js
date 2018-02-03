@@ -1,13 +1,27 @@
 import maps from '../assets/img/maps.json'
 import Raven from 'raven-js';
+import {getActiveLanguage} from "react-localize-redux/lib/index";
 
 
 const get_absolut_path = path => require(`../assets/img/${path}`);
 
+const img_with_locate = (obj, number, currentLanguage, error) => {
+    if (typeof obj[number] !== 'undefined') {
+        return get_absolut_path(obj[number])
+    } else if (obj[`${number}_${currentLanguage}`] !== 'undefined') {
+        return get_absolut_path(obj[`${number}_${currentLanguage}`])
+    } else {
+        Raven.captureException(error);
+        console.error(error);
+        return get_absolut_path('default.png')
+    }
+};
+
 const image_manager = (test, number) => {
     return (dispatch, getState) => {
-        let { current_iphone } = getState(),
-            {model, color} = current_iphone;
+        let { current_iphone, locale } = getState(),
+            {model, color} = current_iphone,
+            currentLanguage = getActiveLanguage(locale).code;
 
         test = test.toLowerCase();
 
@@ -15,12 +29,12 @@ const image_manager = (test, number) => {
             Raven.captureException(`Test "${test}" not found!`);
             console.error(`Test "${test}" not found!`);
         } else if (typeof maps[test]["default"] !== 'undefined') {
-            if (typeof maps[test]["default"][number] === 'undefined') {
-                Raven.captureException(`Image ${number} for ${test}/default not found!`);
-                console.error(`Image ${number} for ${test}/default not found!`)
-            } else {
-                return get_absolut_path(maps[test]["default"][number])
-            }
+            return img_with_locate(
+                maps[test]["default"],
+                number,
+                currentLanguage,
+                `Image ${number} for ${test}/default not found!`
+            )
         } else {
             if (model && color) {
                 model = model.toLowerCase();
@@ -30,20 +44,22 @@ const image_manager = (test, number) => {
                     Raven.captureException(`Model "${model}" for ${test} not found!`);
                     console.error(`Model "${model}" for ${test} not found!`);
                 } else if (typeof maps[test][model]["default"] !== 'undefined') {
-                    if (typeof maps[test][model]["default"][number] === 'undefined') {
-                        Raven.captureException(`Image ${number} for ${test}/${model}/default not found!`);
-                        console.error(`Image ${number} for ${test}/${model}/default not found!`)
-                    } else {
-                        return get_absolut_path(maps[test][model]["default"][number])
-                    }
+                    return img_with_locate(
+                        maps[test][model]["default"],
+                        number,
+                        currentLanguage,
+                        `Image ${number} for ${test}/${model}/default not found!`
+                    );
                 } else if (typeof maps[test][model][color] === 'undefined') {
                     Raven.captureException(`Color "${color}" for ${test}/${model} not found!`);
                     console.error(`Color "${color}" for ${test}/${model} not found!`)
-                } else if (typeof maps[test][model][color][number] === 'undefined'){
-                    Raven.captureException(`Image ${number} for ${test}/${model}/${color} not found!`);
-                    console.error(`Image ${number} for ${test}/${model}/${color} not found!`)
                 } else {
-                    return get_absolut_path(maps[test][model][color][number])
+                    return img_with_locate(
+                        maps[test][model][color],
+                        number,
+                        currentLanguage,
+                        `Image ${number} for ${test}/${model}/${color} not found!`
+                    )
                 }
             }
         }

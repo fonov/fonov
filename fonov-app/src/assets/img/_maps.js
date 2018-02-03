@@ -49,7 +49,12 @@ const openFolder = (path, init=false) => {
 
                             let clean_name = clean_file_name(dff[2]);
                             s_dir.forEach(item => {
-                                maps[dff[0]][item][clean_name] = is_dir ? {} : file_path
+                                let dir_3 = clean_name.split(', ');
+                                if (dir_3.length > 1) {
+                                    dir_3.forEach(item_3 => maps[dff[0]][item][item_3.trim()] = is_dir ? {} : file_path)
+                                } else {
+                                    maps[dff[0]][item][clean_name] = is_dir ? {} : file_path
+                                }
                             });
                         }
                         if (dff.length === 4) {
@@ -57,7 +62,12 @@ const openFolder = (path, init=false) => {
 
                             let clean_name = clean_file_name(dff[3]);
                             s_dir.forEach(item => {
-                                maps[dff[0]][item][dff[2]][clean_name] = is_dir ? {} : file_path
+                                let dir_3 = dff[2].split(', ');
+                                if (dir_3.length > 1) {
+                                    dir_3.forEach(item_3 => maps[dff[0]][item][item_3.trim()][clean_name] = is_dir ? {} : file_path)
+                                } else {
+                                    maps[dff[0]][item][dff[2]][clean_name] = is_dir ? {} : file_path
+                                }
                             });
                         }
                     }

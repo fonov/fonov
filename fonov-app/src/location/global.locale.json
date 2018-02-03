@@ -966,5 +966,9 @@
 	"0_for_move_the_image_around...": [
 		"For move the image around on the screen",
 		"По перемещайте изображение по экрану"
+	],
+	"Apple_Warranty_URI": [
+		"https://checkcoverage.apple.com/us/en/",
+		"https://checkcoverage.apple.com/ru/ru/"
 	]
 }

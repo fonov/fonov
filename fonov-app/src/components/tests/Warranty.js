@@ -45,7 +45,7 @@ class Warranty extends Component {
                         fill
                         big
                         color='green'
-                        onClick={() => window.open("https://checkcoverage.apple.com")}
+                        onClick={() => window.open(_("Apple_Warranty_URI"))}
                     >
                         {_('check_guarantee')}
                     </Button>
