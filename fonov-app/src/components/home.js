@@ -9,12 +9,12 @@ import { View, Navbar, Pages, Page,
     ActionsGroup, ActionsLabel, ActionsButton
 } from 'framework7-react';
 import {version} from '../../package.json';
-import {clean_test} from '../actions/test'
+import {clean_test} from '../actions/main'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
 import {ListItem as ListItem16} from '../elements/index'
 import {set_active_language} from '../actions/localize'
 import FontAwesome from 'react-fontawesome'
-import {start_test} from '../actions/test'
+import {start_test} from '../actions/main'
 
 
 class Home extends Component {

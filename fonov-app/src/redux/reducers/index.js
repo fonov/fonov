@@ -5,7 +5,7 @@ import { localeReducer as locale } from 'react-localize-redux';
 import { combineReducers } from 'redux'
 import current_iphone from './current-iphone'
 import rating from './rating'
-import test from './test'
+import test from './main'
 
 
 const reducers = combineReducers({

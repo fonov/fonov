@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome'
 import { ContentBlock, ContentBlockTitle, Link, PickerModal, Toolbar,
     GridRow, GridCol, Page} from 'framework7-react';
 import {TestBtnNext} from '../../elements/index'
-import {nextTest} from '../../actions/test'
+import {nextTest} from '../../actions/main'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
