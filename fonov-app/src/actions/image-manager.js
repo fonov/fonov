@@ -20,12 +20,12 @@ const img_with_locate = (obj, number, currentLanguage, error) => {
 const image_manager = (test, number) => {
     return (dispatch, getState) => {
         let { current_iphone, locale } = getState(),
-            {model = '', color = ''} = current_iphone,
+            {model, color} = current_iphone,
             currentLanguage = getActiveLanguage(locale).code;
 
         test = test.toLowerCase();
-        model = model.toLowerCase();
-        color = color.toLowerCase();
+        model = model ? model.toLowerCase() : model;
+        color = color ? color.toLowerCase(): color;
 
         if(typeof maps[test] === 'undefined') {
             Raven.captureException(`Test "${test}" not found!`);
