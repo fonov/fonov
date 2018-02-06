@@ -30,11 +30,11 @@ const nextTest = testN => {
 const start_test = test_type => {
     return (dispatch, getState) => {
         const {test} = getState(),
-            initialTest = test.scheme[0];
+            initialURL = URLS[test.scheme[0]];
 
         Promise.all([
             dispatch({type: SET_TESTTYPE, test_type}),
-            dispatch(push(initialTest))
+            dispatch(push(initialURL))
         ])
     }
 };
