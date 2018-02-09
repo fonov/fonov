@@ -3,9 +3,6 @@ import { connect } from 'react-redux'
 import {replace, push} from 'react-router-redux';
 import URLS from '../constant/urls'
 import FontAwesome from 'react-fontawesome'
-import { View, Navbar, Pages, Page, Views, NavCenter, ContentBlock, Button, List, ListItem, Badge, NavLeft,
-    NavRight, Card, CardContent, CardHeader
-} from 'framework7-react';
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
 
@@ -153,6 +150,10 @@ class TestResult extends Component {
 
         let testList = [], rank = 0;
 
+        /*
+
+        TODO: UPDATE UI
+
         for (let key of Object.keys(rating)) {
             let rTest = this.ratingTest[key], tResult = rating[key];
             if (typeof tResult.check !== 'undefined') {
@@ -204,6 +205,8 @@ class TestResult extends Component {
             this.setState({testList}),
             this.conclusion(rank)
         ])
+
+        */
     }
 
     conclusion(rank) {
@@ -263,6 +266,8 @@ class TestResult extends Component {
         const { push, _ } = this.props,
             { testList, conclusion } = this.state;
 
+        /*
+        TODO: UPDATE UI
         return (
             <Views>
                 <View navbarThrough>
@@ -300,6 +305,7 @@ class TestResult extends Component {
                 </View>
             </Views>
         );
+        */
     }
 
 }

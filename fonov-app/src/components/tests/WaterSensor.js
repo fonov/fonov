@@ -4,9 +4,6 @@ import {Image, BaseTest} from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -25,6 +22,8 @@ class WaterSensor extends Component {
 
         const { image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='WaterSensor' title={_('moisture_indicator')}>
                 <Card>
@@ -40,6 +39,7 @@ class WaterSensor extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

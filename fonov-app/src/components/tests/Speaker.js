@@ -21,6 +21,8 @@ class Speaker extends Component {
 
         const {_} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Speaker' title={_('dynamics')}>
                 <AudioTest/>
@@ -29,6 +31,7 @@ class Speaker extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

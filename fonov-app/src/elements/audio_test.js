@@ -1,9 +1,6 @@
 import React, {Component} from "react";
 import {TEST_TYPE_0} from "../constant/config";
 import image_manager from "../actions/image-manager";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import {connect} from "react-redux";
 import {getTranslate} from "react-localize-redux/lib/index";
 import {PlayAudio, Image} from './index'
@@ -14,6 +11,8 @@ class AudioTest extends Component {
     render() {
         const {image_manager, test_type, _} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return test_type === TEST_TYPE_0 ? (
             <PlayAudio />
         ) : (
@@ -26,6 +25,7 @@ class AudioTest extends Component {
                 </CardContent>
             </Card>
         )
+        */
     }
 }
 

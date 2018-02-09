@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import setCurrentiPhone from '../../actions/current-iphone'
 import { RatingCheck } from '../rating/index'
-import {
-    List, ListItem,
-    Card, CardHeader, CardContent,
-    AccordionContent, ContentBlock
-} from 'framework7-react';
 import { Image, BaseTest } from '../../elements/index'
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -102,6 +97,9 @@ class About extends Component {
         const { iPhone, capacity, color, type, country_of_purchase, input_valid } = this.state,
             {image_manager, _} = this.props;
 
+
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test={'About'} title={_('о_iphone')}>
                 <List inset accordion>
@@ -156,6 +154,7 @@ class About extends Component {
                 }
             </BaseTest>
         );
+        */
     }
 
 }

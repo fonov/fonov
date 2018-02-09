@@ -4,9 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -25,6 +22,8 @@ class CompassAndGsensor extends Component {
 
         const { image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='CompassAndGsensor' title={_('compass_and_g-sensor')}>
                 <Card>
@@ -50,6 +49,7 @@ class CompassAndGsensor extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

@@ -4,9 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -59,6 +56,7 @@ class Package extends Component {
 
         const { currentModel, image_manager, _ } = this.props;
 
+        /*
         switch (currentModel) {
             case 'iPhone 7':
             case 'iPhone 7 Plus':
@@ -78,12 +76,15 @@ class Package extends Component {
             default:
                 return null
         }
+        */
     }
 
     cable() {
 
         const { currentModel, image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         switch (currentModel) {
             case 'iPhone':
             case 'iPhone 3G':
@@ -126,6 +127,7 @@ class Package extends Component {
             default:
                 return null
         }
+        */
     }
 
     powerAdapter() {
@@ -350,6 +352,8 @@ class Package extends Component {
 
         const {_} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Package' title={_('equipment')}>
                 <Card>
@@ -375,6 +379,7 @@ class Package extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

@@ -4,9 +4,6 @@ import { Image, BaseTest, Cycle3DTouch } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent, CardHeader, ContentBlockTitle
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {TEST_TYPE_0} from '../../constant/config'
@@ -26,6 +23,8 @@ class Touch3D extends Component {
 
         const { image_manager, _, test_type } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Touch3D' title={_('3d_touch')}>
                 {
@@ -53,6 +52,7 @@ class Touch3D extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

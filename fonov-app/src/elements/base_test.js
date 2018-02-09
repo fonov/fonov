@@ -1,9 +1,4 @@
 import React, {Component} from "react";
-import {
-    NavRight, Link, Navbar,
-    NavLeft, NavCenter, Progressbar,
-    Views, View, Page, Pages
-} from 'framework7-react';
 import {connect} from "react-redux";
 
 
@@ -14,6 +9,8 @@ class BaseTest extends Component {
         const {test, schemeOfTest, title, children, testCount, navStyle = {}, ProgressStyle = {}} = this.props,
             testNumber = schemeOfTest.indexOf(test)+1;
 
+        /*
+        TODO: UPDATE UI
         return (
             <Views>
                 <View navbarThrough>
@@ -39,6 +36,7 @@ class BaseTest extends Component {
                 </View>
             </Views>
         );
+        */
     }
 }
 

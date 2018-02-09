@@ -4,10 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent, CardHeader,
-    Button, ContentBlock, CardFooter
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {TEST_TYPE_0} from '../../constant/config'
@@ -27,6 +23,8 @@ class Warranty extends Component {
 
         const { image_manager, _, test_type } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Warranty' title={_('warranty')}>
                 <Card>
@@ -75,6 +73,7 @@ class Warranty extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

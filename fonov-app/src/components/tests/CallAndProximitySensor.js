@@ -4,9 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -25,6 +22,8 @@ class CallAndProximitySensor extends Component {
 
         const { currentModel, image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         switch (currentModel) {
             case 'iPhone':
             case 'iPhone 3G':
@@ -52,12 +51,15 @@ class CallAndProximitySensor extends Component {
             default:
                 return null
         }
+        */
     }
 
     render() {
 
         const { cell_status_image, image_manager, _, call_image} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test="CallAndProximitySensor" title={_('call_and_proximity_sensor')}>
                 <Card>
@@ -103,6 +105,7 @@ class CallAndProximitySensor extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

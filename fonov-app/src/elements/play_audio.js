@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {ContentBlock, ContentBlockTitle} from 'framework7-react';
 import Sound from 'react-sound';
 import FontAwesome from 'react-fontawesome'
 import {getTranslate} from "react-localize-redux/lib/index";
@@ -21,6 +20,8 @@ class PlayAudio extends Component {
         const {playStatus} = this.state,
             {_} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <div>
                 <ContentBlockTitle className='content_block_title'>
@@ -44,6 +45,7 @@ class PlayAudio extends Component {
                 </ContentBlock>
             </div>
         )
+        */
     }
 }
 

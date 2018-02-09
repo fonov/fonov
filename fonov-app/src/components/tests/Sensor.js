@@ -4,10 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent,
-    ContentBlockTitle, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import Draggable from 'react-draggable';
@@ -36,7 +32,9 @@ class Sensor extends Component {
 
         const { image_manager, _, test_type, image_manager2 } = this.props,
             {opacity} = this.state;
-
+        
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Sensor' title={_('sensor')} navStyle={{opacity}} ProgressStyle={{opacity}}>
                 {
@@ -71,6 +69,7 @@ class Sensor extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

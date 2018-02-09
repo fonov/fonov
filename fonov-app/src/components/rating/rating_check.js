@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
-import { ContentBlock, GridRow, GridCol, Button, ContentBlockTitle} from 'framework7-react';
 import {nextTest} from '../../actions/main'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -20,7 +19,10 @@ class RatingCheck extends Component {
 
         const { children, _, style = {} } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
+
             <div style={style}>
                 <ContentBlockTitle className='content_block_title'>
                     {children}
@@ -41,6 +43,7 @@ class RatingCheck extends Component {
                 </ContentBlock>
             </div>
         )
+        */
     }
 }
 

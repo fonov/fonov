@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {APP_NAME, LANGUAGES, TEST_TYPE_0, TEST_TYPE_1} from '../constant/config'
-import { View, Navbar, Pages, Page,
-    ContentBlock, ContentBlockTitle,
-    List, ListItem, Views, NavCenter,
-    AccordionContent, Button,
-    NavLeft, NavRight, Actions,
-    ActionsGroup, ActionsLabel, ActionsButton
-} from 'framework7-react';
 import {version} from '../../package.json';
 import {clean_test} from '../actions/main'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
@@ -82,7 +75,9 @@ class Home extends Component {
 
         const {_, currentLanguage, set_active_language, start_test} = this.props,
             {select_type_test} = this.state;
-
+        
+        /*
+        TODO: UPDATE UI
         return (
             <Views>
                 <View navbarThrough>
@@ -170,6 +165,7 @@ class Home extends Component {
                 </View>
             </Views>
         );
+        */
     }
 
 }

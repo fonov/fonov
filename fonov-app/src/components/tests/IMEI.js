@@ -4,10 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent,
-    CardHeader, ContentBlockTitle
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -26,6 +22,8 @@ class IMEI extends Component {
 
         const { currentModel, image_manager, imei_back_side_image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         switch(currentModel) {
             case 'iPhone 6s':
             case 'iPhone 6s Plus':
@@ -78,12 +76,15 @@ class IMEI extends Component {
             default:
                 return null
         }
+       */
     }
 
     render() {
 
         const { image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='IMEI' title={_('coincidence_imei')}>
                 <ContentBlockTitle className='content_block_title'>
@@ -115,6 +116,7 @@ class IMEI extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

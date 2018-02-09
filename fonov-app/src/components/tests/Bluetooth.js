@@ -4,9 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -25,6 +22,8 @@ class Bluetooth extends Component {
 
         const { image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Bluetooth' title={_('bluetooth')}>
                 <Card>
@@ -41,6 +40,7 @@ class Bluetooth extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

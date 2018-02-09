@@ -4,9 +4,6 @@ import {Image, BaseTest} from '../../elements/index'
 import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -25,6 +22,8 @@ class ButtonsAndVibration extends Component {
 
         const { currentModel, image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         switch (currentModel) {
             case 'iPhone X':
                 return null;
@@ -40,12 +39,15 @@ class ButtonsAndVibration extends Component {
                     </Card>
                 )
         }
+        */
     }
 
     render() {
 
         const { currentModel, image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='ButtonsAndVibration' title={_('buttons_and_vibration')}>
                 <Card>
@@ -70,6 +72,7 @@ class ButtonsAndVibration extends Component {
                 </RatingCheck>
             </BaseTest>
         );
+        */
     }
 
 }

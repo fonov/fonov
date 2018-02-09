@@ -4,10 +4,6 @@ import { Image, BaseTest } from '../../elements/index'
 import { Rating5Stars } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from '../../constant/urls'
-import {
-    Card, CardHeader, CardContent,
-    ContentBlockTitle
-} from 'framework7-react';
 import image_manager from '../../actions/image-manager'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -27,6 +23,8 @@ class Appearance extends Component {
 
         const { image_manager, _ } = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <BaseTest test='Appearance' title={_('appearance')}>
                 <ContentBlockTitle className='content_block_title'>
@@ -68,6 +66,7 @@ class Appearance extends Component {
                 </Rating5Stars>
             </BaseTest>
         );
+        */
     }
 
 }

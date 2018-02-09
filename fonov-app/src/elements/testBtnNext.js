@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import {Button} from 'framework7-react';
 
 
 class TestBtnNext extends Component {
@@ -9,11 +8,14 @@ class TestBtnNext extends Component {
 
         const {lastTest, testN, onClick} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return(
             <Button big color="blue" onClick={onClick}>
                 {testN === lastTest ? 'Завершить тест' : 'Далее'}
             </Button>
         )
+        */
     }
 }
 

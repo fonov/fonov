@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
 import FontAwesome from 'react-fontawesome'
-import { ContentBlock, ContentBlockTitle, Link, PickerModal, Toolbar,
-    GridRow, GridCol, Page} from 'framework7-react';
 import {TestBtnNext} from '../../elements/index'
 import {nextTest} from '../../actions/main'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
@@ -27,6 +25,8 @@ class Stars extends Component {
         let array = [];
         for (let i = 0; i < countStars; i++) {
             array.push(
+                /*
+                TODO: UPDATE UI
                 <GridCol key={`start_${i}`} className='stars'>
                     <FontAwesome
                         name={startPosition >= i ? 'star' : 'star-o'}
@@ -36,6 +36,7 @@ class Stars extends Component {
                         }}
                     />
                 </GridCol>
+                */
             )
         }
         return array
@@ -45,6 +46,8 @@ class Stars extends Component {
 
         const {title} = this.props;
 
+        /*
+        TODO: UPDATE UI
         return (
             <div>
                 <ContentBlockTitle className='content_block_title'>{title}</ContentBlockTitle>
@@ -55,6 +58,7 @@ class Stars extends Component {
                 </ContentBlock>
             </div>
         )
+        */
     }
 }
 
@@ -103,6 +107,7 @@ class Rating5Stars extends Component {
         const { children, firstTitle, lastTitle, testN, _ } = this.props,
             { firstStars, secondStars, picker_modal } = this.state;
 
+        /*
         return (
             <ContentBlock>
                 <TestBtnNext testN={testN} onClick={() => this.setState({picker_modal: true})}/>
@@ -130,6 +135,7 @@ class Rating5Stars extends Component {
                 </PickerModal>
             </ContentBlock>
         );
+        */
     }
 
 }
