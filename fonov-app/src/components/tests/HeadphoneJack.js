@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {AudioTest} from '../../elements/index'
+import {Card, CardBody, CardHeader} from 'reactstrap'
 
 
 class HeadphoneJack extends Component {
@@ -23,25 +23,24 @@ class HeadphoneJack extends Component {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='HeadphoneJack' title={_('headphone_jack')}>
-                <Card>
+            <BaseTest
+                test='HeadphoneJack'
+                Title={_('headphone_jack')}
+                rating_check
+                rating_question={_('the_headphone_jack_works?')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('insert_the_earphone.')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(1)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
                 <AudioTest/>
-                <RatingCheck testN='HeadphoneJack'>
-                    {_('the_headphone_jack_works?')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */ 
+        )
     }
 
 }

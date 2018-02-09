@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import Draggable from 'react-draggable';
 import {TEST_TYPE_0} from '../../constant/config'
+import {CardBody, Card, CardHeader} from 'reactstrap'
 
 
 class Sensor extends Component {
@@ -32,17 +32,21 @@ class Sensor extends Component {
 
         const { image_manager, _, test_type, image_manager2 } = this.props,
             {opacity} = this.state;
-        
-        /*
-        TODO: UPDATE UI
+
         return (
-            <BaseTest test='Sensor' title={_('sensor')} navStyle={{opacity}} ProgressStyle={{opacity}}>
+            <BaseTest
+                test='Sensor'
+                Title={_('sensor')}
+                extraStyle={{opacity}}
+                rating_check
+                rating_question={_('the_sensor_is_working_cor...')}
+            >
                 {
                     test_type === TEST_TYPE_0 ? (
                         <div>
-                            <ContentBlockTitle className='content_block_title' style={{opacity}}>
+                            <p className='mt-4' style={{opacity}}>
                                 {_('0_for_move_the_image_around...')}
-                            </ContentBlockTitle>
+                            </p>
                             <Draggable
                                 position={{x: 0, y: 0}}
                                 onStart={() => this.setState({opacity: 0})}
@@ -54,22 +58,18 @@ class Sensor extends Component {
                             </Draggable>
                         </div>
                     ) : (
-                        <Card>
+                        <Card className='mt-4'>
                             <CardHeader>
                                 {_('swipe_your_finger_across_...')}
                             </CardHeader>
-                            <CardContent>
+                            <CardBody>
                                 <Image src={image_manager(1)}/>
-                            </CardContent>
+                            </CardBody>
                         </Card>
                     )
                 }
-                <RatingCheck testN='Sensor' style={{opacity}}>
-                    {_('the_sensor_is_working_cor...')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

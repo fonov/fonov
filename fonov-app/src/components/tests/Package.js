@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {Card, CardBody, CardHeader} from 'reactstrap'
 
 
 class Package extends Component {
@@ -56,7 +56,6 @@ class Package extends Component {
 
         const { currentModel, image_manager, _ } = this.props;
 
-        /*
         switch (currentModel) {
             case 'iPhone 7':
             case 'iPhone 7 Plus':
@@ -64,27 +63,24 @@ class Package extends Component {
             case 'iPhone 8 Plus':
             case 'iPhone X':
                 return (
-                    <Card>
+                    <Card className='mt-4'>
                         <CardHeader>
                             {_('lightning_adapter/3.5_mm_...')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={image_manager(8)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             default:
                 return null
         }
-        */
     }
 
     cable() {
 
         const { currentModel, image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         switch (currentModel) {
             case 'iPhone':
             case 'iPhone 3G':
@@ -92,13 +88,13 @@ class Package extends Component {
             case 'iPhone 4':
             case 'iPhone 4S':
                 return (
-                    <Card>
+                    <Card className='mt-4'>
                         <CardHeader>
                             {_('30-pin_cable.')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={image_manager(1)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             case 'iPhone 5':
@@ -115,19 +111,18 @@ class Package extends Component {
             case 'iPhone 8 Plus':
             case 'iPhone X':
                 return (
-                    <Card>
+                    <Card className='mt-4'>
                         <CardHeader>
                             {_('lightning_to_usb_cable.')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={image_manager(2)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             default:
                 return null
         }
-        */
     }
 
     powerAdapter() {
@@ -352,34 +347,33 @@ class Package extends Component {
 
         const {_} = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='Package' title={_('equipment')}>
-                <Card>
+            <BaseTest
+                test='Package'
+                Title={_('equipment')}
+                rating_check
+                rating_question={_('package_contents_iphone_i...')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('headphones.')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         {this.earpods()}
-                    </CardContent>
+                    </CardBody>
                 </Card>
                 {this.adapter()}
-                <Card>
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('charger.')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         {this.powerAdapter()}
-                    </CardContent>
+                    </CardBody>
                 </Card>
                 {this.cable()}
-                <RatingCheck testN='Package'>
-                    {_('package_contents_iphone_i...')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

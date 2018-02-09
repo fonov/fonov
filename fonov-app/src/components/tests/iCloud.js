@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardBody, Card, CardHeader} from 'reactstrap'
 
 
 class iCloud extends Component {
@@ -22,25 +22,23 @@ class iCloud extends Component {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='iCloud' title={_('icloud')}>
-                <Card>
+            <BaseTest
+                test='iCloud'
+                Title={_('icloud')}
+                rating_check
+                rating_question={_('iphone_untethered_jailbre...')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('the_phone_must_be_untethe...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(1)}/>
-                    </CardContent>
+                    </CardBody>
                 </Card>
-
-                <RatingCheck testN='iCloud'>
-                    {_('iphone_untethered_jailbre...')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

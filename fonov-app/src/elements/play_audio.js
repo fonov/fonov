@@ -20,21 +20,17 @@ class PlayAudio extends Component {
         const {playStatus} = this.state,
             {_} = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <div>
-                <ContentBlockTitle className='content_block_title'>
+            <div className='mt-4'>
+                <p>
                     {_('play_the_sound')}
-                </ContentBlockTitle>
-
+                </p>
                 <Sound
                     url={require('../assets/audio/krasivyj_rington_samsung_galaxy.mp3')}
                     playStatus={playStatus}
                     onFinishedPlaying={() => this.setState({ playStatus: Sound.status.STOPPED })}
                 />
-
-                <ContentBlock style={{textAlign: 'center', padding: '20px'}}>
+                <p className='text-center'>
                     <FontAwesome
                         name={playStatus === Sound.status.STOPPED ? 'play': 'pause'}
                         style={{fontSize: '7rem'}}
@@ -42,10 +38,9 @@ class PlayAudio extends Component {
                             playStatus: playStatus === Sound.status.STOPPED ? Sound.status.PLAYING : Sound.status.STOPPED
                         })}
                     />
-                </ContentBlock>
+                </p>
             </div>
         )
-        */
     }
 }
 

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class Flash extends Component {
@@ -22,25 +22,23 @@ class Flash extends Component {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='Flash' title={_('flash')}>
-                <Card>
+            <BaseTest
+                test='Flash'
+                Title={_('flash')}
+                rating_check
+                rating_question={_('the_flash_works?')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('0_open_the_control_center_...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(1)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
-
-                <RatingCheck testN='Flash'>
-                    {_('the_flash_works?')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

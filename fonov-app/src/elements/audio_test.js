@@ -4,6 +4,7 @@ import image_manager from "../actions/image-manager";
 import {connect} from "react-redux";
 import {getTranslate} from "react-localize-redux/lib/index";
 import {PlayAudio, Image} from './index'
+import {CardBody, Card, CardHeader} from 'reactstrap'
 
 
 class AudioTest extends Component {
@@ -11,21 +12,18 @@ class AudioTest extends Component {
     render() {
         const {image_manager, test_type, _} = this.props;
 
-        /*
-        TODO: UPDATE UI
         return test_type === TEST_TYPE_0 ? (
             <PlayAudio />
         ) : (
-            <Card>
+            <Card className='mt-4'>
                 <CardHeader>
                     {_('to_check_sound_you_will_...')}
                 </CardHeader>
-                <CardContent>
+                <CardBody>
                     <Image src={image_manager(1)}/>
-                </CardContent>
+                </CardBody>
             </Card>
         )
-        */
     }
 }
 

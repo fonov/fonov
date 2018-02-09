@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/index.js'
 //CSS
+import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/fonov_test.css'
 //Sentry
 import Raven from 'raven-js';

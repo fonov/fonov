@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Image, BaseTest} from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {Card, CardBody, CardHeader} from 'reactstrap'
 
 
 class WaterSensor extends Component {
@@ -22,24 +22,23 @@ class WaterSensor extends Component {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='WaterSensor' title={_('moisture_indicator')}>
-                <Card>
+            <BaseTest
+                test='WaterSensor'
+                Title={_('moisture_indicator')}
+                rating_check={{revert_color: true}}
+                rating_question={_('0_iphone_was_exposed_to_moi...')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('moisture_has_a_devastatin...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(1)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
-                <RatingCheck testN='WaterSensor'>
-                    {_('0_iphone_was_exposed_to_moi...')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

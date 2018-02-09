@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import {replace, push} from 'react-router-redux';
 import URLS from '../constant/urls'
 import FontAwesome from 'react-fontawesome'
-import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {getActiveLanguage, getTranslate} from "react-localize-redux";
+import {BasePage} from '../elements/index'
+import {ListGroupItem, ListGroup, Badge, Alert, Button} from 'reactstrap'
 
 
 class TestResult extends Component {
@@ -150,10 +152,6 @@ class TestResult extends Component {
 
         let testList = [], rank = 0;
 
-        /*
-
-        TODO: UPDATE UI
-
         for (let key of Object.keys(rating)) {
             let rTest = this.ratingTest[key], tResult = rating[key];
             if (typeof tResult.check !== 'undefined') {
@@ -161,25 +159,18 @@ class TestResult extends Component {
                     rank = rank+rTest.weight
                 }
                 testList.push(
-                    <li className='item-content'>
-                        <div className="item-media">
-                            {tResult.check === rTest.pass ? (
-                                <FontAwesome name='check-circle-o' style={{fontSize: 40, color: 'MediumSeaGreen'}}/>
-                            ) : (
-                                <FontAwesome name='times-circle-o' style={{fontSize: 40, color: 'Tomato'}}/>
-                            )}
-                        </div>
-                        <div className="item-inner">
-                            <div className="item-title">
-                                {rTest.title}
-                                {tResult.check !== rTest.pass && rTest.warning ? (
-                                    <div className="item-footer">
-                                        {rTest.warning}
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </li>
+                    <ListGroupItem>
+                        {tResult.check === rTest.pass ? (
+                            <FontAwesome name='check-circle-o' className='green_check'/>
+                        ) : (
+                            <FontAwesome name='times-circle-o' className='red_times' />
+                        )} <span className='ml-2'>{rTest.title}</span>
+                        {tResult.check !== rTest.pass && rTest.warning ? (
+                            <p className="text-muted mb-0">
+                                {rTest.warning}
+                            </p>
+                        ) : null}
+                    </ListGroupItem>
                 )
             }
             if (typeof tResult.firstStars !== 'undefined' && typeof tResult.secondStars !== 'undefined') {
@@ -190,13 +181,14 @@ class TestResult extends Component {
                     difference_star = (firstStars <= secondStars) ? 0 : tResult.firstStars - tResult.secondStars;
 
                 testList.push(
-                    <ListItem title={rTest.title}>
-                        <Badge
-                            color={difference_star === 0 ? 'green' : difference_star === 1 ? 'orange' : 'red'}
-                        >
-                            {`${firstStars}/${secondStars}`} <FontAwesome name='star-o'/>
+                    <ListGroupItem className='d-flex justify-content-between align-items-center'>
+                        {rTest.title}
+                        <Badge color={difference_star === 0 ? 'success' : difference_star === 1 ? 'warning' : 'danger'}>
+                            <span className="h5">
+                                {`${firstStars}/${secondStars}`} <FontAwesome name='star-o'/>
+                            </span>
                         </Badge>
-                    </ListItem>
+                    </ListGroupItem>
                 )
             }
         }
@@ -205,8 +197,6 @@ class TestResult extends Component {
             this.setState({testList}),
             this.conclusion(rank)
         ])
-
-        */
     }
 
     conclusion(rank) {
@@ -224,37 +214,37 @@ class TestResult extends Component {
 
         if (rank < 0) {
             return set_conclusion(
-                'card_header_danger',
+                'danger',
                 _('0_{currentmodel}_is_not_re...', {currentModel}),
                 _('1_{currentmodel}_contains_...', {currentModel})
             );
         } else if (rank === 0) {
             return set_conclusion(
-                'card_header_success',
+                'success',
                 _('2_{currentmodel}_recommend...', {currentModel}),
                 _('3_{currentmodel}_is_fully_...', {currentModel})
             );
         } else if (rank > 0 && rank <= 10) {
             return set_conclusion(
-                'card_header_success',
+                'success',
                 _('4_{currentmodel}_recommend...', {currentModel}),
                 _('5_{currentmodel}_has_minor...', {currentModel})
             );
         } else if (rank > 10 && rank <= 20) {
             return set_conclusion(
-                'card_header_success',
+                'success',
                 _('6_{currentmodel}_recommend...', {currentModel}),
                 _('7_{currentmodel}_has_minor...', {currentModel})
             );
         } else if (rank > 20 && rank <= 25) {
             return set_conclusion(
-                'card_header_success',
+                'success',
                 _('8_{currentmodel}_recommend...', {currentModel}),
                 _('9_{currentmodel}_has_minor...', {currentModel})
             );
         } else {
             return set_conclusion(
-                'card_header_success',
+                'success',
                 _('10_{currentmodel}_recommend...', {currentModel}),
                 _('11_{currentmodel}_has_flaws...', {currentModel})
             );
@@ -266,48 +256,30 @@ class TestResult extends Component {
         const { push, _ } = this.props,
             { testList, conclusion } = this.state;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                        <NavCenter>{_('test_results')}</NavCenter>
-                        <NavRight/>
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <List inset>
-                                {testList !== null && testList}
-                            </List>
-
-                            {
-                                conclusion && (
-                                    <Card>
-                                        <CardHeader className={conclusion.type}>
-                                            {conclusion.title}
-                                        </CardHeader>
-                                        <CardContent>
-                                            {conclusion.text}
-                                        </CardContent>
-                                    </Card>
-                                )
-                            }
-
-                            <ContentBlock>
-                                <Button big color="blue" onClick={() => push(URLS.Home)}>
-                                    {_('home')}
-                                </Button>
-                            </ContentBlock>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
-        );
-        */
+            <BasePage Title={_('test_results')}>
+                <ListGroup className='mt-4'>
+                    {testList !== null && testList}
+                </ListGroup>
+                {
+                    conclusion && (
+                        <Alert color={conclusion.type} className='mt-4'>
+                            <h4 className="alert-heading">
+                                {conclusion.title}
+                            </h4>
+                            <hr />
+                            <p className="mb-0">
+                                {conclusion.text}
+                            </p>
+                        </Alert>
+                    )
+                }
+                <Button color="primary" block className='my-4' onClick={() => push(URLS.Home)}>
+                    {_('home')}
+                </Button>
+            </BasePage>
+        )
     }
-
 }
 
 const mapStateToProps = state => {

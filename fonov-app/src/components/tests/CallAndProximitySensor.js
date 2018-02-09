@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class CallAndProximitySensor extends Component {
@@ -22,8 +22,6 @@ class CallAndProximitySensor extends Component {
 
         const { currentModel, image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         switch (currentModel) {
             case 'iPhone':
             case 'iPhone 3G':
@@ -39,73 +37,50 @@ class CallAndProximitySensor extends Component {
             case 'iPhone 6s Plus':
             case 'iPhone SE':
                 return (
-                    <Card>
+                    <Card className='mt-4'>
                         <CardHeader>
                             {_('turn_off_the_speakerphone...')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={image_manager(3)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             default:
                 return null
         }
-        */
     }
 
     render() {
 
         const { cell_status_image, image_manager, _, call_image} = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test="CallAndProximitySensor" title={_('call_and_proximity_sensor')}>
-                <Card>
-                    <CardHeader>
-                        {_('insert_the_sim_card._the_...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={cell_status_image()} />
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        {_('try_to_make_a_call.')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={call_image(1)} />
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        {_('0_during_the_call_close_th...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(4)} />
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        {_('put_it_on_speaker_to_chec...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={call_image(2)} />
-                    </CardContent>
-                </Card>
-
-                {this.callWithHeadpods()}
-
-                <RatingCheck testN='CallAndProximitySensor'>
-                    {_('call_and_the_proximity_se...')}
-                </RatingCheck>
+            <BaseTest
+                test="CallAndProximitySensor"
+                Title={_('call_and_proximity_sensor')}
+                rating_check
+                rating_question={_('call_and_the_proximity_se...')}
+            >
+                {
+                    [
+                        [_('insert_the_sim_card._the_...'), <Image src={cell_status_image()} />],
+                        [_('try_to_make_a_call.'), <Image src={call_image(1)} />],
+                        [_('0_during_the_call_close_th...'), <Image src={image_manager(4)} />],
+                        [_('put_it_on_speaker_to_chec...'), <Image src={call_image(2)} />]
+                    ].map((item, i) => (
+                        <Card key={i} className='mt-4'>
+                            <CardHeader>
+                                {item[0]}
+                            </CardHeader>
+                            <CardBody>
+                                {item[1]}
+                            </CardBody>
+                        </Card>
+                    ))
+                }
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

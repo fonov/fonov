@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardHeader, Card, CardBody} from 'reactstrap'
 
 
 class CompassAndGsensor extends Component {
@@ -22,34 +22,32 @@ class CompassAndGsensor extends Component {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='CompassAndGsensor' title={_('compass_and_g-sensor')}>
-                <Card>
+            <BaseTest
+                test='CompassAndGsensor'
+                Title={_('compass_and_g-sensor')}
+                rating_check
+                rating_question= {_('compass_and_g-sensor_work...')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('open_the_compass_app_and_...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(1)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
 
-                <Card>
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('swipe_to_the_left_to_open...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(2)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
-
-                <RatingCheck testN='CompassAndGsensor'>
-                    {_('compass_and_g-sensor_work...')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

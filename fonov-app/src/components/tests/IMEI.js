@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class IMEI extends Component {
@@ -22,8 +22,6 @@ class IMEI extends Component {
 
         const { currentModel, image_manager, imei_back_side_image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         switch(currentModel) {
             case 'iPhone 6s':
             case 'iPhone 6s Plus':
@@ -37,9 +35,9 @@ class IMEI extends Component {
                         <CardHeader>
                             {_('the_slot_for_the_sim_card...')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={image_manager(3)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             case 'iPhone 5':
@@ -53,9 +51,9 @@ class IMEI extends Component {
                         <CardHeader>
                             {_('on_the_back_side_of_the_i...')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={imei_back_side_image_manager(1)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             case 'iPhone':
@@ -68,55 +66,51 @@ class IMEI extends Component {
                         <CardHeader>
                             {_('the_slot_for_sim_card')}
                         </CardHeader>
-                        <CardContent>
+                        <CardBody>
                             <Image src={image_manager(1)} />
-                        </CardContent>
+                        </CardBody>
                     </Card>
                 );
             default:
                 return null
         }
-       */
     }
 
     render() {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='IMEI' title={_('coincidence_imei')}>
-                <ContentBlockTitle className='content_block_title'>
+            <BaseTest
+                test='IMEI'
+                Title={_('coincidence_imei')}
+                rating_check
+                rating_question={_('imei_the_same?')}
+            >
+                <p className='mt-4'>
                     {_('check_whether_the_imei_of...')}
-                </ContentBlockTitle>
-
-                <Card>
+                </p>
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('settings_->_general_->_ab...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(2)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
-
-                {this.secondImei()}
-
-                <Card>
+                <div className='mt-4'>
+                    {this.secondImei()}
+                </div>
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('on_the_box.')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(5)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
-
-                <RatingCheck testN='IMEI'>
-                    {_('imei_the_same?')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }

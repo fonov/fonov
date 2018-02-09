@@ -55,6 +55,7 @@ class Image extends Component {
         return (
             <div style={{textAlign: 'center'}}>
                 <img
+                    className="rounded"
                     onLoad={this.onImgLoad}
                     src={src}
                     style={{...imgStyle, visibility}}

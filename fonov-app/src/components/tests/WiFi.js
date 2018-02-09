@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {Card, CardBody, CardHeader} from 'reactstrap'
 
 
 class WiFi extends Component {
@@ -22,25 +22,23 @@ class WiFi extends Component {
 
         const { image_manager, _ } = this.props;
 
-        /*
-        TODO: UPDATE UI
         return (
-            <BaseTest test='WiFi' title={_('wi-fi')}>
-                <Card>
+            <BaseTest
+                test='WiFi'
+                Title={_('wi-fi')}
+                rating_check
+                rating_question={_('wi-fi_works?')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('open_settings_->_wi-fi._t...')}
                     </CardHeader>
-                    <CardContent>
+                    <CardBody>
                         <Image src={image_manager(1)} />
-                    </CardContent>
+                    </CardBody>
                 </Card>
-
-                <RatingCheck testN='WiFi'>
-                    {_('wi-fi_works?')}
-                </RatingCheck>
             </BaseTest>
-        );
-        */
+        )
     }
 
 }
