@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 
 class Base extends Component {
@@ -14,7 +14,11 @@ class Base extends Component {
                     {nav}
                 </Container>
                 <Container>
-                    {children}
+                    <Row>
+                        <Col xs="12" md={{ size: 8, offset: 2 }}>
+                            {children}
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         )
