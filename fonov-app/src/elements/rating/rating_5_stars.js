@@ -89,13 +89,13 @@ class Rating5Stars extends Component {
 
     render() {
 
-        const { children, firstTitle, lastTitle, testN, lastTest, style = {} } = this.props,
+        const { children, firstTitle, lastTitle, testN, lastTest, style = {}, _ } = this.props,
             { firstStars, secondStars, picker_modal } = this.state;
 
         return (
             <div style={style}>
                 <Button outline color="primary" block className="my-4" onClick={() => this.toggle_picker_modal()}>
-                    {testN === lastTest ? 'Завершить тест' : 'Далее'}
+                    {testN === lastTest ? _('end_test') : _('further')}
                 </Button>
                 <Modal isOpen={picker_modal} toggle={() => this.toggle_picker_modal()}>
                     <ModalHeader toggle={() => this.toggle_picker_modal()}>

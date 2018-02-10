@@ -962,5 +962,17 @@
 	"0_what_you_need_for_the_tes...": [
 		"What you need for the test?",
 		"Что нужно для теста?"
+	],
+	"enter_the_model": [
+		"Enter the model",
+		"Введите модель"
+	],
+	"end_test": [
+		"End test",
+		"Завершить тест"
+	],
+	"further": [
+		"Further",
+		"Далее"
 	]
 }

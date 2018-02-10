@@ -114,7 +114,9 @@ class About extends Component {
                 block_testStatus={input_valid}
             >
                 <InputGroup className='my-4'>
-                    <InputGroupAddon addonType="prepend">Введите модель:</InputGroupAddon>
+                    <InputGroupAddon addonType="prepend">
+                        {`${_('enter_the_model')}:`}
+                    </InputGroupAddon>
                     <Input
                         placeholder="MQ8M2B/A"
                         onChange={event => this.inputModel(event.target.value)}
