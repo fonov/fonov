@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .container-nav {
+        padding-right: 0px;
+        padding-left: 0px;
+        max-width: 100%;
+    }
+}
+.stars {
+    font-size: 2em;
+    color: Gold;
+}

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Image, BaseTest} from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class ButtonsAndVibration extends Component {
@@ -34,9 +31,9 @@ class ButtonsAndVibration extends Component {
                         <CardHeader>
                             {_('key_home')}
                         </CardHeader>
-                        <CardContent>
-                            <Image src={image_manager(2)}/>
-                        </CardContent>
+                        <CardBody>
+                            <Image {...image_manager(2)}/>
+                        </CardBody>
                     </Card>
                 )
         }
@@ -47,29 +44,33 @@ class ButtonsAndVibration extends Component {
         const { currentModel, image_manager, _ } = this.props;
 
         return (
-            <BaseTest test='ButtonsAndVibration' title={_('buttons_and_vibration')}>
-                <Card>
+            <BaseTest
+                test='ButtonsAndVibration'
+                Title={_('buttons_and_vibration')}
+                rating_check
+                rating_question={_('work_button_and_vibration...')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('lock_key')}
                     </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)}/>
-                    </CardContent>
+                    <CardBody>
+                        <Image {...image_manager(1)}/>
+                    </CardBody>
                 </Card>
-                {this.home_button()}
-                <Card>
+                <div className='mt-4'>
+                    {this.home_button()}
+                </div>
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('check_the_volume_keys_and...')}
                     </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
-                    </CardContent>
+                    <CardBody>
+                        <Image {...image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
+                    </CardBody>
                 </Card>
-                <RatingCheck testN='ButtonsAndVibration'>
-                    {_('work_button_and_vibration...')}
-                </RatingCheck>
             </BaseTest>
-        );
+        )
     }
 
 }

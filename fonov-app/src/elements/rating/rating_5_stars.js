@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
 import FontAwesome from 'react-fontawesome'
-import { ContentBlock, ContentBlockTitle, Link, PickerModal, Toolbar,
-    GridRow, GridCol, Page} from 'framework7-react';
-import {TestBtnNext} from '../../elements/index'
 import {nextTest} from '../../actions/main'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import { Button, Modal, ModalHeader, ModalBody, Row, Col } from 'reactstrap'
 
 
 class Stars extends Component {
@@ -15,7 +13,7 @@ class Stars extends Component {
         super(props);
 
         this.state = {
-            startPosition: -1
+            startPosition: props.initStars-1
         }
     }
 
@@ -27,7 +25,7 @@ class Stars extends Component {
         let array = [];
         for (let i = 0; i < countStars; i++) {
             array.push(
-                <GridCol key={`start_${i}`} className='stars'>
+                <Col key={i}>
                     <FontAwesome
                         name={startPosition >= i ? 'star' : 'star-o'}
                         onClick={() => {
@@ -35,7 +33,7 @@ class Stars extends Component {
                             onChange(i+1)
                         }}
                     />
-                </GridCol>
+                </Col>
             )
         }
         return array
@@ -47,12 +45,10 @@ class Stars extends Component {
 
         return (
             <div>
-                <ContentBlockTitle className='content_block_title'>{title}</ContentBlockTitle>
-                <ContentBlock>
-                    <GridRow>
-                        {this.stars()}
-                    </GridRow>
-                </ContentBlock>
+                <p>{title}</p>
+                <Row className='text-center stars'>
+                    {this.stars()}
+                </Row>
             </div>
         )
     }
@@ -69,51 +65,43 @@ class Rating5Stars extends Component {
             secondStars: 0,
             picker_modal: false
         }
-
     }
 
     saveRating(key, i) {
 
         const { firstStars, secondStars } = this.state,
-            { add_rating, testN } = this.props;
-
-        let new_state = Object.assign({firstStars, secondStars}, {[key]: i}),
-            picker_modal = true;
+            { add_rating, testN, nextTest } = this.props,
+            new_state = Object.assign({firstStars, secondStars}, {[key]: i});
 
         add_rating(testN, new_state);
 
-        if (new_state.firstStars !== 0 && new_state.secondStars !== 0)
-            picker_modal = false;
+        this.setState(new_state);
 
-        this.setState({...new_state, picker_modal});
+        if (new_state.firstStars !== 0 && new_state.secondStars !== 0)
+            nextTest(testN)
     }
 
-    nextTest() {
-
-        const { firstStars, secondStars } = this.state,
-            { testN, nextTest } = this.props;
-
-        if (firstStars !== 0 && secondStars !== 0) {
-            setTimeout(() => nextTest(testN), 200)
-        }
+    toggle_picker_modal() {
+        this.setState({
+            picker_modal: !this.state.picker_modal
+        })
     }
 
     render() {
 
-        const { children, firstTitle, lastTitle, testN, _ } = this.props,
+        const { children, firstTitle, lastTitle, testN, lastTest, style = {} } = this.props,
             { firstStars, secondStars, picker_modal } = this.state;
 
         return (
-            <ContentBlock>
-                <TestBtnNext testN={testN} onClick={() => this.setState({picker_modal: true})}/>
-                <PickerModal opened={picker_modal} onPickerClosed={() => this.nextTest()}>
-                    <Toolbar>
-                        <Link color="gray">{children}</Link>
-                        <Link onClick={() => this.setState({picker_modal: false})}>
-                            {_('close')}
-                        </Link>
-                    </Toolbar>
-                    <Page>
+            <div style={style}>
+                <Button outline color="primary" block className="my-4" onClick={() => this.toggle_picker_modal()}>
+                    {testN === lastTest ? 'Завершить тест' : 'Далее'}
+                </Button>
+                <Modal isOpen={picker_modal} toggle={() => this.toggle_picker_modal()}>
+                    <ModalHeader toggle={() => this.toggle_picker_modal()}>
+                        {children}
+                    </ModalHeader>
+                    <ModalBody>
                         <Stars
                             countStars={5}
                             initStars={firstStars}
@@ -126,10 +114,10 @@ class Rating5Stars extends Component {
                             onChange={i => this.saveRating('secondStars', i)}
                             title={lastTitle}
                         />
-                    </Page>
-                </PickerModal>
-            </ContentBlock>
-        );
+                    </ModalBody>
+                </Modal>
+            </div>
+        )
     }
 
 }
@@ -137,7 +125,8 @@ class Rating5Stars extends Component {
 const mapStateToProps = state => {
     return {
         _: getTranslate(state.locale),
-        currentLanguage: getActiveLanguage(state.locale).code
+        currentLanguage: getActiveLanguage(state.locale).code,
+        lastTest: state.test.scheme[state.test.scheme.length-1]
     }
 };
 

@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {APP_NAME, LANGUAGES, TEST_TYPE_0, TEST_TYPE_1} from '../constant/config'
-import { View, Navbar, Pages, Page,
-    ContentBlock, ContentBlockTitle,
-    List, ListItem, Views, NavCenter,
-    AccordionContent, Button,
-    NavLeft, NavRight, Actions,
-    ActionsGroup, ActionsLabel, ActionsButton
-} from 'framework7-react';
 import {version} from '../../package.json';
 import {clean_test} from '../actions/main'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
-import {ListItem as ListItem16} from '../elements/index'
+import {BasePage} from '../elements/index'
 import {set_active_language} from '../actions/localize'
-import FontAwesome from 'react-fontawesome'
 import {start_test} from '../actions/main'
+import {
+    Button, ListGroup, ListGroupItem,
+    Card, CardHeader, CardText, CardBody,
+    Modal, ModalHeader, ModalBody
+} from 'reactstrap'
 
 
 class Home extends Component {
@@ -42,31 +39,41 @@ class Home extends Component {
             {
                 title: _('{app_name}_-_what_is_it?', {APP_NAME}),
                 desc: (
-                    <p>{_('test_for_iphone_before_bu...')}</p>
+                    <CardBody>
+                        <CardText>{_('test_for_iphone_before_bu...')}</CardText>
+                    </CardBody>
                 )
             },
             {
                 title: _('why_is_it_necessary?'),
                 desc: (
-                    <p>{_('most_people_don\'t_know_ho...', {APP_NAME})}</p>
+                    <CardBody>
+                        <CardText>{_('most_people_don\'t_know_ho...', {APP_NAME})}</CardText>
+                    </CardBody>
                 )
             },
             {
                 title: _('why_{app_name}?', {APP_NAME}),
                 desc: (
-                    <p>{_('{app_name}_is_completely...', {APP_NAME})}</p>
+                    <CardBody>
+                        <CardText>{_('{app_name}_is_completely...', {APP_NAME})}</CardText>
+                    </CardBody>
                 )
             },
             {
                 title: _('what_you_need_for_the_tes...'),
                 desc: (
-                    <div style={{padding: 8}}>
-                        <ul>
-                            <li>{_('clip')}</li>
-                            <li>{_('socket/powerbank')}</li>
-                            <li>{_('smartphone_with_the_funct...')}</li>
-                        </ul>
-                    </div>
+                    <ListGroup flush>
+                        <ListGroupItem>
+                            {_('clip')}
+                        </ListGroupItem>
+                        <ListGroupItem>
+                            {_('socket/powerbank')}
+                        </ListGroupItem>
+                        <ListGroupItem>
+                            {_('smartphone_with_the_funct...')}
+                        </ListGroupItem>
+                    </ListGroup>
                 )
             }
         ]
@@ -84,92 +91,64 @@ class Home extends Component {
             {select_type_test} = this.state;
 
         return (
-            <Views>
-                <View navbarThrough>
-                    <Navbar>
-                        <NavLeft/>
-                            <NavCenter>{APP_NAME}</NavCenter>
-                        <NavRight/>
-                    </Navbar>
-                    <Pages>
-                        <Page>
-                            <ContentBlockTitle className='content_block_title'>
-                                {_('test_iphone')}
-                            </ContentBlockTitle>
-
-                            <ContentBlock>
-                                <Button big color="red" fill onClick={() => this.action_select_type_test()}>
-                                    {_('start_test')}
-                                </Button>
-                            </ContentBlock>
-
-                            <Actions opened={select_type_test} onActionsClosed={() => this.action_select_type_test()}>
-                                <ActionsGroup>
-                                    <ActionsLabel>
-                                        {_('0_select_which_iphone_you_w...')}
-                                    </ActionsLabel>
-                                    <ActionsButton
-                                        onClick={() => start_test(TEST_TYPE_0)}
-                                    >
-                                        {_('to_test_this_iphone')}
-                                    </ActionsButton>
-                                    <ActionsButton
-                                        onClick={() => start_test(TEST_TYPE_1)}
-                                    >
-                                        {_('another_test_iphone')}
-                                    </ActionsButton>
-                                </ActionsGroup>
-                                <ActionsGroup>
-                                    <ActionsButton color="red" bold>
-                                        {_('cancel')}
-                                    </ActionsButton>
-                                </ActionsGroup>
-                            </Actions>
-
-                            <ContentBlockTitle className='content_block_title'>
-                                <span role="img" aria-label="Globified">🌐</span> {_('language')}
-                            </ContentBlockTitle>
-                            <List inset>
-                                {
-                                    Object.keys(LANGUAGES).map((lang, i) => (
-                                        <ListItem16
-                                            onClick={() => set_active_language(lang)}
-                                            key={i}
-                                            title={(
-                                                <span>
-                                                    <span
-                                                        role="img"
-                                                        aria-label={LANGUAGES[lang].emoji_name}
-                                                    >
-                                                        {LANGUAGES[lang].emoji}
-                                                    </span> {LANGUAGES[lang].name}
-                                                </span>
-                                            )}
-                                            after={currentLanguage === lang ?
-                                                <FontAwesome name="check" style={{color: '#c7c7cd'}} />  : null}
-                                        />
-                                    ))
-                                }
-                            </List>
-                            <List accordion inset>
-                                {
-                                    this.aboutTest().map((item, i) => (
-                                        <ListItem accordionItem title={item.title}>
-                                            <AccordionContent>
-                                                <ContentBlock>{item.desc}</ContentBlock>
-                                            </AccordionContent>
-                                        </ListItem>
-                                    ))
-                                }
-                            </List>
-                            <ContentBlock inset>
-                                {`${_('version')}: ${version}`}
-                            </ContentBlock>
-                        </Page>
-                    </Pages>
-                </View>
-            </Views>
-        );
+            <BasePage>
+                <p className="mt-4">
+                    {_('test_iphone')}
+                </p>
+                <Button color="danger" size="lg" block onClick={() => this.action_select_type_test()}>
+                    {_('start_test')}
+                </Button>
+                <p className="mt-4">
+                    <span role="img" aria-label="Globified">🌐</span> {_('language')}
+                </p>
+                <ListGroup>
+                    {
+                        Object.keys(LANGUAGES).map((lang, i) => (
+                            <ListGroupItem
+                                key={i}
+                                onClick={() => set_active_language(lang)}
+                                active={currentLanguage === lang}
+                            >
+                                <span
+                                    role="img"
+                                    aria-label={LANGUAGES[lang].emoji_name}
+                                >
+                                    {LANGUAGES[lang].emoji}
+                                </span> {LANGUAGES[lang].name}
+                            </ListGroupItem>
+                        ))
+                    }
+                </ListGroup>
+                {
+                    this.aboutTest().map((item, i) => (
+                        <Card className="mt-4" key={i}>
+                            <CardHeader>
+                                {item.title}
+                            </CardHeader>
+                            {item.desc}
+                        </Card>
+                    ))
+                }
+                <p className="my-4">
+                    <strong>
+                        {`${_('version')}: ${version}`}
+                    </strong>
+                </p>
+                <Modal isOpen={select_type_test} toggle={() => this.action_select_type_test()}>
+                    <ModalHeader>
+                        {_('0_select_which_iphone_you_w...')}
+                    </ModalHeader>
+                    <ModalBody>
+                        <Button outline color="primary" size="lg" block onClick={() => start_test(TEST_TYPE_0)}>
+                            {_('to_test_this_iphone')}
+                        </Button>
+                        <Button outline color="primary" size="lg" block onClick={() => start_test(TEST_TYPE_1)}>
+                            {_('another_test_iphone')}
+                        </Button>
+                    </ModalBody>
+                </Modal>
+            </BasePage>
+        )
     }
 
 }

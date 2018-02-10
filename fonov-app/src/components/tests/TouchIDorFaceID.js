@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -37,36 +33,32 @@ class TouchIDorFaceID extends Component {
             case 'iPhone 8':
             case 'iPhone 8 Plus':
                 return (
-                    <BaseTest test='TouchIDorFaceID' title={_('touch_id')}>
-                        <Card>
-                            <CardHeader>
-                                {_('go_to_settings_->_touch_i...')}
-                            </CardHeader>
-                            <CardContent>
-                                <Image src={image_manager(1)} />
-                            </CardContent>
-                        </Card>
-
-                        <RatingCheck testN='TouchIDorFaceID'>
-                            {_('touch_id_works?')}
-                        </RatingCheck>
+                    <BaseTest
+                        test='TouchIDorFaceID'
+                        Title={_('touch_id')}
+                        rating_check
+                        rating_question={_('touch_id_works?')}
+                    >
+                        <BaseCard
+                            cards={[
+                                [_('go_to_settings_->_touch_i...'), image_manager(1)]
+                            ]}
+                        />
                     </BaseTest>
                 );
             case 'iPhone X':
                 return (
-                    <BaseTest test='TouchIDorFaceID' title={_('face_id')}>
-                        <Card>
-                            <CardHeader>
-                                {_('to_check_face_id_go_to_se...')}
-                            </CardHeader>
-                            <CardContent>
-                                <Image src={image_manager(1)} />
-                            </CardContent>
-                        </Card>
-
-                        <RatingCheck testN='TouchIDorFaceID'>
-                            {_('face_id_works?')}
-                        </RatingCheck>
+                    <BaseTest
+                        test='TouchIDorFaceID'
+                        Title={_('face_id')}
+                        rating_check
+                        rating_question={_('face_id_works?')}
+                    >
+                        <BaseCard
+                            cards={[
+                                [_('to_check_face_id_go_to_se...'), image_manager(1)]
+                            ]}
+                        />
                     </BaseTest>
                 );
             default:

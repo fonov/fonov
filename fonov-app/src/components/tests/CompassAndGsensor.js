@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -26,30 +22,20 @@ class CompassAndGsensor extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <BaseTest test='CompassAndGsensor' title={_('compass_and_g-sensor')}>
-                <Card>
-                    <CardHeader>
-                        {_('open_the_compass_app_and_...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)} />
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        {_('swipe_to_the_left_to_open...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(2)} />
-                    </CardContent>
-                </Card>
-
-                <RatingCheck testN='CompassAndGsensor'>
-                    {_('compass_and_g-sensor_work...')}
-                </RatingCheck>
+            <BaseTest
+                test='CompassAndGsensor'
+                Title={_('compass_and_g-sensor')}
+                rating_check
+                rating_question= {_('compass_and_g-sensor_work...')}
+            >
+                <BaseCard
+                    cards={[
+                        [_('open_the_compass_app_and_...'), image_manager(1)],
+                        [_('swipe_to_the_left_to_open...'), image_manager(2)]
+                    ]}
+                />
             </BaseTest>
-        );
+        )
     }
 
 }

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
+import { Image, BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent,
-    ContentBlockTitle, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import Draggable from 'react-draggable';
@@ -38,39 +33,39 @@ class Sensor extends Component {
             {opacity} = this.state;
 
         return (
-            <BaseTest test='Sensor' title={_('sensor')} navStyle={{opacity}} ProgressStyle={{opacity}}>
+            <BaseTest
+                test='Sensor'
+                Title={_('sensor')}
+                extraStyle={{opacity}}
+                rating_check
+                rating_question={_('the_sensor_is_working_cor...')}
+            >
                 {
                     test_type === TEST_TYPE_0 ? (
                         <div>
-                            <ContentBlockTitle className='content_block_title' style={{opacity}}>
+                            <p className='mt-4' style={{opacity}}>
                                 {_('0_for_move_the_image_around...')}
-                            </ContentBlockTitle>
+                            </p>
                             <Draggable
                                 position={{x: 0, y: 0}}
                                 onStart={() => this.setState({opacity: 0})}
                                 onStop={() => this.setState({opacity: 1})}
                             >
                                 <div>
-                                    <Image src={image_manager2(1)}/>
+                                    <Image {...image_manager2(1)}/>
                                 </div>
                             </Draggable>
                         </div>
                     ) : (
-                        <Card>
-                            <CardHeader>
-                                {_('swipe_your_finger_across_...')}
-                            </CardHeader>
-                            <CardContent>
-                                <Image src={image_manager(1)}/>
-                            </CardContent>
-                        </Card>
+                        <BaseCard
+                            cards={[
+                                [_('swipe_your_finger_across_...'), image_manager(1)]
+                            ]}
+                        />
                     )
                 }
-                <RatingCheck testN='Sensor' style={{opacity}}>
-                    {_('the_sensor_is_working_cor...')}
-                </RatingCheck>
             </BaseTest>
-        );
+        )
     }
 
 }

@@ -1,26 +1,13 @@
-.item-footer {
-    color: #8e8e93;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.2;
-    white-space: normal;
+@media (max-width: 768px) {
+    .container-nav {
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 100%;
+    }
 }
 .stars {
-    font-size: 3rem;
+    font-size: 2em;
     color: Gold;
-    text-align: center;
-}
-.card_header_success {
-    background-color: #4cd964;
-    color: white
-}
-.card_header_danger {
-    background-color: #ff3b30;
-    color: white
-}
-.content_block_title {
-    white-space: normal;
-    line-height: 1.5em;
 }
 .cycle_3d_touch {
     width: 150px;
@@ -29,4 +16,18 @@
     margin: 10px auto;
     background-color: #ff3b30;
     border: #ff3b30 solid;
+}
+.progress-nav {
+    height: 5px;
+    border-radius: 0
+}
+.red_times {
+    font-size: 40px;
+    color: tomato;
+    vertical-align: middle;
+}
+.green_check {
+    font-size: 40px;
+    color: mediumseagreen;
+    vertical-align: middle;
 }

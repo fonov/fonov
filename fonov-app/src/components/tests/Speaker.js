@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { RatingCheck } from '../rating/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import {getTranslate} from "react-localize-redux/lib/index";
@@ -21,14 +20,17 @@ class Speaker extends Component {
 
         const {_} = this.props;
 
+
         return (
-            <BaseTest test='Speaker' title={_('dynamics')}>
+            <BaseTest
+                test='Speaker'
+                Title={_('dynamics')}
+                rating_check
+                rating_question={_('the_speakers_are_working?')}
+            >
                 <AudioTest/>
-                <RatingCheck testN='Speaker'>
-                    {_('the_speakers_are_working?')}
-                </RatingCheck>
             </BaseTest>
-        );
+        )
     }
 
 }

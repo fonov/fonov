@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {Card, CardBody, CardHeader} from 'reactstrap'
 
 
 class Camera extends Component {
@@ -26,8 +23,13 @@ class Camera extends Component {
         const { image_manager, no_front_camera, _ } = this.props;
 
         return (
-            <BaseTest test='Camera' title={_('camera')}>
-                <Card>
+            <BaseTest
+                test='Camera'
+                Title={_('camera')}
+                rating_check
+                rating_question={_('the_camera_works?')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {
                             no_front_camera ? (
@@ -37,16 +39,12 @@ class Camera extends Component {
                             )
                         }
                     </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(no_front_camera ? 2 : 1)}/>
-                    </CardContent>
+                    <CardBody>
+                        <Image {...image_manager(no_front_camera ? 2 : 1)}/>
+                    </CardBody>
                 </Card>
-
-                <RatingCheck testN='Camera'>
-                    {_('the_camera_works?')}
-                </RatingCheck>
             </BaseTest>
-        );
+        )
     }
 
 }

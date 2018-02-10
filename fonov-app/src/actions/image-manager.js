@@ -5,15 +5,27 @@ import {getActiveLanguage} from "react-localize-redux/lib/index";
 
 const get_absolut_path = path => require(`../assets/img/${path}`);
 
+const get_default_img = () => ({
+    src: get_absolut_path('default.png'),
+    width: 365,
+    height: 710
+});
+
+const get_normal_img = image => ({
+    src: get_absolut_path(image.src),
+    width: image.width,
+    height: image.height
+});
+
 const img_with_locate = (obj, number, currentLanguage, error) => {
     if (typeof obj[number] !== 'undefined') {
-        return get_absolut_path(obj[number])
+        return get_normal_img(obj[number])
     } else if (obj[`${number}_${currentLanguage}`] !== 'undefined') {
-        return get_absolut_path(obj[`${number}_${currentLanguage}`])
+        return get_normal_img(obj[`${number}_${currentLanguage}`])
     } else {
         Raven.captureException(error);
         console.error(error);
-        return get_absolut_path('default.png')
+        return get_default_img()
     }
 };
 
@@ -59,7 +71,7 @@ const image_manager = (test, number) => {
             )
         }
 
-        return get_absolut_path('default.png')
+        return get_default_img()
     }
 };
 

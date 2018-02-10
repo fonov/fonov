@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
-import { RatingCheck } from '../rating/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 
@@ -26,21 +22,19 @@ class WiFi extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <BaseTest test='WiFi' title={_('wi-fi')}>
-                <Card>
-                    <CardHeader>
-                        {_('open_settings_->_wi-fi._t...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)} />
-                    </CardContent>
-                </Card>
-
-                <RatingCheck testN='WiFi'>
-                    {_('wi-fi_works?')}
-                </RatingCheck>
+            <BaseTest
+                test='WiFi'
+                Title={_('wi-fi')}
+                rating_check
+                rating_question={_('wi-fi_works?')}
+            >
+                <BaseCard
+                    cards={[
+                        [_('open_settings_->_wi-fi._t...'), image_manager(1)]
+                    ]}
+                />
             </BaseTest>
-        );
+        )
     }
 
 }

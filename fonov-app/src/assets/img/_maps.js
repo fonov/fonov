@@ -1,3 +1,6 @@
+const sizeOf = require('image-size');
+
+
 const fs = require('fs'),
     ignore = ['.DS_Store', '_maps.js', '_refactor.js', 'maps.json', '_ls_maps.js', '_rename_img.js'];
 
@@ -20,6 +23,15 @@ const separate_dir = name => {
     }
 
     return arr_dir
+};
+
+const prepare_img = file_path => {
+    let dimensions = sizeOf(file_path);
+    delete dimensions.type;
+    return {
+        src: file_path,
+        ...dimensions
+    }
 };
 
 const openFolder = (path, init=false) => {
@@ -51,9 +63,9 @@ const openFolder = (path, init=false) => {
                             s_dir.forEach(item => {
                                 let dir_3 = clean_name.split(', ');
                                 if (dir_3.length > 1) {
-                                    dir_3.forEach(item_3 => maps[dff[0]][item][item_3.trim()] = is_dir ? {} : file_path)
+                                    dir_3.forEach(item_3 => maps[dff[0]][item][item_3.trim()] = is_dir ? {} : prepare_img(file_path))
                                 } else {
-                                    maps[dff[0]][item][clean_name] = is_dir ? {} : file_path
+                                    maps[dff[0]][item][clean_name] = is_dir ? {} : prepare_img(file_path)
                                 }
                             });
                         }
@@ -64,9 +76,9 @@ const openFolder = (path, init=false) => {
                             s_dir.forEach(item => {
                                 let dir_3 = dff[2].split(', ');
                                 if (dir_3.length > 1) {
-                                    dir_3.forEach(item_3 => maps[dff[0]][item][item_3.trim()][clean_name] = is_dir ? {} : file_path)
+                                    dir_3.forEach(item_3 => maps[dff[0]][item][item_3.trim()][clean_name] = is_dir ? {} : prepare_img(file_path))
                                 } else {
-                                    maps[dff[0]][item][dff[2]][clean_name] = is_dir ? {} : file_path
+                                    maps[dff[0]][item][dff[2]][clean_name] = is_dir ? {} : prepare_img(file_path)
                                 }
                             });
                         }

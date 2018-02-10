@@ -1,63 +1,29 @@
 import React, { Component } from 'react';
 import {APP_NAME} from '../constant/config'
+import windowSize from 'react-window-size';
 
 
 class Image extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            width: '0',
-            height: '0',
-            imgStyle: {},
-            visibility: 'hidden'
-        };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-        this.onImgLoad = this.onImgLoad.bind(this);
-    }
+    resize() {
+        const {width, height, windowWidth, windowHeight} = this.props;
 
-    componentDidMount() {
-        this.updateWindowDimensions();
-        window.addEventListener('resize', this.updateWindowDimensions);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
-    }
-
-    updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight });
-    }
-
-    onImgLoad({target:img}) {
-
-        const { height, width } = this.state;
-        let new_state = {};
-
-        if (img.offsetHeight > img.offsetWidth) {
-            if (img.offsetHeight > height/2) {
-                new_state = {imgStyle: {height: height*0.5}}
-            }
+        if (windowWidth < windowHeight) {
+            return {width: '100%', maxWidth: width > windowWidth/2 ? width/2 : width};
         } else {
-            if(img.offsetWidth > width/2) {
-                new_state = {imgStyle: {width: width*0.8}}
-            }
+            return {height: '100%', maxHeight: height >= windowHeight/2 ? height/2: height}
         }
-
-        this.setState({...new_state, visibility: 'visible'})
     }
 
     render() {
-
-        const { src } = this.props,
-            { imgStyle, visibility } = this.state;
+        const {src} = this.props;
 
         return (
-            <div style={{textAlign: 'center'}}>
+            <div className='text-center'>
                 <img
-                    onLoad={this.onImgLoad}
+                    className="rounded"
                     src={src}
-                    style={{...imgStyle, visibility}}
+                    style={this.resize()}
                     alt={APP_NAME}
                 />
             </div>
@@ -66,4 +32,4 @@ class Image extends Component {
 
 }
 
-export default Image
+export default windowSize(Image);

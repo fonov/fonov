@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { add_rating } from '../../actions/rating'
-import { ContentBlock, GridRow, GridCol, Button, ContentBlockTitle} from 'framework7-react';
 import {nextTest} from '../../actions/main'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import { Row, Col, Button } from 'reactstrap';
 
 
 class RatingCheck extends Component {
@@ -18,27 +18,25 @@ class RatingCheck extends Component {
 
     render() {
 
-        const { children, _, style = {} } = this.props;
+        const { children, _, style = {}, revert_color = false } = this.props;
 
         return (
             <div style={style}>
-                <ContentBlockTitle className='content_block_title'>
+                <p className="mt-4">
                     {children}
-                </ContentBlockTitle>
-                <ContentBlock>
-                    <GridRow>
-                        <GridCol>
-                            <Button big onClick={() => this.saveRating(false)}>
-                                {_('no')}
-                            </Button>
-                        </GridCol>
-                        <GridCol>
-                            <Button big onClick={() => this.saveRating(true)}>
-                                {_('yes')}
-                            </Button>
-                        </GridCol>
-                    </GridRow>
-                </ContentBlock>
+                </p>
+                <Row className='my-4'>
+                    <Col>
+                        <Button outline color={revert_color ? "success" : "danger"} block onClick={() => this.saveRating(false)}>
+                            {_('no')}
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button outline color={revert_color ? "danger" : "success"} block onClick={() => this.saveRating(true)}>
+                            {_('yes')}
+                        </Button>
+                    </Col>
+                </Row>
             </div>
         )
     }

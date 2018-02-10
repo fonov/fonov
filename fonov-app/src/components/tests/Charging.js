@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Image, BaseTest } from '../../elements/index'
-import {RatingCheck} from '../rating/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
-import {
-    Card, CardContent, CardHeader
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class Charging extends Component {
@@ -26,20 +23,22 @@ class Charging extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <BaseTest test="Charging" title={_('charging_port')}>
-                <Card>
+            <BaseTest
+                test="Charging"
+                Title={_('charging_port')}
+                rating_check
+                rating_question={_('charging_port_works?')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_('connect_your_phone_to_cha...')}
                     </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)} />
-                    </CardContent>
+                    <CardBody>
+                        <Image {...image_manager(1)} />
+                    </CardBody>
                 </Card>
-                <RatingCheck testN='Charging'>
-                    {_('charging_port_works?')}
-                </RatingCheck>
             </BaseTest>
-        );
+        )
     }
 
 }

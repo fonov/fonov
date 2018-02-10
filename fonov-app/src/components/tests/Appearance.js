@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
-import { Rating5Stars } from '../rating/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from '../../constant/urls'
-import {
-    Card, CardHeader, CardContent,
-    ContentBlockTitle
-} from 'framework7-react';
 import image_manager from '../../actions/image-manager'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
+import {
+    Card, ListGroup, ListGroupItem,
+} from 'reactstrap'
 
 
 class Appearance extends Component {
@@ -28,46 +26,37 @@ class Appearance extends Component {
         const { image_manager, _ } = this.props;
 
         return (
-            <BaseTest test='Appearance' title={_('appearance')}>
-                <ContentBlockTitle className='content_block_title'>
+            <BaseTest
+                test='Appearance'
+                Title={_('appearance')}
+                rating_5_stars={{
+                    firstTitle: _('claimed_as'),
+                    lastTitle: _('real_state')
+                }}
+                rating_question={_('rating_of_appearance.')}
+            >
+                <p className="mt-4">
                     {_('inspect_the_iphone_for_sc...')}
-                </ContentBlockTitle>
+                </p>
                 <Card>
-                    <CardContent>
-                        <p>{_('remove_the_iphone_from_th...')}</p>
-                        <p>{_('remove_the_protective_fil...')}</p>
-                    </CardContent>
+                    <ListGroup flush>
+                        <ListGroupItem>
+                            {_('remove_the_iphone_from_th...')}
+                        </ListGroupItem>
+                        <ListGroupItem>
+                            {_('remove_the_protective_fil...')}
+                        </ListGroupItem>
+                    </ListGroup>
                 </Card>
-                <Card>
-                    <CardHeader>{_('the_front_part_of_the_pho...')}</CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)}/>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>{_('the_back_of_the_phone.')}</CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(2)}/>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>{_('the_side_of_the_phone.')}</CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(3)}/>
-                    </CardContent>
-                </Card>
-
-                <Rating5Stars
-                    testN='Appearance'
-                    firstTitle={_('claimed_as')}
-                    lastTitle={_('real_state')}
-                >
-                    {_('rating_of_appearance.')}
-                </Rating5Stars>
+                <BaseCard
+                    cards={[
+                        [_('the_front_part_of_the_pho...'), image_manager(1)],
+                        [_('the_back_of_the_phone.'), image_manager(2)],
+                        [_('the_side_of_the_phone.'), image_manager(3)]
+                    ]}
+                />
             </BaseTest>
-        );
+        )
     }
 
 }

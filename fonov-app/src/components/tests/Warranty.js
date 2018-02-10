@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
-import {RatingCheck} from '../rating/index'
+import { Image, BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
-import {
-    Card, CardContent, CardHeader,
-    Button, ContentBlock, CardFooter
-} from 'framework7-react';
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {TEST_TYPE_0} from '../../constant/config'
+import {CardBody, CardHeader, Card, CardFooter, Button} from 'reactstrap'
 
 
 class Warranty extends Component {
@@ -28,53 +24,41 @@ class Warranty extends Component {
         const { image_manager, _, test_type } = this.props;
 
         return (
-            <BaseTest test='Warranty' title={_('warranty')}>
-                <Card>
+            <BaseTest
+                test='Warranty'
+                Title={_('warranty')}
+                rating_check
+                rating_question={_('information_about_warrant...')}
+            >
+                <Card className='mt-4'>
                     <CardHeader>
                         {_(test_type === TEST_TYPE_0 ? 'go_to_settings_->_general...' : '0_locate_the_serial_number....')}
                     </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)} />
-                    </CardContent>
+                    <CardBody>
+                        <Image {...image_manager(1)} />
+                    </CardBody>
                     <CardFooter>
                         {_('then_go_to_the_official_...')}
                     </CardFooter>
                 </Card>
-
-                <ContentBlock>
-                    <Button
-                        fill
-                        big
-                        color='green'
-                        onClick={() => window.open(_("Apple_Warranty_URI"))}
-                    >
-                        {_('check_guarantee')}
-                    </Button>
-                </ContentBlock>
-
-                <Card>
-                    <CardHeader>
-                        {_('insert_the_serial_number...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(2)} />
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        {_('scroll_down_to_warranty_s...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(3)} />
-                    </CardContent>
-                </Card>
-
-                <RatingCheck testN='Warranty'>
-                    {_('information_about_warrant...')}
-                </RatingCheck>
+                <Button
+                    color="success"
+                    block
+                    outline
+                    size="lg"
+                    onClick={() => window.open(_("Apple_Warranty_URI"))}
+                    className='mt-4'
+                >
+                    {_('check_guarantee')}
+                </Button>
+                <BaseCard
+                    cards={[
+                        [_('insert_the_serial_number...'), image_manager(2)],
+                        [_('scroll_down_to_warranty_s...'), image_manager(3)]
+                    ]}
+                />
             </BaseTest>
-        );
+        )
     }
 
 }
