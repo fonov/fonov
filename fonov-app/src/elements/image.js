@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import {APP_NAME} from '../constant/config'
+import windowSize from 'react-window-size';
 
 
 class Image extends Component {
 
+    resize() {
+        const {width, height, windowWidth, windowHeight} = this.props;
+
+        if (windowWidth < windowHeight) {
+            return {width: '100%', maxWidth: width > windowWidth/2 ? width/2 : width};
+        } else {
+            return {height: '100%', maxHeight: height >= windowHeight/2 ? height/2: height}
+        }
+    }
+
     render() {
-        const {src, width} = this.props;
+        const {src} = this.props;
 
         return (
             <div className='text-center'>
                 <img
                     className="rounded"
                     src={src}
-                    style={{width: '100%', maxWidth: width}}
+                    style={this.resize()}
                     alt={APP_NAME}
                 />
             </div>
@@ -21,4 +32,4 @@ class Image extends Component {
 
 }
 
-export default Image
+export default windowSize(Image);
