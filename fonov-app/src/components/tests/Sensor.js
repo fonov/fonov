@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
+import { Image, BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import Draggable from 'react-draggable';
 import {TEST_TYPE_0} from '../../constant/config'
-import {CardBody, Card, CardHeader} from 'reactstrap'
 
 
 class Sensor extends Component {
@@ -53,19 +52,16 @@ class Sensor extends Component {
                                 onStop={() => this.setState({opacity: 1})}
                             >
                                 <div>
-                                    <Image src={image_manager2(1)}/>
+                                    <Image {...image_manager2(1)}/>
                                 </div>
                             </Draggable>
                         </div>
                     ) : (
-                        <Card className='mt-4'>
-                            <CardHeader>
-                                {_('swipe_your_finger_across_...')}
-                            </CardHeader>
-                            <CardBody>
-                                <Image src={image_manager(1)}/>
-                            </CardBody>
-                        </Card>
+                        <BaseCard
+                            cards={[
+                                [_('swipe_your_finger_across_...'), image_manager(1)]
+                            ]}
+                        />
                     )
                 }
             </BaseTest>

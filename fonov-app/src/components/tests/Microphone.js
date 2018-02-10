@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {CardBody, Card, CardHeader} from 'reactstrap'
 
 
 class Microphone extends Component {
@@ -29,23 +28,12 @@ class Microphone extends Component {
                 rating_check
                 rating_question={_('the_microphone_works?')}
             >
-                <Card className='mt-4'>
-                    <CardHeader>
-                        {_('open_the_voice_recorder._...')}
-                    </CardHeader>
-                    <CardBody>
-                        <Image src={image_manager(1)} />
-                    </CardBody>
-                </Card>
-
-                <Card className='mt-4'>
-                    <CardHeader>
-                        {_('listen_to_it._the_entry_m...')}
-                    </CardHeader>
-                    <CardBody>
-                        <Image src={image_manager(2)} />
-                    </CardBody>
-                </Card>
+                <BaseCard
+                    cards={[
+                        [_('open_the_voice_recorder._...'), image_manager(1)],
+                        [_('listen_to_it._the_entry_m...'), image_manager(2)]
+                    ]}
+                />
             </BaseTest>
         )
     }

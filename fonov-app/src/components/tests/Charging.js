@@ -34,7 +34,7 @@ class Charging extends Component {
                         {_('connect_your_phone_to_cha...')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(1)} />
+                        <Image {...image_manager(1)} />
                     </CardBody>
                 </Card>
             </BaseTest>

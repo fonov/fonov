@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest, Cycle3DTouch } from '../../elements/index'
+import { BaseTest, Cycle3DTouch, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {TEST_TYPE_0} from '../../constant/config'
-import {Card, CardBody, CardHeader} from 'reactstrap'
 
 
 class Touch3D extends Component {
@@ -39,14 +38,11 @@ class Touch3D extends Component {
                             <Cycle3DTouch />
                         </div>
                     ) : (
-                        <Card className='mt-4'>
-                            <CardHeader>
-                                {_('0_to_check_3d_touch_must_fo...')}
-                            </CardHeader>
-                            <CardBody>
-                                <Image src={image_manager(1)}/>
-                            </CardBody>
-                        </Card>
+                        <BaseCard
+                            cards={[
+                                [_('0_to_check_3d_touch_must_fo...'), image_manager(1)]
+                            ]}
+                        />
                     )
                 }
             </BaseTest>

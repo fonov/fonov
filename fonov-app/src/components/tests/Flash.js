@@ -34,7 +34,7 @@ class Flash extends Component {
                         {_('0_open_the_control_center_...')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(1)} />
+                        <Image {...image_manager(1)} />
                     </CardBody>
                 </Card>
             </BaseTest>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
+import { Image, BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
@@ -35,7 +35,7 @@ class Warranty extends Component {
                         {_(test_type === TEST_TYPE_0 ? 'go_to_settings_->_general...' : '0_locate_the_serial_number....')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(1)} />
+                        <Image {...image_manager(1)} />
                     </CardBody>
                     <CardFooter>
                         {_('then_go_to_the_official_...')}
@@ -51,74 +51,14 @@ class Warranty extends Component {
                 >
                     {_('check_guarantee')}
                 </Button>
-                {
-                    [
+                <BaseCard
+                    cards={[
                         [_('insert_the_serial_number...'), image_manager(2)],
                         [_('scroll_down_to_warranty_s...'), image_manager(3)]
-                    ].map((item, i) => (
-                        <Card className='mt-4' key={i}>
-                            <CardHeader>
-                                {item[0]}
-                            </CardHeader>
-                            <CardBody>
-                                <Image src={item[1]} />
-                            </CardBody>
-                        </Card>
-                    ))
-                }
+                    ]}
+                />
             </BaseTest>
         )
-        /*
-        TODO: UPDATE UI
-        return (
-            <BaseTest test='Warranty' title={_('warranty')}>
-                <Card>
-                    <CardHeader>
-                        {_(test_type === TEST_TYPE_0 ? 'go_to_settings_->_general...' : '0_locate_the_serial_number....')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)} />
-                    </CardContent>
-                    <CardFooter>
-                        {_('then_go_to_the_official_...')}
-                    </CardFooter>
-                </Card>
-
-                <ContentBlock>
-                    <Button
-                        fill
-                        big
-                        color='green'
-                        onClick={() => window.open(_("Apple_Warranty_URI"))}
-                    >
-                        {_('check_guarantee')}
-                    </Button>
-                </ContentBlock>
-
-                <Card>
-                    <CardHeader>
-                        {_('insert_the_serial_number...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(2)} />
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        {_('scroll_down_to_warranty_s...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(3)} />
-                    </CardContent>
-                </Card>
-
-                <RatingCheck testN='Warranty'>
-                    {_('information_about_warrant...')}
-                </RatingCheck>
-            </BaseTest>
-        );
-        */
     }
 
 }

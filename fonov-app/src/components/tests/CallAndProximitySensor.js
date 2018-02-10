@@ -42,7 +42,7 @@ class CallAndProximitySensor extends Component {
                             {_('turn_off_the_speakerphone...')}
                         </CardHeader>
                         <CardBody>
-                            <Image src={image_manager(3)} />
+                            <Image {...image_manager(3)} />
                         </CardBody>
                     </Card>
                 );
@@ -64,17 +64,17 @@ class CallAndProximitySensor extends Component {
             >
                 {
                     [
-                        [_('insert_the_sim_card._the_...'), <Image src={cell_status_image()} />],
-                        [_('try_to_make_a_call.'), <Image src={call_image(1)} />],
-                        [_('0_during_the_call_close_th...'), <Image src={image_manager(4)} />],
-                        [_('put_it_on_speaker_to_chec...'), <Image src={call_image(2)} />]
+                        [_('insert_the_sim_card._the_...'), cell_status_image()],
+                        [_('try_to_make_a_call.'), call_image(1)],
+                        [_('0_during_the_call_close_th...'), image_manager(4)],
+                        [_('put_it_on_speaker_to_chec...'), call_image(2)]
                     ].map((item, i) => (
                         <Card key={i} className='mt-4'>
                             <CardHeader>
                                 {item[0]}
                             </CardHeader>
                             <CardBody>
-                                {item[1]}
+                                <Image {...item[1]} />
                             </CardBody>
                         </Card>
                     ))

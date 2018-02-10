@@ -3,8 +3,7 @@ import {TEST_TYPE_0} from "../constant/config";
 import image_manager from "../actions/image-manager";
 import {connect} from "react-redux";
 import {getTranslate} from "react-localize-redux/lib/index";
-import {PlayAudio, Image} from './index'
-import {CardBody, Card, CardHeader} from 'reactstrap'
+import {PlayAudio, BaseCard} from './index'
 
 
 class AudioTest extends Component {
@@ -15,14 +14,11 @@ class AudioTest extends Component {
         return test_type === TEST_TYPE_0 ? (
             <PlayAudio />
         ) : (
-            <Card className='mt-4'>
-                <CardHeader>
-                    {_('to_check_sound_you_will_...')}
-                </CardHeader>
-                <CardBody>
-                    <Image src={image_manager(1)}/>
-                </CardBody>
-            </Card>
+            <BaseCard
+                cards={[
+                    [_('to_check_sound_you_will_...'), image_manager(1)]
+                ]}
+            />
         )
     }
 }

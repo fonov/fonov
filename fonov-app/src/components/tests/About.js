@@ -133,9 +133,9 @@ class About extends Component {
                     <Card>
                         <CardBody>
                             <p>{_('settings_->_master_->_abo...')}</p>
-                            <Image src={image_manager(1)}/>
+                            <Image {...image_manager(1)}/>
                             <p>{_('on_the_back_side_of_the_b...')}</p>
-                            <Image src={image_manager(2)}/>
+                            <Image {...image_manager(2)}/>
                         </CardBody>
                     </Card>
                 </Collapse>

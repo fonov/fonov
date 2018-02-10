@@ -32,7 +32,7 @@ class ButtonsAndVibration extends Component {
                             {_('key_home')}
                         </CardHeader>
                         <CardBody>
-                            <Image src={image_manager(2)}/>
+                            <Image {...image_manager(2)}/>
                         </CardBody>
                     </Card>
                 )
@@ -55,7 +55,7 @@ class ButtonsAndVibration extends Component {
                         {_('lock_key')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(1)}/>
+                        <Image {...image_manager(1)}/>
                     </CardBody>
                 </Card>
                 <div className='mt-4'>
@@ -66,38 +66,11 @@ class ButtonsAndVibration extends Component {
                         {_('check_the_volume_keys_and...')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
+                        <Image {...image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
                     </CardBody>
                 </Card>
             </BaseTest>
         )
-        /*
-        TODO: UPDATE UI
-        return (
-            <BaseTest test='ButtonsAndVibration' title={_('buttons_and_vibration')}>
-                <Card>
-                    <CardHeader>
-                        {_('lock_key')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(1)}/>
-                    </CardContent>
-                </Card>
-                {this.home_button()}
-                <Card>
-                    <CardHeader>
-                        {_('check_the_volume_keys_and...')}
-                    </CardHeader>
-                    <CardContent>
-                        <Image src={image_manager(currentModel === 'iPhone X' ? 2 : 3)}/>
-                    </CardContent>
-                </Card>
-                <RatingCheck testN='ButtonsAndVibration'>
-                    {_('work_button_and_vibration...')}
-                </RatingCheck>
-            </BaseTest>
-        );
-        */
     }
 
 }

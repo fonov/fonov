@@ -36,7 +36,7 @@ class IMEI extends Component {
                             {_('the_slot_for_the_sim_card...')}
                         </CardHeader>
                         <CardBody>
-                            <Image src={image_manager(3)} />
+                            <Image {...image_manager(3)} />
                         </CardBody>
                     </Card>
                 );
@@ -52,7 +52,7 @@ class IMEI extends Component {
                             {_('on_the_back_side_of_the_i...')}
                         </CardHeader>
                         <CardBody>
-                            <Image src={imei_back_side_image_manager(1)} />
+                            <Image {...imei_back_side_image_manager(1)} />
                         </CardBody>
                     </Card>
                 );
@@ -67,7 +67,7 @@ class IMEI extends Component {
                             {_('the_slot_for_sim_card')}
                         </CardHeader>
                         <CardBody>
-                            <Image src={image_manager(1)} />
+                            <Image {...image_manager(1)} />
                         </CardBody>
                     </Card>
                 );
@@ -95,7 +95,7 @@ class IMEI extends Component {
                         {_('settings_->_general_->_ab...')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(2)} />
+                        <Image {...image_manager(2)} />
                     </CardBody>
                 </Card>
                 <div className='mt-4'>
@@ -106,7 +106,7 @@ class IMEI extends Component {
                         {_('on_the_box.')}
                     </CardHeader>
                     <CardBody>
-                        <Image src={image_manager(5)} />
+                        <Image {...image_manager(5)} />
                     </CardBody>
                 </Card>
             </BaseTest>

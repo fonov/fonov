@@ -5,6 +5,7 @@ import AudioTest from './audio_test'
 import Base from './Base'
 import BasePage from './BasePage'
 import BaseTest from './BaseTest'
+import BaseCard from './BaseCard'
 
 
 export {
@@ -14,5 +15,6 @@ export {
     AudioTest,
     Base,
     BasePage,
-    BaseTest
+    BaseTest,
+    BaseCard
 }

@@ -7,6 +7,7 @@
     "bootstrap": "^4.0.0",
     "browser-locale": "^1.0.3",
     "history": "^4.7.2",
+    "image-size": "^0.6.2",
     "raven-js": "^3.22.1",
     "react": "^16.2.0",
     "react-cookie": "^2.1.2",

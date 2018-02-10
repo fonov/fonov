@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class TouchIDorFaceID extends Component {
@@ -40,14 +39,11 @@ class TouchIDorFaceID extends Component {
                         rating_check
                         rating_question={_('touch_id_works?')}
                     >
-                        <Card className='mt-4'>
-                            <CardHeader>
-                                {_('go_to_settings_->_touch_i...')}
-                            </CardHeader>
-                            <CardBody>
-                                <Image src={image_manager(1)} />
-                            </CardBody>
-                        </Card>
+                        <BaseCard
+                            cards={[
+                                [_('go_to_settings_->_touch_i...'), image_manager(1)]
+                            ]}
+                        />
                     </BaseTest>
                 );
             case 'iPhone X':
@@ -58,14 +54,11 @@ class TouchIDorFaceID extends Component {
                         rating_check
                         rating_question={_('face_id_works?')}
                     >
-                        <Card className='mt-4'>
-                            <CardHeader>
-                                {_('to_check_face_id_go_to_se...')}
-                            </CardHeader>
-                            <CardBody>
-                                <Image src={image_manager(1)} />
-                            </CardBody>
-                        </Card>
+                        <BaseCard
+                            cards={[
+                                [_('to_check_face_id_go_to_se...'), image_manager(1)]
+                            ]}
+                        />
                     </BaseTest>
                 );
             default:

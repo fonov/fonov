@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
+import { BaseTest, BaseCard } from '../../elements/index'
 import {replace} from "react-router-redux";
 import URLS from "../../constant/urls";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class Bluetooth extends Component {
@@ -29,14 +28,11 @@ class Bluetooth extends Component {
                 rating_check
                 rating_question={_('the_bluetooth_works?')}
             >
-                <Card className='mt-4'>
-                    <CardHeader>
-                        {_('open_settings_->_bluetoot...')}
-                    </CardHeader>
-                    <CardBody>
-                        <Image src={image_manager(1)}/>
-                    </CardBody>
-                </Card>
+                <BaseCard
+                    cards={[
+                        [_('open_settings_->_bluetoot...'), image_manager(1)]
+                    ]}
+                />
             </BaseTest>
         )
     }
