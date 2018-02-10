@@ -89,7 +89,7 @@ class Rating5Stars extends Component {
 
     render() {
 
-        const { children, firstTitle, lastTitle, testN, _, lastTest, style = {} } = this.props,
+        const { children, firstTitle, lastTitle, testN, lastTest, style = {} } = this.props,
             { firstStars, secondStars, picker_modal } = this.state;
 
         return (

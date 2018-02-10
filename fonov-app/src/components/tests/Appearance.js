@@ -7,7 +7,7 @@ import image_manager from '../../actions/image-manager'
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
 import {
     Card, ListGroup, ListGroupItem,
-    CardHeader, CardBody, CardText
+    CardHeader, CardBody
 } from 'reactstrap'
 
 class Appearance extends Component {
