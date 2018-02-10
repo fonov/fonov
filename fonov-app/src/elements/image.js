@@ -8,10 +8,12 @@ class Image extends Component {
     resize() {
         const {width, height, windowWidth, windowHeight} = this.props;
 
-        if (width > height) {
-            return {width: '100%', maxWidth: width > windowWidth/2 ? width/2 : width};
+        if (width > windowWidth/2) {
+            return {width: '100%', maxWidth: windowWidth/2};
+        } else if (height > windowHeight/2) {
+            return {height: '100%', maxHeight: windowHeight/2}
         } else {
-            return {height: '100%', maxHeight: height >= windowHeight/2 ? height/2: height}
+            return {}
         }
     }
 
