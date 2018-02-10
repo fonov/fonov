@@ -161,7 +161,7 @@ class TestResult extends Component {
                     rank = rank+rTest.weight
                 }
                 testList.push(
-                    <ListGroupItem>
+                    <ListGroupItem key={key}>
                         {tResult.check === rTest.pass ? (
                             <FontAwesome name='check-circle-o' className='green_check'/>
                         ) : (
@@ -183,7 +183,7 @@ class TestResult extends Component {
                     difference_star = (firstStars <= secondStars) ? 0 : tResult.firstStars - tResult.secondStars;
 
                 testList.push(
-                    <ListGroupItem className='d-flex justify-content-between align-items-center'>
+                    <ListGroupItem className='d-flex justify-content-between align-items-center' key={key}>
                         {rTest.title}
                         <Badge color={difference_star === 0 ? 'success' : difference_star === 1 ? 'warning' : 'danger'}>
                             <span className="h5">

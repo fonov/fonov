@@ -12,6 +12,7 @@ import {
     Card, CardHeader, CardText, CardBody,
     Modal, ModalHeader, ModalBody
 } from 'reactstrap'
+import {isIOS, isMobileOnly} from 'react-device-detect';
 
 
 class Home extends Component {
@@ -72,6 +73,16 @@ class Home extends Component {
         this.setState({select_type_test: !select_type_test})
     }
 
+    start_test() {
+        const {start_test} = this.props;
+
+        if (isIOS && isMobileOnly) {
+            this.action_select_type_test()
+        } else {
+            start_test(TEST_TYPE_1)
+        }
+    }
+
     render() {
 
         const {_, currentLanguage, set_active_language, start_test} = this.props,
@@ -82,7 +93,7 @@ class Home extends Component {
                 <p className="mt-4">
                     {_('test_iphone')}
                 </p>
-                <Button color="danger" size="lg" block onClick={() => this.action_select_type_test()}>
+                <Button color="danger" size="lg" block onClick={() => this.start_test()}>
                     {_('start_test')}
                 </Button>
                 <p className="mt-4">
