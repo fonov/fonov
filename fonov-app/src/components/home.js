@@ -37,31 +37,15 @@ class Home extends Component {
 
         return [
             {
-                title: _('{app_name}_-_what_is_it?', {APP_NAME}),
+                title: _('о_{app_name}', {APP_NAME}),
                 desc: (
                     <CardBody>
-                        <CardText>{_('test_for_iphone_before_bu...')}</CardText>
+                        <CardText>{_('1_test_for_iphone_before_bu...')}</CardText>
                     </CardBody>
                 )
             },
             {
-                title: _('why_is_it_necessary?'),
-                desc: (
-                    <CardBody>
-                        <CardText>{_('most_people_don\'t_know_ho...', {APP_NAME})}</CardText>
-                    </CardBody>
-                )
-            },
-            {
-                title: _('why_{app_name}?', {APP_NAME}),
-                desc: (
-                    <CardBody>
-                        <CardText>{_('{app_name}_is_completely...', {APP_NAME})}</CardText>
-                    </CardBody>
-                )
-            },
-            {
-                title: _('what_you_need_for_the_tes...'),
+                title: _('0_what_you_need_for_the_tes...'),
                 desc: (
                     <ListGroup flush>
                         <ListGroupItem>
@@ -71,7 +55,10 @@ class Home extends Component {
                             {_('socket/powerbank')}
                         </ListGroupItem>
                         <ListGroupItem>
-                            {_('smartphone_with_the_funct...')}
+                            {_('4_wifi/smartphone_with_the_...')}
+                        </ListGroupItem>
+                        <ListGroupItem>
+                            {_('bluetooth_device')}
                         </ListGroupItem>
                     </ListGroup>
                 )

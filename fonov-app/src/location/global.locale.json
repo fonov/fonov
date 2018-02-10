@@ -7,42 +7,6 @@
 		"Start",
 		"Начать"
 	],
-	"test_for_iphone_before_bu...": [
-		"Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test the program will give You recommendations on purchasing the iPhone.",
-		"Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста программа даст Вам рекомендации относительно покупки iPhone."
-	],
-	"why_is_it_necessary?": [
-		"Why is it necessary?",
-		"Зачем это нужно?"
-	],
-	"most_people_don't_know_ho...": [
-		"Most people don't know how to run a complete diagnostic on iPhone before buying, and it is fraught with loss of time, money and nerves. ${APP_NAME} is directed to every person regardless of his knowledge of the iPhone, could make it a complete diagnostics before buying, the arguments to reduce the price due to the identified deficiencies and to buy a serviceable iPhone no hidden defects.",
-		"Большинство людей не знают как провести полную диагностику iPhone перед покупкой, а это чревато потерей времени, денег и нервов. ${APP_NAME} направлен на то, чтобы каждый человек в независимости от его познаний в iPhone, мог провести его полную диагностику перед покупкой, аргументированно снизить цену из-за выявленных недостатков и купить исправный iPhone без скрытых дефектов."
-	],
-	"why_{app_name}?": [
-		"Why ${APP_NAME}?",
-		"Почему ${APP_NAME}?"
-	],
-	"{app_name}_is_completely...": [
-		"${APP_NAME} is completely free and contains no advertising. We conduct full testing iPhone both outside and inside. Our test supports multiple languages. Our mission is to help people save time, money and nerves. We are constantly developing ${APP_NAME} and improve it every day.",
-		"${APP_NAME} абсолютно бесплатный и не содержит рекламу. Мы проводим полное тестирование iPhone как снаружи, так и изнутри. Наш тест поддерживает несколько языков. Наша миссия - помогать людям экономить время, деньги и нервы. Мы постоянно развиваем ${APP_NAME} и совершенствуем его каждый день."
-	],
-	"what_you_need_for_the_tes...": [
-		"What you need for the test?",
-		"Что нужно для теста?"
-	],
-	"clip": [
-		"Clip",
-		"Скрепка"
-	],
-	"socket/powerbank": [
-		"Socket/PowerBank",
-		"Розетка/PowerBank"
-	],
-	"smartphone_with_the_funct...": [
-		"Smartphone with the function of distribution of Wi-Fi",
-		"Смартфон с функцией раздачи Wi-Fi"
-	],
 	"restored": [
 		"Restored",
 		"Восстановленный"
@@ -927,10 +891,6 @@
 		"Open the control Center, to check on the flash, click on the \"Flashlight\" and check the operation of the led.",
 		"Откройте Центр управления, что бы проверить вспышку, нажмите на иконку \"Фонарик\" и проверьте работу светодиода."
 	],
-	"{app_name}_-_what_is_it?": [
-		"${APP_NAME} - what is it?",
-		"${APP_NAME} - что это такое?"
-	],
 	"play_the_sound": [
 		"Play the sound",
 		"Проиграйте звук"
@@ -974,5 +934,33 @@
 	"0_locate_the_serial_number....": [
 		"Locate the serial number. Go to Settings -> General -> About -> Serial number.",
 		"Найдите серийный номер. Зайдите в Настройки -> Основные -> Об этом устройстве -> Серийный номер."
+	],
+	"о_{app_name}": [
+		"About ${APP_NAME}",
+		"О ${APP_NAME}"
+	],
+	"1_test_for_iphone_before_bu...": [
+		"Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test You will receive recommendations on purchasing the iPhone.",
+		"Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста Вы получите рекомендации относительно покупки iPhone."
+	],
+	"clip": [
+		"Clip",
+		"Скрепка"
+	],
+	"socket/powerbank": [
+		"Socket/PowerBank",
+		"Розетка/PowerBank"
+	],
+	"4_wifi/smartphone_with_the_...": [
+		"WiFi/Smartphone with the function of distribution of Wi-Fi",
+		"WiFi/Смартфон с функцией раздачи Wi-Fi"
+	],
+	"bluetooth_device": [
+		"Bluetooth device",
+		"Bluetooth устройство"
+	],
+	"0_what_you_need_for_the_tes...": [
+		"What you need for the test?",
+		"Что нужно для теста?"
 	]
 }

@@ -9,3 +9,13 @@
     font-size: 2em;
     color: Gold;
 }
+.red_times {
+    font-size: 40px;
+    color: tomato;
+    vertical-align: middle;
+}
+.green_check {
+    font-size: 40px;
+    color: mediumseagreen;
+    vertical-align: middle;
+}
