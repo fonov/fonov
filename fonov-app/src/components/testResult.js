@@ -234,19 +234,19 @@ class TestResult extends Component {
             );
         } else if (rank > 10 && rank <= 20) {
             return set_conclusion(
-                'success',
+                'warning',
                 _('6_{currentmodel}_recommend...', {currentModel}),
                 _('7_{currentmodel}_has_minor...', {currentModel})
             );
         } else if (rank > 20 && rank <= 25) {
             return set_conclusion(
-                'success',
+                'warning',
                 _('8_{currentmodel}_recommend...', {currentModel}),
                 _('9_{currentmodel}_has_minor...', {currentModel})
             );
         } else {
             return set_conclusion(
-                'success',
+                'warning',
                 _('10_{currentmodel}_recommend...', {currentModel}),
                 _('11_{currentmodel}_has_flaws...', {currentModel})
             );
