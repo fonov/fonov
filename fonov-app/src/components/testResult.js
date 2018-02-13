@@ -146,8 +146,6 @@ class TestResult extends Component {
 
         const {rating, replace, currentModel} = this.props;
 
-        window.scrollTo(0, 0);
-
         if (currentModel === null) {
             replace(URLS.Home)
         }

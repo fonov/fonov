@@ -4,6 +4,10 @@ import { Container, Row, Col } from 'reactstrap';
 
 class Base extends Component {
 
+    componentWillMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
 
         const { children, nav } = this.props;
