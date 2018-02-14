@@ -106,4 +106,4 @@ setTimeout(() => {
         console.log("Maps create\n\n" +
             "=========================\n\n" + JSON.stringify(maps));
     });
-}, 500);
+}, 1000);

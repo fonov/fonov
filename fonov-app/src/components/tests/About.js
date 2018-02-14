@@ -12,7 +12,7 @@ import {
 } from 'reactstrap'
 
 
-class About extends Component {
+export class About extends Component {
 
     constructor(props) {
         super(props);

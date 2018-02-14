@@ -40,7 +40,7 @@ class Camera extends Component {
                         }
                     </CardHeader>
                     <CardBody>
-                        <Image {...image_manager(no_front_camera ? 2 : 1)}/>
+                        <Image {...image_manager(1)}/>
                     </CardBody>
                 </Card>
             </BaseTest>

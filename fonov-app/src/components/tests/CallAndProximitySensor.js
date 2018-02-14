@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest } from '../../elements/index'
+import { Image, BaseTest, BaseCard} from '../../elements/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
@@ -37,14 +37,11 @@ class CallAndProximitySensor extends Component {
             case 'iPhone 6s Plus':
             case 'iPhone SE':
                 return (
-                    <Card className='mt-4'>
-                        <CardHeader>
-                            {_('turn_off_the_speakerphone...')}
-                        </CardHeader>
-                        <CardBody>
-                            <Image {...image_manager(3)} />
-                        </CardBody>
-                    </Card>
+                    <BaseCard
+                        cards={[
+                            [_('turn_off_the_speakerphone...'), image_manager(3)]
+                        ]}
+                    />
                 );
             default:
                 return null
@@ -62,23 +59,13 @@ class CallAndProximitySensor extends Component {
                 rating_check
                 rating_question={_('call_and_the_proximity_se...')}
             >
-                {
-                    [
-                        [_('insert_the_sim_card._the_...'), cell_status_image()],
-                        [_('try_to_make_a_call.'), call_image(1)],
-                        [_('0_during_the_call_close_th...'), image_manager(4)],
-                        [_('put_it_on_speaker_to_chec...'), call_image(2)]
-                    ].map((item, i) => (
-                        <Card key={i} className='mt-4'>
-                            <CardHeader>
-                                {item[0]}
-                            </CardHeader>
-                            <CardBody>
-                                <Image {...item[1]} />
-                            </CardBody>
-                        </Card>
-                    ))
-                }
+                <BaseCard cards={[
+                    [_('insert_the_sim_card._the_...'), cell_status_image()],
+                    [_('try_to_make_a_call.'), call_image(1)],
+                    [_('0_during_the_call_close_th...'), image_manager(4)],
+                    [_('put_it_on_speaker_to_chec...'), call_image(2)]
+                ]}/>
+                {this.callWithHeadpods()}
             </BaseTest>
         )
     }

@@ -20,7 +20,7 @@ const get_normal_img = image => ({
 const img_with_locate = (obj, number, currentLanguage, error) => {
     if (typeof obj[number] !== 'undefined') {
         return get_normal_img(obj[number])
-    } else if (obj[`${number}_${currentLanguage}`] !== 'undefined') {
+    } else if (typeof obj[`${number}_${currentLanguage}`] !== 'undefined') {
         return get_normal_img(obj[`${number}_${currentLanguage}`])
     } else {
         Raven.captureException(error);
