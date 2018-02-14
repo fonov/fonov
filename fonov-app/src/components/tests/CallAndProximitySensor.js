@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Image, BaseTest, BaseCard} from '../../elements/index'
+import { BaseTest, BaseCard} from '../../elements/index'
 import URLS from "../../constant/urls";
 import {replace} from "react-router-redux";
 import image_manager from "../../actions/image-manager";
 import {getActiveLanguage, getTranslate} from "react-localize-redux/lib/index";
-import {CardBody, CardHeader, Card} from 'reactstrap'
 
 
 class CallAndProximitySensor extends Component {
