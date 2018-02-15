@@ -11,6 +11,8 @@ export const LANGUAGES = {
         emoji_name: 'Russian Flag'
     }
 };
+export const LANGUAGES_CODE_EN = 'en';
+export const LANGUAGES_CODE_RU = 'ru';
 export const COOKIE_LANGUAGE = 'active_language';
 export const COOKIE_MAXAGE = 60*60*24*180;
 export const TEST_TYPE_0 = 'SELF';

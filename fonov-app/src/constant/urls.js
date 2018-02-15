@@ -21,6 +21,7 @@ const Warranty = '/warranty';
 const IMEI = '/imei';
 const Package = '/package';
 const TestResult = '/test_result';
+const Feedback = '/feedback';
 
 
 export default {
@@ -46,5 +47,6 @@ export default {
     Warranty,
     IMEI,
     Package,
-    TestResult
+    TestResult,
+    Feedback
 }

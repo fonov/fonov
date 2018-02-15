@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {APP_NAME, LANGUAGES, TEST_TYPE_0, TEST_TYPE_1, CONTACT_EMAIL, SHARE_URL} from '../constant/config'
+import URLS from '../constant/urls'
 import {version} from '../../package.json';
 import {clean_test} from '../actions/main'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
@@ -19,6 +20,7 @@ import {
     VKShareButton
 } from 'react-share';
 import FontAwesome from 'react-fontawesome'
+import {push} from "react-router-redux";
 
 
 class Home extends Component {
@@ -91,7 +93,7 @@ class Home extends Component {
 
     render() {
 
-        const {_, currentLanguage, set_active_language, start_test} = this.props,
+        const {_, currentLanguage, set_active_language, start_test, push} = this.props,
             {select_type_test} = this.state,
             share_props = {
                 url: SHARE_URL,
@@ -151,7 +153,7 @@ class Home extends Component {
                     </CardBody>
                 </Card>
 
-                <Row className="my-4 text-center">
+                <Row className="mt-4 mb-2 text-center">
                     <Col>
                         <FacebookShareButton {...share_props}>
                             <Button color="link" >
@@ -183,13 +185,16 @@ class Home extends Component {
                         </TelegramShareButton>
                     </Col>
                 </Row>
-
-                <p className="my-4">
+                <p className='text-center'>
+                    <button type="button" className="btn btn-outline-primary" onClick={() => push(URLS.Feedback)}>
+                        {_('reviews_app_name', {APP_NAME})}
+                    </button>
+                </p>
+                <p className="mt-2 mb-4">
                     <strong>
                         {`${_('version')}: ${version}`}
                     </strong>
                 </p>
-
                 <Modal isOpen={select_type_test} toggle={() => this.action_select_type_test()}>
                     <ModalHeader>
                         {_('0_select_which_iphone_you_w...')}
@@ -221,7 +226,8 @@ const mapDispatchToProps = dispatch => {
     return {
         clean_test: () => dispatch(clean_test()),
         set_active_language: code => dispatch(set_active_language(code)),
-        start_test: test_type => dispatch(start_test(test_type))
+        start_test: test_type => dispatch(start_test(test_type)),
+        push: url => dispatch(push(url))
     }
 };
 

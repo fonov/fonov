@@ -29,6 +29,7 @@ import Warranty from './tests/Warranty'
 import IMEI from './tests/IMEI'
 import Package from './tests/Package'
 import TestResult from './testResult'
+import Feedback from './feedback'
 // URLS
 import URLS from '../constant/urls'
 
@@ -67,6 +68,7 @@ export default class App extends Component {
                         <Route path={URLS.IMEI} component={IMEI} />
                         <Route path={URLS.Package} component={Package} />
                         <Route path={URLS.TestResult} component={TestResult} />
+                        <Route path={URLS.Feedback} component={Feedback} />
                     </CookiesProvider>
                 </ConnectedRouter>
             </Provider>

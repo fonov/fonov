@@ -978,5 +978,13 @@
 	"contacts": [
 		"Contacts",
 		"Контакты"
+	],
+	"reviews_app_name": [
+		"Reviews ${APP_NAME}",
+		"Отзывы о ${APP_NAME}"
+	],
+	"comments": [
+		"Comments",
+		"Отзывы"
 	]
 }
