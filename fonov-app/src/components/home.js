@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {APP_NAME, LANGUAGES, TEST_TYPE_0, TEST_TYPE_1} from '../constant/config'
+import {APP_NAME, LANGUAGES, TEST_TYPE_0, TEST_TYPE_1, CONTACT_EMAIL, SHARE_URL} from '../constant/config'
 import {version} from '../../package.json';
 import {clean_test} from '../actions/main'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
@@ -10,9 +10,15 @@ import {start_test} from '../actions/main'
 import {
     Button, ListGroup, ListGroupItem,
     Card, CardHeader, CardText, CardBody,
-    Modal, ModalHeader, ModalBody
+    Modal, ModalHeader, ModalBody, Row, Col
 } from 'reactstrap'
 import {isIOS, isMobileOnly} from 'react-device-detect';
+import {
+    FacebookShareButton,
+    TelegramShareButton,
+    VKShareButton
+} from 'react-share';
+import FontAwesome from 'react-fontawesome'
 
 
 class Home extends Component {
@@ -86,7 +92,14 @@ class Home extends Component {
     render() {
 
         const {_, currentLanguage, set_active_language, start_test} = this.props,
-            {select_type_test} = this.state;
+            {select_type_test} = this.state,
+            share_props = {
+                url: SHARE_URL,
+                title: APP_NAME,
+                description: _('test_iphone'),
+                quote: `${APP_NAME} - ${_('test_iphone')}`,
+                hashtag: `#${APP_NAME}`
+            };
 
         return (
             <BasePage>
@@ -127,11 +140,56 @@ class Home extends Component {
                         </Card>
                     ))
                 }
+                <Card className="mt-4">
+                    <CardHeader>
+                        {_('contacts')}
+                    </CardHeader>
+                    <CardBody>
+                        <CardText>
+                            <a href={`mailto:${CONTACT_EMAIL}?subject=${APP_NAME} ${version}`}>{CONTACT_EMAIL}</a>
+                        </CardText>
+                    </CardBody>
+                </Card>
+
+                <Row className="my-4 text-center">
+                    <Col>
+                        <FacebookShareButton {...share_props}>
+                            <Button color="link" >
+                                <FontAwesome
+                                    name="facebook-square"
+                                    className="share_icon"
+                                />
+                            </Button>
+                        </FacebookShareButton>
+                    </Col>
+                    <Col>
+                        <VKShareButton {...share_props}>
+                            <Button color="link" >
+                                <FontAwesome
+                                    name="vk"
+                                    className="share_icon"
+                                />
+                            </Button>
+                        </VKShareButton>
+                    </Col>
+                    <Col>
+                        <TelegramShareButton {...share_props}>
+                            <Button color="link" >
+                                <FontAwesome
+                                    name="telegram"
+                                    className="share_icon"
+                                />
+                            </Button>
+                        </TelegramShareButton>
+                    </Col>
+                </Row>
+
                 <p className="my-4">
                     <strong>
                         {`${_('version')}: ${version}`}
                     </strong>
                 </p>
+
                 <Modal isOpen={select_type_test} toggle={() => this.action_select_type_test()}>
                     <ModalHeader>
                         {_('0_select_which_iphone_you_w...')}
