@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import {SHARE_URL, LANGUAGES_CODE_EN, LANGUAGES_CODE_RU} from '../constant/config'
 import { getTranslate, getActiveLanguage,  } from 'react-localize-redux';
 import {BasePage} from '../elements/index'
-import {isIOS, isMobileOnly} from 'react-device-detect';
 import { VK, Comments } from 'react-vk';
 import FacebookProvider, { Comments as FBComments } from 'react-facebook';
 
