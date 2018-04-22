@@ -2,7 +2,6 @@
   "name": "fonov-app",
   "version": "1.0.2",
   "private": true,
-  "homepage": "https://mounlion.github.io",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "browser-locale": "^1.0.3",

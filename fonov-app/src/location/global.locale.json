@@ -940,11 +940,11 @@
 		"О ${APP_NAME}"
 	],
 	"1_test_for_iphone_before_bu...": [
-		"Test for iPhone before buying. The test is aimed at identifying various kinds of faults and shortcomings. After passing the test You will receive recommendations on purchasing the iPhone.",
+		"The test aims to identify the various types of faults and shortcomings. After testing you receive the recommendation about buying the iPhone.",
 		"Тест для проверки iPhone перед покупкой. Тест направлен на выявление различного рода неисправностей и недостатков. После прохождения теста Вы получите рекомендации относительно покупки iPhone."
 	],
 	"clip": [
-		"Clip",
+		"SIM card eject tool",
 		"Скрепка"
 	],
 	"socket/powerbank": [
@@ -952,7 +952,7 @@
 		"Розетка/PowerBank"
 	],
 	"4_wifi/smartphone_with_the_...": [
-		"WiFi/Smartphone with the function of distribution of Wi-Fi",
+		"WiFi/Smartphone with function Hotspot",
 		"WiFi/Смартфон с функцией раздачи Wi-Fi"
 	],
 	"bluetooth_device": [
