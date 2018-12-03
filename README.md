@@ -15,3 +15,5 @@ FonovTest абсолютно бесплатный и не содержит ре�
 
 # Автор
 Fonov Sergei - [ask@mounlion.com](mailto:ask@mounlion.com)
+
+<img src="demo.png" width="400">
