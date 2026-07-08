@@ -1,0 +1,57 @@
+[
+  {
+    "name": "iPhone 18 Pro",
+    "generation": "18",
+    "formFactor": "bar",
+    "status": "placeholder",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "cameraControl", "tripleCamera", "placeholder"],
+    "colors": {
+      "Space Black": {
+        "256 GB": ["A3801"],
+        "512 GB": ["A3802"],
+        "1 TB": ["A3803"]
+      },
+      "Silver": {
+        "256 GB": ["A3804"],
+        "512 GB": ["A3805"],
+        "1 TB": ["A3806"]
+      },
+      "Titanium Blue": {
+        "256 GB": ["A3807"],
+        "512 GB": ["A3808"],
+        "1 TB": ["A3809"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 18 Pro Max",
+    "generation": "18",
+    "formFactor": "bar",
+    "status": "placeholder",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "cameraControl", "tripleCamera", "placeholder"],
+    "colors": {
+      "Space Black": {
+        "256 GB": ["A3810"],
+        "512 GB": ["A3811"],
+        "1 TB": ["A3812"],
+        "2 TB": ["A3813"]
+      },
+      "Silver": {
+        "256 GB": ["A3814"],
+        "512 GB": ["A3815"],
+        "1 TB": ["A3816"],
+        "2 TB": ["A3817"]
+      },
+      "Titanium Blue": {
+        "256 GB": ["A3818"],
+        "512 GB": ["A3819"],
+        "1 TB": ["A3820"],
+        "2 TB": ["A3821"]
+      }
+    }
+  }
+]

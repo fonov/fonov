@@ -1,0 +1,470 @@
+[
+  {
+    "name": "iPhone",
+    "generation": "1",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton"],
+    "colors": {
+      "Black": {
+        "4 GB": ["A501"],
+        "8 GB": ["A712"],
+        "16 GB": ["B384"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 3G",
+    "generation": "3G",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "3g"],
+    "colors": {
+      "Black": {
+        "8 GB": ["B046", "B489"],
+        "16 GB": ["B048", "B496"]
+      },
+      "White": {
+        "16 GB": ["B499", "B500"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 3GS",
+    "generation": "3GS",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "3g"],
+    "colors": {
+      "Black": {
+        "8 GB": ["C555", "C640"],
+        "16 GB": ["B715", "B719"],
+        "32 GB": ["B717", "B737"]
+      },
+      "White": {
+        "16 GB": ["B716", "B736"],
+        "32 GB": ["B718", "B738"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 4",
+    "generation": "4",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "retina"],
+    "colors": {
+      "Black": {
+        "8 GB": ["D126", "D127"],
+        "16 GB": ["C318", "C603"],
+        "32 GB": ["C319", "C605"]
+      },
+      "White": {
+        "8 GB": ["D196", "D197"],
+        "16 GB": ["C604", "C536"],
+        "32 GB": ["C606", "C537"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 4S",
+    "generation": "4S",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "retina", "siri"],
+    "colors": {
+      "Black": {
+        "8 GB": ["E259", "F257"],
+        "16 GB": ["C918", "C922"],
+        "32 GB": ["C919", "C923"],
+        "64 GB": ["D257", "D258"]
+      },
+      "White": {
+        "8 GB": ["F258", "F260"],
+        "16 GB": ["C920", "C924"],
+        "32 GB": ["C921", "D244"],
+        "64 GB": ["D260", "D271"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 5",
+    "generation": "5",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "lightning"],
+    "colors": {
+      "Black": {
+        "16 GB": ["D293", "D634"],
+        "32 GB": ["D295", "D636"],
+        "64 GB": ["D642", "D644"]
+      },
+      "White": {
+        "16 GB": ["D294", "D635"],
+        "32 GB": ["D296", "D637"],
+        "64 GB": ["D643", "D645"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 5c",
+    "generation": "5c",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "lightning"],
+    "colors": {
+      "Blue": {
+        "8 GB": ["G0T2", "G1U2"],
+        "16 GB": ["E507", "E531"],
+        "32 GB": ["F136", "F151"]
+      },
+      "Green": {
+        "8 GB": ["G0V2", "G1W2"],
+        "16 GB": ["E508", "E496"],
+        "32 GB": ["F137", "F152"]
+      },
+      "Pink": {
+        "16 GB": ["E509", "E533"],
+        "32 GB": ["F138", "F133"]
+      },
+      "White": {
+        "8 GB": ["G0Q2", "G1Q2"],
+        "16 GB": ["E505", "E493"],
+        "32 GB": ["F134", "F149"]
+      },
+      "Yellow": {
+        "8 GB": ["G0R2", "G1R2"],
+        "16 GB": ["E506", "E554"],
+        "32 GB": ["F135", "F155"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 5s",
+    "generation": "5s",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "lightning"],
+    "colors": {
+      "Gold": {
+        "16 GB": ["E298", "E307"],
+        "32 GB": ["E301", "E310"],
+        "64 GB": ["E304", "E313"]
+      },
+      "Silver": {
+        "16 GB": ["E297", "E306"],
+        "32 GB": ["E300", "E309"],
+        "64 GB": ["E303", "E312"]
+      },
+      "Space Gray": {
+        "16 GB": ["E296", "E305"],
+        "32 GB": ["E299", "E308"],
+        "64 GB": ["E302", "E311"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 6",
+    "generation": "6",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc"],
+    "colors": {
+      "Gold": {
+        "16 GB": ["G3D2", "G492"],
+        "64 GB": ["G3L2", "G4J2"],
+        "128 GB": ["G3G2", "G4E2"]
+      },
+      "Silver": {
+        "16 GB": ["G3C2", "G4P2"],
+        "64 GB": ["G3K2", "G4H2"],
+        "128 GB": ["G3F2", "G4C2"]
+      },
+      "Space Gray": {
+        "16 GB": ["G3A2", "G4N2"],
+        "64 GB": ["G3H2", "G4F2"],
+        "128 GB": ["G3E2", "G4A2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 6 Plus",
+    "generation": "6",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc"],
+    "colors": {
+      "Gold": {
+        "16 GB": ["GAA2", "GAN2"],
+        "64 GB": ["GAK2", "GAW2"],
+        "128 GB": ["GAF2", "GAR2"]
+      },
+      "Silver": {
+        "16 GB": ["GA92", "GC92"],
+        "64 GB": ["GAJ2", "GAV2"],
+        "128 GB": ["GAE2", "GAQ2"]
+      },
+      "Space Gray": {
+        "16 GB": ["GA82", "GAL2"],
+        "64 GB": ["GAH2", "GAU2"],
+        "128 GB": ["GAC2", "GAP2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 6s",
+    "generation": "6s",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc", "touch3D"],
+    "colors": {
+      "Gold": {
+        "16 GB": ["KQL2", "KQ72"],
+        "64 GB": ["KQC2", "KQQ2"],
+        "128 GB": ["KQG2", "KQV2"]
+      },
+      "Rose Gold": {
+        "16 GB": ["KQM2", "KQ82"],
+        "64 GB": ["KQD2", "KQR2"],
+        "128 GB": ["KQH2", "KQW2"]
+      },
+      "Silver": {
+        "16 GB": ["KQ62", "KQK2"],
+        "64 GB": ["KQA2", "KQP2"],
+        "128 GB": ["KQF2", "KQU2"]
+      },
+      "Space Gray": {
+        "16 GB": ["KQ52", "KQJ2"],
+        "64 GB": ["KQN2", "KQ92"],
+        "128 GB": ["KQE2", "KQT2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 6s Plus",
+    "generation": "6s",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc", "touch3D"],
+    "colors": {
+      "Gold": {
+        "16 GB": ["KTN2", "KU32"],
+        "64 GB": ["KTT2", "KU82"],
+        "128 GB": ["KTX2", "KUF2"]
+      },
+      "Rose Gold": {
+        "16 GB": ["KU52", "KTP2"],
+        "64 GB": ["KU92", "KTU2"],
+        "128 GB": ["KUG2", "KV22"]
+      },
+      "Silver": {
+        "16 GB": ["KTM2", "KU22"],
+        "64 GB": ["KTR2", "KU72"],
+        "128 GB": ["KTW2", "KUE2"]
+      },
+      "Space Gray": {
+        "16 GB": ["KU12", "KTL2"],
+        "64 GB": ["KU62", "KTQ2"],
+        "128 GB": ["KUD2", "KTV2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone SE",
+    "generation": "SE1",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc"],
+    "colors": {
+      "Gold": {
+        "16 GB": ["LXH2", "LXW2"],
+        "64 GB": ["LXK2", "LXY2"],
+        "128 GB": ["P952", "P9J2"]
+      },
+      "Rose Gold": {
+        "16 GB": ["LXJ2", "LXX2"],
+        "64 GB": ["LXL2", "LY02"],
+        "128 GB": ["P962", "P9K2"]
+      },
+      "Silver": {
+        "16 GB": ["LLM2", "LLV2"],
+        "64 GB": ["LM52", "LMC2"],
+        "128 GB": ["P942", "P9H2"]
+      },
+      "Space Gray": {
+        "16 GB": ["LLL2", "LLU2"],
+        "64 GB": ["LM42", "LM62"],
+        "128 GB": ["P932", "P9G2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 7",
+    "generation": "7",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc", "waterResistant"],
+    "colors": {
+      "Black": {
+        "32 GB": ["N8G2", "NAC2"],
+        "128 GB": ["N8L2", "NAJ2"],
+        "256 GB": ["N8R2", "NAQ2"]
+      },
+      "Gold": {
+        "32 GB": ["N8J2", "NAE2"],
+        "128 GB": ["N8N2", "NAL2"],
+        "256 GB": ["N8U2", "NAV2"]
+      },
+      "Jet Black": {
+        "128 GB": ["N8Q2", "NAP2"],
+        "256 GB": ["N8W2", "NAX2"]
+      },
+      "Red": {
+        "128 GB": ["PRV2", "PRT2"],
+        "256 GB": ["PRW2", "PRU2"]
+      },
+      "Rose Gold": {
+        "32 GB": ["N8K2", "NAF2"],
+        "128 GB": ["N8P2", "NAM2"],
+        "256 GB": ["N8V2", "NAW2"]
+      },
+      "Silver": {
+        "32 GB": ["N8H2", "NAD2"],
+        "128 GB": ["N8M2", "NAK2"],
+        "256 GB": ["N8T2", "NAU2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 7 Plus",
+    "generation": "7",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc", "waterResistant", "dualCamera"],
+    "colors": {
+      "Black": {
+        "32 GB": ["NQH2", "NR12"],
+        "128 GB": ["N482", "N5T2"],
+        "256 GB": ["N4E2", "N5Y2"]
+      },
+      "Gold": {
+        "32 GB": ["NQK2", "NR32"],
+        "128 GB": ["N4A2", "N5V2"],
+        "256 GB": ["N4J2", "N612"]
+      },
+      "Jet Black": {
+        "128 GB": ["N4D2", "N5X2"],
+        "256 GB": ["N4L2", "N632"]
+      },
+      "Red": {
+        "128 GB": ["PR12", "PR02"],
+        "256 GB": ["PRA2", "PR92"]
+      },
+      "Rose Gold": {
+        "32 GB": ["NQL2", "NR42"],
+        "128 GB": ["N4C2", "N5W2"],
+        "256 GB": ["N4K2", "N622"]
+      },
+      "Silver": {
+        "32 GB": ["NQJ2", "NR22"],
+        "128 GB": ["N492", "N5U2"],
+        "256 GB": ["N4F2", "N602"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 8",
+    "generation": "8",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc", "wirelessCharging"],
+    "colors": {
+      "Gold": {
+        "64 GB": ["Q6M2", "Q742"],
+        "256 GB": ["Q7H2", "Q802"]
+      },
+      "Silver": {
+        "64 GB": ["Q6L2", "Q732"],
+        "256 GB": ["Q7G2", "Q7Y2"]
+      },
+      "Space Gray": {
+        "64 GB": ["Q6K2", "Q722"],
+        "256 GB": ["Q7F2", "Q7X2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 8 Plus",
+    "generation": "8",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "homeButton", "touchId", "nfc", "wirelessCharging", "dualCamera"],
+    "colors": {
+      "Gold": {
+        "64 GB": ["Q8F2", "Q9F2"],
+        "256 GB": ["Q8J2", "Q9C2"]
+      },
+      "Silver": {
+        "64 GB": ["Q8E2", "Q9E2"],
+        "256 GB": ["Q8H2", "Q9A2"]
+      },
+      "Space Gray": {
+        "64 GB": ["Q8D2", "Q9D2"],
+        "256 GB": ["Q8G2", "Q9G2"]
+      }
+    }
+  },
+  {
+    "name": "iPhone X",
+    "generation": "X",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "faceId", "nfc", "wirelessCharging"],
+    "colors": {
+      "Silver": {
+        "64 GB": ["QCT2", "QCL2"],
+        "256 GB": ["QCW2", "QCP2"]
+      },
+      "Space Gray": {
+        "64 GB": ["QCR2", "QCK2"],
+        "256 GB": ["QCV2", "QCN2"]
+      }
+    }
+  }
+]

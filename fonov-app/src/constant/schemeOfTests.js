@@ -9,7 +9,7 @@ const testForRemove = currentModel => {
                 'Flash',
                 'TouchIDorFaceID',
                 'Warranty',
-                'iCloid'
+                'iCloud'
             ];
         case 'iPhone 4':
         case 'iPhone 4S':

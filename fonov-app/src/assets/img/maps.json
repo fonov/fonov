@@ -1,0 +1,8 @@
+{
+  "default": {
+    "default": {
+      "1": { "src": "default.svg", "width": 365, "height": 710 },
+      "2": { "src": "default.svg", "width": 365, "height": 710 }
+    }
+  }
+}

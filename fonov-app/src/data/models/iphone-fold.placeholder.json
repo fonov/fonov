@@ -1,0 +1,44 @@
+[
+  {
+    "name": "iPhone Fold",
+    "generation": "fold",
+    "formFactor": "foldable",
+    "status": "placeholder",
+    "biometrics": "touchIdButton",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "usbC", "foldable", "coverDisplay", "innerDisplay", "placeholder"],
+    "colors": {
+      "Space Black": {
+        "256 GB": ["A3901"],
+        "512 GB": ["A3902"],
+        "1 TB": ["A3903"]
+      },
+      "Silver": {
+        "256 GB": ["A3904"],
+        "512 GB": ["A3905"],
+        "1 TB": ["A3906"]
+      }
+    }
+  },
+  {
+    "name": "iPhone Ultra",
+    "generation": "fold",
+    "formFactor": "foldable",
+    "status": "placeholder",
+    "biometrics": "touchIdButton",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "usbC", "foldable", "coverDisplay", "innerDisplay", "lidar", "tripleCamera", "placeholder"],
+    "colors": {
+      "Titanium Black": {
+        "512 GB": ["A3910"],
+        "1 TB": ["A3911"],
+        "2 TB": ["A3912"]
+      },
+      "Titanium Natural": {
+        "512 GB": ["A3913"],
+        "1 TB": ["A3914"],
+        "2 TB": ["A3915"]
+      }
+    }
+  }
+]

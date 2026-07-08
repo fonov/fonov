@@ -11,28 +11,17 @@ const history = createHistory();
 const route_middleware = routerMiddleware(history);
 
 
-const store = () => {
-    if (process.env.NODE_ENV === 'development') {
-        return createStore(
-            reducers,
-            compose(
-                applyMiddleware(ReduxThunk),
-                applyMiddleware(route_middleware),
-                applyMiddleware(logger)
-            )
-        );
-    } else {
-        return createStore(
-            reducers,
-            compose(
-                applyMiddleware(ReduxThunk),
-                applyMiddleware(route_middleware)
-            )
-        );
-    }
-};
+const middlewares = [ReduxThunk, route_middleware];
+if (process.env.NODE_ENV === 'development') {
+    middlewares.push(logger);
+}
+
+const reduxStore = createStore(
+    reducers,
+    compose(applyMiddleware(...middlewares))
+);
 
 export {
-    store,
+    reduxStore as store,
     history
 }
