@@ -34,12 +34,12 @@ import Feedback from './feedback'
 import URLS from '../constant/urls'
 
 
+const _store = store();
+_store.dispatch(init_localize());
+
 export default class App extends Component {
 
     render () {
-
-        const _store = store();
-        _store.dispatch(init_localize());
 
         return (
             <Provider store={_store}>

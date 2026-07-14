@@ -1,0 +1,1128 @@
+[
+  {
+    "name": "iPhone XS",
+    "generation": "10",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "touch3D"],
+    "colors": {
+      "Gold": {
+        "64 GB": ["A2097", "A2100"],
+        "256 GB": ["A2098", "A2101"],
+        "512 GB": ["A2099", "A2102"]
+      },
+      "Silver": {
+        "64 GB": ["A1920", "A2097"],
+        "256 GB": ["A1921", "A2098"],
+        "512 GB": ["A2104", "A2105"]
+      },
+      "Space Gray": {
+        "64 GB": ["A1920", "A2097"],
+        "256 GB": ["A1921", "A2098"],
+        "512 GB": ["A2104", "A2105"]
+      }
+    }
+  },
+  {
+    "name": "iPhone XS Max",
+    "generation": "10",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "touch3D"],
+    "colors": {
+      "Gold": {
+        "64 GB": ["A2101", "A2104"],
+        "256 GB": ["A2102", "A2105"],
+        "512 GB": ["A2103", "A2106"]
+      },
+      "Silver": {
+        "64 GB": ["A1921", "A2101"],
+        "256 GB": ["A1922", "A2102"],
+        "512 GB": ["A2105", "A2108"]
+      },
+      "Space Gray": {
+        "64 GB": ["A1921", "A2101"],
+        "256 GB": ["A1922", "A2102"],
+        "512 GB": ["A2105", "A2108"]
+      }
+    }
+  },
+  {
+    "name": "iPhone XR",
+    "generation": "10",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["lcd", "dualSim", "nfc", "wirelessCharging"],
+    "colors": {
+      "Black": {
+        "64 GB": ["A1984", "A2105"],
+        "128 GB": ["A1984", "A2105"],
+        "256 GB": ["A1984", "A2105"]
+      },
+      "White": {
+        "64 GB": ["A1984", "A2105"],
+        "128 GB": ["A1984", "A2105"],
+        "256 GB": ["A1984", "A2105"]
+      },
+      "Blue": {
+        "64 GB": ["A1984", "A2105"],
+        "128 GB": ["A1984", "A2105"],
+        "256 GB": ["A1984", "A2105"]
+      },
+      "Yellow": {
+        "64 GB": ["A1984", "A2105"],
+        "128 GB": ["A1984", "A2105"],
+        "256 GB": ["A1984", "A2105"]
+      },
+      "Coral": {
+        "64 GB": ["A1984", "A2105"],
+        "128 GB": ["A1984", "A2105"],
+        "256 GB": ["A1984", "A2105"]
+      },
+      "Red": {
+        "64 GB": ["A1984", "A2105"],
+        "128 GB": ["A1984", "A2105"],
+        "256 GB": ["A1984", "A2105"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 11",
+    "generation": "11",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["lcd", "dualSim", "nfc", "wirelessCharging", "ultraWideCamera"],
+    "colors": {
+      "Black": {
+        "64 GB": ["A2111", "A2221"],
+        "128 GB": ["A2111", "A2221"],
+        "256 GB": ["A2111", "A2221"]
+      },
+      "White": {
+        "64 GB": ["A2111", "A2221"],
+        "128 GB": ["A2111", "A2221"],
+        "256 GB": ["A2111", "A2221"]
+      },
+      "Green": {
+        "64 GB": ["A2111", "A2221"],
+        "128 GB": ["A2111", "A2221"],
+        "256 GB": ["A2111", "A2221"]
+      },
+      "Yellow": {
+        "64 GB": ["A2111", "A2221"],
+        "128 GB": ["A2111", "A2221"],
+        "256 GB": ["A2111", "A2221"]
+      },
+      "Purple": {
+        "64 GB": ["A2111", "A2221"],
+        "128 GB": ["A2111", "A2221"],
+        "256 GB": ["A2111", "A2221"]
+      },
+      "Red": {
+        "64 GB": ["A2111", "A2221"],
+        "128 GB": ["A2111", "A2221"],
+        "256 GB": ["A2111", "A2221"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 11 Pro",
+    "generation": "11",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "ultraWideCamera", "tripleCamera"],
+    "colors": {
+      "Midnight Green": {
+        "64 GB": ["A2160", "A2215"],
+        "256 GB": ["A2160", "A2215"],
+        "512 GB": ["A2160", "A2215"]
+      },
+      "Silver": {
+        "64 GB": ["A2160", "A2215"],
+        "256 GB": ["A2160", "A2215"],
+        "512 GB": ["A2160", "A2215"]
+      },
+      "Gold": {
+        "64 GB": ["A2160", "A2215"],
+        "256 GB": ["A2160", "A2215"],
+        "512 GB": ["A2160", "A2215"]
+      },
+      "Space Gray": {
+        "64 GB": ["A2160", "A2215"],
+        "256 GB": ["A2160", "A2215"],
+        "512 GB": ["A2160", "A2215"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 11 Pro Max",
+    "generation": "11",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "ultraWideCamera", "tripleCamera"],
+    "colors": {
+      "Midnight Green": {
+        "64 GB": ["A2161", "A2216"],
+        "256 GB": ["A2161", "A2216"],
+        "512 GB": ["A2161", "A2216"]
+      },
+      "Silver": {
+        "64 GB": ["A2161", "A2216"],
+        "256 GB": ["A2161", "A2216"],
+        "512 GB": ["A2161", "A2216"]
+      },
+      "Gold": {
+        "64 GB": ["A2161", "A2216"],
+        "256 GB": ["A2161", "A2216"],
+        "512 GB": ["A2161", "A2216"]
+      },
+      "Space Gray": {
+        "64 GB": ["A2161", "A2216"],
+        "256 GB": ["A2161", "A2216"],
+        "512 GB": ["A2161", "A2216"]
+      }
+    }
+  },
+  {
+    "name": "iPhone SE (2nd gen)",
+    "generation": "SE2",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "dualSim", "nfc", "wirelessCharging", "homeButton"],
+    "colors": {
+      "Black": {
+        "64 GB": ["A2275", "A2296"],
+        "128 GB": ["A2275", "A2296"],
+        "256 GB": ["A2275", "A2296"]
+      },
+      "White": {
+        "64 GB": ["A2275", "A2296"],
+        "128 GB": ["A2275", "A2296"],
+        "256 GB": ["A2275", "A2296"]
+      },
+      "Red": {
+        "64 GB": ["A2275", "A2296"],
+        "128 GB": ["A2275", "A2296"],
+        "256 GB": ["A2275", "A2296"]
+      }
+    }
+  },
+  {
+    "name": "iPhone SE (3rd gen)",
+    "generation": "SE3",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "touchId",
+    "portType": "lightning",
+    "features": ["lcd", "dualSim", "nfc", "wirelessCharging", "homeButton", "5g"],
+    "colors": {
+      "Midnight": {
+        "64 GB": ["A2595", "A2782"],
+        "128 GB": ["A2595", "A2782"],
+        "256 GB": ["A2595", "A2782"]
+      },
+      "Starlight": {
+        "64 GB": ["A2595", "A2782"],
+        "128 GB": ["A2595", "A2782"],
+        "256 GB": ["A2595", "A2782"]
+      },
+      "Red": {
+        "64 GB": ["A2595", "A2782"],
+        "128 GB": ["A2595", "A2782"],
+        "256 GB": ["A2595", "A2782"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 12 mini",
+    "generation": "12",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera"],
+    "colors": {
+      "Black": {
+        "64 GB": ["A2176", "A2398"],
+        "128 GB": ["A2176", "A2398"],
+        "256 GB": ["A2176", "A2398"]
+      },
+      "White": {
+        "64 GB": ["A2176", "A2398"],
+        "128 GB": ["A2176", "A2398"],
+        "256 GB": ["A2176", "A2398"]
+      },
+      "Blue": {
+        "64 GB": ["A2176", "A2398"],
+        "128 GB": ["A2176", "A2398"],
+        "256 GB": ["A2176", "A2398"]
+      },
+      "Green": {
+        "64 GB": ["A2176", "A2398"],
+        "128 GB": ["A2176", "A2398"],
+        "256 GB": ["A2176", "A2398"]
+      },
+      "Purple": {
+        "64 GB": ["A2176", "A2398"],
+        "128 GB": ["A2176", "A2398"],
+        "256 GB": ["A2176", "A2398"]
+      },
+      "Red": {
+        "64 GB": ["A2176", "A2398"],
+        "128 GB": ["A2176", "A2398"],
+        "256 GB": ["A2176", "A2398"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 12",
+    "generation": "12",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera"],
+    "colors": {
+      "Black": {
+        "64 GB": ["A2172", "A2402"],
+        "128 GB": ["A2172", "A2402"],
+        "256 GB": ["A2172", "A2402"]
+      },
+      "White": {
+        "64 GB": ["A2172", "A2402"],
+        "128 GB": ["A2172", "A2402"],
+        "256 GB": ["A2172", "A2402"]
+      },
+      "Blue": {
+        "64 GB": ["A2172", "A2402"],
+        "128 GB": ["A2172", "A2402"],
+        "256 GB": ["A2172", "A2402"]
+      },
+      "Green": {
+        "64 GB": ["A2172", "A2402"],
+        "128 GB": ["A2172", "A2402"],
+        "256 GB": ["A2172", "A2402"]
+      },
+      "Purple": {
+        "64 GB": ["A2172", "A2402"],
+        "128 GB": ["A2172", "A2402"],
+        "256 GB": ["A2172", "A2402"]
+      },
+      "Red": {
+        "64 GB": ["A2172", "A2402"],
+        "128 GB": ["A2172", "A2402"],
+        "256 GB": ["A2172", "A2402"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 12 Pro",
+    "generation": "12",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "tripleCamera"],
+    "colors": {
+      "Graphite": {
+        "128 GB": ["A2341", "A2406"],
+        "256 GB": ["A2341", "A2406"],
+        "512 GB": ["A2341", "A2406"]
+      },
+      "Silver": {
+        "128 GB": ["A2341", "A2406"],
+        "256 GB": ["A2341", "A2406"],
+        "512 GB": ["A2341", "A2406"]
+      },
+      "Gold": {
+        "128 GB": ["A2341", "A2406"],
+        "256 GB": ["A2341", "A2406"],
+        "512 GB": ["A2341", "A2406"]
+      },
+      "Pacific Blue": {
+        "128 GB": ["A2341", "A2406"],
+        "256 GB": ["A2341", "A2406"],
+        "512 GB": ["A2341", "A2406"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 12 Pro Max",
+    "generation": "12",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "tripleCamera"],
+    "colors": {
+      "Graphite": {
+        "128 GB": ["A2342", "A2410"],
+        "256 GB": ["A2342", "A2410"],
+        "512 GB": ["A2342", "A2410"]
+      },
+      "Silver": {
+        "128 GB": ["A2342", "A2410"],
+        "256 GB": ["A2342", "A2410"],
+        "512 GB": ["A2342", "A2410"]
+      },
+      "Gold": {
+        "128 GB": ["A2342", "A2410"],
+        "256 GB": ["A2342", "A2410"],
+        "512 GB": ["A2342", "A2410"]
+      },
+      "Pacific Blue": {
+        "128 GB": ["A2342", "A2410"],
+        "256 GB": ["A2342", "A2410"],
+        "512 GB": ["A2342", "A2410"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 13 mini",
+    "generation": "13",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "cinematicMode"],
+    "colors": {
+      "Midnight": {
+        "128 GB": ["A2481", "A2626"],
+        "256 GB": ["A2481", "A2626"],
+        "512 GB": ["A2481", "A2626"]
+      },
+      "Starlight": {
+        "128 GB": ["A2481", "A2626"],
+        "256 GB": ["A2481", "A2626"],
+        "512 GB": ["A2481", "A2626"]
+      },
+      "Blue": {
+        "128 GB": ["A2481", "A2626"],
+        "256 GB": ["A2481", "A2626"],
+        "512 GB": ["A2481", "A2626"]
+      },
+      "Pink": {
+        "128 GB": ["A2481", "A2626"],
+        "256 GB": ["A2481", "A2626"],
+        "512 GB": ["A2481", "A2626"]
+      },
+      "Red": {
+        "128 GB": ["A2481", "A2626"],
+        "256 GB": ["A2481", "A2626"],
+        "512 GB": ["A2481", "A2626"]
+      },
+      "Green": {
+        "128 GB": ["A2481", "A2626"],
+        "256 GB": ["A2481", "A2626"],
+        "512 GB": ["A2481", "A2626"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 13",
+    "generation": "13",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "cinematicMode"],
+    "colors": {
+      "Midnight": {
+        "128 GB": ["A2482", "A2631"],
+        "256 GB": ["A2482", "A2631"],
+        "512 GB": ["A2482", "A2631"]
+      },
+      "Starlight": {
+        "128 GB": ["A2482", "A2631"],
+        "256 GB": ["A2482", "A2631"],
+        "512 GB": ["A2482", "A2631"]
+      },
+      "Blue": {
+        "128 GB": ["A2482", "A2631"],
+        "256 GB": ["A2482", "A2631"],
+        "512 GB": ["A2482", "A2631"]
+      },
+      "Pink": {
+        "128 GB": ["A2482", "A2631"],
+        "256 GB": ["A2482", "A2631"],
+        "512 GB": ["A2482", "A2631"]
+      },
+      "Red": {
+        "128 GB": ["A2482", "A2631"],
+        "256 GB": ["A2482", "A2631"],
+        "512 GB": ["A2482", "A2631"]
+      },
+      "Green": {
+        "128 GB": ["A2482", "A2631"],
+        "256 GB": ["A2482", "A2631"],
+        "512 GB": ["A2482", "A2631"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 13 Pro",
+    "generation": "13",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "tripleCamera"],
+    "colors": {
+      "Graphite": {
+        "128 GB": ["A2483", "A2633"],
+        "256 GB": ["A2483", "A2633"],
+        "512 GB": ["A2483", "A2633"],
+        "1 TB": ["A2483", "A2633"]
+      },
+      "Silver": {
+        "128 GB": ["A2483", "A2633"],
+        "256 GB": ["A2483", "A2633"],
+        "512 GB": ["A2483", "A2633"],
+        "1 TB": ["A2483", "A2633"]
+      },
+      "Gold": {
+        "128 GB": ["A2483", "A2633"],
+        "256 GB": ["A2483", "A2633"],
+        "512 GB": ["A2483", "A2633"],
+        "1 TB": ["A2483", "A2633"]
+      },
+      "Sierra Blue": {
+        "128 GB": ["A2483", "A2633"],
+        "256 GB": ["A2483", "A2633"],
+        "512 GB": ["A2483", "A2633"],
+        "1 TB": ["A2483", "A2633"]
+      },
+      "Alpine Green": {
+        "128 GB": ["A2483", "A2633"],
+        "256 GB": ["A2483", "A2633"],
+        "512 GB": ["A2483", "A2633"],
+        "1 TB": ["A2483", "A2633"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 13 Pro Max",
+    "generation": "13",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "tripleCamera"],
+    "colors": {
+      "Graphite": {
+        "128 GB": ["A2484", "A2641"],
+        "256 GB": ["A2484", "A2641"],
+        "512 GB": ["A2484", "A2641"],
+        "1 TB": ["A2484", "A2641"]
+      },
+      "Silver": {
+        "128 GB": ["A2484", "A2641"],
+        "256 GB": ["A2484", "A2641"],
+        "512 GB": ["A2484", "A2641"],
+        "1 TB": ["A2484", "A2641"]
+      },
+      "Gold": {
+        "128 GB": ["A2484", "A2641"],
+        "256 GB": ["A2484", "A2641"],
+        "512 GB": ["A2484", "A2641"],
+        "1 TB": ["A2484", "A2641"]
+      },
+      "Sierra Blue": {
+        "128 GB": ["A2484", "A2641"],
+        "256 GB": ["A2484", "A2641"],
+        "512 GB": ["A2484", "A2641"],
+        "1 TB": ["A2484", "A2641"]
+      },
+      "Alpine Green": {
+        "128 GB": ["A2484", "A2641"],
+        "256 GB": ["A2484", "A2641"],
+        "512 GB": ["A2484", "A2641"],
+        "1 TB": ["A2484", "A2641"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 14",
+    "generation": "14",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "crashDetection"],
+    "colors": {
+      "Midnight": {
+        "128 GB": ["A2649", "A2881"],
+        "256 GB": ["A2649", "A2881"],
+        "512 GB": ["A2649", "A2881"]
+      },
+      "Starlight": {
+        "128 GB": ["A2649", "A2881"],
+        "256 GB": ["A2649", "A2881"],
+        "512 GB": ["A2649", "A2881"]
+      },
+      "Blue": {
+        "128 GB": ["A2649", "A2881"],
+        "256 GB": ["A2649", "A2881"],
+        "512 GB": ["A2649", "A2881"]
+      },
+      "Purple": {
+        "128 GB": ["A2649", "A2881"],
+        "256 GB": ["A2649", "A2881"],
+        "512 GB": ["A2649", "A2881"]
+      },
+      "Red": {
+        "128 GB": ["A2649", "A2881"],
+        "256 GB": ["A2649", "A2881"],
+        "512 GB": ["A2649", "A2881"]
+      },
+      "Yellow": {
+        "128 GB": ["A2649", "A2881"],
+        "256 GB": ["A2649", "A2881"],
+        "512 GB": ["A2649", "A2881"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 14 Plus",
+    "generation": "14",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "crashDetection"],
+    "colors": {
+      "Midnight": {
+        "128 GB": ["A2632", "A2885"],
+        "256 GB": ["A2632", "A2885"],
+        "512 GB": ["A2632", "A2885"]
+      },
+      "Starlight": {
+        "128 GB": ["A2632", "A2885"],
+        "256 GB": ["A2632", "A2885"],
+        "512 GB": ["A2632", "A2885"]
+      },
+      "Blue": {
+        "128 GB": ["A2632", "A2885"],
+        "256 GB": ["A2632", "A2885"],
+        "512 GB": ["A2632", "A2885"]
+      },
+      "Purple": {
+        "128 GB": ["A2632", "A2885"],
+        "256 GB": ["A2632", "A2885"],
+        "512 GB": ["A2632", "A2885"]
+      },
+      "Red": {
+        "128 GB": ["A2632", "A2885"],
+        "256 GB": ["A2632", "A2885"],
+        "512 GB": ["A2632", "A2885"]
+      },
+      "Yellow": {
+        "128 GB": ["A2632", "A2885"],
+        "256 GB": ["A2632", "A2885"],
+        "512 GB": ["A2632", "A2885"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 14 Pro",
+    "generation": "14",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "alwaysOnDisplay", "tripleCamera"],
+    "colors": {
+      "Space Black": {
+        "128 GB": ["A2650", "A2889"],
+        "256 GB": ["A2650", "A2889"],
+        "512 GB": ["A2650", "A2889"],
+        "1 TB": ["A2650", "A2889"]
+      },
+      "Silver": {
+        "128 GB": ["A2650", "A2889"],
+        "256 GB": ["A2650", "A2889"],
+        "512 GB": ["A2650", "A2889"],
+        "1 TB": ["A2650", "A2889"]
+      },
+      "Gold": {
+        "128 GB": ["A2650", "A2889"],
+        "256 GB": ["A2650", "A2889"],
+        "512 GB": ["A2650", "A2889"],
+        "1 TB": ["A2650", "A2889"]
+      },
+      "Deep Purple": {
+        "128 GB": ["A2650", "A2889"],
+        "256 GB": ["A2650", "A2889"],
+        "512 GB": ["A2650", "A2889"],
+        "1 TB": ["A2650", "A2889"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 14 Pro Max",
+    "generation": "14",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "lightning",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "alwaysOnDisplay", "tripleCamera"],
+    "colors": {
+      "Space Black": {
+        "128 GB": ["A2651", "A2893"],
+        "256 GB": ["A2651", "A2893"],
+        "512 GB": ["A2651", "A2893"],
+        "1 TB": ["A2651", "A2893"]
+      },
+      "Silver": {
+        "128 GB": ["A2651", "A2893"],
+        "256 GB": ["A2651", "A2893"],
+        "512 GB": ["A2651", "A2893"],
+        "1 TB": ["A2651", "A2893"]
+      },
+      "Gold": {
+        "128 GB": ["A2651", "A2893"],
+        "256 GB": ["A2651", "A2893"],
+        "512 GB": ["A2651", "A2893"],
+        "1 TB": ["A2651", "A2893"]
+      },
+      "Deep Purple": {
+        "128 GB": ["A2651", "A2893"],
+        "256 GB": ["A2651", "A2893"],
+        "512 GB": ["A2651", "A2893"],
+        "1 TB": ["A2651", "A2893"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 15",
+    "generation": "15",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "usbC"],
+    "colors": {
+      "Black": {
+        "128 GB": ["A2846", "A3089"],
+        "256 GB": ["A2846", "A3089"],
+        "512 GB": ["A2846", "A3089"]
+      },
+      "Blue": {
+        "128 GB": ["A2846", "A3089"],
+        "256 GB": ["A2846", "A3089"],
+        "512 GB": ["A2846", "A3089"]
+      },
+      "Green": {
+        "128 GB": ["A2846", "A3089"],
+        "256 GB": ["A2846", "A3089"],
+        "512 GB": ["A2846", "A3089"]
+      },
+      "Yellow": {
+        "128 GB": ["A2846", "A3089"],
+        "256 GB": ["A2846", "A3089"],
+        "512 GB": ["A2846", "A3089"]
+      },
+      "Pink": {
+        "128 GB": ["A2846", "A3089"],
+        "256 GB": ["A2846", "A3089"],
+        "512 GB": ["A2846", "A3089"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 15 Plus",
+    "generation": "15",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "usbC"],
+    "colors": {
+      "Black": {
+        "128 GB": ["A2847", "A3093"],
+        "256 GB": ["A2847", "A3093"],
+        "512 GB": ["A2847", "A3093"]
+      },
+      "Blue": {
+        "128 GB": ["A2847", "A3093"],
+        "256 GB": ["A2847", "A3093"],
+        "512 GB": ["A2847", "A3093"]
+      },
+      "Green": {
+        "128 GB": ["A2847", "A3093"],
+        "256 GB": ["A2847", "A3093"],
+        "512 GB": ["A2847", "A3093"]
+      },
+      "Yellow": {
+        "128 GB": ["A2847", "A3093"],
+        "256 GB": ["A2847", "A3093"],
+        "512 GB": ["A2847", "A3093"]
+      },
+      "Pink": {
+        "128 GB": ["A2847", "A3093"],
+        "256 GB": ["A2847", "A3093"],
+        "512 GB": ["A2847", "A3093"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 15 Pro",
+    "generation": "15",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "titanium", "tripleCamera"],
+    "colors": {
+      "Black Titanium": {
+        "128 GB": ["A2848", "A3101"],
+        "256 GB": ["A2848", "A3101"],
+        "512 GB": ["A2848", "A3101"],
+        "1 TB": ["A2848", "A3101"]
+      },
+      "White Titanium": {
+        "128 GB": ["A2848", "A3101"],
+        "256 GB": ["A2848", "A3101"],
+        "512 GB": ["A2848", "A3101"],
+        "1 TB": ["A2848", "A3101"]
+      },
+      "Blue Titanium": {
+        "128 GB": ["A2848", "A3101"],
+        "256 GB": ["A2848", "A3101"],
+        "512 GB": ["A2848", "A3101"],
+        "1 TB": ["A2848", "A3101"]
+      },
+      "Natural Titanium": {
+        "128 GB": ["A2848", "A3101"],
+        "256 GB": ["A2848", "A3101"],
+        "512 GB": ["A2848", "A3101"],
+        "1 TB": ["A2848", "A3101"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 15 Pro Max",
+    "generation": "15",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "titanium", "tripleCamera"],
+    "colors": {
+      "Black Titanium": {
+        "128 GB": ["A2849", "A3105"],
+        "256 GB": ["A2849", "A3105"],
+        "512 GB": ["A2849", "A3105"],
+        "1 TB": ["A2849", "A3105"]
+      },
+      "White Titanium": {
+        "128 GB": ["A2849", "A3105"],
+        "256 GB": ["A2849", "A3105"],
+        "512 GB": ["A2849", "A3105"],
+        "1 TB": ["A2849", "A3105"]
+      },
+      "Blue Titanium": {
+        "128 GB": ["A2849", "A3105"],
+        "256 GB": ["A2849", "A3105"],
+        "512 GB": ["A2849", "A3105"],
+        "1 TB": ["A2849", "A3105"]
+      },
+      "Natural Titanium": {
+        "128 GB": ["A2849", "A3105"],
+        "256 GB": ["A2849", "A3105"],
+        "512 GB": ["A2849", "A3105"],
+        "1 TB": ["A2849", "A3105"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 16",
+    "generation": "16",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "actionButton", "usbC", "cameraControl"],
+    "colors": {
+      "Black": {
+        "128 GB": ["A3081", "A3286"],
+        "256 GB": ["A3081", "A3286"],
+        "512 GB": ["A3081", "A3286"]
+      },
+      "White": {
+        "128 GB": ["A3081", "A3286"],
+        "256 GB": ["A3081", "A3286"],
+        "512 GB": ["A3081", "A3286"]
+      },
+      "Pink": {
+        "128 GB": ["A3081", "A3286"],
+        "256 GB": ["A3081", "A3286"],
+        "512 GB": ["A3081", "A3286"]
+      },
+      "Teal": {
+        "128 GB": ["A3081", "A3286"],
+        "256 GB": ["A3081", "A3286"],
+        "512 GB": ["A3081", "A3286"]
+      },
+      "Ultramarine": {
+        "128 GB": ["A3081", "A3286"],
+        "256 GB": ["A3081", "A3286"],
+        "512 GB": ["A3081", "A3286"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 16 Plus",
+    "generation": "16",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "actionButton", "usbC", "cameraControl"],
+    "colors": {
+      "Black": {
+        "128 GB": ["A3082", "A3290"],
+        "256 GB": ["A3082", "A3290"],
+        "512 GB": ["A3082", "A3290"]
+      },
+      "White": {
+        "128 GB": ["A3082", "A3290"],
+        "256 GB": ["A3082", "A3290"],
+        "512 GB": ["A3082", "A3290"]
+      },
+      "Pink": {
+        "128 GB": ["A3082", "A3290"],
+        "256 GB": ["A3082", "A3290"],
+        "512 GB": ["A3082", "A3290"]
+      },
+      "Teal": {
+        "128 GB": ["A3082", "A3290"],
+        "256 GB": ["A3082", "A3290"],
+        "512 GB": ["A3082", "A3290"]
+      },
+      "Ultramarine": {
+        "128 GB": ["A3082", "A3290"],
+        "256 GB": ["A3082", "A3290"],
+        "512 GB": ["A3082", "A3290"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 16 Pro",
+    "generation": "16",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "titanium", "cameraControl", "tripleCamera"],
+    "colors": {
+      "Black Titanium": {
+        "128 GB": ["A3083", "A3294"],
+        "256 GB": ["A3083", "A3294"],
+        "512 GB": ["A3083", "A3294"],
+        "1 TB": ["A3083", "A3294"]
+      },
+      "White Titanium": {
+        "128 GB": ["A3083", "A3294"],
+        "256 GB": ["A3083", "A3294"],
+        "512 GB": ["A3083", "A3294"],
+        "1 TB": ["A3083", "A3294"]
+      },
+      "Natural Titanium": {
+        "128 GB": ["A3083", "A3294"],
+        "256 GB": ["A3083", "A3294"],
+        "512 GB": ["A3083", "A3294"],
+        "1 TB": ["A3083", "A3294"]
+      },
+      "Desert Titanium": {
+        "128 GB": ["A3083", "A3294"],
+        "256 GB": ["A3083", "A3294"],
+        "512 GB": ["A3083", "A3294"],
+        "1 TB": ["A3083", "A3294"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 16 Pro Max",
+    "generation": "16",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "titanium", "cameraControl", "tripleCamera"],
+    "colors": {
+      "Black Titanium": {
+        "256 GB": ["A3084", "A3298"],
+        "512 GB": ["A3084", "A3298"],
+        "1 TB": ["A3084", "A3298"]
+      },
+      "White Titanium": {
+        "256 GB": ["A3084", "A3298"],
+        "512 GB": ["A3084", "A3298"],
+        "1 TB": ["A3084", "A3298"]
+      },
+      "Natural Titanium": {
+        "256 GB": ["A3084", "A3298"],
+        "512 GB": ["A3084", "A3298"],
+        "1 TB": ["A3084", "A3298"]
+      },
+      "Desert Titanium": {
+        "256 GB": ["A3084", "A3298"],
+        "512 GB": ["A3084", "A3298"],
+        "1 TB": ["A3084", "A3298"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 16e",
+    "generation": "16",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "usbC", "singleCamera"],
+    "colors": {
+      "Black": {
+        "128 GB": ["A3212", "A3408"],
+        "256 GB": ["A3212", "A3408"],
+        "512 GB": ["A3212", "A3408"]
+      },
+      "White": {
+        "128 GB": ["A3212", "A3408"],
+        "256 GB": ["A3212", "A3408"],
+        "512 GB": ["A3212", "A3408"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 17",
+    "generation": "17",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "ultraWideCamera", "actionButton", "usbC", "cameraControl"],
+    "colors": {
+      "Black": {
+        "256 GB": ["A3520", "A3710"],
+        "512 GB": ["A3520", "A3710"]
+      },
+      "White": {
+        "256 GB": ["A3520", "A3710"],
+        "512 GB": ["A3520", "A3710"]
+      },
+      "Lavender": {
+        "256 GB": ["A3520", "A3710"],
+        "512 GB": ["A3520", "A3710"]
+      },
+      "Sage": {
+        "256 GB": ["A3520", "A3710"],
+        "512 GB": ["A3520", "A3710"]
+      },
+      "Mist Blue": {
+        "256 GB": ["A3520", "A3710"],
+        "512 GB": ["A3520", "A3710"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 17 Air",
+    "generation": "17",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "usbC", "ultraThin", "singleCamera"],
+    "colors": {
+      "Space Black": {
+        "256 GB": ["A3521", "A3714"],
+        "512 GB": ["A3521", "A3714"],
+        "1 TB": ["A3521", "A3714"]
+      },
+      "Cloud White": {
+        "256 GB": ["A3521", "A3714"],
+        "512 GB": ["A3521", "A3714"],
+        "1 TB": ["A3521", "A3714"]
+      },
+      "Light Gold": {
+        "256 GB": ["A3521", "A3714"],
+        "512 GB": ["A3521", "A3714"],
+        "1 TB": ["A3521", "A3714"]
+      },
+      "Sky Blue": {
+        "256 GB": ["A3521", "A3714"],
+        "512 GB": ["A3521", "A3714"],
+        "1 TB": ["A3521", "A3714"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 17 Pro",
+    "generation": "17",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "aluminumUnibody", "cameraControl", "tripleCamera"],
+    "colors": {
+      "Cosmic Orange": {
+        "256 GB": ["A3522", "A3718"],
+        "512 GB": ["A3522", "A3718"],
+        "1 TB": ["A3522", "A3718"]
+      },
+      "Deep Blue": {
+        "256 GB": ["A3522", "A3718"],
+        "512 GB": ["A3522", "A3718"],
+        "1 TB": ["A3522", "A3718"]
+      },
+      "Silver": {
+        "256 GB": ["A3522", "A3718"],
+        "512 GB": ["A3522", "A3718"],
+        "1 TB": ["A3522", "A3718"]
+      }
+    }
+  },
+  {
+    "name": "iPhone 17 Pro Max",
+    "generation": "17",
+    "formFactor": "bar",
+    "status": "active",
+    "biometrics": "faceId",
+    "portType": "usbc",
+    "features": ["oled", "dualSim", "nfc", "wirelessCharging", "magSafe", "5g", "lidar", "proMotion", "dynamicIsland", "actionButton", "usbC", "aluminumUnibody", "cameraControl", "tripleCamera"],
+    "colors": {
+      "Cosmic Orange": {
+        "256 GB": ["A3523", "A3722"],
+        "512 GB": ["A3523", "A3722"],
+        "1 TB": ["A3523", "A3722"],
+        "2 TB": ["A3523", "A3722"]
+      },
+      "Deep Blue": {
+        "256 GB": ["A3523", "A3722"],
+        "512 GB": ["A3523", "A3722"],
+        "1 TB": ["A3523", "A3722"],
+        "2 TB": ["A3523", "A3722"]
+      },
+      "Silver": {
+        "256 GB": ["A3523", "A3722"],
+        "512 GB": ["A3523", "A3722"],
+        "1 TB": ["A3523", "A3722"],
+        "2 TB": ["A3523", "A3722"]
+      }
+    }
+  }
+]
