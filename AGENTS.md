@@ -24,6 +24,14 @@ The committed `maps.json` is generated on Linux; note the asset dirs contain bot
 `appearance/` (a macOS case-insensitivity artifact) — the generator lowercases map keys but keeps the
 real-case `src` paths, so regenerate on Linux if paths ever fail to resolve.
 
+### Dependency resolution (`react` / `createContext`)
+`package.json` declares `"react": "^16.2.0"`. The repo's original `package-lock.json` was stale/incomplete
+(it pinned `react@16.2.0` but was missing several declared deps such as `react-localize-redux` and
+`react-vk`). Installing against it left `react` at 16.2.0 while newer transitive deps call
+`React.createContext` (added in 16.3), which crashed the app at runtime with a `createContext` TypeError
+(blank page). The lockfile has been regenerated so `react`/`react-dom` resolve to `16.14.0` (still within
+`^16.2.0`) and the tree is internally consistent. Do not re-pin `react` back to 16.2.0.
+
 ### Run / build / test (from `fonov-app/`)
 - Run dev server: `BROWSER=none npm start` (Create React App, serves on port 3000).
 - Build: `npm run build`.
